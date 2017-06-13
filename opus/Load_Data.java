@@ -44,6 +44,7 @@ public class Load_Data {
 					s = sb.toString();
 					
 					if (!s.isEmpty()){
+						//Save the consequent separately when in Supervised Descriptive Rule Discovery
 						if (Globals.sdrd == true || Globals.consequentName.equals(s)){
 							Globals.consequentTids.add((long)Globals.noOfTransactions);
 						}else{

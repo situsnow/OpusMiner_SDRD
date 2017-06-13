@@ -30,9 +30,11 @@ public class Globals {
 	
 	//supervised descriptive rule discovery - contrast-sets mining
 	public static boolean sdrd = false;
-	//For contrast-set mining
+	//For contrast-set mining - name
 	public static String consequentName = "";
-	//public static int consequentID;
+	//For contrast-set mining - id
+	public final static int consequentID = -1;
+	//Save the transaction id for current consequent
 	public static Tidset consequentTids = new Tidset();
 	
 	public static void expandAlpha(final long depth){

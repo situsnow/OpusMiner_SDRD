@@ -8,7 +8,11 @@ public class Find_Itemsets {
 
 	public static float minValue = Float.MIN_VALUE;
 	
+	//Only save those itemsets that pass the bound value and productive
 	public static Map<Itemset, Integer> TIDCount = new HashMap<Itemset, Integer>();
+	
+	//Supervised Descriptive Rule Discovery - Contrast-set mining, for {productive itemsets, Consequent} : cover
+	public static Map<Itemset, Integer> TIDConCount = new HashMap<Itemset, Integer>();
 	
 	//for static function getTIDCount
 	private static int count;
@@ -350,14 +354,10 @@ public class Find_Itemsets {
 		// initialize q - the queue of items ordered on an upper bound on value
 		for (i = 0; i < Globals.noOfItems; i++){
 			
+			//In first level of lattice, only need to check if single item can pass th Fisher Exact Test
 			Tidset newCover = new Tidset();
-			if (Globals.sdrd == true){
-				//joint 1-itemset with consequent to get intersection
-				Tidset.intersection(newCover, Globals.tids.get(i), Globals.consequentTids);
-			}else{
-				newCover = Globals.tids.get(i);
-			}
-			//c : How many transactions that current item (or + consequent) occurs
+			newCover = Globals.tids.get(i);
+			//c : How many transactions that current item occurs
 			int c = newCover.size();
 			
 			float sup = Utils.countToSup(c);
@@ -368,6 +368,24 @@ public class Find_Itemsets {
 			if (Utils.fisher(c, c, c) <= Globals.getAlpha(2)){
 				// it is faster to sort the q once it is full rather than doing an insertion sort
 				q.append(ubVal, i);
+				
+				//Save productive {1-itemset, consequent} when in Supervised Descriptive Rule Discovery
+				if (Globals.sdrd == true){
+					newCover = new Tidset();
+					Tidset.intersection(newCover, Globals.tids.get(i), Globals.consequentTids);
+					int ruleCover = newCover.size();
+					
+					float newSup = Utils.countToSup(ruleCover);
+					float consequentSup = Utils.countToSup(Globals.consequentTids.size());
+					ubVal = (float)(Globals.searchByLift? newSup/(sup * consequentSup): newSup - sup * consequentSup);
+					
+					if (Utils.fisher(ruleCover, Globals.consequentTids.size(), c) <= Globals.getAlpha(2)){
+						Itemset is = new Itemset();
+						is.add(i);
+						is.add(Globals.consequentID);
+						TIDConCount.put(is, ruleCover);
+					}
+				}
 			}
 		}
 		
