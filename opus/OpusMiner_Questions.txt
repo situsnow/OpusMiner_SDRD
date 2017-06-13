@@ -1,0 +1,117 @@
+﻿Questions:
+------------------------------------------------------------
+1. Command -p was not indicated in usageStr and what does command -p do? : in opus_miner.cpp, line 80 
+<Xuelin>The p command was the flag to perform Bonferroni Correction in OpusMiner or not.
+
+2. What does it mean by search by Lift in command -l : in opus_miner.cpp, line 111
+<Xuelin> There are two measurements proposed to calculate the upper bound value of an item: Leverage/Lift; The command -l aims to set the flag to use which measurements.
+
+3. Why the p value needs to calculate with log factorial? isn't it only factorial would be fine? Try to scale the data to lower range? : in fisher.cpp, line 51
+<Xuelin>With large sample data, the pure factorial will be really large and somehow may exceeds the range of (unsigned) int. However, by calculating the log factorial and then round with e to the power of invariant result, will keep the meaning of p value from Fisher Exact Test and also scale down the double value of p. 
+
+4. Why there's an array for alpha? in globals.h, line 45
+<Xuelin> It originates to the idea of Bonfferoni Correction which divide the significance level alfa with sample size. However, it's more related to the concept of Layered critical values, which the assigned critical value to evaluate current itemsets is calculated according to searching depth but not total sample size.
+
+5. What is the null hypotheses to accept a single item? in find_itemsets.cpp, line 342
+<Xuelin>While evaluating the interestingness of a single item in fisher exact test, can view as the contingency table with the support count of current item in true negative cell. 
+
+6. Why apriori is true when redundancy is true? find_itemsets.cpp, line 135, 298
+The apriori variable here is nothing related to the Algorithm Apriori but the definition of anti-monotonicity property of an items and its subset. By filtering out one itemset, none of its superset needed to be scanned.
+
+7. Why need to check if upper bound value is greater than minValue? find_itemsets.cpp, line 287
+When assessing the interestingness of an itemset, not only that the pvalue should be less than the layered significance level alpha (Reject H0 and Acccept H1 in such case), but also need to be greater than the minimum value of the top K because when top K itemsets are already existed, it's useless to include more itemsets whose upper bound value is less than the Kth itemset's upper bound value (current itemset will filter out anyway).
+
+leverage = sup(s) - sup(A) * sup(s-A) <= sup(s) - sup(s) * sup(s)
+s is the superset of A.
+
+new : sup (antecedent + consequent) - sup ( antecedent) * sup (consequent)
+Only use one combination
+
+8. replace leverage/lift with mutual information
+Before OpusMiner: identify which variable is consequent (get rid of it or use flag to identify it), perform only one type of consequent domain (e.g poison first)
+
+When pruning itemsets, use mutual information instead of leverage or lift
+Make the mutual information run without the upper bound.
+
+9. Why the count of immediate subset is equal to current itemset will mark it as redundant? find_itemsets.cpp, line 139
+It's for the non-redundancy property in self-sufficient itemset. When there's subsumed items lying in an itemset, one of its subset and subset of subset will have the same support count. E.g. {female, pregnant} and {pregnant}.
+
+
+#########################################################################################
+**The key amendment to OpusMiner is that, when counting the support for an itemset, it will include the consequent; However, when checking the immediate or partition subsets of an itemset, it should exclude the consequent when looping every subsets, but when calculating the support count, it should include the consequent again.
+
+A B Y
+subsets: A, B, AY, BY, AB should all saved in the memory.
+
+1. Should I check only {AY, BY, CY, ...} in the first level of lattice?
+2. When I check {AY, BY, CY,,,} should I still use lattice depth as 2 or should increase 1 every time for itemsets in lattice?
+
+3. In fisher exact test, Is the position for A and B matter? say, antecedent/consequent?
+         |    !A   |     A    |
+---------|---------|----------|
+   !B    |   a     | b        |
+---------|---------|----------|
+   B     |   c     | d(count) | Count 2
+---------|---------|----------|----------
+         |         | Count 1  | Total transaction
+#########################################################################################
+
+
+Literature Review:
+Association discovery (Apriori only, Not too much portion on other algorithms) (1/4)
+Self-sufficient itemsets, k-optimal, Opus (5/12)
+Supervised Descriptive Rule Discovery (1/3)
+
+“A fuzzy association rule-based classification model for high-dimensional problems with genetic rule selection and lateral tuning”
+“Fuzzy association rule mining algorithm for fast and efficient performance on very large datasets”
+
+“Multi objective association rule mining with genetic algorithm without specifying minimum support and minimum confidence”
+
+“The strategy of mining association rule based on cloud computing”
+
+“Discovering associations with numeric variables” – Geoff Webb
+
+1.	Sequential patterns
+2.	Subgraph patterns
+Infrequent patterns
+------------------------------------------------------------
+
+1. All of the subsets of the current itemsets should be stored and when checking in the next level, 
+it do not need to check the support count of the correspondent subsets again.
+
+itemID --> int
+TID --> long
+p_value --> double
+
+
+tids: list of Tidset, the index is the item id
+	{TidSet: list of TID, the transaction ids}
+
+
+Itemset: List of 
+
+
+Disjunction: OR, 并集
+Conjunction: AND, 交集
+#########################################################################################
+Globals.itemNames: All item names, List<String>
+Globals.tids: Transaction list(Tidset) of each item, List<Tidset>
+
+Globals.noOfTransactions: Total transaction number, int
+Globals.noOfItems: Total item number, int
+
+OpusMiner.itemsets: PriorityQueue<ItemsetRec>, the top k itemsets that identified as self-sufficient
+Find_Itemsets.TIDCount: Map<Itemset, Integer>, the cover count of an itemset
+
+1. Read documents
+2. Check if first-level item can pass the Fisher Exact Test. 
+	Need to join consequent at this moment?
+		If yes, then need to join both X and consequent
+		If no, then just remain the same
+3. Save all productive 1-itemset to ItemQClass q
+
+
+
+
+
+
