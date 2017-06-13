@@ -402,6 +402,7 @@ public class Find_Itemsets {
 			}
 			
 			//TODO Snow: pay attention here if need to use the intersection of item+consequent for the last param: size
+			//Make sure when checking itemset {A, B, Y}, all its subsets {A, B, AB, AY, BY} should be stored.
 			opus(is, newCover, newq, Globals.tids.get(item).size());
 			
 			newq.append(q.get(i).ubVal, item);
