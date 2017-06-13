@@ -35,12 +35,6 @@ public class Utils {
 			final int item2 = is.get(it++);
 			Tidset.intersection(t, Globals.tids.get(item1), Globals.tids.get(item2));
 
-			//joint consequent when it's supervised descriptive rule discovery
-			if (Globals.sdrd == true){
-				Tidset temp = t;
-				Tidset.intersection(t, temp, Globals.consequentTids);
-			}
-			
 			while (it != is.size() - 1){
 				Tidset.dintersection(t, Globals.tids.get(is.get(it++)));
 			}

@@ -43,7 +43,10 @@ It's for the non-redundancy property in self-sufficient itemset. When there's su
 A B Y
 subsets: A, B, AY, BY, AB should all saved in the memory.
 
-1. Should I check only {AY, BY, CY, ...} in the first level of lattice?
+1. Should I only save those itemsets: {1-itemset + consequent} who passes the Fisher Exact Test for correspondent {1-itemset}?
+
+For example, I have {A}, {B}, {C} that without consequent Y to pass the FET, but only {AY}, {BY} pass FET, should I opt out {C}?
+
 2. When I check {AY, BY, CY,,,} should I still use lattice depth as 2 or should increase 1 every time for itemsets in lattice?
 
 3. In fisher exact test, Is the position for A and B matter? say, antecedent/consequent?

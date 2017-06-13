@@ -153,6 +153,8 @@ public class Find_Itemsets {
 			if (p > alpha) return false;
 		}
 		
+		//TODO Snow: joint the consequent to see if {k-itemset, consequent} can pass the Fisher Exact Test
+		
 		if (remaining.size() > 1){
 			Itemset new_remaining = new Itemset(remaining);
 			
@@ -274,18 +276,12 @@ public class Find_Itemsets {
 			int item = q.get(i).item;
 			int count;
 			
-			//joint itemsets with consequent to have the latest cover Tidset
 			Tidset currItemset = new Tidset();
-			if (Globals.sdrd == true){
-				Tidset.intersection(currItemset, Globals.tids.get(item), Globals.consequentTids);
-			}else{
-				currItemset = Globals.tids.get(item);
-			}
+			currItemset = Globals.tids.get(item);
 			
 			// determine the number of TIDs that the new itemset covers
 			Tidset.intersection(newCover, cover, currItemset);
 			
-			//TODO Snow: need to save this one when checking the pair of partitions from a itemset (While checking self-sufficient?)
 			count = newCover.size();
 			
 			int newMaxItemCount = Math.max(maxItemCount, currItemset.size());
@@ -311,7 +307,7 @@ public class Find_Itemsets {
 				 * 4. bool apriori
 				 */
 				
-				//TODO: Snow!! Duplicate itemset added here, check why
+				//TODO: Duplicate itemset added here, check why
 				Collections.reverse(is);
 				is.add(item);
 				Collections.reverse(is);
@@ -366,9 +362,6 @@ public class Find_Itemsets {
 			
 			// make sure that the support is high enough for it to be possible to create a significant itemset
 			if (Utils.fisher(c, c, c) <= Globals.getAlpha(2)){
-				// it is faster to sort the q once it is full rather than doing an insertion sort
-				q.append(ubVal, i);
-				
 				//Save productive {1-itemset, consequent} when in Supervised Descriptive Rule Discovery
 				if (Globals.sdrd == true){
 					newCover = new Tidset();
@@ -384,8 +377,15 @@ public class Find_Itemsets {
 						is.add(i);
 						is.add(Globals.consequentID);
 						TIDConCount.put(is, ruleCover);
+						
+						//TODO opt out the 1-itemset who's superset {1-itemset, consequent} cannot pass the test.
+						q.append(ubVal, i);
 					}
+				}else{
+					// it is faster to sort the q once it is full rather than doing an insertion sort
+					q.append(ubVal, i);
 				}
+				
 			}
 		}
 		
@@ -412,14 +412,9 @@ public class Find_Itemsets {
 			is.add(item);
 			
 			Tidset newCover = new Tidset();
-			//joint consequent
-			if (Globals.sdrd == true){
-				Tidset.intersection(newCover, Globals.tids.get(item), Globals.consequentTids);
-			}else{
-				newCover = Globals.tids.get(item);
-			}
+			newCover = Globals.tids.get(item);
 			
-			//TODO Snow: pay attention here if need to use the intersection of item+consequent for the last param: size
+			//TODO pay attention here if need to use the intersection of item+consequent for the last param: size
 			//Make sure when checking itemset {A, B, Y}, all its subsets {A, B, AB, AY, BY} should be stored.
 			opus(is, newCover, newq, Globals.tids.get(item).size());
 			

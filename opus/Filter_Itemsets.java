@@ -59,11 +59,7 @@ public class Filter_Itemsets {
 		if (result){
 			// set up a process that will check whether uniqueCov.size() is significantly greater than can be predicted by assuming independence between any partition of is
 			Tidset uniqueCov = new Tidset();// this is the TIDs covered by is that are not in supsettids
-			if (Globals.sdrd == true){
-				Tidset.intersection(uniqueCov, uniqueTids.get(0), Globals.consequentTids);
-			}else{
-				uniqueCov = uniqueTids.get(0);
-			}
+			uniqueCov = uniqueTids.get(0);
 			
 			// calculate uniqueCov
 			for (i = 0; i < is.size(); i++){
