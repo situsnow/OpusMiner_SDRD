@@ -41,15 +41,18 @@ It's for the non-redundancy property in self-sufficient itemset. When there's su
 **The key amendment to OpusMiner is that, when counting the support for an itemset, it will include the consequent; However, when checking the immediate or partition subsets of an itemset, it should exclude the consequent when looping every subsets, but when calculating the support count, it should include the consequent again.
 
 A B Y
-subsets: A, B, AY, BY, AB should all saved in the memory.
+subsets: A, B, AY, BY, AB should all saved (TIDCount) in the memory.
 
 1. Should I only save those itemsets: {1-itemset + consequent} who passes the Fisher Exact Test for correspondent {1-itemset}?
+Yes. Only check those with consequent who pass the Fisher Exact Test, but have to save the support(TIDCount) of all subsets.
 
-For example, I have {A}, {B}, {C} that without consequent Y to pass the FET, but only {AY}, {BY} pass FET, should I opt out {C}?
+2. For example, I have {A}, {B}, {C} that without consequent Y to pass the FET, but only {AY}, {BY} pass FET, should I opt out {C}?
+No.
 
-2. When I check {AY, BY, CY,,,} should I still use lattice depth as 2 or should increase 1 every time for itemsets in lattice?
+3. When I check {AY, BY, CY,,,} should I still use lattice depth as 2 or should increase 1 every time for itemsets in lattice?
+<Xuelin> Still follow the same depth in original lattice when adding Consequent.
 
-3. In fisher exact test, Is the position for A and B matter? say, antecedent/consequent?
+4. In fisher exact test, Is the position for A and B matter? say, antecedent/consequent?
          |    !A   |     A    |
 ---------|---------|----------|
    !B    |   a     | b        |
@@ -57,6 +60,8 @@ For example, I have {A}, {B}, {C} that without consequent Y to pass the FET, but
    B     |   c     | d(count) | Count 2
 ---------|---------|----------|----------
          |         | Count 1  | Total transaction
+         
+ it does not matter.
 #########################################################################################
 
 
