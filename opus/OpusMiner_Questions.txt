@@ -54,6 +54,10 @@ one is the fisher exact test (Whether its supersets might be good).  When an ite
 
 If an itemset's any subset is identified as redundant (cannot find in TIDCount), this itemset is redundant.
 
+**I. When calculating the upper bound value (leverage/lift), only need to consider the itemset that contain consequent;
+**II. When calculating the lower bound value (p value in FET), only need to consider the itemset that contain consequent;
+**III. When checking subsets of an itemset, all of its subsets should be non-redundant (Can be found in TIDCount)
+
 3. When I check {AY, BY, CY,,,} should I still use lattice depth as 2 or should increase 1 every time for itemsets in lattice?
 <Xuelin> Still follow the same depth in original lattice when adding Consequent.
 
