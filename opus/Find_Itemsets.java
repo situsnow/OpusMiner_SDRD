@@ -343,6 +343,10 @@ public class Find_Itemsets {
 	}
 	
 	public static void find_itemsets(){
+		//TODO need to check if consequent can pass the Fisher Exact Test, kind of exception handling
+		if (Globals.sdrd == true){
+			
+		}
 		//A queue of items, to be sorted on an upper bound on value
 		ItemQClass q = new ItemQClass();
 		int i;
