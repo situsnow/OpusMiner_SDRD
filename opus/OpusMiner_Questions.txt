@@ -38,7 +38,9 @@ It's for the non-redundancy property in self-sufficient itemset. When there's su
 
 
 #########################################################################################
-**The key amendment to OpusMiner is that, when counting the support for an itemset, it will include the consequent; However, when checking the immediate or partition subsets of an itemset, it should exclude the consequent when looping every subsets, but when calculating the support count, it should include the consequent again.
+**The key amendment to OpusMiner is that, when counting the support for an itemset, it will include the consequent; 
+However, when checking the immediate or partition subsets of an itemset, it should exclude the consequent when looping every subsets, 
+but when calculating the support count, it should include the consequent again.
 
 A B Y
 subsets: A, B, AY, BY, AB should all saved (TIDCount) in the memory.
@@ -47,7 +49,10 @@ subsets: A, B, AY, BY, AB should all saved (TIDCount) in the memory.
 Yes. Only check those with consequent who pass the Fisher Exact Test, but have to save the support(TIDCount) of all subsets.
 
 2. For example, I have {A}, {B}, {C} that without consequent Y to pass the FET, but only {AY}, {BY} pass FET, should I opt out {C}?
-No.
+No. There's two criteria that a "good" itemset should be fulfilled. One is should exceeds the productive test (leverage/lift), 
+one is the fisher exact test (Whether its supersets might be good).  When an itemset is redundant, it will not put into memory. 
+
+If an itemset's any subset is identified as redundant (cannot find in TIDCount), this itemset is redundant.
 
 3. When I check {AY, BY, CY,,,} should I still use lattice depth as 2 or should increase 1 every time for itemsets in lattice?
 <Xuelin> Still follow the same depth in original lattice when adding Consequent.

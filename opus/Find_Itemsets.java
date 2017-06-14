@@ -277,8 +277,13 @@ public class Find_Itemsets {
 			int count;
 			
 			Tidset currItemset = new Tidset();
-			currItemset = Globals.tids.get(item);
 			
+			
+			if (Globals.sdrd == true){
+				Tidset.intersection(currItemset, Globals.consequentTids, Globals.tids.get(item));
+			}else{
+				currItemset = Globals.tids.get(item);
+			}
 			// determine the number of TIDs that the new itemset covers
 			Tidset.intersection(newCover, cover, currItemset);
 			
@@ -343,21 +348,35 @@ public class Find_Itemsets {
 	}
 	
 	public static void find_itemsets(){
-		//TODO need to check if consequent can pass the Fisher Exact Test, kind of exception handling
-		if (Globals.sdrd == true){
-			
-		}
 		//A queue of items, to be sorted on an upper bound on value
 		ItemQClass q = new ItemQClass();
 		int i;
+		//Check if consequent can pass the Fisher Exact Test, kind of exception handling
+		if (Globals.sdrd == true){
+			int consequentCover = Globals.consequentTids.size();
+			float conSup = Utils.countToSup(consequentCover);
+			float conUbVal = (float)(Globals.searchByLift? 1.0/conSup
+					: conSup - conSup * conSup);
+			if (Utils.fisher(consequentCover, consequentCover, consequentCover) > Globals.getAlpha(2)){
+				System.err.print(String.format("Consequent '%s' is not productive.", Globals.consequentName));
+				return;
+			}else{
+				Globals.conUbVal = conUbVal;
+			}
+		}
 		
 		// initialize q - the queue of items ordered on an upper bound on value
 		for (i = 0; i < Globals.noOfItems; i++){
 			
 			//In first level of lattice, only need to check if single item can pass th Fisher Exact Test
 			Tidset newCover = new Tidset();
-			newCover = Globals.tids.get(i);
-			//c : How many transactions that current item occurs
+			
+			//c : How many transactions that current item or +consequent occurs
+			if (Globals.sdrd == true){
+				Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
+			}else{
+				newCover = Globals.tids.get(i);
+			}
 			int c = newCover.size();
 			
 			float sup = Utils.countToSup(c);
@@ -366,30 +385,8 @@ public class Find_Itemsets {
 			
 			// make sure that the support is high enough for it to be possible to create a significant itemset
 			if (Utils.fisher(c, c, c) <= Globals.getAlpha(2)){
-				//Save productive {1-itemset, consequent} when in Supervised Descriptive Rule Discovery
-				if (Globals.sdrd == true){
-					newCover = new Tidset();
-					Tidset.intersection(newCover, Globals.tids.get(i), Globals.consequentTids);
-					int ruleCover = newCover.size();
-					
-					float newSup = Utils.countToSup(ruleCover);
-					float consequentSup = Utils.countToSup(Globals.consequentTids.size());
-					ubVal = (float)(Globals.searchByLift? newSup/(sup * consequentSup): newSup - sup * consequentSup);
-					
-					if (Utils.fisher(ruleCover, Globals.consequentTids.size(), c) <= Globals.getAlpha(2)){
-						Itemset is = new Itemset();
-						is.add(i);
-						is.add(Globals.consequentID);
-						TIDConCount.put(is, ruleCover);
-						
-						//TODO opt out the 1-itemset who's superset {1-itemset, consequent} cannot pass the test.
-						q.append(ubVal, i);
-					}
-				}else{
-					// it is faster to sort the q once it is full rather than doing an insertion sort
-					q.append(ubVal, i);
-				}
-				
+				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
+				q.append(ubVal, i);
 			}
 		}
 		
@@ -416,11 +413,15 @@ public class Find_Itemsets {
 			is.add(item);
 			
 			Tidset newCover = new Tidset();
-			newCover = Globals.tids.get(item);
+			if (Globals.sdrd == true){
+				Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(item));
+			}else{
+				newCover = Globals.tids.get(item);
+			}
 			
 			//TODO pay attention here if need to use the intersection of item+consequent for the last param: size
 			//Make sure when checking itemset {A, B, Y}, all its subsets {A, B, AB, AY, BY} should be stored.
-			opus(is, newCover, newq, Globals.tids.get(item).size());
+			opus(is, newCover, newq, newCover.size());
 			
 			newq.append(q.get(i).ubVal, item);
 			

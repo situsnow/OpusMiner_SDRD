@@ -36,6 +36,8 @@ public class Globals {
 	public final static int consequentID = -1;
 	//Save the transaction id for current consequent
 	public static Tidset consequentTids = new Tidset();
+	//Upper bound value for consequent only
+	public static float conUbVal;
 	
 	public static void expandAlpha(final long depth){
 		if (alpha.isEmpty()){
