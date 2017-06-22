@@ -45,7 +45,7 @@ public class Load_Data {
 					
 					if (!s.isEmpty()){
 						//Save the consequent separately when in Supervised Descriptive Rule Discovery
-						if (Globals.sdrd == true || Globals.consequentName.equals(s)){
+						if (Globals.sdrd == true && Globals.consequentName.equals(s)){
 							Globals.consequentTids.add((long)Globals.noOfTransactions);
 						}else{
 							//The item id for each unique item in DB
@@ -54,12 +54,12 @@ public class Load_Data {
 							Integer it = itemstrs.get(s);
 							
 							if (it == null){
+								// if it doesn't have an id, assign one
 								thisid = Globals.itemNames.size();
 								itemstrs.put(s, thisid);
 								Globals.itemNames.add(s);
 								Globals.noOfItems = Globals.itemNames.size();
 								
-								//TODO
 								//tids.resize(noOfItems);
 								//There's no need to resize a List in Java
 								
@@ -68,18 +68,13 @@ public class Load_Data {
 							}
 							
 							// insert the current TID into the tids for thisval, unless it has already been inserted and latest update
-							if (Globals.tids.size() > thisid && Globals.tids.get(thisid) != null){
-								//TODO Need to double check the logic here
-								int lastIndex = Globals.tids.get(thisid).size() - 1;
-								long lastList = Globals.tids.get(thisid).get(lastIndex);
-								
-								if (lastList != Globals.noOfTransactions){
-									Globals.tids.get(thisid).add(Globals.noOfTransactions);
-								}
-							}else{
+							if (Globals.tids.size() == thisid){
+								//If the item appear in dataset the first time
 								Tidset tmp = new Tidset();
 								tmp.add(Globals.noOfTransactions);
 								Globals.tids.add(tmp);
+							}else if(Globals.tids.get(thisid).get(Globals.tids.get(thisid).size() - 1) != Globals.noOfTransactions){
+								Globals.tids.get(thisid).add(Globals.noOfTransactions);
 							}
 						}
 					}

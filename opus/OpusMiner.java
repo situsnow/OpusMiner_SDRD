@@ -29,7 +29,7 @@ public class OpusMiner {
 		f.print(sb.toString());
 		
 		for (int i = 1; i < argc; i++){
-			if (argv[i].charAt(0) == '-' && argv[i].charAt(1) == 'k' && i < argc - 1){
+			if (argv[i].charAt(0) == '-' && (argv[i].charAt(1) == 'k' || argv[i].charAt(1) == 's') && i < argc - 1){
 				f.print(String.format("  %s %s\n", argv[i], argv[i+1]));
 				++i;
 			}else{
@@ -44,11 +44,10 @@ public class OpusMiner {
 	}
 	
 	public static void main(String []argv){
-		//TODO debug infor?
 		
 		String inputFileName = "";
 		String outputFileName = "";
-		String usageStr = "Usage: %s [-c] [-f] [-k <k>] [-l] [-r] [-s <consequent>] <input file> <output file>\n";
+		String usageStr = "Usage: %s [-c] [-f] [-k <k>] [-l] [-p] [-r] [-s <consequent>] <input file> <output file>\n";
 		ArrayList<ItemsetRec> is = new ArrayList<ItemsetRec>();
 		
 		PrintStream outf = null;
@@ -72,10 +71,11 @@ public class OpusMiner {
 					Globals.filter = false;
 					break;
 				case 'k':
+					//In case no space between command and defined 'k'
 					if (argv[i].length() == 2){
 						Globals.k = Utils.getNum(argv[++i]);
 					}else{
-						//TODO pay attention here: argv[i] + 2
+						
 						Globals.k = Utils.getNum(argv[i].substring(2, argv[i].length()));
 					}
 					break;
@@ -95,6 +95,7 @@ public class OpusMiner {
 					//Attention here, it only accepts one specific consequent in single test and no space in consequent label
 					Globals.sdrd = true;
 					Globals.consequentName = argv[++i];
+					break;
 				default:
 					System.err.println(String.format(usageStr, argv[0]));
 					System.exit(1);

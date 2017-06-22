@@ -65,11 +65,11 @@ If an itemset's any subset is identified as redundant (cannot find in TIDCount),
    B     |   c     | d(count) | Count 2
 ---------|---------|----------|----------
          |         | Count 1  | Total transaction
-         
  it does not matter.
+ 
+ 5. What's the strategy to exclude non-oriented consequents?
+ If treat the oriented consequent as a normal term, there's no need to specially handle non-oriented consequents.
 #########################################################################################
-
-
 Literature Review:
 Association discovery (Apriori only, Not too much portion on other algorithms) (1/4)
 Self-sufficient itemsets, k-optimal, Opus (5/12)
@@ -107,11 +107,11 @@ Itemset: List of
 Disjunction: OR, 并集
 Conjunction: AND, 交集
 #########################################################################################
-Globals.itemNames: All item names, List<String>
-Globals.tids: Transaction list(Tidset) of each item, List<Tidset>
-
-Globals.noOfTransactions: Total transaction number, int
-Globals.noOfItems: Total item number, int
+Globals.itemNames: List<String>, List of item names
+Globals.tids: List<Tidset>, Transaction list(Tidset) of each item with indexed of item id.
+Globals.consequentTids: Tidset, the transaction list of consequent.
+Globals.noOfTransactions: Total number of transactions, int
+Globals.noOfItems: Total number of items, int
 
 OpusMiner.itemsets: PriorityQueue<ItemsetRec>, the top k itemsets that identified as self-sufficient
 Find_Itemsets.TIDCount: Map<Itemset, Integer>, the cover count of an itemset
@@ -123,6 +123,9 @@ Find_Itemsets.TIDCount: Map<Itemset, Integer>, the cover count of an itemset
 		If no, then just remain the same
 3. Save all productive 1-itemset to ItemQClass q
 
+
+[-c] [-f] [-k <k>] [-l] [-p] [-r] [-s <consequent>] <input file> <output file>
+-c -f -k 2 -l -p -r -s Y Test.txt Output.txt
 
 
 

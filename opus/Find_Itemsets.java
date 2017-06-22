@@ -359,7 +359,7 @@ public class Find_Itemsets {
 					: conSup - conSup * conSup);
 			if (Utils.fisher(consequentCover, consequentCover, consequentCover) > Globals.getAlpha(2)){
 				System.err.print(String.format("Consequent '%s' is not productive.", Globals.consequentName));
-				return;
+				System.exit(1);
 			}else{
 				Globals.conUbVal = conUbVal;
 			}
@@ -368,7 +368,7 @@ public class Find_Itemsets {
 		// initialize q - the queue of items ordered on an upper bound on value
 		for (i = 0; i < Globals.noOfItems; i++){
 			
-			//In first level of lattice, only need to check if single item can pass th Fisher Exact Test
+			//In first level of lattice, only need to check if single item can pass the Fisher Exact Test
 			Tidset newCover = new Tidset();
 			
 			//c : How many transactions that current item or +consequent occurs
@@ -390,13 +390,14 @@ public class Find_Itemsets {
 			}
 		}
 		
-		q.sort();
-		
 		// this is the queue of items that will be available for the item currently being explored
 		ItemQClass newq = new ItemQClass();
 		
-		//The first item in the queue with highest upper bound value
-		newq.add(q.get(0).ubVal, q.get(0).item);
+		if (q.size() > 0){
+			q.sort();
+			// the first item will have no previous items with which to be paired so is simply added to the queue of availabile items
+			newq.add(q.get(0).ubVal, q.get(0).item);
+		}
 		
 		// remember the current minValue, and output an update if it improves in this iteration of the loop
 		float prevMinVal = minValue;
