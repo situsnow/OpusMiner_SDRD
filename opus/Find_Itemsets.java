@@ -329,6 +329,7 @@ public class Find_Itemsets {
 					
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
 					if (!redundant){
+						//TODO Snow, saved all subsets here? Say, When checking {ABY}, AB is also need to saved.
 						TIDCount.put(is, count);
 						
 						if (!newQ.isEmpty()){
