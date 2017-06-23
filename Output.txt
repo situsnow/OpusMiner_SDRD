@@ -10,11 +10,10 @@ If you publish results obtained by using this software please cite
   ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
 
   -f
-  -k20 -l
-  -p
+  -k 2
   -r
-  -s Y
+  -s X
   Test.txt
   Output.txt
 
-Test.txt: 7 items, 2 transactions
+Test.txt: 6 items, 11 transactions

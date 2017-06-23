@@ -313,6 +313,7 @@ public class Find_Itemsets {
 				 */
 				
 				//TODO: Duplicate itemset added here, check why
+				//Might consider to use the List API which allows no duplicates
 				Collections.reverse(is);
 				is.add(item);
 				Collections.reverse(is);
