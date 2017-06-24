@@ -29,7 +29,7 @@ public class ItemsetRec extends Itemset{
 		return this.value > pI.value;
 	}
 	
-	
+	//Sort the ItemsetRec with ascending order, when there's bigger values, will remove the smallest one in peek
 	public static Comparator<ItemsetRec> ItemsetRecComparator = new Comparator<ItemsetRec>(){
 
 		@Override

@@ -254,8 +254,11 @@ public class Find_Itemsets {
 		if (OpusMiner.itemsets.size() >= Globals.k){
 			OpusMiner.itemsets.poll();
 		}
+
+		ItemsetRec tmp = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient);
+		tmp.addAll(is);
 		
-		OpusMiner.itemsets.offer(is);
+		OpusMiner.itemsets.add(tmp);
 		if (OpusMiner.itemsets.size() == Globals.k){
 			float newMin = OpusMiner.itemsets.peek().value;
 			if (newMin > minValue){
