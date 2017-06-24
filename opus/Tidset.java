@@ -20,11 +20,11 @@ public class Tidset extends ArrayList<Long>{
 		
 		int it1 = 0;
 		long v1 = s1.get(it1);
-		int end1 = s1.size() - 1;
+		int end1 = s1.size();
 		
 		int it2 = 0;
 		long v2 = s2.get(it2);
-		int end2 = s2.size() - 1;
+		int end2 = s2.size();
 		
 		int count = 0;
 		while (true){

@@ -54,7 +54,7 @@ public class Print_Itemsets {
 		
 		int failed_count = 0;
 		
-		for (it = 0; it != is.size() - 1; it++){
+		for (it = 0; it < is.size(); it++){
 			if (!is.get(it).selfSufficient){
 				failed_count++;
 			}else{
@@ -66,7 +66,7 @@ public class Print_Itemsets {
 			f.print(String.format("\n%d itemsets failed test for self sufficiency\n", failed_count));
 		}
 		
-		for (it = 0; it != is.size() - 1; it++){
+		for (it = 0; it < is.size(); it++){
 			if (!is.get(it).selfSufficient){
 				print_itemsetRec(f, is.get(it));
 			}

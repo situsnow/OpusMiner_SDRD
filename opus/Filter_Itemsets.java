@@ -41,7 +41,7 @@ public class Filter_Itemsets {
 		uniqueTids.ensureCapacity(is.size());
 		
 		int i;
-		for (i = 0; i != is.size() - 1; i++){
+		for (i = 0; i < is.size(); i++){
 			uniqueTids.get(i).ensureCapacity(Globals.tids.get(i).size());
 			
 			//TODO double check logics
@@ -70,6 +70,7 @@ public class Filter_Itemsets {
 			Tidset tidsright = uniqueTids.get(uniqueTids.size() - 1);
 			
 			// start with the last item committed to the right, then successively commit eeach item first to the left then to the right
+			//TODO pay attention here for -2 or -1
 			for (i = uniqueTids.size() - 2; i >= 0; i--){
 				result = checkSS2(uniqueTids, i, uniqueTids.get(i), tidsright, 
 						Globals.noOfTransactions - supsettids.size(), uniqueCov.size(), Globals.getAlpha(is.size()));
@@ -101,7 +102,7 @@ public class Filter_Itemsets {
 			Tidset supsettids; // the tids covered by the supitems
 			Tidset thissupsettids = new Tidset(); // the tids covered by the supitems
 			
-			for (subset_it = 1; subset_it != is.size() - 1; subset_it++){
+			for (subset_it = 1; subset_it < is.size(); subset_it++){
 				// get the TIDs that are covered by the current itemset's supersets
 				supsettids = new Tidset();
 				int supset_it;
@@ -112,7 +113,7 @@ public class Filter_Itemsets {
 						if (Utils.subset(is.get(subset_it), is.get(supset_it))){
 							int it;
 							
-							for (it = 0; it != is.get(supset_it).size() - 1; it++){
+							for (it = 0; it < is.get(supset_it).size(); it++){
 								if (is.get(subset_it).indexOf(is.get(it)) == is.get(subset_it).size() - 1){
 									Collections.reverse(supitems);
 									supitems.addAll(is.get(it));

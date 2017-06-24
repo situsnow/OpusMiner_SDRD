@@ -1,0 +1,11 @@
+a,b,c,Y
+b,c,d,e,Y
+a,b,b,d,X
+a,b,e,Y
+a,b,c,Y
+a,b,b,d,X
+a,b,b,d,X
+a,b,b,d,X
+b,c,d,e,Y
+a,b,e,Y
+a,b,c,Y

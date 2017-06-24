@@ -17,9 +17,9 @@ public class ItemQElem {
 		@Override
 		public int compare(ItemQElem o1, ItemQElem o2) {
 			// TODO Auto-generated method stub
-			if (o1.ubVal < o2.ubVal)
-				return -1;
 			if (o1.ubVal > o2.ubVal)
+				return -1;
+			if (o1.ubVal < o2.ubVal)
 				return 1;
 			return 0;
 		}

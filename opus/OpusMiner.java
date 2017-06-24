@@ -11,6 +11,9 @@ public class OpusMiner {
 
 	public static PriorityQueue<ItemsetRec> itemsets = new PriorityQueue<ItemsetRec>(10, ItemsetRec.ItemsetRecComparator);
 	
+	//TODO remove after testing
+	public final static String MAPPING_FILE = "mapping.csv";
+	
 	//TODO: Attention. Change the type of argv to be fit for Java mechanism
 	public static void print_header(PrintStream f, int argc, String[] argv){
 		
@@ -43,6 +46,23 @@ public class OpusMiner {
 		//f.close();
 	}
 	
+	public static void print_mapping(PrintStream f){
+		//Globals.itemNames
+		StringBuffer sb = new StringBuffer();
+		
+		sb.append("Index, ");
+		sb.append("Item Name\n");
+		
+		for (int i = 0; i < Globals.itemNames.size(); i++){
+			sb.append(i);
+			sb.append(", ");
+			sb.append(Globals.itemNames.get(i));
+			sb.append("\n");
+		}
+		f.println(sb.toString());
+		f.close();
+	}
+	
 	public static void main(String []argv){
 		
 		String inputFileName = "";
@@ -51,6 +71,9 @@ public class OpusMiner {
 		ArrayList<ItemsetRec> is = new ArrayList<ItemsetRec>();
 		
 		PrintStream outf = null;
+		//TODO remove after testing
+		PrintStream mappingf = null;
+		//TODO
 		int argc = argv.length;
 		if (argc < 3){
 			System.err.print(String.format(usageStr, argv[0]));
@@ -75,7 +98,6 @@ public class OpusMiner {
 					if (argv[i].length() == 2){
 						Globals.k = Utils.getNum(argv[++i]);
 					}else{
-						
 						Globals.k = Utils.getNum(argv[i].substring(2, argv[i].length()));
 					}
 					break;
@@ -129,6 +151,12 @@ public class OpusMiner {
 			
 			System.out.print("Finding itemsets\n");
 			
+			//TODO remove after testing
+			//print the item name and id mapping into files for further reference.
+			mappingf = new PrintStream(new File(MAPPING_FILE));
+			print_mapping(mappingf);
+			//TODO
+			
 			Date find_start_t = new Date();
 			
 			Find_Itemsets.find_itemsets();
@@ -160,7 +188,7 @@ public class OpusMiner {
 			System.out.print(String.format("%d seconds (%d input, %d search, %d filter, %d output)", 
 					t, find_start_t.getTime() - start_t.getTime(), find_end_t.getTime() - find_start_t.getTime(),
 					print_start_t.getTime() - find_end_t.getTime(), end_t.getTime() - print_start_t.getTime()));
-			System.out.print(String.format(" for %ld itemsets\n", (long)is.size()));
+			System.out.print(String.format(" for %d itemsets\n", (long)is.size()));
 			
 		} catch (FileNotFoundException ex){
 			if (outf == null){

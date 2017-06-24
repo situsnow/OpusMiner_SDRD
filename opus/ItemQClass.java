@@ -47,6 +47,7 @@ public class ItemQClass extends ArrayList<ItemQElem>{
 			}
 			
 			if (this.get(first).ubVal >= ubVal){
+				// this should only happen if all items in the queue have lower value than the new item
 				first ++;
 			}
 			
@@ -54,7 +55,7 @@ public class ItemQClass extends ArrayList<ItemQElem>{
 				this.set(last, this.get(last - 1));
 			}
 			
-			this.set(first, itemQElem);
+			super.add(first, itemQElem);
 		}
 	}
 }

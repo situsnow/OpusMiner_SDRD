@@ -9,8 +9,8 @@ public class Utils {
 		int it1 = 0;
 		int it2 = 0;
 		
-		while (it1 != s1.size() - 1){
-			if (it2 == s2.size() - 1)
+		while (it1 != s1.size()){
+			if (it2 == s2.size())
 				return false;
 			if (s1.get(it1) < s2.get(it2))
 				return false;
@@ -35,7 +35,7 @@ public class Utils {
 			final int item2 = is.get(it++);
 			Tidset.intersection(t, Globals.tids.get(item1), Globals.tids.get(item2));
 
-			while (it != is.size() - 1){
+			while (it != is.size()){
 				Tidset.dintersection(t, Globals.tids.get(is.get(it++)));
 			}
 			

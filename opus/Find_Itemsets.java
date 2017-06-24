@@ -1,5 +1,8 @@
 package opus;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -73,13 +76,14 @@ public class Find_Itemsets {
 	 * @param isCnt
 	 */
 	public static void checkImmediateSubsets(Itemset is, final int isCnt){
-		Itemset subset = is;
+		Itemset subset = new Itemset();
+		subset.addAll(is);
 		int it;
 		
 		redundant = false;
 		apriori = false;
 		
-		for (it = 0; it != is.size() - 1; it++){
+		for (it = 0; it < is.size(); it++){
 			int subsetCnt;
 			
 			//Iteratively remove one of the items in is, and check if all of its immediate subset is in memory
@@ -325,7 +329,9 @@ public class Find_Itemsets {
 						is.count = count;
 						is.value = val;
 						is.p = p;
+						//TODO only need to save those with oriented consequent itemsets.
 						insert_itemset(is);
+						
 					}
 					
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
@@ -400,6 +406,37 @@ public class Find_Itemsets {
 			// the first item will have no previous items with which to be paired so is simply added to the queue of availabile items
 			newq.add(q.get(0).ubVal, q.get(0).item);
 		}
+		
+		//TODO remove after testing
+		PrintStream queuef = null;
+		try {
+			queuef = new PrintStream(new File("queue.csv"));
+			StringBuffer sb = new StringBuffer();
+			sb.append("Index, ");
+			sb.append("Item Name\n");
+			
+			for (int j = 0; j < q.size(); j++){
+				ItemQElem elem = q.get(j);
+				
+				sb.append(elem.item);
+				sb.append(", ");
+				sb.append(Globals.itemNames.get(elem.item));
+				sb.append(", ");
+				sb.append(elem.ubVal);
+				sb.append("\n");
+			}
+			
+			queuef.print(sb.toString());
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (queuef != null){
+				queuef.close();
+			}
+		}
+
+		//TODO
 		
 		// remember the current minValue, and output an update if it improves in this iteration of the loop
 		float prevMinVal = minValue;

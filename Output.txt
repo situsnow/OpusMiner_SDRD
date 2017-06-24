@@ -9,11 +9,9 @@ If you publish results obtained by using this software please cite
   Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
   ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
 
-  -f
-  -k 2
-  -r
-  -s X
-  Test.txt
+  -k20 -l
+  Mushroom.txt
   Output.txt
 
-Test.txt: 6 items, 11 transactions
+Mushroom.txt: 70 items, 8416 transactions
+Found 20 non-redundant productive itemsets in 5575 seconds
