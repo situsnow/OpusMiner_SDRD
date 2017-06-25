@@ -71,8 +71,8 @@ If an itemset's any subset is identified as redundant (cannot find in TIDCount),
          |         | Count 1  | Total transaction
  it does not matter.
  
- 5. What's the strategy to exclude non-oriented consequents?
- If treat the oriented consequent as a normal term, there's no need to specially handle non-oriented consequents.
+ 5. There's no special handling for different attributes have same values, e.g. in Mushroom data, there are three 
+ different attributes have "SMOOTH" values.
 #########################################################################################
 Literature Review:
 Association discovery (Apriori only, Not too much portion on other algorithms) (1/4)

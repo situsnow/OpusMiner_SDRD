@@ -16,7 +16,12 @@ public class Print_Itemsets {
 			if (item_it != 0){
 				f.print(',');
 			}
-			f.print(String.format("%s", Globals.itemNames.get(is.get(item_it))));
+			if (Globals.consequentID == is.get(item_it)){
+				f.print(String.format("%s", Globals.consequentName));
+			}else{
+				f.print(String.format("%s", Globals.itemNames.get(is.get(item_it))));
+			}
+			
 		}
 	}
 	
@@ -24,7 +29,7 @@ public class Print_Itemsets {
 		print_itemset(f, is);
 		
 		f.print(String.format(" [%d,%f", is.count, is.value));
-		f.print(String.format(" %g]", is.p));
+		f.print(String.format(", %g]", is.p));
 		
 		if (Globals.printClosures) {
 			Itemset closure = new Itemset();

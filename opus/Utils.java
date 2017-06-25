@@ -47,7 +47,11 @@ public class Utils {
 	}
 	
 	public static double itemSup(final int item){
-		return countToSup(Globals.tids.get(item).size());
+		if (Globals.consequentID == item){
+			return countToSup(Globals.consequentTids.size());
+		}else{
+			return countToSup(Globals.tids.get(item).size());
+		}
 	}
 	
 	/**

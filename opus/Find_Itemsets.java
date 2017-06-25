@@ -35,7 +35,12 @@ public class Find_Itemsets {
 	 */
 	public static boolean getTIDCount(Itemset is){
 		if (is.size() == 1){
-			count = Globals.tids.get(is.get(0)).size();
+			if (Globals.sdrd == true && is.get(0) == Globals.consequentID)
+			{
+				count = Globals.consequentTids.size();
+			}else{
+				count = Globals.tids.get(is.get(0)).size();
+			}
 			return true;
 		}else{
 			Itemset tmp = new Itemset();
@@ -209,7 +214,12 @@ public class Find_Itemsets {
 	public static boolean checkSubsets(int item, Itemset is, int cnt, double new_sup, int parentCnt, double parentSup, double alpha){
 		assert (is.size() > 1);
 		
-		int itemCnt = Globals.tids.get(item).size();
+		int itemCnt;
+		if (Globals.consequentID == item){
+			itemCnt = Globals.consequentTids.size();
+		}else{
+			itemCnt = Globals.tids.get(item).size();
+		}
 		
 		val = (float) (Globals.searchByLift? new_sup / (parentSup * Utils.itemSup(item))
 				: new_sup - parentSup * Utils.itemSup(item));
@@ -292,8 +302,8 @@ public class Find_Itemsets {
 			Tidset currItemset = new Tidset();
 			
 			
-			if (Globals.sdrd == true){
-				Tidset.intersection(currItemset, Globals.consequentTids, Globals.tids.get(item));
+			if (Globals.sdrd == true && Globals.consequentID == item){
+				currItemset = Globals.consequentTids;
 			}else{
 				currItemset = Globals.tids.get(item);
 			}
@@ -333,12 +343,13 @@ public class Find_Itemsets {
 				
 				if (!apriori){
 					if (checkSubsets(item, is, count, new_sup, cover.size(), parentSup, Globals.getAlpha(depth))){
-						is.count = count;
-						is.value = val;
-						is.p = p;
-						//TODO only need to save those with oriented consequent itemsets.
-						insert_itemset(is);
-						
+						if (Globals.sdrd == false || is.contains(Globals.consequentID)){
+							is.count = count;
+							is.value = val;
+							is.p = p;
+							//TODO only need to save those with oriented consequent itemsets.
+							insert_itemset(is);
+						}
 					}
 					
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
@@ -415,6 +426,9 @@ public class Find_Itemsets {
 			q.sort();
 			// the first item will have no previous items with which to be paired so is simply added to the queue of availabile items
 			newq.add(q.get(0).ubVal, q.get(0).item);
+			if (Globals.sdrd == true){
+				newq.add(Globals.conUbVal, Globals.consequentID);
+			}
 		}
 		
 		//TODO remove after testing
@@ -463,11 +477,7 @@ public class Find_Itemsets {
 			is.add(item);
 			
 			Tidset newCover = new Tidset();
-			if (Globals.sdrd == true){
-				Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(item));
-			}else{
-				newCover = Globals.tids.get(item);
-			}
+			newCover = Globals.tids.get(item);
 			
 			//TODO pay attention here if need to use the intersection of item+consequent for the last param: size
 			//Make sure when checking itemset {A, B, Y}, all its subsets {A, B, AB, AY, BY} should be stored.
