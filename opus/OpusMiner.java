@@ -51,9 +51,6 @@ public class OpusMiner {
 		ArrayList<ItemsetRec> is = new ArrayList<ItemsetRec>();
 		
 		PrintStream outf = null;
-		//TODO remove after testing
-		PrintStream mappingf = null;
-		//TODO
 		int argc = argv.length;
 		if (argc < 3){
 			System.err.print(String.format(usageStr, argv[0]));
