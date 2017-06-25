@@ -38,7 +38,11 @@ public class Find_Itemsets {
 			count = Globals.tids.get(is.get(0)).size();
 			return true;
 		}else{
-			Integer it = Find_Itemsets.TIDCount.get(is);
+			Itemset tmp = new Itemset();
+			tmp.addAll(is);
+			//Add sorting here in case there's matching subsets but in different order
+			Collections.sort(tmp);
+			Integer it = Find_Itemsets.TIDCount.get(tmp);
 			if (it == null){
 				count = 0;
 				return false;
@@ -257,6 +261,8 @@ public class Find_Itemsets {
 
 		ItemsetRec tmp = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient);
 		tmp.addAll(is);
+		//Add sorting here in case there's same itemset but in different orders
+		//Collections.sort(tmp);
 		
 		OpusMiner.itemsets.add(tmp);
 		if (OpusMiner.itemsets.size() == Globals.k){
@@ -319,8 +325,6 @@ public class Find_Itemsets {
 				 * 4. bool apriori
 				 */
 				
-				//TODO: Duplicate itemset added here, check why
-				//Might consider to use the List API which allows no duplicates
 				Collections.reverse(is);
 				is.add(item);
 				Collections.reverse(is);
@@ -340,7 +344,10 @@ public class Find_Itemsets {
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
 					if (!redundant){
 						//TODO Snow, saved all subsets here? Say, When checking {ABY}, AB is also need to saved.
-						TIDCount.put(is, count);
+						ItemsetRec tmp = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient);
+						tmp.addAll(is);
+						Collections.sort(tmp);
+						TIDCount.put(tmp, count);
 						
 						if (!newQ.isEmpty()){
 							// there are only more nodes to expand if there is a queue of items to consider expanding it with

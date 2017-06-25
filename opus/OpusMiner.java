@@ -11,9 +11,6 @@ public class OpusMiner {
 
 	public static PriorityQueue<ItemsetRec> itemsets = new PriorityQueue<ItemsetRec>(10, ItemsetRec.ItemsetRecComparator);
 	
-	//TODO remove after testing
-	public final static String MAPPING_FILE = "mapping.csv";
-	
 	//TODO: Attention. Change the type of argv to be fit for Java mechanism
 	public static void print_header(PrintStream f, int argc, String[] argv){
 		
@@ -44,23 +41,6 @@ public class OpusMiner {
 		//System.out, there is no need to close it
 		//For file PrintStream, it will close when it's not needed.
 		//f.close();
-	}
-	
-	public static void print_mapping(PrintStream f){
-		//Globals.itemNames
-		StringBuffer sb = new StringBuffer();
-		
-		sb.append("Index, ");
-		sb.append("Item Name\n");
-		
-		for (int i = 0; i < Globals.itemNames.size(); i++){
-			sb.append(i);
-			sb.append(", ");
-			sb.append(Globals.itemNames.get(i));
-			sb.append("\n");
-		}
-		f.println(sb.toString());
-		f.close();
 	}
 	
 	public static void main(String []argv){
@@ -150,12 +130,6 @@ public class OpusMiner {
 					(long)Globals.noOfItems, (long)Globals.noOfTransactions));
 			
 			System.out.print("Finding itemsets\n");
-			
-			//TODO remove after testing
-			//print the item name and id mapping into files for further reference.
-			mappingf = new PrintStream(new File(MAPPING_FILE));
-			print_mapping(mappingf);
-			//TODO
 			
 			Date find_start_t = new Date();
 			

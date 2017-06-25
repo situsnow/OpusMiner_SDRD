@@ -3,6 +3,7 @@ package opus;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Itemset extends ArrayList<Integer> {
 
@@ -10,7 +11,7 @@ public class Itemset extends ArrayList<Integer> {
 	
 	//Copy another array list
 	public Itemset(Itemset itemset){
-		Collections.copy(this, itemset);
+		this.addAll(itemset);
 	}
 	
 	//Default constructor
@@ -49,5 +50,5 @@ public class Itemset extends ArrayList<Integer> {
 		copy.removeAll(this);
 		return super.addAll(index, copy);
 	}
-
+	
 }
