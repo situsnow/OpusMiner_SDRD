@@ -16,6 +16,8 @@ public class Load_Data {
 	public static void load_data(final String filename){
 		int c;
 		String s;
+		//for non-market-basket-data applications
+		int fCounter = 0;
 		//Save item name <> unique item id
 		Map<String, Integer> itemstrs = new HashMap<String, Integer>();
 		Reader fileReader = null;
@@ -28,6 +30,8 @@ public class Load_Data {
 					//next transaction
 					Globals.noOfTransactions++;
 					c = fileReader.read();
+					if (Globals.marketBasketData == false)
+						fCounter = 2;
 				}else{
 					//TODO
 //					if (Globals.noOfTransactions == 0){
@@ -49,6 +53,11 @@ public class Load_Data {
 							Globals.consequentTids.add((long)Globals.noOfTransactions);
 						}else{
 							//The item id for each unique item in DB
+							if (Globals.marketBasketData == false){
+								s = fCounter + "_" + s;
+								fCounter++;
+							}
+								
 							int thisid;
 							
 							Integer it = itemstrs.get(s);

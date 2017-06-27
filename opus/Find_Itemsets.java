@@ -273,7 +273,6 @@ public class Find_Itemsets {
 		tmp.addAll(is);
 		//Add sorting here in case there's same itemset but in different orders
 		//Collections.sort(tmp);
-		
 		OpusMiner.itemsets.add(tmp);
 		if (OpusMiner.itemsets.size() == Globals.k){
 			float newMin = OpusMiner.itemsets.peek().value;

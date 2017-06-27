@@ -28,15 +28,37 @@ public class Utils {
 		int it = 0;
 		
 		if (is.size() == 1){
-			t = Globals.tids.get(it);
+			if (is.get(0) == Globals.consequentID){
+				t = Globals.consequentTids;
+			}else{
+				t = Globals.tids.get(it);
+			}
 		}else{
-			
 			final int item1 = is.get(it++);
 			final int item2 = is.get(it++);
-			Tidset.intersection(t, Globals.tids.get(item1), Globals.tids.get(item2));
+			Tidset item1Tid = new Tidset();
+			Tidset item2Tid = new Tidset();
+			if (item1 == Globals.consequentID){
+				item1Tid = Globals.consequentTids;
+				item2Tid = Globals.tids.get(item2);
+			}else if(item2 == Globals.consequentID){
+				item1Tid = Globals.tids.get(item1);
+				item2Tid = Globals.consequentTids;
+			}else{
+				item1Tid = Globals.tids.get(item1);
+				item2Tid = Globals.tids.get(item2);
+			}
+			Tidset.intersection(t, item1Tid, item2Tid);
 
-			while (it != is.size()){
-				Tidset.dintersection(t, Globals.tids.get(is.get(it++)));
+			while (it < is.size()){
+				Tidset itemTid = new Tidset();
+				if (is.get(it) == Globals.consequentID){
+					itemTid = Globals.consequentTids;
+				}else{
+					itemTid = Globals.tids.get(is.get(it));
+				}
+				Tidset.dintersection(t, itemTid);
+				it++;
 			}
 			
 		}

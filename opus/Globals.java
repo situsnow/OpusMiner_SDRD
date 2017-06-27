@@ -27,6 +27,7 @@ public class Globals {
 	public static boolean searchByLift = false;
 	public static boolean redundancyTests = true;
 	public static boolean printClosures = false;
+	public static boolean marketBasketData = false;
 	
 	//supervised descriptive rule discovery - contrast-sets mining
 	public static boolean sdrd = false;

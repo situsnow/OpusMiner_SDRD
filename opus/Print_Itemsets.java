@@ -14,7 +14,8 @@ public class Print_Itemsets {
 	public static void print_itemset(PrintStream f, Itemset is){
 		for (int item_it = 0; item_it != is.size(); item_it++){
 			if (item_it != 0){
-				f.print(',');
+				//f.print(',');
+				f.print('/');
 			}
 			if (Globals.consequentID == is.get(item_it)){
 				f.print(String.format("%s", Globals.consequentName));
@@ -28,8 +29,8 @@ public class Print_Itemsets {
 	public static void print_itemsetRec(PrintStream f, final ItemsetRec is){
 		print_itemset(f, is);
 		
-		f.print(String.format(" [%d,%f", is.count, is.value));
-		f.print(String.format(", %g]", is.p));
+		f.print(String.format(",%d,%f", is.count, is.value));
+		f.print(String.format(",%g\n", is.p));
 		
 		if (Globals.printClosures) {
 			Itemset closure = new Itemset();

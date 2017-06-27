@@ -47,7 +47,7 @@ public class OpusMiner {
 		
 		String inputFileName = "";
 		String outputFileName = "";
-		String usageStr = "Usage: %s [-c] [-f] [-k <k>] [-l] [-p] [-r] [-s <consequent>] <input file> <output file>\n";
+		String usageStr = "Usage: %s [-c] [-f] [-k <k>] [-l] [-p] [-r] [-s <consequent>] [-m] <input file> <output file>\n";
 		ArrayList<ItemsetRec> is = new ArrayList<ItemsetRec>();
 		
 		PrintStream outf = null;
@@ -94,6 +94,9 @@ public class OpusMiner {
 					//Attention here, it only accepts one specific consequent in single test and no space in consequent label
 					Globals.sdrd = true;
 					Globals.consequentName = argv[++i];
+					break;
+				case 'm':
+					Globals.marketBasketData = true;
 					break;
 				default:
 					System.err.println(String.format(usageStr, argv[0]));
