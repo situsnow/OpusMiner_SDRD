@@ -301,8 +301,14 @@ public class Find_Itemsets {
 			int count;
 			
 			//Check if itemset has been checked before
-			
-			
+			if (Globals.sdrd == true && is.size() == 1){
+				Itemset tmp = new Itemset();
+				tmp.add(item);
+				tmp.addAll(is);
+				if (tmp.contains(Globals.consequentID)){
+					continue;
+				}
+			}
 			Tidset currItemset = new Tidset();
 			
 			
@@ -359,10 +365,10 @@ public class Find_Itemsets {
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
 					if (!redundant){
 						//TODO Snow, saved all subsets here? Say, When checking {ABY}, AB is also need to saved.
-						ItemsetRec tmp = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient);
-						tmp.addAll(is);
-						Collections.sort(tmp);
-						TIDCount.put(tmp, count);
+						ItemsetRec tmp_rec = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient);
+						tmp_rec.addAll(is);
+						Collections.sort(tmp_rec);
+						TIDCount.put(tmp_rec, count);
 						
 						if (!newQ.isEmpty()){
 							// there are only more nodes to expand if there is a queue of items to consider expanding it with
