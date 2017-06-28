@@ -291,12 +291,17 @@ public class Find_Itemsets {
 		
 		int depth = is.size() + 1;
 		
-		Tidset newCover = new Tidset();
+		
 		ItemQClass newQ = new ItemQClass();
 		
 		for (i = 0; i < q.size(); i++){
+			
+			Tidset newCover = new Tidset();
 			int item = q.get(i).item;
 			int count;
+			
+			//Check if itemset has been checked before
+			
 			
 			Tidset currItemset = new Tidset();
 			
@@ -458,8 +463,7 @@ public class Find_Itemsets {
 				queuef.close();
 			}
 		}
-
-		//TODO
+		//TODO remove after testing
 		
 		// remember the current minValue, and output an update if it improves in this iteration of the loop
 		float prevMinVal = minValue;

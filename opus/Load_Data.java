@@ -54,7 +54,7 @@ public class Load_Data {
 						}else{
 							//The item id for each unique item in DB
 							if (Globals.marketBasketData == false){
-								s = fCounter + "_" + s;
+								s = "field" + fCounter + " = " + s;
 								fCounter++;
 							}
 								

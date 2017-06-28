@@ -73,6 +73,14 @@ If an itemset's any subset is identified as redundant (cannot find in TIDCount),
  
  5. There's no special handling for different attributes have same values, e.g. in Mushroom data, there are three 
  different attributes have "SMOOTH" values.
+ --Add identifiers to the different item names to make it unique with each other
+ 
+ 
+ //TODO need to check if the new itemset is already exist in the TIDCount or not, to skip duplicating calculation of AY, BY, CY....
+			
+//TODO  Debug with k = 1 to manually check if the calculation is correct or not
+
+//TODO Check why make leverage will throw error in ItemQClass.add(float ubVal, int item)
 #########################################################################################
 Literature Review:
 Association discovery (Apriori only, Not too much portion on other algorithms) (1/4)
