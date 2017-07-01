@@ -54,7 +54,7 @@ public class Print_Itemsets {
 		
 		f.print("\nSELF-SUFFICIENT ITEMSETS:\n");
 		
-		Collections.sort(is, ItemsetRec.ItemsetRecComparator);
+		Collections.sort(is, ItemsetRec.ItemsetRecComparatorD);
 		
 		int it;
 		

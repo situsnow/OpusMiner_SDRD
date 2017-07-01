@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 
 public class OpusMiner {
 
-	public static PriorityQueue<ItemsetRec> itemsets = new PriorityQueue<ItemsetRec>(10, ItemsetRec.ItemsetRecComparator);
+	public static PriorityQueue<ItemsetRec> itemsets = new PriorityQueue<ItemsetRec>(10, ItemsetRec.ItemsetRecComparatorA);
 	
 	//TODO: Attention. Change the type of argv to be fit for Java mechanism
 	public static void print_header(PrintStream f, int argc, String[] argv){
@@ -28,7 +28,7 @@ public class OpusMiner {
 		sb.append("\n");
 		f.print(sb.toString());
 		
-		for (int i = 1; i < argc; i++){
+		for (int i = 0; i < argc; i++){
 			if (argv[i].charAt(0) == '-' && (argv[i].charAt(1) == 'k' || argv[i].charAt(1) == 's') && i < argc - 1){
 				f.print(String.format("  %s %s\n", argv[i], argv[i+1]));
 				++i;
@@ -61,7 +61,7 @@ public class OpusMiner {
 		
 		int i;
 		
-		for (i = 1; i < argc; i++){
+		for (i = 0; i < argc; i++){
 			if (argv[i].charAt(0) == '-'){
 				switch (argv[i].charAt(1)){
 				case 'c':

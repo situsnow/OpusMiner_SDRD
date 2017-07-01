@@ -30,7 +30,7 @@ public class ItemsetRec extends Itemset{
 	}
 	
 	//Sort the ItemsetRec with ascending order, when there's bigger values, will remove the smallest one in peek
-	public static Comparator<ItemsetRec> ItemsetRecComparator = new Comparator<ItemsetRec>(){
+	public static Comparator<ItemsetRec> ItemsetRecComparatorA = new Comparator<ItemsetRec>(){
 
 		@Override
 		public int compare(ItemsetRec o1, ItemsetRec o2) {
@@ -38,6 +38,19 @@ public class ItemsetRec extends Itemset{
 			if (o1.value < o2.value)
 				return -1;
 			if (o1.value > o2.value)
+				return 1;
+			return 0;
+		}
+	};
+	//Sort the ItemsetRec with descending order when printing
+	public static Comparator<ItemsetRec> ItemsetRecComparatorD = new Comparator<ItemsetRec>(){
+
+		@Override
+		public int compare(ItemsetRec o1, ItemsetRec o2) {
+			// TODO Auto-generated method stub
+			if (o1.value > o2.value)
+				return -1;
+			if (o1.value < o2.value)
 				return 1;
 			return 0;
 		}

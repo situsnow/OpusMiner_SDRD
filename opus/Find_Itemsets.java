@@ -1,8 +1,5 @@
 package opus;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,8 +11,8 @@ public class Find_Itemsets {
 	//Only save those itemsets that pass the bound value and productive
 	public static Map<Itemset, Integer> TIDCount = new HashMap<Itemset, Integer>();
 	
-	//Supervised Descriptive Rule Discovery - Contrast-set mining, for {productive itemsets, Consequent} : cover
-	public static Map<Itemset, Integer> TIDConCount = new HashMap<Itemset, Integer>();
+	//Supervised Descriptive Rule Discovery - Contrast-set mining, for {1-itemsets, Consequent} : upper bound value
+	public static Map<Itemset, Float> SDRDTIDCount = new HashMap<Itemset, Float>();
 	
 	//for static function getTIDCount
 	private static int count;
@@ -300,15 +297,6 @@ public class Find_Itemsets {
 			int item = q.get(i).item;
 			int count;
 			
-			//Check if itemset has been checked before
-			if (Globals.sdrd == true && is.size() == 1){
-				Itemset tmp = new Itemset();
-				tmp.add(item);
-				tmp.addAll(is);
-				if (tmp.contains(Globals.consequentID)){
-					continue;
-				}
-			}
 			Tidset currItemset = new Tidset();
 			
 			
@@ -324,6 +312,22 @@ public class Find_Itemsets {
 			
 			int newMaxItemCount = Math.max(maxItemCount, currItemset.size());
 			float new_sup = Utils.countToSup(count);
+			
+			//Check if itemset: {1-itemset, consequent} has been checked before, if true, skip calculation
+			if (Globals.sdrd == true && is.size() == 1 && (Globals.consequentID == item || is.contains(Globals.consequentID))){
+				Collections.reverse(is);
+				is.add(item);
+				Collections.reverse(is);
+				if (!newQ.isEmpty()){
+					opus(is, newCover, newQ, newMaxItemCount);
+				}
+				
+				Collections.reverse(newQ);
+				newQ.add(SDRDTIDCount.get(is), item);
+				Collections.reverse(newQ);
+				
+				continue;
+			}
 			
 			// this is a lower bound on the p value that may be obtained for this itemset or any superset
 			double lb_p = Utils.fisher(count, newMaxItemCount, count);
@@ -411,21 +415,39 @@ public class Find_Itemsets {
 			Tidset newCover = new Tidset();
 			
 			//c : How many transactions that current item or +consequent occurs
+			float maxsup = 0;
+			
 			if (Globals.sdrd == true){
 				Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
+				maxsup = Utils.countToSup(Globals.tids.get(i).size());
 			}else{
 				newCover = Globals.tids.get(i);
+				maxsup = Utils.countToSup(newCover.size());
 			}
 			int c = newCover.size();
-			
 			float sup = Utils.countToSup(c);
-			float ubVal = (float)(Globals.searchByLift ? 1.0 / sup
-					: sup - sup * sup); //later one is leverage value
+			float ubVal = (float)(Globals.searchByLift ? 1.0 / maxsup
+					: sup - sup * maxsup); //later one is leverage value
 			
 			// make sure that the support is high enough for it to be possible to create a significant itemset
-			if (Utils.fisher(c, c, c) <= Globals.getAlpha(2)){
+			double p = Utils.fisher(c, c, c);
+			if (p <= Globals.getAlpha(2)){
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
 				q.append(ubVal, i);
+				
+				//Save the 2-itemset {1-itemset, consequent} to memory
+				if(Globals.sdrd == true){
+					ItemsetRec is = new ItemsetRec();
+					is.add(Globals.consequentID);
+					is.add(i);
+					is.count = c;
+					is.value = ubVal;
+					is.p = p;
+					insert_itemset(is);
+					TIDCount.put(is, c);
+					
+					SDRDTIDCount.put(is, ubVal);
+				}
 			}
 		}
 		
@@ -441,35 +463,35 @@ public class Find_Itemsets {
 			}
 		}
 		
-		//TODO remove after testing
-		PrintStream queuef = null;
-		try {
-			queuef = new PrintStream(new File("queue.csv"));
-			StringBuffer sb = new StringBuffer();
-			sb.append("Index, ");
-			sb.append("Item Name\n");
-			
-			for (int j = 0; j < q.size(); j++){
-				ItemQElem elem = q.get(j);
-				
-				sb.append(elem.item);
-				sb.append(", ");
-				sb.append(Globals.itemNames.get(elem.item));
-				sb.append(", ");
-				sb.append(elem.ubVal);
-				sb.append("\n");
-			}
-			
-			queuef.print(sb.toString());
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			if (queuef != null){
-				queuef.close();
-			}
-		}
-		//TODO remove after testing
+//		//TODO remove after testing
+//		PrintStream queuef = null;
+//		try {
+//			queuef = new PrintStream(new File("queue.csv"));
+//			StringBuffer sb = new StringBuffer();
+//			sb.append("Index, ");
+//			sb.append("Item Name\n");
+//			
+//			for (int j = 0; j < q.size(); j++){
+//				ItemQElem elem = q.get(j);
+//				
+//				sb.append(elem.item);
+//				sb.append(", ");
+//				sb.append(Globals.itemNames.get(elem.item));
+//				sb.append(", ");
+//				sb.append(elem.ubVal);
+//				sb.append("\n");
+//			}
+//			
+//			queuef.print(sb.toString());
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} finally {
+//			if (queuef != null){
+//				queuef.close();
+//			}
+//		}
+//		//TODO remove after testing
 		
 		// remember the current minValue, and output an update if it improves in this iteration of the loop
 		float prevMinVal = minValue;
