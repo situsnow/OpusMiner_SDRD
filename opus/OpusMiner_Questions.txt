@@ -71,6 +71,10 @@ If an itemset's any subset is identified as redundant (cannot find in TIDCount),
          |         | Count 1  | Total transaction
  it does not matter.
  
+ When checking {A, B}, the fisher exact test assigns {count = AB.tid.size, count1 = max(A.tid.size, B.tid.size), count2 = AB.tid.size.
+ As such, c will always equal 0 in RXC table and makes the hypotheses that B exists in all transactions where A also exists (the extreme case that 
+ B is subsumed with A like A = female, B = pregnant).
+ 
 5. There's no special handling for different attributes have same values, e.g. in Mushroom data, there are three 
 different attributes have "SMOOTH" values.
 --Add identifiers to the different item names to make it unique with each other
@@ -78,10 +82,12 @@ different attributes have "SMOOTH" values.
 6. Why the calculation of lift and leverage is different than usual in opus function? find_itemsets.cpp, line 283 
 
 
+*After confirm with Prof.Webb, change the code in find_itemset() and opus() in java version.
 
 
 
 
+#########################################################################################
 replace leverage/lift with mutual information
 Before OpusMiner: identify which variable is consequent (get rid of it or use flag to identify it), perform only one type of consequent domain (e.g poison first)
 

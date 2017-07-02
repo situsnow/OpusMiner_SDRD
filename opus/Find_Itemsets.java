@@ -1,8 +1,8 @@
 package opus;
 
-//import java.io.File;
-//import java.io.FileNotFoundException;
-//import java.io.PrintStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -302,13 +302,8 @@ public class Find_Itemsets {
 			}else{
 				currItemset = Globals.tids.get(item);
 			}
-			// determine the number of TIDs that the new itemset covers
-			Tidset.intersection(newCover, cover, currItemset);
-			
-			count = newCover.size();
 			
 			int newMaxItemCount = Math.max(maxItemCount, currItemset.size());
-			float new_sup = Utils.countToSup(count);
 			
 			//Check if itemset: {1-itemset, consequent} has been checked before, if true, skip calculation
 			if (Globals.sdrd == true && is.size() == 1 && (Globals.consequentID == item || is.contains(Globals.consequentID))){
@@ -326,13 +321,20 @@ public class Find_Itemsets {
 				is.remove(new Integer(item));
 				continue;
 			}
+			// determine the number of TIDs that the new itemset covers
+			Tidset.intersection(newCover, cover, currItemset);
+			count = newCover.size();
+			
+			float new_sup = Utils.countToSup(count);
 			
 			// this is a lower bound on the p value that may be obtained for this itemset or any superset
 			double lb_p = Utils.fisher(count, newMaxItemCount, count);
 			
 			// calculate an upper bound on the value that can be obtained by this itemset or any superset
-			float ubval = (float)(Globals.searchByLift? ((count ==0) ? 0.0 : (1.0 / Utils.countToSup(maxItemCount)))
-					: new_sup - new_sup * Utils.countToSup(maxItemCount));
+//			float ubval = (float)(Globals.searchByLift? ((count ==0) ? 0.0 : (1.0 / Utils.countToSup(maxItemCount)))
+//					: new_sup - new_sup * Utils.countToSup(maxItemCount));
+			float ubval = (float)(Globals.searchByLift? ((count ==0) ? 0.0 : (new_sup / (parentSup * Utils.countToSup(currItemset.size()))))
+					: new_sup - parentSup * Utils.countToSup(currItemset.size()));
 			
 			// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
 			if (lb_p <= Globals.getAlpha(depth) && ubval > minValue){
@@ -415,8 +417,8 @@ public class Find_Itemsets {
 			int maxCount = 0;
 			if (Globals.sdrd == true){
 				Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
-				maxCount = Globals.tids.get(i).size();
-				maxsup = Utils.countToSup(maxCount);
+				maxsup = Utils.countToSup(Globals.tids.get(i).size());
+				maxCount = Math.max(Globals.consequentTids.size(), Globals.tids.get(i).size());
 			}else{
 				newCover = Globals.tids.get(i);
 				maxCount = newCover.size();
@@ -464,34 +466,34 @@ public class Find_Itemsets {
 			}
 		}
 		
-//		//TODO remove after testing
-//		PrintStream queuef = null;
-//		try {
-//			queuef = new PrintStream(new File("queue.csv"));
-//			StringBuffer sb = new StringBuffer();
-//			sb.append("Index, ");
-//			sb.append("Item Name\n");
-//			
-//			for (int j = 0; j < q.size(); j++){
-//				ItemQElem elem = q.get(j);
-//				
-//				sb.append(elem.item);
-//				sb.append(", ");
-//				sb.append(Globals.itemNames.get(elem.item));
-//				sb.append(", ");
-//				sb.append(elem.ubVal);
-//				sb.append("\n");
-//			}
-//			
-//			queuef.print(sb.toString());
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} finally {
-//			if (queuef != null){
-//				queuef.close();
-//			}
-//		}
-//		//TODO remove after testing
+		//TODO remove after testing
+		PrintStream queuef = null;
+		try {
+			queuef = new PrintStream(new File("queue.csv"));
+			StringBuffer sb = new StringBuffer();
+			sb.append("Index, ");
+			sb.append("Item Name\n");
+			
+			for (int j = 0; j < q.size(); j++){
+				ItemQElem elem = q.get(j);
+				
+				sb.append(elem.item);
+				sb.append(", ");
+				sb.append(Globals.itemNames.get(elem.item));
+				sb.append(", ");
+				sb.append(elem.ubVal);
+				sb.append("\n");
+			}
+			
+			queuef.print(sb.toString());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			if (queuef != null){
+				queuef.close();
+			}
+		}
+		//TODO remove after testing
 		
 		// remember the current minValue, and output an update if it improves in this iteration of the loop
 		float prevMinVal = minValue;
