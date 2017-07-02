@@ -82,6 +82,7 @@ different attributes have "SMOOTH" values.
 6. Why the calculation of lift and leverage is different than usual in opus function? find_itemsets.cpp, line 283 
 
 
+*Understand checkSubsets and checkSubsetsX
 *After confirm with Prof.Webb, change the code in find_itemset() and opus() in java version.
 
 
