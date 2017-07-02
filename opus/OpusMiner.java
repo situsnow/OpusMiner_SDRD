@@ -102,9 +102,16 @@ public class OpusMiner {
 					System.exit(1);
 				}
 			}else if ("".equals(inputFileName)){
-				inputFileName = argv[i];
+				//inputFileName = argv[i];
+				inputFileName = "File/input/" + argv[i];
 			}else if ("".equals(outputFileName)){
-				outputFileName = argv[i];
+				//outputFileName = argv[i];
+				if (Globals.searchByLift){
+					outputFileName = "File/output/" + argv[i] + "_Lift.csv";
+				}else{
+					outputFileName = "File/output/" + argv[i] + "_Leverage.csv";
+				}
+				
 			}else{
 				System.err.println(String.format(usageStr, argv[0]));
 				System.exit(1);
@@ -119,7 +126,7 @@ public class OpusMiner {
 			Load_Data.load_data(inputFileName);
 			
 			//TODO delete after testing
-			PrintStream mappingf = new PrintStream(new File("mapping.csv"));
+			PrintStream mappingf = new PrintStream(new File("File/mapping.csv"));
 			StringBuffer sb = new StringBuffer();
 			sb.append("Index,ItemName\n");
 			for (int j = 0; j < Globals.noOfItems; j++){

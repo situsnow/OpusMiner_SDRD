@@ -469,7 +469,7 @@ public class Find_Itemsets {
 		//TODO remove after testing
 		PrintStream queuef = null;
 		try {
-			queuef = new PrintStream(new File("queue.csv"));
+			queuef = new PrintStream(new File("File/queue.csv"));
 			StringBuffer sb = new StringBuffer();
 			sb.append("Index, ");
 			sb.append("Item Name\n");

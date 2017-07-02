@@ -13,6 +13,6 @@ If you publish results obtained by using this software please cite
   -k 100
   -s EDIBLE
   Mushroom.txt
-  Output.csv
+  Output
 
-Mushroom.txt: 118 items, 8416 transactions
+File/input/Mushroom.txt: 118 items, 8416 transactions
