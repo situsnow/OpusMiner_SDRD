@@ -1,19 +1,24 @@
 ﻿Questions:
 ------------------------------------------------------------
 1. Command -p was not indicated in usageStr and what does command -p do? : in opus_miner.cpp, line 80 
-<Xuelin>The p command was the flag to perform Bonferroni Correction in OpusMiner or not.
+
+The p command was the flag to perform Bonferroni Correction in OpusMiner or not.
 
 2. What does it mean by search by Lift in command -l : in opus_miner.cpp, line 111
-<Xuelin> There are two measurements proposed to calculate the upper bound value of an item: Leverage/Lift; The command -l aims to set the flag to use which measurements.
+
+There are two measurements proposed to calculate the upper bound value of an item: Leverage/Lift; The command -l aims to set the flag to use which measurements.
 
 3. Why the p value needs to calculate with log factorial? isn't it only factorial would be fine? Try to scale the data to lower range? : in fisher.cpp, line 51
-<Xuelin>With large sample data, the pure factorial will be really large and somehow may exceeds the range of (unsigned) int. However, by calculating the log factorial and then round with e to the power of invariant result, will keep the meaning of p value from Fisher Exact Test and also scale down the double value of p. 
+
+With large sample data, the pure factorial will be really large and somehow may exceeds the range of (unsigned) int. However, by calculating the log factorial and then round with e to the power of invariant result, will keep the meaning of p value from Fisher Exact Test and also scale down the double value of p. 
 
 4. Why there's an array for alpha? in globals.h, line 45
-<Xuelin> It originates to the idea of Bonfferoni Correction which divide the significance level alfa with sample size. However, it's more related to the concept of Layered critical values, which the assigned critical value to evaluate current itemsets is calculated according to searching depth but not total sample size.
+
+It originates to the idea of Bonfferoni Correction which divide the significance level alfa with sample size. However, it's more related to the concept of Layered critical values, which the assigned critical value to evaluate current itemsets is calculated according to searching depth but not total sample size.
 
 5. What is the null hypotheses to accept a single item? in find_itemsets.cpp, line 342
-<Xuelin>While evaluating the interestingness of a single item in fisher exact test, can view as the contingency table with the support count of current item in true negative cell. 
+
+While evaluating the interestingness of a single item in fisher exact test, can view as the contingency table with the support count of current item in true negative cell. 
 
 6. Why apriori is true when redundancy is true? find_itemsets.cpp, line 135, 298
 The apriori variable here is nothing related to the Algorithm Apriori but the definition of anti-monotonicity property of an items and its subset. By filtering out one itemset, none of its superset needed to be scanned.
@@ -27,11 +32,6 @@ s is the superset of A.
 new : sup (antecedent + consequent) - sup ( antecedent) * sup (consequent)
 Only use one combination
 
-8. replace leverage/lift with mutual information
-Before OpusMiner: identify which variable is consequent (get rid of it or use flag to identify it), perform only one type of consequent domain (e.g poison first)
-
-When pruning itemsets, use mutual information instead of leverage or lift
-Make the mutual information run without the upper bound.
 
 9. Why the count of immediate subset is equal to current itemset will mark it as redundant? find_itemsets.cpp, line 139
 It's for the non-redundancy property in self-sufficient itemset. When there's subsumed items lying in an itemset, one of its subset and subset of subset will have the same support count. E.g. {female, pregnant} and {pregnant}.
@@ -71,16 +71,24 @@ If an itemset's any subset is identified as redundant (cannot find in TIDCount),
          |         | Count 1  | Total transaction
  it does not matter.
  
- 5. There's no special handling for different attributes have same values, e.g. in Mushroom data, there are three 
- different attributes have "SMOOTH" values.
- --Add identifiers to the different item names to make it unique with each other
- 
- 
- //TODO need to check if the new itemset is already exist in the TIDCount or not, to skip duplicating calculation of AY, BY, CY....
-			
-//TODO  Debug with k = 1 to manually check if the calculation is correct or not
+5. There's no special handling for different attributes have same values, e.g. in Mushroom data, there are three 
+different attributes have "SMOOTH" values.
+--Add identifiers to the different item names to make it unique with each other
 
-//TODO Check why make leverage will throw error in ItemQClass.add(float ubVal, int item)
+6. Why the calculation of lift and leverage is different than usual in opus function? find_itemsets.cpp, line 283 
+
+
+
+
+
+
+replace leverage/lift with mutual information
+Before OpusMiner: identify which variable is consequent (get rid of it or use flag to identify it), perform only one type of consequent domain (e.g poison first)
+
+When pruning itemsets, use mutual information instead of leverage or lift
+Make the mutual information run without the upper bound.
+
+
 #########################################################################################
 Literature Review:
 Association discovery (Apriori only, Not too much portion on other algorithms) (1/4)

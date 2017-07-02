@@ -24,7 +24,7 @@ public class ItemsetRec extends Itemset{
 		this.p = 1.0;
 		this.selfSufficient = true;
 	}
-	//TODO The less the value, the better?	
+
 	public boolean lessThan(ItemsetRec pI){
 		return this.value > pI.value;
 	}
@@ -34,7 +34,7 @@ public class ItemsetRec extends Itemset{
 
 		@Override
 		public int compare(ItemsetRec o1, ItemsetRec o2) {
-			// TODO Auto-generated method stub
+
 			if (o1.value < o2.value)
 				return -1;
 			if (o1.value > o2.value)
@@ -47,7 +47,6 @@ public class ItemsetRec extends Itemset{
 
 		@Override
 		public int compare(ItemsetRec o1, ItemsetRec o2) {
-			// TODO Auto-generated method stub
 			if (o1.value > o2.value)
 				return -1;
 			if (o1.value < o2.value)
@@ -59,7 +58,6 @@ public class ItemsetRec extends Itemset{
 	public static Comparator<ItemsetRec> ItemsetRecSizeComparator = new Comparator<ItemsetRec>(){
 		@Override
 		public int compare(ItemsetRec o1, ItemsetRec o2) {
-			// TODO Auto-generated method stub
 			if (o1.size() < o2.size())
 				return -1;
 			if (o1.size() > o2.size())

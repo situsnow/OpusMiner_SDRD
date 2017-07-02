@@ -53,10 +53,8 @@ public class Globals {
 			double tmp = alpha.get(alpha.size() - 1);
 			alpha.add(tmp);
 		}else{
-			//TODO unsigned int
 			long i;
 			for (i = alpha.size(); i <= depth; i++){
-				//TODO it will throw IndexOutOfBoundsException here when alpha.size = depth
 				alpha.add(Math.min((Math.pow(0.5, depth - 1) / 
 						Math.exp(Fisher.getInstance().log_combin(noOfItems, (int)depth))), 
 						alpha.get((int) (depth - 1))));

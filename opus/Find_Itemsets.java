@@ -1,5 +1,8 @@
 package opus;
 
+//import java.io.File;
+//import java.io.FileNotFoundException;
+//import java.io.PrintStream;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +27,6 @@ public class Find_Itemsets {
 	private static float val;
 	private static double p;
 	
-	//TODO 
 	/**Attention here: delete the second variable as Java is pass by value of reference,
 	 * as the count can not refreshed with new value outside the function
 	 * @param is
@@ -65,7 +67,6 @@ public class Find_Itemsets {
 		}
 	}
 	
-	//TODO
 	/**
 	 * Skip below coding blocks as no reference in orginal program
 	 * 1. public float sortval;
@@ -73,7 +74,6 @@ public class Find_Itemsets {
 	 * 3. int itemlt(const void *i1, const void *i2) 
 	 */
 	
-	//TODO
 	/**
 	 * Skip two vairables here as Java is pass by value of reference.
 	 * bool &redudant
@@ -94,7 +94,6 @@ public class Find_Itemsets {
 			
 			//Iteratively remove one of the items in is, and check if all of its immediate subset is in memory
 			subset.remove(new Integer(is.get(it)));
-			//TODO
 			/**
 			 * Skip second variable subsetCnt here
 			 */
@@ -118,7 +117,6 @@ public class Find_Itemsets {
 		return;
 	}
 	
-	//TODO
 	/**
 	 * calculates leverage, p, whether the itemset is is redundant and whether it is possible to determine that all supersets of is will be redundant
 	 * return true iff is is not redundant, val > minValue and p <= alpha
@@ -191,7 +189,6 @@ public class Find_Itemsets {
 		return p <= alpha && val > minValue;
 	}
 	
-	//TODO
 	/**
 	 * calculates leverage, p, whether is is redundant and whether it is possible to determine that all supersets of is will be redundant
 	 * return true iff is is not redundant, val > minValue and p <= alpha
@@ -326,6 +323,7 @@ public class Find_Itemsets {
 				newQ.add(SDRDTIDCount.get(is), item);
 				Collections.reverse(newQ);
 				
+				is.remove(new Integer(item));
 				continue;
 			}
 			
@@ -340,7 +338,6 @@ public class Find_Itemsets {
 			if (lb_p <= Globals.getAlpha(depth) && ubval > minValue){
 				
 				// only continue if there is any possibility of this itemset or its supersets entering the list of best itemsets
-				//TODO
 				/**
 				 * Skip four variables here
 				 * 1. float val;
@@ -368,7 +365,6 @@ public class Find_Itemsets {
 					
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
 					if (!redundant){
-						//TODO Snow, saved all subsets here? Say, When checking {ABY}, AB is also need to saved.
 						ItemsetRec tmp_rec = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient);
 						tmp_rec.addAll(is);
 						Collections.sort(tmp_rec);
@@ -416,21 +412,26 @@ public class Find_Itemsets {
 			
 			//c : How many transactions that current item or +consequent occurs
 			float maxsup = 0;
-			
+			int maxCount = 0;
 			if (Globals.sdrd == true){
 				Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
-				maxsup = Utils.countToSup(Globals.tids.get(i).size());
+				maxCount = Globals.tids.get(i).size();
+				maxsup = Utils.countToSup(maxCount);
 			}else{
 				newCover = Globals.tids.get(i);
-				maxsup = Utils.countToSup(newCover.size());
+				maxCount = newCover.size();
+				maxsup = Utils.countToSup(maxCount);
 			}
 			int c = newCover.size();
 			float sup = Utils.countToSup(c);
-			float ubVal = (float)(Globals.searchByLift ? 1.0 / maxsup
-					: sup - sup * maxsup); //later one is leverage value
+			//TODO
+//			float ubVal = (float)(Globals.searchByLift ? 1.0 / maxsup
+//					: sup - sup * maxsup); //later one is leverage value
+			float ubVal = (float)(Globals.searchByLift ? sup / (maxsup * Utils.countToSup(Globals.consequentTids.size()))
+					: sup - Utils.countToSup(Globals.consequentTids.size()) * maxsup); //later one is leverage value
 			
 			// make sure that the support is high enough for it to be possible to create a significant itemset
-			double p = Utils.fisher(c, c, c);
+			double p = Utils.fisher(c, maxCount, c);
 			if (p <= Globals.getAlpha(2)){
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
 				q.append(ubVal, i);
@@ -484,7 +485,6 @@ public class Find_Itemsets {
 //			
 //			queuef.print(sb.toString());
 //		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		} finally {
 //			if (queuef != null){
@@ -503,15 +503,12 @@ public class Find_Itemsets {
 			int item = q.get(i).item;
 			
 			is = new ItemsetRec();
-			//TODO
-			//Originate is insert()
+			
 			is.add(item);
 			
 			Tidset newCover = new Tidset();
 			newCover = Globals.tids.get(item);
 			
-			//TODO pay attention here if need to use the intersection of item+consequent for the last param: size
-			//Make sure when checking itemset {A, B, Y}, all its subsets {A, B, AB, AY, BY} should be stored.
 			opus(is, newCover, newq, newCover.size());
 			
 			newq.append(q.get(i).ubVal, item);

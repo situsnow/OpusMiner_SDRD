@@ -100,7 +100,6 @@ public class Tidset extends ArrayList<Long>{
 			return;
 		}
 		
-		//TODO unsigned int
 		int from = 0;
 		int to = 0;
 		

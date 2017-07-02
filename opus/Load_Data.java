@@ -12,12 +12,11 @@ public class Load_Data {
 	
 	private static int EOF = -1;
 
-	//TODO Attention. Change char to String of filename
 	public static void load_data(final String filename){
 		int c;
 		String s;
 		//for non-market-basket-data applications
-		int fCounter = 0;
+		int fCounter = 1;
 		//Save item name <> unique item id
 		Map<String, Integer> itemstrs = new HashMap<String, Integer>();
 		Reader fileReader = null;
@@ -31,12 +30,8 @@ public class Load_Data {
 					Globals.noOfTransactions++;
 					c = fileReader.read();
 					if (Globals.marketBasketData == false)
-						fCounter = 2;
+						fCounter = 1;
 				}else{
-					//TODO
-//					if (Globals.noOfTransactions == 0){
-//						Globals.noOfTransactions++;
-//					}
 					
 					s = "";
 					StringBuffer sb = new StringBuffer();
@@ -51,7 +46,9 @@ public class Load_Data {
 						//Save the consequent separately when in Supervised Descriptive Rule Discovery
 						if (Globals.sdrd == true && Globals.consequentName.equals(s)){
 							Globals.consequentTids.add((long)Globals.noOfTransactions);
+							fCounter++;
 						}else{
+							
 							//The item id for each unique item in DB
 							if (Globals.marketBasketData == false){
 								s = "field" + fCounter + " = " + s;
@@ -93,14 +90,14 @@ public class Load_Data {
 				}
 			}
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+
 			if (fileReader == null){
 				System.out.print(String.format("Cannot open input file '%s'\n", filename));
 				System.exit(1);;
 			}
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} 
 	}

@@ -11,7 +11,6 @@ public class OpusMiner {
 
 	public static PriorityQueue<ItemsetRec> itemsets = new PriorityQueue<ItemsetRec>(10, ItemsetRec.ItemsetRecComparatorA);
 	
-	//TODO: Attention. Change the type of argv to be fit for Java mechanism
 	public static void print_header(PrintStream f, int argc, String[] argv){
 		
 		StringBuffer sb = new StringBuffer();
@@ -37,7 +36,7 @@ public class OpusMiner {
 			}
 		}
 		
-		//TODO discard f.close() here as for
+		//discard f.close() here as for
 		//System.out, there is no need to close it
 		//For file PrintStream, it will close when it's not needed.
 		//f.close();
