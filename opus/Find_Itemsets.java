@@ -161,8 +161,6 @@ public class Find_Itemsets {
 			if (p > alpha) return false;
 		}
 		
-		//TODO Snow: joint the consequent to see if {k-itemset, consequent} can pass the Fisher Exact Test
-		
 		if (remaining.size() > 1){
 			Itemset new_remaining = new Itemset(remaining);
 			
@@ -215,6 +213,7 @@ public class Find_Itemsets {
 			itemCnt = Globals.tids.get(item).size();
 		}
 		
+		//TODO, refer to OpusMiner_Questions.txt #7
 		val = (float) (Globals.searchByLift? new_sup / (parentSup * Utils.itemSup(item))
 				: new_sup - parentSup * Utils.itemSup(item));
 		
@@ -234,7 +233,7 @@ public class Find_Itemsets {
 			remaining.remove(new Integer(item));
 			
 			int it;
-			for (it = 0; it != is.size() - 1; it++){
+			for (it = 0; it < is.size(); it++){
 				if (is.get(it) != item){
 					Collections.reverse(sofar);
 					sofar.add(is.get(it));
@@ -355,14 +354,13 @@ public class Find_Itemsets {
 				checkImmediateSubsets(is, count);
 				
 				if (!apriori){
-					if (checkSubsets(item, is, count, new_sup, cover.size(), parentSup, Globals.getAlpha(depth))){
-						if (Globals.sdrd == false || is.contains(Globals.consequentID)){
+					if ((Globals.sdrd == false || is.contains(Globals.consequentID)) &&
+							checkSubsets(item, is, count, new_sup, cover.size(), parentSup, Globals.getAlpha(depth))){
 							is.count = count;
 							is.value = val;
 							is.p = p;
 							//TODO only need to save those with oriented consequent itemsets.
 							insert_itemset(is);
-						}
 					}
 					
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
