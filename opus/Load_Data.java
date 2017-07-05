@@ -44,7 +44,7 @@ public class Load_Data {
 					
 					if (!s.isEmpty()){
 						//Save the consequent separately when in Supervised Descriptive Rule Discovery
-						if (Globals.sdrd == true && Globals.consequentName.equals(s)){
+						if (Globals.consequentName.equals(s)){
 							Globals.consequentTids.add((long)Globals.noOfTransactions);
 							fCounter++;
 						}else{
@@ -65,9 +65,6 @@ public class Load_Data {
 								itemstrs.put(s, thisid);
 								Globals.itemNames.add(s);
 								Globals.noOfItems = Globals.itemNames.size();
-								
-								//tids.resize(noOfItems);
-								//There's no need to resize a List in Java
 								
 							}else{
 								thisid = itemstrs.get(s);

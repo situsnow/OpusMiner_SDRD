@@ -22,6 +22,10 @@ public class ItemQClass extends ArrayList<ItemQElem>{
 	public void sort(){
 		Collections.sort(this, ItemQElem.ItemsQElemComparator);
 	}
+	public void sortSDRD(){
+		Collections.sort(this, ItemQElem.ItemQElemSDRDComparator);
+	}
+	
 	
 	public void add(float ubVal, int item){
 //		int initialSize = this.size();
@@ -59,6 +63,6 @@ public class ItemQClass extends ArrayList<ItemQElem>{
 //		}
 		ItemQElem iqe = new ItemQElem(ubVal, item);
 		this.add(iqe);
-		this.sort();
+		this.sortSDRD();
 	}
 }

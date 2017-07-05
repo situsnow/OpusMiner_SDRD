@@ -52,9 +52,6 @@ Only use one combination
 It's for the non-redundancy property in self-sufficient itemset. When there's subsumed items lying in an itemset, one of its subset and subset of subset 
 will have the same support count. E.g. {female, pregnant} and {pregnant}.
 
-10. The leverage/lift values for k-itemset (including consequent and k > 3) is different from the BigML result is because when checking correspondent
-subsets (find_itemsets.cpp, line 164), only the smallest upper bound value of these subsets will be saved and attach to current k-itemset.
-
 #########################################################################################
 **The key amendment to OpusMiner is that, when counting the support for an itemset, it will include the consequent; 
 However, when checking the immediate or partition subsets of an itemset, it should exclude the consequent when looping every subsets, 
@@ -103,8 +100,18 @@ different attributes have "SMOOTH" values.
 *Understand checkSubsets and checkSubsetsX
 *After confirm with Prof.Webb, change the code in find_itemset() and opus() in java version.
 
+--Use the maxItemCount in the first level of calculating AY, BY, ......
 
+--Use the upper bounds value calculation provided by Prof. Webb
 
+--Do not need to calculate and get the smallest lift/leverage when checking the subsets of current itemset.
+
+The leverage/lift values for k-itemset (including consequent and k > 3) is different from the BigML result is because when checking correspondent
+subsets (find_itemsets.cpp, line 164), only the smallest upper bound value of these subsets will be saved and attach to current k-itemset.
+
+What is the maxSupCount should be when performing Supervised Descriptive Rule Discovery?
+
+Only extract the consequent and field19 and other fields like field6 to check why field19 is not including in the result.
 
 #########################################################################################
 replace leverage/lift with mutual information

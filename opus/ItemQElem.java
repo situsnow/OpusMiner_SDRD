@@ -23,4 +23,17 @@ public class ItemQElem {
 			return 0;
 		}
 	};
+	
+	//Ensure that the consequent ID (-1) will always in the head of the queue
+	public static Comparator<ItemQElem> ItemQElemSDRDComparator = new Comparator<ItemQElem>(){
+		@Override
+		
+		public int compare(ItemQElem o1, ItemQElem o2) {
+			if (o1.item < o2.item)
+				return -1;
+			if (o1.item > o2.item)
+				return 1;
+			return 0;
+		}
+	};
 }

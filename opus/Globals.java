@@ -30,7 +30,8 @@ public class Globals {
 	public static boolean marketBasketData = false;
 	
 	//supervised descriptive rule discovery - contrast-sets mining
-	public static boolean sdrd = false;
+	//public static boolean sdrd = false;
+	
 	//For contrast-set mining - name
 	public static String consequentName = "";
 	//For contrast-set mining - id

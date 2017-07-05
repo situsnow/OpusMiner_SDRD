@@ -34,7 +34,8 @@ public class Find_Itemsets {
 	 */
 	public static boolean getTIDCount(Itemset is){
 		if (is.size() == 1){
-			if (Globals.sdrd == true && is.get(0) == Globals.consequentID)
+			//if (Globals.sdrd == true && is.get(0) == Globals.consequentID)
+			if (is.get(0) == Globals.consequentID)
 			{
 				count = Globals.consequentTids.size();
 			}else{
@@ -146,18 +147,20 @@ public class Find_Itemsets {
 		}
 		
 		// do test for sofar against remaining
-		float this_val = (float) (Globals.searchByLift? new_sup / (Utils.countToSup(remainingCnt) * Utils.countToSup(sofarCnt))
-				: new_sup - Utils.countToSup(remainingCnt) * Utils.countToSup(sofarCnt));
-		
-		if (this_val < val){
-			val = this_val;
-			if (this_val <= minValue) return false;
-		}
+//		float this_val = (float) (Globals.searchByLift? new_sup / (Utils.countToSup(remainingCnt) * Utils.countToSup(sofarCnt))
+//				: new_sup - Utils.countToSup(remainingCnt) * Utils.countToSup(sofarCnt));
+//		
+//		if (this_val < val){
+//			//TODO
+//			//val = this_val;
+//			if (this_val <= minValue) return false;
+//		}
 		
 		double this_p = Utils.fisher(cnt, sofarCnt, remainingCnt);
 		
 		if (this_p > p){
-			p = this_p;
+			//TODO
+			//p = this_p;
 			if (p > alpha) return false;
 		}
 		
@@ -184,7 +187,8 @@ public class Find_Itemsets {
 			}
 		}
 		
-		return p <= alpha && val > minValue;
+		return p <= alpha;
+		//return p <= alpha && val > minValue;
 	}
 	
 	/**
@@ -213,10 +217,10 @@ public class Find_Itemsets {
 			itemCnt = Globals.tids.get(item).size();
 		}
 		
-		//TODO, refer to OpusMiner_Questions.txt #7
+		//In Supervised Descriptive Rule Discovery, the val calculation only need to use one combination 
+				//sup (antecedent + consequent) - sup (antecedent) * sup (consequent)
 		val = (float) (Globals.searchByLift? new_sup / (parentSup * Utils.itemSup(item))
 				: new_sup - parentSup * Utils.itemSup(item));
-		
 		
 		if (val <= minValue) return false;
 		
@@ -228,7 +232,6 @@ public class Find_Itemsets {
 			Itemset sofar = new Itemset();
 			Itemset remaining = new Itemset(is);
 			
-			//TODO originate is insert
 			sofar.add(item);
 			remaining.remove(new Integer(item));
 			
@@ -296,7 +299,8 @@ public class Find_Itemsets {
 			Tidset currItemset = new Tidset();
 			
 			
-			if (Globals.sdrd == true && Globals.consequentID == item){
+			//if (Globals.sdrd == true && Globals.consequentID == item){
+			if (Globals.consequentID == item){
 				currItemset = Globals.consequentTids;
 			}else{
 				currItemset = Globals.tids.get(item);
@@ -305,17 +309,15 @@ public class Find_Itemsets {
 			int newMaxItemCount = Math.max(maxItemCount, currItemset.size());
 			
 			//Check if itemset: {1-itemset, consequent} has been checked before, if true, skip calculation
-			if (Globals.sdrd == true && is.size() == 1 && (Globals.consequentID == item || is.contains(Globals.consequentID))){
-				Collections.reverse(is);
+			if (is.size() == 1 && (Globals.consequentID == item || is.contains(Globals.consequentID))){
 				is.add(item);
-				Collections.reverse(is);
 				if (!newQ.isEmpty()){
 					opus(is, newCover, newQ, newMaxItemCount);
 				}
 				
-				Collections.reverse(newQ);
-				newQ.add(SDRDTIDCount.get(is), item);
-				Collections.reverse(newQ);
+				Itemset tmp = new Itemset(is);
+				Collections.sort(tmp);
+				newQ.add(SDRDTIDCount.get(tmp), item);
 				
 				is.remove(new Integer(item));
 				continue;
@@ -330,38 +332,42 @@ public class Find_Itemsets {
 			double lb_p = Utils.fisher(count, newMaxItemCount, count);
 			
 			// calculate an upper bound on the value that can be obtained by this itemset or any superset
-//			float ubval = (float)(Globals.searchByLift? ((count ==0) ? 0.0 : (1.0 / Utils.countToSup(maxItemCount)))
-//					: new_sup - new_sup * Utils.countToSup(maxItemCount));
-			float ubval = (float)(Globals.searchByLift? ((count ==0) ? 0.0 : (new_sup / (parentSup * Utils.countToSup(currItemset.size()))))
-					: new_sup - parentSup * Utils.countToSup(currItemset.size()));
 			
+			float ubVal = 0;
+			if (is.contains(Globals.consequentID) || Globals.consequentID == item){
+				//actually the consequent id will always in item as the itemset is sorted, hence, the support of is is the support of antecedent
+				float conSup = Utils.countToSup(Globals.consequentTids.size());
+				if (Globals.searchByLift){
+					ubVal = (float) (1.0 / conSup);
+				}else if (new_sup <= 0.5){
+					ubVal = Math.min(conSup, new_sup) - conSup * new_sup;
+				}else{
+					ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
+				}
+			}else{
+				ubVal = (float)(Globals.searchByLift? ((count == 0)? 0.0 : (1.0 / Utils.countToSup(maxItemCount)))
+						: new_sup - new_sup * Utils.countToSup(maxItemCount));
+			}
+				
 			// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
-			if (lb_p <= Globals.getAlpha(depth) && ubval > minValue){
-				
+			if (lb_p <= Globals.getAlpha(depth) && ubVal > minValue){
 				// only continue if there is any possibility of this itemset or its supersets entering the list of best itemsets
-				/**
-				 * Skip four variables here
-				 * 1. float val;
-				 * 2. double p;
-				 * 3. bool redundant
-				 * 4. bool apriori
-				 */
 				
-				Collections.reverse(is);
 				is.add(item);
-				Collections.reverse(is);
 				
 				checkImmediateSubsets(is, count);
 				
 				if (!apriori){
-					if ((Globals.sdrd == false || is.contains(Globals.consequentID)) &&
+					//only save those with oriented consequent itemsets.
+					if (is.contains(Globals.consequentID) && 
 							checkSubsets(item, is, count, new_sup, cover.size(), parentSup, Globals.getAlpha(depth))){
 							is.count = count;
 							is.value = val;
 							is.p = p;
-							//TODO only need to save those with oriented consequent itemsets.
+							
 							insert_itemset(is);
 					}
+					
 					
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
 					if (!redundant){
@@ -375,9 +381,9 @@ public class Find_Itemsets {
 							opus(is, newCover, newQ, newMaxItemCount);
 						}
 						
-						Collections.reverse(newQ);
-						newQ.add(ubval, item);
-						Collections.reverse(newQ);
+						//Collections.reverse(newQ);
+						newQ.add(ubVal, item);
+						//Collections.reverse(newQ);
 					}
 				}
 				
@@ -391,18 +397,17 @@ public class Find_Itemsets {
 		ItemQClass q = new ItemQClass();
 		int i;
 		//Check if consequent can pass the Fisher Exact Test, kind of exception handling
-		if (Globals.sdrd == true){
-			int consequentCover = Globals.consequentTids.size();
-			float conSup = Utils.countToSup(consequentCover);
-			float conUbVal = (float)(Globals.searchByLift? 1.0/conSup
-					: conSup - conSup * conSup);
-			if (Utils.fisher(consequentCover, consequentCover, consequentCover) > Globals.getAlpha(2)){
-				System.err.print(String.format("Consequent '%s' is not productive.", Globals.consequentName));
-				System.exit(1);
-			}else{
-				Globals.conUbVal = conUbVal;
-			}
+		int consequentCover = Globals.consequentTids.size();
+		float conSup = Utils.countToSup(consequentCover);
+		float conUbVal = (float)(Globals.searchByLift? 1.0/conSup
+				: conSup - conSup * conSup);
+		if (Utils.fisher(consequentCover, consequentCover, consequentCover) > Globals.getAlpha(2)){
+			System.err.print(String.format("Consequent '%s' is not productive.", Globals.consequentName));
+			System.exit(1);
+		}else{
+			Globals.conUbVal = conUbVal;
 		}
+		//}
 		
 		// initialize q - the queue of items ordered on an upper bound on value
 		for (i = 0; i < Globals.noOfItems; i++){
@@ -410,45 +415,42 @@ public class Find_Itemsets {
 			//In first level of lattice, only need to check if single item can pass the Fisher Exact Test
 			Tidset newCover = new Tidset();
 			
-			//c : How many transactions that current item or +consequent occurs
-			float maxsup = 0;
-			int maxCount = 0;
-			if (Globals.sdrd == true){
-				Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
-				maxsup = Utils.countToSup(Globals.tids.get(i).size());
-				maxCount = Math.max(Globals.consequentTids.size(), Globals.tids.get(i).size());
+			
+			Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
+			float antSup = Utils.countToSup(Globals.tids.get(i).size());
+			int maxCount = Math.max(Globals.consequentTids.size(), Globals.tids.get(i).size());
+			
+			float ubVal = 0;
+			if (Globals.searchByLift){
+				ubVal = (float) (1.0 / conSup);
+			}else if (antSup <= 0.5){
+				ubVal = Math.min(conSup, antSup) - conSup * antSup;
 			}else{
-				newCover = Globals.tids.get(i);
-				maxCount = newCover.size();
-				maxsup = Utils.countToSup(maxCount);
+				ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
 			}
-			int c = newCover.size();
-			float sup = Utils.countToSup(c);
-			//TODO
-//			float ubVal = (float)(Globals.searchByLift ? 1.0 / maxsup
-//					: sup - sup * maxsup); //later one is leverage value
-			float ubVal = (float)(Globals.searchByLift ? sup / (maxsup * Utils.countToSup(Globals.consequentTids.size()))
-					: sup - Utils.countToSup(Globals.consequentTids.size()) * maxsup); //later one is leverage value
 			
 			// make sure that the support is high enough for it to be possible to create a significant itemset
+			//c : How many transactions that current item or +consequent occurs
+			int c = newCover.size();
 			double p = Utils.fisher(c, maxCount, c);
-			if (p <= Globals.getAlpha(2)){
+			if (p <= Globals.getAlpha(2) && ubVal >minValue){
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
 				q.append(ubVal, i);
 				
 				//Save the 2-itemset {1-itemset, consequent} to memory
-				if(Globals.sdrd == true){
-					ItemsetRec is = new ItemsetRec();
-					is.add(Globals.consequentID);
-					is.add(i);
-					is.count = c;
-					is.value = ubVal;
-					is.p = p;
-					insert_itemset(is);
-					TIDCount.put(is, c);
-					
-					SDRDTIDCount.put(is, ubVal);
-				}
+				ItemsetRec is = new ItemsetRec();
+				is.add(Globals.consequentID);
+				is.add(i);
+				is.count = c;
+				is.value = ubVal;
+				is.p = p;
+				//Sort is in case no match in get
+				Collections.sort(is);
+				
+				insert_itemset(is);
+				TIDCount.put(is, c);
+				
+				SDRDTIDCount.put(is, ubVal);
 			}
 		}
 		
@@ -459,9 +461,9 @@ public class Find_Itemsets {
 			q.sort();
 			// the first item will have no previous items with which to be paired so is simply added to the queue of availabile items
 			newq.add(q.get(0).ubVal, q.get(0).item);
-			if (Globals.sdrd == true){
-				newq.add(Globals.conUbVal, Globals.consequentID);
-			}
+
+			newq.add(Globals.conUbVal, Globals.consequentID);
+				
 		}
 		
 		//TODO remove after testing
