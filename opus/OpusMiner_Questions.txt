@@ -96,22 +96,18 @@ different attributes have "SMOOTH" values.
 
 6. Why the calculation of lift and leverage is different than usual in opus function? find_itemsets.cpp, line 283 
 
-
-*Understand checkSubsets and checkSubsetsX
-*After confirm with Prof.Webb, change the code in find_itemset() and opus() in java version.
-
 --Use the maxItemCount in the first level of calculating AY, BY, ......
 
 --Use the upper bounds value calculation provided by Prof. Webb
 
 --Do not need to calculate and get the smallest lift/leverage when checking the subsets of current itemset.
 
-The leverage/lift values for k-itemset (including consequent and k > 3) is different from the BigML result is because when checking correspondent
-subsets (find_itemsets.cpp, line 164), only the smallest upper bound value of these subsets will be saved and attach to current k-itemset.
-
 What is the maxSupCount should be when performing Supervised Descriptive Rule Discovery?
 
 Only extract the consequent and field19 and other fields like field6 to check why field19 is not including in the result.
+
+7. When calculating the upper bound value (if search by lift) for AY, BY, it will always be 1/sup(con), for example, if a dataset get 100 attributes, but 
+I run program with K = 10 and search by lift, only the first 10 attributes will be saved in the level of 1-itemset + consequent.
 
 #########################################################################################
 replace leverage/lift with mutual information

@@ -397,15 +397,12 @@ public class Find_Itemsets {
 		//Check if consequent can pass the Fisher Exact Test, kind of exception handling
 		int consequentCover = Globals.consequentTids.size();
 		float conSup = Utils.countToSup(consequentCover);
-		float conUbVal = (float)(Globals.searchByLift? 1.0/conSup
-				: conSup - conSup * conSup);
+//		float conUbVal = (float)(Globals.searchByLift? 1.0/conSup
+//				: conSup - conSup * conSup);
 		if (Utils.fisher(consequentCover, consequentCover, consequentCover) > Globals.getAlpha(2)){
 			System.err.print(String.format("Consequent '%s' is not productive.", Globals.consequentName));
 			System.exit(1);
-		}else{
-			Globals.conUbVal = conUbVal;
 		}
-		//}
 		
 		// initialize q - the queue of items ordered on an upper bound on value
 		for (i = 0; i < Globals.noOfItems; i++){
