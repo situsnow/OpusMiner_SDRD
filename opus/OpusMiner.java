@@ -88,12 +88,12 @@ public class OpusMiner {
 				case 'r':
 					Globals.redundancyTests = false;
 					break;
-//				case 's':
-//					//If it's for supervised descriptive rule discovery - contrast-sets mining
-//					//Attention here, it only accepts one specific consequent in single test and no space in consequent label
-//					Globals.sdrd = true;
-//					Globals.consequentName = argv[++i];
-//					break;
+				case 's':
+					//If it's for supervised descriptive rule discovery - contrast-sets mining
+					//Attention here, it only accepts one specific consequent in single test and no space in consequent label
+					//Globals.sdrd = true;
+					Globals.consequentName = argv[++i];
+					break;
 				case 'm':
 					Globals.marketBasketData = true;
 					break;

@@ -381,9 +381,7 @@ public class Find_Itemsets {
 							opus(is, newCover, newQ, newMaxItemCount);
 						}
 						
-						//Collections.reverse(newQ);
 						newQ.add(ubVal, item);
-						//Collections.reverse(newQ);
 					}
 				}
 				
@@ -458,6 +456,7 @@ public class Find_Itemsets {
 		ItemQClass newq = new ItemQClass();
 		
 		if (q.size() > 0){
+			//Sort the Item queue with upper bound values
 			q.sort();
 			// the first item will have no previous items with which to be paired so is simply added to the queue of availabile items
 			newq.add(q.get(0).ubVal, q.get(0).item);
