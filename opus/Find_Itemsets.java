@@ -408,10 +408,6 @@ public class Find_Itemsets {
 		for (i = 0; i < Globals.noOfItems; i++){
 			
 			//In first level of lattice, only need to check if single item can pass the Fisher Exact Test
-			Tidset newCover = new Tidset();
-			
-			
-			Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
 			float antSup = Utils.countToSup(Globals.tids.get(i).size());
 			int maxCount = Math.max(Globals.consequentTids.size(), Globals.tids.get(i).size());
 			
@@ -426,18 +422,22 @@ public class Find_Itemsets {
 			
 			// make sure that the support is high enough for it to be possible to create a significant itemset
 			//c : How many transactions that current item or +consequent occurs
+			Tidset newCover = new Tidset();
+			Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
 			int c = newCover.size();
 			double p = Utils.fisher(c, maxCount, c);
 			if (p <= Globals.getAlpha(2) && ubVal >minValue){
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
-				q.append(ubVal, i);
+				float lVal = (float)(Globals.searchByLift? Utils.countToSup(c)/(conSup * antSup)
+						:Utils.countToSup(c) - conSup * antSup); 
+				q.append(lVal, i);
 				
 				//Save the 2-itemset {1-itemset, consequent} to memory
 				ItemsetRec is = new ItemsetRec();
 				is.add(Globals.consequentID);
 				is.add(i);
 				is.count = c;
-				is.value = ubVal;
+				is.value = lVal;
 				is.p = p;
 				//Sort is in case no match in get
 				Collections.sort(is);
@@ -445,7 +445,7 @@ public class Find_Itemsets {
 				insert_itemset(is);
 				TIDCount.put(is, c);
 				
-				SDRDTIDCount.put(is, ubVal);
+				SDRDTIDCount.put(is, lVal);
 			}
 		}
 		
