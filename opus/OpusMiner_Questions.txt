@@ -48,7 +48,7 @@ new : sup (antecedent + consequent) - sup (antecedent) * sup (consequent)
 Only use one combination
 ------------------------------------------------------------------------------------------------------------------------------------
 
-9. Why the count of immediate subset is equal to current itemset will mark it as redundant? find_itemsets.cpp, line 139
+8. Why the count of immediate subset is equal to current itemset will mark it as redundant? find_itemsets.cpp, line 139
 It's for the non-redundancy property in self-sufficient itemset. When there's subsumed items lying in an itemset, one of its subset and subset of subset 
 will have the same support count. E.g. {female, pregnant} and {pregnant}.
 
@@ -98,19 +98,22 @@ different attributes have "SMOOTH" values.
 
 --Use the maxItemCount in the first level of calculating AY, BY, ......
 
---Use the upper bounds value calculation provided by Prof. Webb
+What is the maxSupCount when performing Supervised Descriptive Rule Discovery?
 
---Do not need to calculate and get the smallest lift/leverage when checking the subsets of current itemset.
 
-What is the maxSupCount should be when performing Supervised Descriptive Rule Discovery?
 
-Only extract the consequent and field19 and other fields like field6 to check why field19 is not including in the result.
 
 7. When calculating the upper bound value (if search by lift) for AY, BY, it will always be 1/sup(con), for example, if a dataset get 100 attributes, but 
 I run program with K = 10 and search by lift, only the first 10 attributes will be saved in the level of 1-itemset + consequent.
 
 Meanwhile, since the searching strategy in SDRD, when scanning AY, BY, CY...the upper bound is used to prune. How about the saving of lift/leverage for all these
 itemsets? Should use the actual lift/leverage, right?
+
+8. Only extract the consequent and field19 and other fields like field6 to check why field19 is not including in the result.
+The reason that field19 is not extracting is because the upper bound value for this field is negative (leverage), the criteria for "q.get(i).ubVal > minValue" is 
+not satisfied. (find_itemsets.cpp, line 360)
+The problem for this question is similar to #7 above, when the top-k container is full by the combinations of previous attributes, the attributes who comes later
+in the dataset will not even been scanned.
 
 #########################################################################################
 replace leverage/lift with mutual information

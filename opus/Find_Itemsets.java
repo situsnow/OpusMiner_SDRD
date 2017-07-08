@@ -333,9 +333,11 @@ public class Find_Itemsets {
 			
 			// calculate an upper bound on the value that can be obtained by this itemset or any superset
 			
+			//TODO maybe the new calculation for upper bound should also apply to situations where consequent does not exist?
 			float ubVal = 0;
 			if (is.contains(Globals.consequentID) || Globals.consequentID == item){
-				//actually the consequent id will always in item as the itemset is sorted, hence, the support of is is the support of antecedent
+				//actually the consequent id will always in item as the itemset is sorted by id (consequent is with -1, will already on top) 
+				//Hence, the support of is is the support of antecedent
 				float conSup = Utils.countToSup(Globals.consequentTids.size());
 				if (Globals.searchByLift){
 					ubVal = (float) (1.0 / conSup);
@@ -397,13 +399,14 @@ public class Find_Itemsets {
 		//Check if consequent can pass the Fisher Exact Test, kind of exception handling
 		int consequentCover = Globals.consequentTids.size();
 		float conSup = Utils.countToSup(consequentCover);
-//		float conUbVal = (float)(Globals.searchByLift? 1.0/conSup
-//				: conSup - conSup * conSup);
+		float conUbVal = (float)(Globals.searchByLift? 1.0/conSup
+				: conSup - conSup * conSup);
 		if (Utils.fisher(consequentCover, consequentCover, consequentCover) > Globals.getAlpha(2)){
 			System.err.print(String.format("Consequent '%s' is not productive.", Globals.consequentName));
 			System.exit(1);
 		}
 		
+		Globals.conUbVal = conUbVal;
 		// initialize q - the queue of items ordered on an upper bound on value
 		for (i = 0; i < Globals.noOfItems; i++){
 			
@@ -427,6 +430,7 @@ public class Find_Itemsets {
 			int c = newCover.size();
 			double p = Utils.fisher(c, maxCount, c);
 			if (p <= Globals.getAlpha(2) && ubVal >minValue){
+			//if (p <= Globals.getAlpha(2)){	
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
 				float lVal = (float)(Globals.searchByLift? Utils.countToSup(c)/(conSup * antSup)
 						:Utils.countToSup(c) - conSup * antSup); 
@@ -458,7 +462,11 @@ public class Find_Itemsets {
 			// the first item will have no previous items with which to be paired so is simply added to the queue of availabile items
 			newq.add(q.get(0).ubVal, q.get(0).item);
 
-			newq.add(Globals.conUbVal, Globals.consequentID);
+			//Ensure the consequent will be on top of the queue
+			ItemQElem tmp = new ItemQElem(Globals.conUbVal, Globals.consequentID);
+			Collections.reverse(newq);
+			newq.add(tmp);
+			Collections.reverse(newq);
 				
 		}
 		
@@ -497,9 +505,14 @@ public class Find_Itemsets {
 		ItemsetRec is;
 		
 		// we are stepping through all associations of i with j<i, so the first value of i that will have effect is 1
-		for (i = 1; i < q.size() && q.get(i).ubVal > minValue; i++){
+		for (i = 1; i < q.size(); i++){
+		//for (i = 1; i < q.size() && q.get(i).ubVal > minValue; i++){	
+			//System.out.println("q.get(i).ubVal: "+ q.get(i).ubVal + ", minValue: " +  minValue);
 			int item = q.get(i).item;
 			
+			if (item == 17){
+				System.out.println("Test");
+			}
 			is = new ItemsetRec();
 			
 			is.add(item);

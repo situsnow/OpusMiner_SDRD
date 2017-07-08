@@ -17,7 +17,7 @@ If you publish results obtained by using this software please cite
   Output
 
 File/input/Mushroom.txt: 118 items, 8416 transactions
-Found 100 non-redundant productive itemsets in 141 seconds
+Found 100 non-redundant productive itemsets in 365 seconds
 
 SELF-SUFFICIENT ITEMSETS:
 EDIBLE/field18 = BROWN,96,1.875223,3.79057e-27
