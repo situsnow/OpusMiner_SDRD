@@ -341,14 +341,31 @@ public class Find_Itemsets {
 				float conSup = Utils.countToSup(Globals.consequentTids.size());
 				if (Globals.searchByLift){
 					ubVal = (float) (1.0 / conSup);
+				}else if (parentSup <= 0.5){
+					ubVal = Math.min(conSup, parentSup) - conSup * parentSup;
+				}else{
+					ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
+				}
+				
+				//Original
+//				ubVal = (float)(Globals.searchByLift? ((count == 0)? 0.0 : (1.0 / Utils.countToSup(maxItemCount)))
+//						: new_sup - new_sup * Utils.countToSup(maxItemCount));
+				
+				//Actual lift/leverage
+//				ubVal = (float)(Globals.searchByLift? new_sup/(Utils.countToSup(currItemset.size()) * parentSup)
+//						:new_sup - Utils.countToSup(currItemset.size()) * parentSup);
+				
+			}else{
+				
+				float conSup = Utils.countToSup(Globals.consequentTids.size());
+				if (Globals.searchByLift){
+					ubVal = (float) (1.0 / conSup);
 				}else if (new_sup <= 0.5){
 					ubVal = Math.min(conSup, new_sup) - conSup * new_sup;
 				}else{
 					ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
 				}
-			}else{
-				ubVal = (float)(Globals.searchByLift? ((count == 0)? 0.0 : (1.0 / Utils.countToSup(maxItemCount)))
-						: new_sup - new_sup * Utils.countToSup(maxItemCount));
+				
 			}
 				
 			// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
@@ -414,14 +431,14 @@ public class Find_Itemsets {
 			float antSup = Utils.countToSup(Globals.tids.get(i).size());
 			int maxCount = Math.max(Globals.consequentTids.size(), Globals.tids.get(i).size());
 			
-			float ubVal = 0;
-			if (Globals.searchByLift){
-				ubVal = (float) (1.0 / conSup);
-			}else if (antSup <= 0.5){
-				ubVal = Math.min(conSup, antSup) - conSup * antSup;
-			}else{
-				ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
-			}
+//			float ubVal = 0;
+//			if (Globals.searchByLift){
+//				ubVal = (float) (1.0 / conSup);
+//			}else if (antSup <= 0.5){
+//				ubVal = Math.min(conSup, antSup) - conSup * antSup;
+//			}else{
+//				ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
+//			}
 			
 			// make sure that the support is high enough for it to be possible to create a significant itemset
 			//c : How many transactions that current item or +consequent occurs
@@ -429,8 +446,9 @@ public class Find_Itemsets {
 			Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
 			int c = newCover.size();
 			double p = Utils.fisher(c, maxCount, c);
-			if (p <= Globals.getAlpha(2) && ubVal >minValue){
-			//if (p <= Globals.getAlpha(2)){	
+			//TODO: In original OPUS_MINER, the only pruning criteria is the FISHER EXACT TEST here, so it's more loose.
+			//if (p <= Globals.getAlpha(2) && ubVal >minValue){
+			if (p <= Globals.getAlpha(2)){	
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
 				float lVal = (float)(Globals.searchByLift? Utils.countToSup(c)/(conSup * antSup)
 						:Utils.countToSup(c) - conSup * antSup); 
@@ -510,9 +528,6 @@ public class Find_Itemsets {
 			//System.out.println("q.get(i).ubVal: "+ q.get(i).ubVal + ", minValue: " +  minValue);
 			int item = q.get(i).item;
 			
-			if (item == 17){
-				System.out.println("Test");
-			}
 			is = new ItemsetRec();
 			
 			is.add(item);

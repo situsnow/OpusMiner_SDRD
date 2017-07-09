@@ -20,7 +20,18 @@ public class ItemQClass extends ArrayList<ItemQElem>{
 	}
 	
 	public void sort(){
-		Collections.sort(this, ItemQElem.ItemsQElemComparator);
+		
+		if (this.size() > 0 && this.get(0).item == Globals.consequentID){
+			//Ensure the consequent id will be in front
+			ItemQElem conItem = this.get(0);
+			this.remove(0);
+			Collections.sort(this, ItemQElem.ItemsQElemComparator);
+			Collections.reverse(this);
+			this.add(conItem);
+			Collections.reverse(this);
+		}else{
+			Collections.sort(this, ItemQElem.ItemsQElemComparator);
+		}
 	}
 //	public void sortSDRD(){
 //		Collections.sort(this, ItemQElem.ItemQElemSDRDComparator);

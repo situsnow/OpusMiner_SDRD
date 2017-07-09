@@ -12,6 +12,8 @@ public class Print_Itemsets {
 	}
 
 	public static void print_itemset(PrintStream f, Itemset is){
+		//order is according to attribute index
+		Collections.sort(is);
 		for (int item_it = 0; item_it != is.size(); item_it++){
 			if (item_it != 0){
 				//f.print(',');
