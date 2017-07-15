@@ -7,7 +7,7 @@ public class Find_Closure {
 	public static void find_closure(final Itemset is, Itemset closure){
 		Tidset thistids = new Tidset();
 		
-		closure = is;
+		closure = new Itemset(is);
 		
 		Utils.gettids(is, thistids);
 		

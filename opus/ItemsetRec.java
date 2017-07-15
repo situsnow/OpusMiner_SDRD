@@ -58,9 +58,9 @@ public class ItemsetRec extends Itemset{
 	public static Comparator<ItemsetRec> ItemsetRecSizeComparator = new Comparator<ItemsetRec>(){
 		@Override
 		public int compare(ItemsetRec o1, ItemsetRec o2) {
-			if (o1.size() < o2.size())
-				return -1;
 			if (o1.size() > o2.size())
+				return -1;
+			if (o1.size() < o2.size())
 				return 1;
 			return 0;
 		}

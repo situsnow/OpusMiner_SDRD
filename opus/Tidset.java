@@ -1,13 +1,26 @@
 package opus;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Tidset extends ArrayList<Long>{
 
 	private static final long serialVersionUID = 1L;
 
 	public void add(long TID){
-		super.add(TID);		 
+		if (!this.contains(TID))
+			super.add(TID);
+	}
+	
+	public void addAll(Tidset ts){
+		
+		HashSet<Long> hs = new HashSet<Long>(this);
+		
+		hs.addAll(ts);
+		
+		this.clear();
+		
+		this.addAll(hs);
 	}
 	
 	// count the size of the intersection

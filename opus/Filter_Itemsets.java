@@ -38,16 +38,17 @@ public class Filter_Itemsets {
 		
 		// find for each item in is the TIDs that it covers that are not in supsettids
 		ArrayList<Tidset> uniqueTids = new ArrayList<Tidset>();
-		uniqueTids.ensureCapacity(is.size());
+		//uniqueTids.ensureCapacity(is.size());
 		
 		int i;
 		for (i = 0; i < is.size(); i++){
-			uniqueTids.get(i).ensureCapacity(Globals.tids.get(i).size());
+			//uniqueTids.get(i).ensureCapacity(Globals.tids.get(i).size());
 			
 			//TODO double check logics
 			Tidset temp = Globals.tids.get(i);
+			Collections.sort(supsettids);
 			temp.removeAll(supsettids);
-			uniqueTids.set(i, temp);
+			uniqueTids.add(temp);
 			
 			// there cannot be a significant association from adding this tidset
 			if (uniqueTids.size() == 0){
@@ -107,16 +108,22 @@ public class Filter_Itemsets {
 				supsettids = new Tidset();
 				int supset_it;
 				for (supset_it = 0; supset_it != subset_it; supset_it++){
+					
 					if(is.get(supset_it).selfSufficient){
 						supitems = new Itemset();
 						
 						if (Utils.subset(is.get(subset_it), is.get(supset_it))){
 							int it;
+							Itemset subset = is.get(subset_it);
+							Itemset supset = is.get(supset_it);
+							Collections.sort(subset);
+							Collections.sort(supset);
 							
-							for (it = 0; it < is.get(supset_it).size(); it++){
-								if (is.get(subset_it).indexOf(is.get(it)) == is.get(subset_it).size() - 1){
+							for (it = 0; it < supset.size(); it++){
+								//The original logic in C++ is : if (subset_it->find(*it) == subset_it->end()) {
+								if (!subset.contains(supset.get(it))){
 									Collections.reverse(supitems);
-									supitems.addAll(is.get(it));
+									supitems.add(supset.get(it));
 									Collections.reverse(supitems);
 								}
 							}
@@ -125,7 +132,7 @@ public class Filter_Itemsets {
 								Utils.gettids(supitems, thissupsettids);
 								
 								if (supsettids.isEmpty()){
-									supsettids = thissupsettids;
+									supsettids.addAll(thissupsettids);
 								}else{
 									Tidset.dunion(supsettids, thissupsettids);
 								}

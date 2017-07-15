@@ -1,4 +1,4 @@
-﻿Questions:
+﻿Questions of original OpusMiner:
 #########################################################################################
 1. Command -p was not indicated in usageStr and what does command -p do? : in opus_miner.cpp, line 80 
 
@@ -95,6 +95,24 @@ different attributes have "SMOOTH" values.
 --Add identifiers to the different item names to make it unique with each other
 
 6. Why the calculation of lift and leverage is different than usual in opus function? find_itemsets.cpp, line 283 
+Because the lift/leverage calculation before pruning should be the upper bound values that an itemset may satisfy, and the lift/leverage calculation
+in checksubsets function is the actual lift/leverage values that should save and print in the final output.
+
+######################################TO BE CONFIRMED###################################################
+7. When performing pruning in first level - AY, BY, CY..., should only use the FISHER EXACT TEST criteria, correct? Otherwise, only the first K of 
+2-itemsets (one attribute + consequent) will be saved and loop to be scanned in the next level.
+
+8. Meanwhile, while saving the upper bound values for all these 2-itemsets, should save the actual lift/leverage value or the upper bound values?
+(If search by lift, they will all be the same, and sorting makes no sense). Besides, if #7 is true, no upper bound value is needed.
+
+
+9. Only extract the consequent and field19 and other fields like field6 to check why field19 is not including in the result.
+The reason that field19 is not extracting is because the upper bound value for this field is negative (leverage), the criteria for "q.get(i).ubVal > minValue" is 
+not satisfied. (find_itemsets.cpp, line 360)
+The problem for this question is similar to #7 above, when the top-k container is full by the combinations of previous attributes, the attributes who comes later
+in the dataset will not even be scanned.
+
+10. Pay attention to the calculation of p value!!!!!!!!
 
 --Use the maxItemCount in the first level of calculating AY, BY, ......
 
@@ -103,17 +121,16 @@ What is the maxSupCount when performing Supervised Descriptive Rule Discovery?
 
 
 
-7. When calculating the upper bound value (if search by lift) for AY, BY, it will always be 1/sup(con), for example, if a dataset get 100 attributes, but 
-I run program with K = 10 and search by lift, only the first 10 attributes will be saved in the level of 1-itemset + consequent.
 
-Meanwhile, since the searching strategy in SDRD, when scanning AY, BY, CY...the upper bound is used to prune. How about the saving of lift/leverage for all these
-itemsets? Should use the actual lift/leverage, right?
 
-8. Only extract the consequent and field19 and other fields like field6 to check why field19 is not including in the result.
-The reason that field19 is not extracting is because the upper bound value for this field is negative (leverage), the criteria for "q.get(i).ubVal > minValue" is 
-not satisfied. (find_itemsets.cpp, line 360)
-The problem for this question is similar to #7 above, when the top-k container is full by the combinations of previous attributes, the attributes who comes later
-in the dataset will not even been scanned.
+
+
+
+
+
+
+
+
 
 #########################################################################################
 replace leverage/lift with mutual information
@@ -121,7 +138,6 @@ Before OpusMiner: identify which variable is consequent (get rid of it or use fl
 
 When pruning itemsets, use mutual information instead of leverage or lift
 Make the mutual information run without the upper bound.
-
 
 #########################################################################################
 Literature Review:

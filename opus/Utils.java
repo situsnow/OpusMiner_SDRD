@@ -1,5 +1,6 @@
 package opus;
 
+import java.util.Collections;
 
 public class Utils {
 
@@ -8,6 +9,9 @@ public class Utils {
 	public static boolean subset(ItemsetRec s1, ItemsetRec s2){
 		int it1 = 0;
 		int it2 = 0;
+		
+		Collections.sort(s1);
+		Collections.sort(s2);
 		
 		while (it1 != s1.size()){
 			if (it2 == s2.size())
@@ -29,9 +33,9 @@ public class Utils {
 		
 		if (is.size() == 1){
 			if (is.get(0) == Globals.consequentID){
-				t = Globals.consequentTids;
+				t.addAll(Globals.consequentTids);
 			}else{
-				t = Globals.tids.get(it);
+				t.addAll(Globals.tids.get(it));
 			}
 		}else{
 			final int item1 = is.get(it++);
