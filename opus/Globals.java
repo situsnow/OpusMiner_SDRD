@@ -57,7 +57,7 @@ public class Globals {
 			long i;
 			for (i = alpha.size(); i <= depth; i++){
 				alpha.add(Math.min((Math.pow(0.5, depth - 1) / 
-						Math.exp(Fisher.getInstance().log_combin(noOfItems, (int)depth))), 
+						Math.exp(Fisher.log_combin(noOfItems, (int)depth))), 
 						alpha.get((int) (depth - 1))));
 			}
 			

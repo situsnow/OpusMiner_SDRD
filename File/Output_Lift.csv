@@ -9,7 +9,6 @@ If you publish results obtained by using this software please cite
   Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
   ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
 
-  -c
   -l
   -k 100
   -s EDIBLE
@@ -17,7 +16,7 @@ If you publish results obtained by using this software please cite
   Output
 
 File/input/Mushroom.txt: 118 items, 8416 transactions
-Found 100 non-redundant productive itemsets in 7967 seconds
+Found 100 non-redundant productive itemsets in 15 seconds
 
 SELF-SUFFICIENT ITEMSETS:
 EDIBLE/field21 = BROWN/field7 = ATTACHED,48,1.875223,6.95407e-14

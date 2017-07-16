@@ -168,7 +168,7 @@ public class OpusMiner {
 			
 			Date print_start_t = new Date();
 			
-			long tm = print_start_t.getTime()-find_start_t.getTime();
+			long tm = (print_start_t.getTime()-find_start_t.getTime()) / 1000;
 			
 			outf.print(String.format("Found %d non-redundant productive itemsets in %d seconds\n", (long)is.size(), tm));
 			
@@ -177,11 +177,11 @@ public class OpusMiner {
 			
 			Date end_t = new Date();
 			
-			long t = end_t.getTime() - start_t.getTime();
+			long t = (end_t.getTime() - start_t.getTime()) / 1000;
 			
 			System.out.print(String.format("%d seconds (%d input, %d search, %d filter, %d output)", 
-					t, find_start_t.getTime() - start_t.getTime(), find_end_t.getTime() - find_start_t.getTime(),
-					print_start_t.getTime() - find_end_t.getTime(), end_t.getTime() - print_start_t.getTime()));
+					t, (find_start_t.getTime() - start_t.getTime()) / 1000, (find_end_t.getTime() - find_start_t.getTime()) / 1000,
+					(print_start_t.getTime() - find_end_t.getTime()) / 1000, (end_t.getTime() - print_start_t.getTime()) / 1000));
 			System.out.print(String.format(" for %d itemsets\n", (long)is.size()));
 			
 		} catch (FileNotFoundException ex){

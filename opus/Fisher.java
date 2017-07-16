@@ -29,7 +29,7 @@ public class Fisher {
 		return lf.get(n);
 		
 	}
-	public double log_combin(final int n, final int k){
+	public static double log_combin(final int n, final int k){
 		return logfact(n) - logfact(k) - logfact(n - k);
 	}
 	

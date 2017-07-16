@@ -30,33 +30,11 @@ public class Tidset extends ArrayList<Long>{
 		if (s1.size() == 0 || s2.size() == 0){
 			return 0;
 		}
-		
-		int it1 = 0;
-		long v1 = s1.get(it1);
-		int end1 = s1.size();
-		
-		int it2 = 0;
-		long v2 = s2.get(it2);
-		int end2 = s2.size();
-		
 		int count = 0;
-		while (true){
-			if (v1 == v2){
+		
+		for (Long i : s1){
+			if (s2.contains(i)){
 				count++;
-				it1++;
-				if (it1 == end1) break;
-				v1 = s1.get(it1);
-				it2++;
-				if (it2 == end2) break;
-				v2 = s2.get(it2);
-			}else if (v1 < v2){
-				it1++;
-				if (it1 == end1) break;
-				v1 = s1.get(it1);
-			}else{
-				it2++;
-				if (it2 == end2) break;
-				v2 = s2.get(it2);
 			}
 		}
 		return count;
@@ -72,31 +50,9 @@ public class Tidset extends ArrayList<Long>{
 			return;
 		}
 		
-		int it1 = 0;
-		long v1 = s1.get(it1);
-		int end1 = s1.size();
-		
-		int it2 = 0;
-		long v2 = s2.get(it2);
-		int end2 = s2.size();
-		
-		while (true){
-			if (v1 == v2){
-				result.add(v1);
-				it1++;
-				if (it1 == end1) break;
-				v1 = s1.get(it1);
-				it2++;
-				if (it2 == end2) break;
-				v2 = s2.get(it2);
-			}else if (v1 < v2){
-				it1++;
-				if (it1 == end1) break;
-				v1 = s1.get(it1);
-			}else{
-				it2++;
-				if (it2 == end2) break;
-				v2 = s2.get(it2);
+		for (Long i : s1){
+			if (s2.contains(i)){
+				result.add(i);
 			}
 		}
 		
@@ -113,71 +69,30 @@ public class Tidset extends ArrayList<Long>{
 			return;
 		}
 		
-		int from = 0;
-		int to = 0;
+		Tidset tmp = new Tidset();
 		
-		long v1 = s1.get(0);
-		//int end1 = s1.size() - 1;
-		
-		int it2 = 0;
-		long v2 = s2.get(it2);
-		int end2 = s2.size() - 1;
-		
-		while (true){
-			if (v1 == v2){
-				s1.set(to++, s1.get(from++));
-				if (from == s1.size()) break;
-				v1 = s1.get(from);
-				it2++;
-				if (it2 == end2) break;
-				v2 = s2.get(it2);
-			}else if (v1 < v2){
-				from++;
-				if (from == s1.size()) break;
-				v1 = s1.get(from);
-			}else{
-				it2++;
-				if (it2 == end2) break;
-				v2 = s2.get(it2);
+		for (Long i:s1){
+			if (s2.contains(i)){
+				tmp.add(i);
 			}
 		}
-		s1.ensureCapacity(to);
+		
+		s1.clear();
+		s1.addAll(tmp);
+		
+		
 	}
 	
 	// destructively update s1 to its union with s2
 	public static void dunion(Tidset s1, Tidset s2){
-		Tidset result = new Tidset();
 		
-		int it1 = 0;
-		int it2 = 0;
+		HashSet<Long> tmp = new HashSet<Long>();
 		
-		while (true){
-			if (it1 == s1.size()){
-				while (it2 != s2.size()){
-					result.add(s2.get(it2));
-					it2++;
-				}
-				break;
-			}else if (it2 == s2.size()){
-				while (it1 != s1.size()){
-					result.add(s1.get(it1));
-					it1++;
-				}
-				break;
-			}else if (s1.get(it1) == s2.get(it2)){
-				result.add(s1.get(it1));
-				it1++;
-				it2++;
-			}else if (s1.get(it1) < s2.get(it2)){
-				result.add(s1.get(it1));
-				it1++;
-			}else{
-				result.add(s2.get(it2));
-				it2++;
-			}
-		}
+		tmp.addAll(s1);
+		tmp.addAll(s2);
 		
-		s1 = result;
+		s1.clear();
+		s1.addAll(tmp);
 	}
 	
 }

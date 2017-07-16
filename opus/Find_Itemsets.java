@@ -494,7 +494,9 @@ public class Find_Itemsets {
 			queuef = new PrintStream(new File("File/queue.csv"));
 			StringBuffer sb = new StringBuffer();
 			sb.append("Index, ");
-			sb.append("Item Name\n");
+			sb.append("Item Name, ");
+			sb.append("Upper bound value\n");
+			
 			
 			for (int j = 0; j < q.size(); j++){
 				ItemQElem elem = q.get(j);

@@ -119,10 +119,12 @@ in the dataset will not even be scanned.
 What is the maxSupCount when performing Supervised Descriptive Rule Discovery?
 
 
+11. p-value in "search by leverage", and actual lift in "search by lift" 
 
+The reason for similar lift value in the top K itemsets is due to the same support between the superset and subset (exclude consequent)
+Hence, these itemsets' lift value is equal to 1/sup(Consequent).
 
-
-
+12. What does the meaning of closure?
 
 
 

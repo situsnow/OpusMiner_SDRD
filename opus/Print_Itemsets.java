@@ -42,6 +42,7 @@ public class Print_Itemsets {
 			if (closure.size() > is.size()){
 				f.print(" closure: ");
 				print_itemset(f, closure);
+				f.print("\n");
 			}
 		}
 			
