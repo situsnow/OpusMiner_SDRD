@@ -131,6 +131,8 @@ Hence, these itemsets' lift value is equal to 1/sup(Consequent).
 
 14. redundant itemsets will also retrieved according to the logic in opus()
 
+15. amend the syntax in Tidset.dintersection etc. to make it more efficiently
+
 
 #########################################################################################
 replace leverage/lift with mutual information
