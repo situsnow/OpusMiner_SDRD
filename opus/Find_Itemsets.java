@@ -27,8 +27,6 @@ public class Find_Itemsets {
 	private static float val;
 	private static double p;
 	
-	private static float tmp_ubVal;
-	
 	/**Attention here: delete the second variable as Java is pass by value of reference,
 	 * as the count can not refreshed with new value outside the function
 	 * @param is
@@ -280,7 +278,7 @@ public class Find_Itemsets {
 	
 	// perform OPUS search for specializations of is (which covers cover) using the candidates in queue q
 	// maxItemSup is the maximum of the supports of all individual items in is
-	public static void opus(ItemsetRec is, Tidset cover, ItemQClass q, int maxItemCount, boolean skipFlag){
+	public static void opus(ItemsetRec is, Tidset cover, ItemQClass q, int maxItemCount, boolean skipFlag, float preUbVal){
 		boolean proceedFlag = true;
 		boolean checking = false;
 		int i;
@@ -317,9 +315,10 @@ public class Find_Itemsets {
 			//Check if itemset: {1-itemset, consequent} has been checked before, if true, skip calculation
 			if (is.size() == 1 && (Globals.consequentID == item || is.contains(Globals.consequentID))){
 				is.add(item);
-				if (!newQ.isEmpty()){
-					opus(is, newCover, newQ, count, false);
-				}
+				//newQ will always be empty here
+//				if (!newQ.isEmpty()){
+//					opus(is, newCover, newQ, count, false, 0);
+//				}
 				
 				Itemset tmp = new Itemset(is);
 				Collections.sort(tmp);
@@ -332,8 +331,11 @@ public class Find_Itemsets {
 			float new_sup = Utils.countToSup(count);
 			float ubVal = 0;
 			if (!skipFlag){
+				//At this moment, the current itemset is excluded the consequent.
+				Tidset ruleCover = new Tidset();
+				Tidset.intersection(ruleCover, newCover, Globals.consequentTids);
 				// this is a lower bound on the p value that may be obtained for this itemset or any superset
-				double lb_p = Utils.fisher(count, currItemset.size(), maxItemCount);
+				double lb_p = Utils.fisher(ruleCover.size(), Globals.consequentTids.size(), count);
 				
 				// calculate an upper bound on the value that can be obtained by this itemset or any superset
 				float conSup = Utils.countToSup(Globals.consequentTids.size());
@@ -344,7 +346,6 @@ public class Find_Itemsets {
 				}else{
 					ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
 				}
-				tmp_ubVal = ubVal;
 				//TODO check whether current itemset include consequent, if no, the newMaxItemCount will still be always the cover size of consequent
 				//If it cannot pass, skip the superset checking once and for all (current itemset + consequent).
 				checking = lb_p <= Globals.getAlpha(depth) && (Globals.searchByLift || ubVal > minValue); 
@@ -387,11 +388,11 @@ public class Find_Itemsets {
 						
 						if (!newQ.isEmpty()){
 							// there are only more nodes to expand if there is a queue of items to consider expanding it with
-							opus(is, newCover, newQ, count, skipFlag);
+							opus(is, newCover, newQ, count, skipFlag, ubVal);
 						}
 						
 						//if item is consequent, the ubVal will be 0, but it does not matter as consequent will always order on top of queue
-						newQ.add(tmp_ubVal, item);
+						newQ.add(skipFlag?ubVal:preUbVal, item);
 					}
 				}
 				
@@ -533,7 +534,7 @@ public class Find_Itemsets {
 			Tidset newCover = new Tidset();
 			newCover = Globals.tids.get(item);
 			
-			opus(is, newCover, newq, newCover.size(), false);
+			opus(is, newCover, newq, newCover.size(), false, 0);
 			
 			newq.append(q.get(i).ubVal, item);
 			
