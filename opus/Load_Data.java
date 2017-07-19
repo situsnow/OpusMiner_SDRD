@@ -29,7 +29,7 @@ public class Load_Data {
 					//next transaction
 					Globals.noOfTransactions++;
 					c = fileReader.read();
-					if (Globals.marketBasketData == false)
+					if (!Globals.marketBasketData)
 						fCounter = 1;
 				}else{
 					
@@ -50,7 +50,7 @@ public class Load_Data {
 						}else{
 							
 							//The item id for each unique item in DB
-							if (Globals.marketBasketData == false){
+							if (!Globals.marketBasketData){
 								s = "field" + fCounter + " = " + s;
 								fCounter++;
 							}

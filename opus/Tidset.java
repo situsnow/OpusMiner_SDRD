@@ -45,16 +45,48 @@ public class Tidset extends ArrayList<Long>{
 	public static void intersection(Tidset result, Tidset s1, Tidset s2){
 		result.clear();
 		result.ensureCapacity(Math.min(s1.size(), s2.size()));
-		
+
 		if (s1.size() == 0 || s2.size() == 0){
 			return;
 		}
-		
-		for (Long i : s1){
-			if (s2.contains(i)){
-				result.add(i);
+		int it1 = 0;
+		long v1 = s1.get(it1);
+		int end1 = s1.size();
+		int it2 = 0;
+		long v2 = s2.get(it2);
+		int end2 = s2.size();
+		while (true){
+
+			if (v1 == v2){
+				result.add(v1);
+				it1++;
+				if (it1 == end1) break;
+				v1 = s1.get(it1);
+				it2++;
+				if (it2 == end2) break;
+				v2 = s2.get(it2);
+			}else if (v1 < v2){
+				it1++;
+				if (it1 == end1) break;
+				v1 = s1.get(it1);
+			}else{
+				it2++;
+				if (it2 == end2) break;
+				v2 = s2.get(it2);
 			}
 		}
+//		result.clear();
+//		result.ensureCapacity(Math.min(s1.size(), s2.size()));
+//		
+//		if (s1.size() == 0 || s2.size() == 0){
+//			return;
+//		}
+//		
+//		for (Long i : s1){
+//			if (s2.contains(i)){
+//				result.add(i);
+//			}
+//		}
 		
 	}
 	

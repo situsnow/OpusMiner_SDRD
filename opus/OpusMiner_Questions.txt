@@ -127,11 +127,9 @@ Hence, these itemsets' lift value is equal to 1/sup(Consequent).
 12. What does the meaning of closure?
 
 
+13. Print out the strength(support of intersection/sup(ant)
 
-
-
-
-
+14. redundant itemsets will also retrieved according to the logic in opus()
 
 
 #########################################################################################

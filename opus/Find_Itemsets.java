@@ -27,6 +27,8 @@ public class Find_Itemsets {
 	private static float val;
 	private static double p;
 	
+	private static float tmp_ubVal;
+	
 	/**Attention here: delete the second variable as Java is pass by value of reference,
 	 * as the count can not refreshed with new value outside the function
 	 * @param is
@@ -34,7 +36,6 @@ public class Find_Itemsets {
 	 */
 	public static boolean getTIDCount(Itemset is){
 		if (is.size() == 1){
-			//if (Globals.sdrd == true && is.get(0) == Globals.consequentID)
 			if (is.get(0) == Globals.consequentID)
 			{
 				count = Globals.consequentTids.size();
@@ -151,7 +152,6 @@ public class Find_Itemsets {
 //				: new_sup - Utils.countToSup(remainingCnt) * Utils.countToSup(sofarCnt));
 //		
 //		if (this_val < val){
-//			//TODO
 //			//val = this_val;
 //			if (this_val <= minValue) return false;
 //		}
@@ -280,8 +280,9 @@ public class Find_Itemsets {
 	
 	// perform OPUS search for specializations of is (which covers cover) using the candidates in queue q
 	// maxItemSup is the maximum of the supports of all individual items in is
-	public static void opus(ItemsetRec is, Tidset cover, ItemQClass q, int maxItemCount){
-		//TODO pay attention here, originate unsigned int i
+	public static void opus(ItemsetRec is, Tidset cover, ItemQClass q, int maxItemCount, boolean skipFlag){
+		boolean proceedFlag = true;
+		boolean checking = false;
 		int i;
 		float parentSup = Utils.countToSup(cover.size());
 		
@@ -290,7 +291,11 @@ public class Find_Itemsets {
 		
 		ItemQClass newQ = new ItemQClass();
 		
+		boolean filteredCon = false;
 		for (i = 0; i < q.size(); i++){
+			
+			if(filteredCon)
+				continue;
 			
 			Tidset newCover = new Tidset();
 			int item = q.get(i).item;
@@ -298,21 +303,22 @@ public class Find_Itemsets {
 			
 			Tidset currItemset = new Tidset();
 			
-			
-			//if (Globals.sdrd == true && Globals.consequentID == item){
 			if (Globals.consequentID == item){
 				currItemset = Globals.consequentTids;
 			}else{
 				currItemset = Globals.tids.get(item);
 			}
 			
-			int newMaxItemCount = Math.max(maxItemCount, currItemset.size());
+			//int newMaxItemCount = Math.max(maxItemCount, currItemset.size());
+			// determine the number of TIDs that the new itemset covers
+			Tidset.intersection(newCover, cover, currItemset);
+			count = newCover.size();
 			
 			//Check if itemset: {1-itemset, consequent} has been checked before, if true, skip calculation
 			if (is.size() == 1 && (Globals.consequentID == item || is.contains(Globals.consequentID))){
 				is.add(item);
 				if (!newQ.isEmpty()){
-					opus(is, newCover, newQ, newMaxItemCount);
+					opus(is, newCover, newQ, count, false);
 				}
 				
 				Itemset tmp = new Itemset(is);
@@ -322,54 +328,39 @@ public class Find_Itemsets {
 				is.remove(new Integer(item));
 				continue;
 			}
-			// determine the number of TIDs that the new itemset covers
-			Tidset.intersection(newCover, cover, currItemset);
-			count = newCover.size();
 			
 			float new_sup = Utils.countToSup(count);
-			
-			// this is a lower bound on the p value that may be obtained for this itemset or any superset
-			double lb_p = Utils.fisher(count, newMaxItemCount, count);
-			
-			// calculate an upper bound on the value that can be obtained by this itemset or any superset
-			
-			//TODO maybe the new calculation for upper bound should also apply to situations where consequent does not exist?
 			float ubVal = 0;
-			if (is.contains(Globals.consequentID) || Globals.consequentID == item){
+			if (!skipFlag){
+				// this is a lower bound on the p value that may be obtained for this itemset or any superset
+				double lb_p = Utils.fisher(count, currItemset.size(), maxItemCount);
+				
+				// calculate an upper bound on the value that can be obtained by this itemset or any superset
+				float conSup = Utils.countToSup(Globals.consequentTids.size());
 				//actually the consequent id will always in item as the itemset is sorted by id (consequent is with -1, will already on top) 
 				//Hence, the support of is is the support of antecedent
-				float conSup = Utils.countToSup(Globals.consequentTids.size());
-				if (Globals.searchByLift){
-					ubVal = (float) (1.0 / conSup);
-				}else if (parentSup <= 0.5){
-					ubVal = Math.min(conSup, parentSup) - conSup * parentSup;
-				}else{
-					ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
-				}
-				
-				//Original
-//				ubVal = (float)(Globals.searchByLift? ((count == 0)? 0.0 : (1.0 / Utils.countToSup(maxItemCount)))
-//						: new_sup - new_sup * Utils.countToSup(maxItemCount));
-				
-				//Actual lift/leverage
-//				ubVal = (float)(Globals.searchByLift? new_sup/(Utils.countToSup(currItemset.size()) * parentSup)
-//						:new_sup - Utils.countToSup(currItemset.size()) * parentSup);
-				
-			}else{
-				
-				float conSup = Utils.countToSup(Globals.consequentTids.size());
-				if (Globals.searchByLift){
-					ubVal = (float) (1.0 / conSup);
-				}else if (new_sup <= 0.5){
+				if (new_sup <= 0.5){
 					ubVal = Math.min(conSup, new_sup) - conSup * new_sup;
 				}else{
 					ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
 				}
-				
+				tmp_ubVal = ubVal;
+				//TODO check whether current itemset include consequent, if no, the newMaxItemCount will still be always the cover size of consequent
+				//If it cannot pass, skip the superset checking once and for all (current itemset + consequent).
+				checking = lb_p <= Globals.getAlpha(depth) && (Globals.searchByLift || ubVal > minValue); 
+
+				skipFlag = true;
+			
+			}else{
+				skipFlag = false;
 			}
-				
+			
+			if (skipFlag){
+				//if current scanning itemset without consequent
+				proceedFlag = checking;
+			}
 			// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
-			if (lb_p <= Globals.getAlpha(depth) && ubVal > minValue){
+			if (proceedFlag){
 				// only continue if there is any possibility of this itemset or its supersets entering the list of best itemsets
 				
 				is.add(item);
@@ -387,7 +378,6 @@ public class Find_Itemsets {
 							insert_itemset(is);
 					}
 					
-					
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
 					if (!redundant){
 						ItemsetRec tmp_rec = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient);
@@ -397,14 +387,18 @@ public class Find_Itemsets {
 						
 						if (!newQ.isEmpty()){
 							// there are only more nodes to expand if there is a queue of items to consider expanding it with
-							opus(is, newCover, newQ, newMaxItemCount);
+							opus(is, newCover, newQ, count, skipFlag);
 						}
 						
-						newQ.add(ubVal, item);
+						//if item is consequent, the ubVal will be 0, but it does not matter as consequent will always order on top of queue
+						newQ.add(tmp_ubVal, item);
 					}
 				}
 				
 				is.remove(new Integer(item));
+			}else{
+				//only when k-itemset (exlude consequent) failed the test, will reach here.
+				filteredCon = true;
 			}
 		}
 	}
@@ -429,26 +423,28 @@ public class Find_Itemsets {
 			
 			//In first level of lattice, only need to check if single item can pass the Fisher Exact Test
 			float antSup = Utils.countToSup(Globals.tids.get(i).size());
-			int maxCount = Math.max(Globals.consequentTids.size(), Globals.tids.get(i).size());
 			
-//			float ubVal = 0;
+			float ubVal = 0;
+			//Since when searchByLift is true, the upper bound value is not checked against the minValue, makes no sense to calculate here.
 //			if (Globals.searchByLift){
 //				ubVal = (float) (1.0 / conSup);
-//			}else if (antSup <= 0.5){
-//				ubVal = Math.min(conSup, antSup) - conSup * antSup;
-//			}else{
-//				ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
-//			}
+//			}else 
+			if (antSup <= 0.5){
+				ubVal = Math.min(conSup, antSup) - conSup * antSup;
+			}else{
+				ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
+			}
 			
 			// make sure that the support is high enough for it to be possible to create a significant itemset
 			//c : How many transactions that current item or +consequent occurs
 			Tidset newCover = new Tidset();
 			Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
 			int c = newCover.size();
-			double p = Utils.fisher(c, maxCount, c);
+			double p = Utils.fisher(c, Globals.consequentTids.size(), c);
 			//TODO: In original OPUS_MINER, the only pruning criteria is the FISHER EXACT TEST here, so it's more loose.
-			//if (p <= Globals.getAlpha(2) && ubVal >minValue){
-			if (p <= Globals.getAlpha(2)){	
+			
+			//only skip the checking of ubVal when search by lift
+			if (p <= Globals.getAlpha(2) && (Globals.searchByLift || ubVal >minValue)){	
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
 				float lVal = (float)(Globals.searchByLift? Utils.countToSup(c)/(conSup * antSup)
 						:Utils.countToSup(c) - conSup * antSup); 
@@ -537,7 +533,7 @@ public class Find_Itemsets {
 			Tidset newCover = new Tidset();
 			newCover = Globals.tids.get(item);
 			
-			opus(is, newCover, newq, newCover.size());
+			opus(is, newCover, newq, newCover.size(), false);
 			
 			newq.append(q.get(i).ubVal, item);
 			

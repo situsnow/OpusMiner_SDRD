@@ -22,7 +22,7 @@ public class ItemQClass extends ArrayList<ItemQElem>{
 	public void sort(){
 		
 		if (this.size() > 0 && this.get(0).item == Globals.consequentID){
-			//Ensure the consequent id will be in front
+			//Ensure the consequent id will be in front and for the rest, order by upper bound value
 			ItemQElem conItem = this.get(0);
 			this.remove(0);
 			Collections.sort(this, ItemQElem.ItemsQElemComparator);

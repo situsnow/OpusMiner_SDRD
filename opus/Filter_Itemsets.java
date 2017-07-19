@@ -76,7 +76,7 @@ public class Filter_Itemsets {
 				result = checkSS2(uniqueTids, i, uniqueTids.get(i), tidsright, 
 						Globals.noOfTransactions - supsettids.size(), uniqueCov.size(), Globals.getAlpha(is.size()));
 				
-				if (result == false)
+				if (!result)
 					return false;
 				
 				if (i > 0){
