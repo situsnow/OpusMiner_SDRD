@@ -99,39 +99,19 @@ Because the lift/leverage calculation before pruning should be the upper bound v
 in checksubsets function is the actual lift/leverage values that should save and print in the final output.
 
 ######################################TO BE CONFIRMED###################################################
-7. When performing pruning in first level - AY, BY, CY..., should only use the FISHER EXACT TEST criteria, correct? Otherwise, only the first K of 
-2-itemsets (one attribute + consequent) will be saved and loop to be scanned in the next level.
+7. What does the meaning of closure?
 
-8. Meanwhile, while saving the upper bound values for all these 2-itemsets, should save the actual lift/leverage value or the upper bound values?
-(If search by lift, they will all be the same, and sorting makes no sense). Besides, if #7 is true, no upper bound value is needed.
-
-
-9. Only extract the consequent and field19 and other fields like field6 to check why field19 is not including in the result.
-The reason that field19 is not extracting is because the upper bound value for this field is negative (leverage), the criteria for "q.get(i).ubVal > minValue" is 
-not satisfied. (find_itemsets.cpp, line 360)
-The problem for this question is similar to #7 above, when the top-k container is full by the combinations of previous attributes, the attributes who comes later
-in the dataset will not even be scanned.
-
-10. Pay attention to the calculation of p value!!!!!!!!
-
---Use the maxItemCount in the first level of calculating AY, BY, ......
-
-What is the maxSupCount when performing Supervised Descriptive Rule Discovery?
-
-
-11. p-value in "search by leverage", and actual lift in "search by lift" 
+8. p-value in "search by leverage", and actual lift in "search by lift" 
 
 The reason for similar lift value in the top K itemsets is due to the same support between the superset and subset (exclude consequent)
 Hence, these itemsets' lift value is equal to 1/sup(Consequent).
 
-12. What does the meaning of closure?
 
+9. Print out the strength[sup(intersection)/sup(ant)]
 
-13. Print out the strength(support of intersection/sup(ant)
+10. redundant itemsets will also retrieved according to the logic in opus()
 
-14. redundant itemsets will also retrieved according to the logic in opus()
-
-15. amend the syntax in Tidset.dintersection etc. to make it more efficiently
+11. amend the syntax in Tidset.dintersection etc. to make it more efficiently
 
 
 #########################################################################################

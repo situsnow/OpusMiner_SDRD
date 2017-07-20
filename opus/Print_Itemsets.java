@@ -29,10 +29,12 @@ public class Print_Itemsets {
 	}
 	
 	public static void print_itemsetRec(PrintStream f, final ItemsetRec is){
+		
 		print_itemset(f, is);
 		
 		f.print(String.format(",%d,%f", is.count, is.value));
-		f.print(String.format(",%g\n", is.p));
+		f.print(String.format(",%g", is.p));
+		f.print(String.format(",%f,%f\n", is.antSup, is.strength));
 		
 		if (Globals.printClosures) {
 			Itemset closure = new Itemset();
@@ -57,6 +59,11 @@ public class Print_Itemsets {
 		
 		f.print("\nSELF-SUFFICIENT ITEMSETS:\n");
 		
+		//print header
+		f.print(String.format("%s, %s, %s, %s, %s, %s\n", 
+				"Rule", "No. of transactions", "Leverage/Lift", "P-value", 
+				"Antecedent Support", "Strength"));
+				
 		Collections.sort(is, ItemsetRec.ItemsetRecComparatorD);
 		
 		int it;

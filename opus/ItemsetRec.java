@@ -10,11 +10,17 @@ public class ItemsetRec extends Itemset{
 	public double p;
 	public boolean selfSufficient;
 	
-	public ItemsetRec(int count, float value, double p, boolean selfSufficient){
+	public float antSup;
+	//strength = sup(rule)/sup(ant), which is equal to confidence
+	public float strength;
+	
+	public ItemsetRec(int count, float value, double p, boolean selfSufficient, float antSup, float strength){
 		this.count = count;
 		this.value = value;
 		this.p = p;
 		this.selfSufficient = selfSufficient;
+		this.antSup = antSup;
+		this.strength = strength;
 	}
 	
 	public ItemsetRec(){

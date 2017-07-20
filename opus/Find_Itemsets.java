@@ -263,7 +263,7 @@ public class Find_Itemsets {
 			OpusMiner.itemsets.poll();
 		}
 
-		ItemsetRec tmp = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient);
+		ItemsetRec tmp = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient, is.antSup, is.strength);
 		tmp.addAll(is);
 		//Add sorting here in case there's same itemset but in different orders
 		//Collections.sort(tmp);
@@ -292,6 +292,7 @@ public class Find_Itemsets {
 		boolean filteredCon = false;
 		for (i = 0; i < q.size(); i++){
 			
+			//if the "antecedent" is failed in previous iteration, means currently, the itemset which include the consequent do not need to consider at all
 			if(filteredCon)
 				continue;
 			
@@ -340,7 +341,8 @@ public class Find_Itemsets {
 				// calculate an upper bound on the value that can be obtained by this itemset or any superset
 				float conSup = Utils.countToSup(Globals.consequentTids.size());
 				//actually the consequent id will always in item as the itemset is sorted by id (consequent is with -1, will already on top) 
-				//Hence, the support of is is the support of antecedent
+				//And when the skipFlag is false, means currently is checking itemset without consequent, so the new_sup is actually the
+				//support of antecedent in final rule
 				if (new_sup <= 0.5){
 					ubVal = Math.min(conSup, new_sup) - conSup * new_sup;
 				}else{
@@ -375,13 +377,14 @@ public class Find_Itemsets {
 							is.count = count;
 							is.value = val;
 							is.p = p;
-							
+							is.antSup = parentSup;
+							is.strength = new_sup / parentSup;
 							insert_itemset(is);
 					}
 					
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
 					if (!redundant){
-						ItemsetRec tmp_rec = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient);
+						ItemsetRec tmp_rec = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient, is.antSup, is.strength);
 						tmp_rec.addAll(is);
 						Collections.sort(tmp_rec);
 						TIDCount.put(tmp_rec, count);
@@ -445,10 +448,11 @@ public class Find_Itemsets {
 			//TODO: In original OPUS_MINER, the only pruning criteria is the FISHER EXACT TEST here, so it's more loose.
 			
 			//only skip the checking of ubVal when search by lift
+			float ruleSup = Utils.countToSup(c);
 			if (p <= Globals.getAlpha(2) && (Globals.searchByLift || ubVal >minValue)){	
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
-				float lVal = (float)(Globals.searchByLift? Utils.countToSup(c)/(conSup * antSup)
-						:Utils.countToSup(c) - conSup * antSup); 
+				float lVal = (float)(Globals.searchByLift? ruleSup/(conSup * antSup)
+						:ruleSup - conSup * antSup); 
 				q.append(lVal, i);
 				
 				//Save the 2-itemset {1-itemset, consequent} to memory
@@ -458,6 +462,8 @@ public class Find_Itemsets {
 				is.count = c;
 				is.value = lVal;
 				is.p = p;
+				is.antSup = antSup;
+				is.strength = ruleSup / antSup;
 				//Sort is in case no match in get
 				Collections.sort(is);
 				
