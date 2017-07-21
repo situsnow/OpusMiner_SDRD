@@ -26,6 +26,8 @@ public class Find_Itemsets {
 	//for static function checkSubsetsX
 	private static float val;
 	private static double p;
+	private static float levVal;
+	private static float lifVal;
 	
 	/**Attention here: delete the second variable as Java is pass by value of reference,
 	 * as the count can not refreshed with new value outside the function
@@ -217,8 +219,9 @@ public class Find_Itemsets {
 		
 		//In Supervised Descriptive Rule Discovery, the val calculation only need to use one combination 
 				//sup (antecedent + consequent) - sup (antecedent) * sup (consequent)
-		val = (float) (Globals.searchByLift? new_sup / (parentSup * Utils.itemSup(item))
-				: new_sup - parentSup * Utils.itemSup(item));
+		levVal = (float) (new_sup - parentSup * Utils.itemSup(item));
+		lifVal = (float) (new_sup / (parentSup * Utils.itemSup(item)));
+		val = Globals.searchByLift? lifVal : levVal;
 		
 		if (val <= minValue) return false;
 		
@@ -263,7 +266,8 @@ public class Find_Itemsets {
 			OpusMiner.itemsets.poll();
 		}
 
-		ItemsetRec tmp = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient, is.antSup, is.strength);
+		ItemsetRec tmp = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient, 
+				is.leverage, is.lift, is.antSup, is.strength);
 		tmp.addAll(is);
 		//Add sorting here in case there's same itemset but in different orders
 		//Collections.sort(tmp);
@@ -377,6 +381,8 @@ public class Find_Itemsets {
 							is.count = count;
 							is.value = val;
 							is.p = p;
+							is.leverage = levVal;
+							is.lift = lifVal;
 							is.antSup = parentSup;
 							is.strength = new_sup / parentSup;
 							insert_itemset(is);
@@ -384,7 +390,8 @@ public class Find_Itemsets {
 					
 					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
 					if (!redundant){
-						ItemsetRec tmp_rec = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient, is.antSup, is.strength);
+						ItemsetRec tmp_rec = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient, 
+								is.leverage, is.lift, is.antSup, is.strength);
 						tmp_rec.addAll(is);
 						Collections.sort(tmp_rec);
 						TIDCount.put(tmp_rec, count);
@@ -451,8 +458,9 @@ public class Find_Itemsets {
 			float ruleSup = Utils.countToSup(c);
 			if (p <= Globals.getAlpha(2) && (Globals.searchByLift || ubVal >minValue)){	
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
-				float lVal = (float)(Globals.searchByLift? ruleSup/(conSup * antSup)
-						:ruleSup - conSup * antSup); 
+				float leverage = ruleSup - conSup * antSup;
+				float lift = ruleSup/(conSup * antSup);
+				float lVal = (float)(Globals.searchByLift? lift : leverage); 
 				q.append(lVal, i);
 				
 				//Save the 2-itemset {1-itemset, consequent} to memory
@@ -461,6 +469,8 @@ public class Find_Itemsets {
 				is.add(i);
 				is.count = c;
 				is.value = lVal;
+				is.lift = lift;
+				is.leverage = leverage;
 				is.p = p;
 				is.antSup = antSup;
 				is.strength = ruleSup / antSup;

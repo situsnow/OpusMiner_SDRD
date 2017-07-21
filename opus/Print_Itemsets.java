@@ -32,7 +32,7 @@ public class Print_Itemsets {
 		
 		print_itemset(f, is);
 		
-		f.print(String.format(",%d,%f", is.count, is.value));
+		f.print(String.format(",%d, %f, %f", is.count, is.leverage, is.lift));
 		f.print(String.format(",%g", is.p));
 		f.print(String.format(",%f,%f\n", is.antSup, is.strength));
 		
@@ -60,8 +60,8 @@ public class Print_Itemsets {
 		f.print("\nSELF-SUFFICIENT ITEMSETS:\n");
 		
 		//print header
-		f.print(String.format("%s, %s, %s, %s, %s, %s\n", 
-				"Rule", "No. of transactions", "Leverage/Lift", "P-value", 
+		f.print(String.format("%s, %s, %s, %s, %s, %s, %s\n", 
+				"Rule", "No. of transactions", "Leverage", "Lift", "P-value", 
 				"Antecedent Support", "Strength"));
 				
 		Collections.sort(is, ItemsetRec.ItemsetRecComparatorD);
