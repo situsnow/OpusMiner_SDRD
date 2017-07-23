@@ -17,7 +17,7 @@ public class Print_Itemsets {
 		for (int item_it = 0; item_it != is.size(); item_it++){
 			if (item_it != 0){
 				//f.print(',');
-				f.print('/');
+				f.print(" & ");
 			}
 			if (Globals.consequentID == is.get(item_it)){
 				f.print(String.format("%s", Globals.consequentName));

@@ -1,0 +1,123 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s >50K
+  Adult.csv
+  Output
+
+File/input/Adult.csv: 90 items, 32560 transactions
+Found 100 non-redundant productive itemsets in 85 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+>50K/field5 = Married-civ-spouse/field2 = Private,4220, 0.057628, 1.800625,0.00000,0.298894,0.433621
+>50K/field7 = Husband/field2 = Private,3753, 0.051865, 1.818065,0.00000,0.263268,0.437821
+>50K/field5 = Married-civ-spouse/field7 = Husband/field2 = Private,3751, 0.051848, 1.818369,0.00000,0.263084,0.437894
+>50K/field9 = Male/field5 = Married-civ-spouse/field2 = Private,3769, 0.051639, 1.805386,0.00000,0.266247,0.434768
+>50K/field1 = Age41-50/field5 = Married-civ-spouse/field7 = Husband,2066, 0.035717, 2.287768,0.00000,0.115172,0.550933
+>50K/field8 = White/field1 = Age41-50/field7 = Husband,1877, 0.032767, 2.316974,0.00000,0.103317,0.557967
+>50K/field4 = EduNum13/field8 = White/field9 = Male/field5 = Married-civ-spouse,1520, 0.030101, 2.815276,0.00000,0.068857,0.677966
+>50K/field3 = Bachelors/field8 = White/field9 = Male/field5 = Married-civ-spouse,1520, 0.030101, 2.815276,0.00000,0.068857,0.677966
+>50K/field4 = EduNum13/field8 = White/field5 = Married-civ-spouse/field7 = Husband,1514, 0.030079, 2.831952,0.00000,0.068182,0.681982
+>50K/field3 = Bachelors/field8 = White/field5 = Married-civ-spouse/field7 = Husband,1514, 0.030079, 2.831952,0.00000,0.068182,0.681982
+>50K/field8 = White/field9 = Male/field5 = Married-civ-spouse/field6 = Exec-managerial,1409, 0.028193, 2.869503,0.00000,0.062623,0.691025
+>50K/field8 = White/field6 = Exec-managerial/field7 = Husband,1402, 0.028082, 2.874987,0.00000,0.062193,0.692346
+>50K/field1 = Age32-40/field5 = Married-civ-spouse,1904, 0.027968, 1.916708,9.30736e-245,0.126689,0.461576
+>50K/field8 = White/field5 = Married-civ-spouse/field6 = Prof-specialty,1370, 0.027942, 2.976959,0.00000,0.058692,0.716902
+>50K/field10 = Hour36-50/field1 = Age41-50/field7 = Husband,1570, 0.027236, 2.298017,3.74341e-310,0.087131,0.553402
+>50K/field5 = Married-civ-spouse/field7 = Husband/field6 = Prof-specialty,1274, 0.025800, 2.935807,0.00000,0.055344,0.706992
+>50K/field9 = Male/field5 = Married-civ-spouse/field6 = Prof-specialty,1276, 0.025780, 2.922576,0.00000,0.055682,0.703806
+>50K/field4 = EduNum13/field8 = White/field10 = Hour36-50/field5 = Married-civ-spouse,1251, 0.025352, 2.939908,0.00000,0.054269,0.707980
+>50K/field4 = EduNum13/field9 = Male/field10 = Hour36-50/field5 = Married-civ-spouse,1254, 0.025311, 2.917241,0.00000,0.054822,0.702521
+>50K/field3 = Bachelors/field9 = Male/field10 = Hour36-50/field5 = Married-civ-spouse,1254, 0.025311, 2.917241,0.00000,0.054822,0.702521
+>50K/field3 = Bachelors/field10 = Hour36-50/field5 = Married-civ-spouse/field7 = Husband,1248, 0.025253, 2.931199,0.00000,0.054300,0.705882
+>50K/field4 = EduNum13/field10 = Hour36-50/field5 = Married-civ-spouse/field7 = Husband,1248, 0.025253, 2.931199,0.00000,0.054300,0.705882
+>50K/field8 = White/field9 = Male/field10 = Hour36-50/field1 = Age41-50/field5 = Married-civ-spouse,1423, 0.024955, 2.330987,2.52999e-287,0.077856,0.561341
+>50K/field3 = Bachelors/field5 = Married-civ-spouse/field2 = Private,1224, 0.024671, 2.909387,0.00000,0.053655,0.700630
+>50K/field4 = EduNum13/field5 = Married-civ-spouse/field2 = Private,1224, 0.024671, 2.909387,0.00000,0.053655,0.700630
+>50K/field10 = Hour36-50/field5 = Married-civ-spouse/field6 = Exec-managerial,1204, 0.024072, 2.865128,0.00000,0.053593,0.689971
+>50K/field1 = Age41-50/field5 = Married-civ-spouse/field2 = Private,1418, 0.024025, 2.230413,9.68079e-259,0.081081,0.537121
+>50K/field8 = White/field9 = Male/field6 = Prof-specialty,1343, 0.023881, 2.375149,3.46171e-281,0.072113,0.571976
+>50K/field8 = White/field7 = Husband/field6 = Prof-specialty,1164, 0.023701, 2.967187,0.00000,0.050031,0.714549
+
+71 itemsets failed test for self sufficiency
+>50K/field5 = Married-civ-spouse,6692, 0.094764, 1.855552,0.00000,0.459951,0.446848
+>50K/field8 = White/field5 = Married-civ-spouse,6105, 0.088318, 1.890470,0.00000,0.411855,0.455257
+>50K/field7 = Husband,5918, 0.084180, 1.862706,0.00000,0.405190,0.448571
+>50K/field5 = Married-civ-spouse/field7 = Husband,5914, 0.084124, 1.862718,0.00000,0.404914,0.448574
+>50K/field9 = Male/field5 = Married-civ-spouse,5938, 0.083855, 1.851181,0.00000,0.409091,0.445796
+>50K/field8 = White/field7 = Husband,5428, 0.078398, 1.887767,0.00000,0.366708,0.454606
+>50K/field8 = White/field5 = Married-civ-spouse/field7 = Husband,5424, 0.078342, 1.887799,0.00000,0.366431,0.454614
+>50K/field8 = White/field9 = Male/field5 = Married-civ-spouse,5444, 0.078172, 1.878075,0.00000,0.369687,0.452272
+>50K/field10 = Hour36-50/field5 = Married-civ-spouse,4925, 0.071071, 1.886296,0.00000,0.332985,0.454252
+>50K/field8 = White/field10 = Hour36-50/field5 = Married-civ-spouse,4469, 0.065823, 1.921481,0.00000,0.296622,0.462725
+>50K/field10 = Hour36-50/field7 = Husband,4406, 0.063489, 1.883861,0.00000,0.298280,0.453666
+>50K/field10 = Hour36-50/field5 = Married-civ-spouse/field7 = Husband,4402, 0.063403, 1.883120,0.00000,0.298127,0.453487
+>50K/field9 = Male/field10 = Hour36-50/field5 = Married-civ-spouse,4423, 0.063323, 1.873192,0.00000,0.301136,0.451096
+>50K/field8 = White/field9 = Male/field10 = Hour36-50/field5 = Married-civ-spouse,4039, 0.058866, 1.903106,0.00000,0.270670,0.458300
+>50K/field8 = White/field9 = Male,6089, 0.045188, 1.318632,0.00000,0.588913,0.317549
+>50K/field9 = Male,6662, 0.043439, 1.269523,0.00000,0.669257,0.305723
+>50K/field1 = Age41-50/field5 = Married-civ-spouse,2297, 0.039624, 2.281360,0.00000,0.128409,0.549390
+>50K/field8 = White/field9 = Male/field10 = Hour36-50,4501, 0.038308, 1.383358,1.38858e-233,0.414957,0.333136
+>50K/field9 = Male/field10 = Hour36-50,4947, 0.037880, 1.332117,2.92097e-226,0.473618,0.320796
+>50K/field3 = Bachelors/field5 = Married-civ-spouse,1855, 0.036499, 2.782856,0.00000,0.085012,0.670159
+>50K/field4 = EduNum13/field5 = Married-civ-spouse,1855, 0.036499, 2.782856,0.00000,0.085012,0.670159
+>50K/field8 = White/field1 = Age41-50/field5 = Married-civ-spouse,2068, 0.036096, 2.316546,0.00000,0.113851,0.557863
+>50K/field9 = Male/field1 = Age41-50/field5 = Married-civ-spouse,2070, 0.035758, 2.285493,0.00000,0.115510,0.550386
+>50K/field1 = Age41-50/field7 = Husband,2066, 0.035709, 2.287158,0.00000,0.115203,0.550786
+>50K/field9 = Male/field1 = Age41-50,2289, 0.033846, 1.928412,1.07665e-309,0.151382,0.464394
+>50K/field3 = Bachelors/field8 = White/field5 = Married-civ-spouse,1695, 0.033575, 2.816543,0.00000,0.076751,0.678271
+>50K/field4 = EduNum13/field8 = White/field5 = Married-civ-spouse,1695, 0.033575, 2.816543,0.00000,0.076751,0.678271
+>50K/field5 = Married-civ-spouse/field6 = Exec-managerial,1666, 0.033091, 2.830654,0.00000,0.075061,0.681669
+>50K/field8 = White/field9 = Male/field1 = Age41-50/field5 = Married-civ-spouse,1879, 0.032799, 2.316689,0.00000,0.103440,0.557898
+>50K/field4 = EduNum13/field7 = Husband,1646, 0.032558, 2.809317,0.00000,0.074724,0.676531
+>50K/field3 = Bachelors/field7 = Husband,1646, 0.032558, 2.809317,0.00000,0.074724,0.676531
+>50K/field3 = Bachelors/field5 = Married-civ-spouse/field7 = Husband,1644, 0.032511, 2.808211,0.00000,0.074662,0.676265
+>50K/field4 = EduNum13/field5 = Married-civ-spouse/field7 = Husband,1644, 0.032511, 2.808211,0.00000,0.074662,0.676265
+>50K/field3 = Bachelors/field9 = Male/field5 = Married-civ-spouse,1650, 0.032503, 2.788635,0.00000,0.075461,0.671551
+>50K/field4 = EduNum13/field9 = Male/field5 = Married-civ-spouse,1650, 0.032503, 2.788635,0.00000,0.075461,0.671551
+>50K/field8 = White/field9 = Male/field1 = Age41-50,2081, 0.031607, 1.978347,2.56717e-296,0.134152,0.476419
+>50K/field8 = White/field5 = Married-civ-spouse/field6 = Exec-managerial,1545, 0.030795, 2.848873,0.00000,0.069165,0.686057
+>50K/field5 = Married-civ-spouse/field6 = Prof-specialty,1507, 0.030560, 2.943493,0.00000,0.065295,0.708843
+>50K/field6 = Exec-managerial,1968, 0.030370, 2.009882,0.00000,0.124877,0.484014
+>50K/field9 = Male/field6 = Exec-managerial,1688, 0.030342, 2.411240,0.00000,0.089281,0.580667
+>50K/field3 = Bachelors/field9 = Male,1882, 0.030169, 2.091827,1.73389e-304,0.114742,0.503747
+>50K/field4 = EduNum13/field9 = Male,1882, 0.030169, 2.091827,1.73389e-304,0.114742,0.503747
+>50K/field9 = Male/field5 = Married-civ-spouse/field6 = Exec-managerial,1511, 0.030128, 2.850738,0.00000,0.067598,0.686506
+>50K/field4 = EduNum13/field8 = White/field7 = Husband,1516, 0.030126, 2.833140,0.00000,0.068243,0.682268
+>50K/field3 = Bachelors/field8 = White/field7 = Husband,1516, 0.030126, 2.833140,0.00000,0.068243,0.682268
+>50K/field10 = Hour36-50/field1 = Age41-50/field5 = Married-civ-spouse,1729, 0.030063, 2.304888,0.00000,0.095670,0.555056
+>50K/field6 = Exec-managerial/field7 = Husband,1504, 0.030016, 2.855696,0.00000,0.067168,0.687700
+>50K/field1 = Age41-50,2655, 0.029895, 1.578830,0.00000,0.214466,0.380209
+>50K/field8 = White/field1 = Age41-50,2383, 0.029152, 1.661989,2.47058e-204,0.182862,0.400235
+>50K/field8 = White/field6 = Exec-managerial,1818, 0.028869, 2.070571,3.37334e-285,0.111978,0.498629
+>50K/field4 = EduNum13,2221, 0.028606, 1.722273,0.00000,0.164466,0.414753
+>50K/field3 = Bachelors,2221, 0.028606, 1.722273,0.00000,0.164466,0.414753
+>50K/field8 = White/field9 = Male/field6 = Exec-managerial,1573, 0.028571, 2.447333,0.00000,0.081972,0.589359
+>50K/field4 = EduNum13/field8 = White/field9 = Male,1727, 0.028271, 2.141362,1.89021e-292,0.102856,0.515676
+>50K/field3 = Bachelors/field8 = White/field9 = Male,1727, 0.028271, 2.141362,1.89021e-292,0.102856,0.515676
+>50K/field4 = EduNum13/field10 = Hour36-50/field5 = Married-civ-spouse,1376, 0.027683, 2.898977,0.00000,0.060534,0.698123
+>50K/field3 = Bachelors/field10 = Hour36-50/field5 = Married-civ-spouse,1376, 0.027683, 2.898977,0.00000,0.060534,0.698123
+>50K/field9 = Male/field10 = Hour36-50/field1 = Age41-50/field5 = Married-civ-spouse,1574, 0.027292, 2.296586,1.35818e-310,0.087408,0.553057
+>50K/field8 = White/field10 = Hour36-50/field1 = Age41-50/field5 = Married-civ-spouse,1549, 0.027271, 2.343268,3.42304e-319,0.084306,0.564299
+>50K/field3 = Bachelors/field8 = White,2015, 0.027257, 1.787132,1.94396e-212,0.143796,0.430372
+>50K/field4 = EduNum13/field8 = White,2015, 0.027257, 1.787132,1.94396e-212,0.143796,0.430372
+>50K/field6 = Prof-specialty,1859, 0.026475, 1.864627,0.00000,0.127150,0.449034
+>50K/field9 = Male/field6 = Prof-specialty,1474, 0.025856, 2.331745,7.10394e-299,0.080620,0.561524
+>50K/field7 = Husband/field6 = Prof-specialty,1276, 0.025847, 2.937157,0.00000,0.055405,0.707317
+>50K/field9 = Male/field10 = Hour36-50/field1 = Age41-50,1731, 0.025620, 1.930191,1.20197e-223,0.114373,0.464823
+>50K/field3 = Bachelors/field10 = Hour36-50/field7 = Husband,1250, 0.025300, 2.932579,0.00000,0.054361,0.706215
+>50K/field4 = EduNum13/field10 = Hour36-50/field7 = Husband,1250, 0.025300, 2.932579,0.00000,0.054361,0.706215
+>50K/field8 = White/field6 = Prof-specialty,1682, 0.024655, 1.913054,4.64072e-211,0.112131,0.460696
+>50K/field8 = White/field9 = Male/field10 = Hour36-50/field1 = Age41-50,1565, 0.023843, 1.984340,2.84051e-215,0.100584,0.477863
+>50K/field3 = Bachelors/field9 = Male/field10 = Hour36-50,1427, 0.023732, 2.180958,4.72664e-247,0.083446,0.525212
+>50K/field4 = EduNum13/field9 = Male/field10 = Hour36-50,1427, 0.023732, 2.180958,4.72664e-247,0.083446,0.525212
