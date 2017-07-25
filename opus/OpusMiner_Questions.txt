@@ -101,17 +101,39 @@ in checksubsets function is the actual lift/leverage values that should save and
 ######################################TO BE CONFIRMED###################################################
 7. What does the meaning of closure?
 
+Closed frequent itemsets.
+
 8. p-value in "search by leverage", and actual lift in "search by lift" 
 
 The reason for similar lift value in the top K itemsets is due to the same support between the superset and subset (exclude consequent)
 Hence, these itemsets' lift value is equal to 1/sup(Consequent).
 
 
+
 9. Print out the strength[sup(intersection)/sup(ant)]
 
 10. redundant itemsets will also retrieved according to the logic in opus()
 
-11. amend the syntax in Tidset.dintersection etc. to make it more efficiently
+11. Numerical attributes? Cannot simple remove them as they are also in forming the interesting rules
+
+    Equal attributes? In adult dataset, attributes like "Education = Bachelors" and "Education year = 13" etc. they will form
+    similar rules
+    
+12. From the result of "search by lift", itemsets are with small support but strong strength - sup(rule) = sup(ant)
+
+13. The self-sufficient itemsets who form the rules and meet the "necessary and sufficient" principle.
+	E.g. 
+	In Output_Leverage, ">50K/field9 = Male/field5 = Married-civ-spouse" (failed test for self sufficiency) are strong rule 
+	that most people who earned more than 50K are the husband. However, that doesn't mean that all husbands can earn more than 50K.
+	However, ">50K/field9 = Male/field5 = Married-civ-spouse/field2 = Private" or 
+	">50K/field4 = EduNum13/field8 = White/field9 = Male/field5 = Married-civ-spouse" (both pass test)
+	are "necessary and sufficient" principle to say, most of people who fulfil this rule have higher probability to earn more than 50K.
+	
+	Same theory can apply in Output_Lift, ">50K & field1 = Age41-50 & field4 = EduNum15 & field2 = Self-emp-inc" (failed the test)
+	and ">50K & field1 = Age41-50 & field6 = Exec-managerial & field4 = EduNum15 & field2 = Self-emp-inc" (pass the test).
+	
+	
+	 
 
 
 #########################################################################################
