@@ -42,9 +42,6 @@ public class Filter_Itemsets {
 		
 		int i;
 		for (i = 0; i < is.size(); i++){
-			//uniqueTids.get(i).ensureCapacity(Globals.tids.get(i).size());
-			
-			//TODO double check logics
 			Tidset temp = Globals.tids.get(i);
 			Collections.sort(supsettids);
 			temp.removeAll(supsettids);
@@ -71,7 +68,6 @@ public class Filter_Itemsets {
 			Tidset tidsright = uniqueTids.get(uniqueTids.size() - 1);
 			
 			// start with the last item committed to the right, then successively commit eeach item first to the left then to the right
-			//TODO pay attention here for -2 or -1
 			for (i = uniqueTids.size() - 2; i >= 0; i--){
 				result = checkSS2(uniqueTids, i, uniqueTids.get(i), tidsright, 
 						Globals.noOfTransactions - supsettids.size(), uniqueCov.size(), Globals.getAlpha(is.size()));

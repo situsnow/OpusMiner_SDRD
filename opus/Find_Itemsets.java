@@ -158,10 +158,8 @@ public class Find_Itemsets {
 		
 		double this_p = Utils.fisher(cnt, sofarCnt, remainingCnt);
 		
-		if (this_p > p){
-			//TODO
-			//p = this_p;
-			if (p > alpha) return false;
+		if (this_p > p && p > alpha){
+			return false;
 		}
 		
 		if (remaining.size() > 1){
@@ -352,7 +350,7 @@ public class Find_Itemsets {
 				}else{
 					ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
 				}
-				//TODO check whether current itemset include consequent, if no, the newMaxItemCount will still be always the cover size of consequent
+				//check whether current itemset include consequent, if no, the newMaxItemCount will still be always the cover size of consequent
 				//If it cannot pass, skip the superset checking once and for all (current itemset + consequent).
 				checking = lb_p <= Globals.getAlpha(depth) && (Globals.searchByLift || ubVal > minValue); 
 

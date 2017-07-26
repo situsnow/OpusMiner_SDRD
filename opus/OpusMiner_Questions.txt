@@ -98,7 +98,6 @@ different attributes have "SMOOTH" values.
 Because the lift/leverage calculation before pruning should be the upper bound values that an itemset may satisfy, and the lift/leverage calculation
 in checksubsets function is the actual lift/leverage values that should save and print in the final output.
 
-######################################TO BE CONFIRMED###################################################
 7. What does the meaning of closure?
 
 Closed frequent itemsets.
@@ -108,18 +107,28 @@ Closed frequent itemsets.
 The reason for similar lift value in the top K itemsets is due to the same support between the superset and subset (exclude consequent)
 Hence, these itemsets' lift value is equal to 1/sup(Consequent).
 
-
-
-9. Print out the strength[sup(intersection)/sup(ant)]
-
 10. redundant itemsets will also retrieved according to the logic in opus()
+<Xuelin> By checking if current itemset's redundancy (whether one of its subset has same Tidset), does not aim to identify current itemset is redundant.
+
+For example, though {female} includes all transactions of {pregnant}, itemset of {female, pregnant} is not redundant. However, its superset will be redundant, as
+any itemset {female, pregnant, X} will be redundant as {female} is useless.
+
+Hence, the redundancy test here means the superset of current itemset will be redundant.
 
 11. Numerical attributes? Cannot simple remove them as they are also in forming the interesting rules
+
+	<Xuelin> Define the range of numerical attributes could be suitable way to discretize the feature. 
 
     Equal attributes? In adult dataset, attributes like "Education = Bachelors" and "Education year = 13" etc. they will form
     similar rules
     
+    <Xuelin> This could be something to research and experiment further, but not something to focus at the moment.
+    
 12. From the result of "search by lift", itemsets are with small support but strong strength - sup(rule) = sup(ant)
+
+	<Xuelin> That's the way lift will take effect on.
+
+######################################TO BE CONFIRMED###################################################
 
 13. The self-sufficient itemsets who form the rules and meet the "necessary and sufficient" principle.
 	E.g. 
@@ -132,8 +141,11 @@ Hence, these itemsets' lift value is equal to 1/sup(Consequent).
 	Same theory can apply in Output_Lift, ">50K & field1 = Age41-50 & field4 = EduNum15 & field2 = Self-emp-inc" (failed the test)
 	and ">50K & field1 = Age41-50 & field6 = Exec-managerial & field4 = EduNum15 & field2 = Self-emp-inc" (pass the test).
 	
-	
+	<Xuelin> Yup, this could be the story, but should also explain mathematically why the itemset is not "interesting".
 	 
+14. In filter_itemsets.cpp line 71, why at least one of the Tidset of {1-itemset, exclusive item/domain} is 0, current itemset will be identified 
+	as self-sufficient?
+
 
 
 #########################################################################################
