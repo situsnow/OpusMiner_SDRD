@@ -35,7 +35,7 @@ public class Utils {
 			if (is.get(0) == Globals.consequentID){
 				t.addAll(Globals.consequentTids);
 			}else{
-				t.addAll(Globals.tids.get(it));
+				t.addAll(Globals.tids.get(is.get(0)));
 			}
 		}else{
 			final int item1 = is.get(it++);
@@ -43,23 +43,23 @@ public class Utils {
 			Tidset item1Tid = new Tidset();
 			Tidset item2Tid = new Tidset();
 			if (item1 == Globals.consequentID){
-				item1Tid = Globals.consequentTids;
-				item2Tid = Globals.tids.get(item2);
+				item1Tid.addAll(Globals.consequentTids);
+				item2Tid.addAll(Globals.tids.get(item2));
 			}else if(item2 == Globals.consequentID){
-				item1Tid = Globals.tids.get(item1);
-				item2Tid = Globals.consequentTids;
+				item1Tid.addAll(Globals.tids.get(item1));
+				item2Tid.addAll(Globals.consequentTids);
 			}else{
-				item1Tid = Globals.tids.get(item1);
-				item2Tid = Globals.tids.get(item2);
+				item1Tid.addAll(Globals.tids.get(item1));
+				item2Tid.addAll(Globals.tids.get(item2));
 			}
 			Tidset.intersection(t, item1Tid, item2Tid);
 
 			while (it < is.size()){
 				Tidset itemTid = new Tidset();
 				if (is.get(it) == Globals.consequentID){
-					itemTid = Globals.consequentTids;
+					itemTid.addAll(Globals.consequentTids);
 				}else{
-					itemTid = Globals.tids.get(is.get(it));
+					itemTid.addAll(Globals.tids.get(is.get(it)));
 				}
 				Tidset.dintersection(t, itemTid);
 				it++;

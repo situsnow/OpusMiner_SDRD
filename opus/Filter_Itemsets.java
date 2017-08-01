@@ -42,16 +42,23 @@ public class Filter_Itemsets {
 		
 		int i;
 		for (i = 0; i < is.size(); i++){
-			Tidset temp = Globals.tids.get(i);
+			Tidset temp = new Tidset();
+			if (Globals.consequentID == is.get(i)){
+				temp.addAll(Globals.consequentTids);
+			}else{
+				temp.addAll(Globals.tids.get(is.get(i)));
+			}
+			
 			Collections.sort(supsettids);
 			temp.removeAll(supsettids);
-			uniqueTids.add(temp);
-			
 			// there cannot be a significant association from adding this tidset
-			if (uniqueTids.size() == 0){
+			if (temp.size() == 0){
 				result = false;
 				break;
 			}
+			uniqueTids.add(temp);
+			
+			
 		}
 		
 		if (result){
@@ -97,41 +104,42 @@ public class Filter_Itemsets {
 			
 			Itemset supitems; // the additional items n the supersets of the current itemset
 			Tidset supsettids; // the tids covered by the supitems
-			Tidset thissupsettids = new Tidset(); // the tids covered by the supitems
+			Tidset thissupsettids; // the tids covered by the supitems
 			
 			for (subset_it = 1; subset_it < is.size(); subset_it++){
 				// get the TIDs that are covered by the current itemset's supersets
 				supsettids = new Tidset();
+				
 				int supset_it;
+				
 				for (supset_it = 0; supset_it != subset_it; supset_it++){
 					
-					if(is.get(supset_it).selfSufficient){
-						supitems = new Itemset();
+					if(is.get(supset_it).selfSufficient && Utils.subset(is.get(subset_it), is.get(supset_it))){
 						
-						if (Utils.subset(is.get(subset_it), is.get(supset_it))){
-							int it;
-							Itemset subset = is.get(subset_it);
-							Itemset supset = is.get(supset_it);
-							Collections.sort(subset);
-							Collections.sort(supset);
-							
-							for (it = 0; it < supset.size(); it++){
-								//The original logic in C++ is : if (subset_it->find(*it) == subset_it->end()) {
-								if (!subset.contains(supset.get(it))){
-									Collections.reverse(supitems);
-									supitems.add(supset.get(it));
-									Collections.reverse(supitems);
-								}
+						supitems = new Itemset();
+						thissupsettids = new Tidset();
+						int it;
+						Itemset subset = is.get(subset_it);
+						Itemset supset = is.get(supset_it);
+						Collections.sort(subset);
+						Collections.sort(supset);
+						
+						for (it = 0; it < supset.size(); it++){
+							//The original logic in C++ is : if (subset_it->find(*it) == subset_it->end()) {
+							if (!subset.contains(supset.get(it))){
+								Collections.reverse(supitems);
+								supitems.add(supset.get(it));
+								Collections.reverse(supitems);
 							}
+						}
+						
+						if (!supitems.isEmpty()){
+							Utils.gettids(supitems, thissupsettids);
 							
-							if (!supitems.isEmpty()){
-								Utils.gettids(supitems, thissupsettids);
-								
-								if (supsettids.isEmpty()){
-									supsettids.addAll(thissupsettids);
-								}else{
-									Tidset.dunion(supsettids, thissupsettids);
-								}
+							if (supsettids.isEmpty()){
+								supsettids.addAll(thissupsettids);
+							}else{
+								Tidset.dunion(supsettids, thissupsettids);
 							}
 						}
 					}

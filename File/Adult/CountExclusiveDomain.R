@@ -10,6 +10,9 @@ dim(filter(Adult_NoMacro, Occupation != "Exec-managerial",
            `EduNumEducation-Num` == "EduNum15",
            Workclass == "Self-emp-inc"))[1]
 
+
+dim(filter(Adult_NoMacro, `Hours-Category` != "Hour36-50"))[1]
+
 #5873
 dim(filter(Adult_NoMacro, Occupation != "Exec-managerial", 
            `Hours-Category` != "Hour36-50",

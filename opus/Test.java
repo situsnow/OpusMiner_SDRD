@@ -1,24 +1,31 @@
 package opus;
 
+import java.util.Collections;
 
 public class Test {
 
 	public static void main(String[] args) {
 
-		int n = 8416;
-		int count = 3472;
+		Itemset test = new Itemset();
 		
-		int count1 = 4176;
+		test.add(-1);
+		test.add(70);
+		test.add(11);
+		test.add(69);
 		
-		int count2 = 3808;
+		Itemset test2 = new Itemset();
 		
-		int a = n - count1 - count2 + count;
-		int b = count1 - count;
-		int c = count2 - count;
-		int d = count;
+		test2.add(-1);
+		test2.add(70);
+		test2.add(11);
+		test2.add(69);
 		
-		System.out.println(Fisher.fisherTest(a, b, c, d));
+		Collections.sort(test);
 		
+		
+		for(int i: test){
+			System.out.println(i);
+		}
 	}
 
 }

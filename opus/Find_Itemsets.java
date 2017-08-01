@@ -499,36 +499,36 @@ public class Find_Itemsets {
 				
 		}
 		
-		//TODO remove after testing
-		PrintStream queuef = null;
-		try {
-			queuef = new PrintStream(new File("File/queue.csv"));
-			StringBuffer sb = new StringBuffer();
-			sb.append("Index, ");
-			sb.append("Item Name, ");
-			sb.append("Upper bound value\n");
-			
-			
-			for (int j = 0; j < q.size(); j++){
-				ItemQElem elem = q.get(j);
-				
-				sb.append(elem.item);
-				sb.append(", ");
-				sb.append(Globals.itemNames.get(elem.item));
-				sb.append(", ");
-				sb.append(elem.ubVal);
-				sb.append("\n");
-			}
-			
-			queuef.print(sb.toString());
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} finally {
-			if (queuef != null){
-				queuef.close();
-			}
-		}
-		//TODO remove after testing
+//		//TODO remove after testing
+//		PrintStream queuef = null;
+//		try {
+//			queuef = new PrintStream(new File("File/queue.csv"));
+//			StringBuffer sb = new StringBuffer();
+//			sb.append("Index, ");
+//			sb.append("Item Name, ");
+//			sb.append("Upper bound value\n");
+//			
+//			
+//			for (int j = 0; j < q.size(); j++){
+//				ItemQElem elem = q.get(j);
+//				
+//				sb.append(elem.item);
+//				sb.append(", ");
+//				sb.append(Globals.itemNames.get(elem.item));
+//				sb.append(", ");
+//				sb.append(elem.ubVal);
+//				sb.append("\n");
+//			}
+//			
+//			queuef.print(sb.toString());
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		} finally {
+//			if (queuef != null){
+//				queuef.close();
+//			}
+//		}
+//		//TODO remove after testing
 		
 		// remember the current minValue, and output an update if it improves in this iteration of the loop
 		float prevMinVal = minValue;

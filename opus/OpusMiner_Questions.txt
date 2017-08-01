@@ -143,8 +143,6 @@ Hence, the redundancy test here means the superset of current itemset will be re
 	
 	<Xuelin> Yup, this could be the story, but should also explain mathematically why the itemset is not "interesting".
 	 
-14. In filter_itemsets.cpp line 71, why at least one of the Tidset of {1-itemset, exclusive item/domain} is 0, current itemset will be identified 
-	as self-sufficient?
 
 
 

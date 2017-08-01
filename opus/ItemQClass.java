@@ -33,9 +33,6 @@ public class ItemQClass extends ArrayList<ItemQElem>{
 			Collections.sort(this, ItemQElem.ItemsQElemComparator);
 		}
 	}
-//	public void sortSDRD(){
-//		Collections.sort(this, ItemQElem.ItemQElemSDRDComparator);
-//	}
 	
 	
 	public void add(float ubVal, int item){
