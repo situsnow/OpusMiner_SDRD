@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Globals {
 	
-	public static int noOfTransactions = 0;
+	public static int noOfTransactions = 1;
 	//Total number of unique items in DB
 	public static int noOfItems = 0;
 	//Store the transaction list according to item id

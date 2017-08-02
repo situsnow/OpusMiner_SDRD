@@ -280,14 +280,12 @@ public class Find_Itemsets {
 	
 	// perform OPUS search for specializations of is (which covers cover) using the candidates in queue q
 	// maxItemSup is the maximum of the supports of all individual items in is
-	public static void opus(ItemsetRec is, Tidset cover, ItemQClass q, int maxItemCount, boolean skipFlag, float preUbVal){
+	public static void opus(ItemsetRec is, Tidset cover, ItemQClass q, int maxItemCount, float preUbVal){
 		boolean proceedFlag = true;
-		boolean checking = false;
 		int i;
 		float parentSup = Utils.countToSup(cover.size());
 		
 		int depth = is.size() + 1;
-		
 		
 		ItemQClass newQ = new ItemQClass();
 		
@@ -310,18 +308,11 @@ public class Find_Itemsets {
 				currItemset = Globals.tids.get(item);
 			}
 			
-			//int newMaxItemCount = Math.max(maxItemCount, currItemset.size());
-			// determine the number of TIDs that the new itemset covers
-			Tidset.intersection(newCover, cover, currItemset);
-			count = newCover.size();
+			
 			
 			//Check if itemset: {1-itemset, consequent} has been checked before, if true, skip calculation
 			if (is.size() == 1 && (Globals.consequentID == item || is.contains(Globals.consequentID))){
 				is.add(item);
-				//newQ will always be empty here
-//				if (!newQ.isEmpty()){
-//					opus(is, newCover, newQ, count, false, 0);
-//				}
 				
 				Itemset tmp = new Itemset(is);
 				Collections.sort(tmp);
@@ -331,9 +322,13 @@ public class Find_Itemsets {
 				continue;
 			}
 			
+			// determine the number of TIDs that the new itemset covers
+			Tidset.intersection(newCover, cover, currItemset);
+			count = newCover.size();
+			
 			float new_sup = Utils.countToSup(count);
 			float ubVal = 0;
-			if (!skipFlag){
+			if (item != Globals.consequentID){
 				//At this moment, the current itemset is excluded the consequent.
 				Tidset ruleCover = new Tidset();
 				Tidset.intersection(ruleCover, newCover, Globals.consequentTids);
@@ -352,18 +347,10 @@ public class Find_Itemsets {
 				}
 				//check whether current itemset include consequent, if no, the newMaxItemCount will still be always the cover size of consequent
 				//If it cannot pass, skip the superset checking once and for all (current itemset + consequent).
-				checking = lb_p <= Globals.getAlpha(depth) && (Globals.searchByLift || ubVal > minValue); 
+				proceedFlag = lb_p <= Globals.getAlpha(depth) && (Globals.searchByLift || ubVal > minValue); 
 
-				skipFlag = true;
-			
-			}else{
-				skipFlag = false;
 			}
 			
-			if (skipFlag){
-				//if current scanning itemset without consequent
-				proceedFlag = checking;
-			}
 			// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
 			if (proceedFlag){
 				// only continue if there is any possibility of this itemset or its supersets entering the list of best itemsets
@@ -396,11 +383,11 @@ public class Find_Itemsets {
 						
 						if (!newQ.isEmpty()){
 							// there are only more nodes to expand if there is a queue of items to consider expanding it with
-							opus(is, newCover, newQ, count, skipFlag, ubVal);
+							opus(is, newCover, newQ, count, ubVal);
 						}
 						
 						//if item is consequent, the ubVal will be 0, but it does not matter as consequent will always order on top of queue
-						newQ.add(skipFlag?ubVal:preUbVal, item);
+						newQ.add(ubVal > 0?ubVal:preUbVal, item);
 					}
 				}
 				
@@ -449,7 +436,7 @@ public class Find_Itemsets {
 			Tidset newCover = new Tidset();
 			Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
 			int c = newCover.size();
-			double p = Utils.fisher(c, Globals.consequentTids.size(), c);
+			double p = Utils.fisher(c, Globals.consequentTids.size(), Globals.tids.get(i).size());
 			//TODO: In original OPUS_MINER, the only pruning criteria is the FISHER EXACT TEST here, so it's more loose.
 			
 			//only skip the checking of ubVal when search by lift
@@ -457,7 +444,7 @@ public class Find_Itemsets {
 			if (p <= Globals.getAlpha(2) && (Globals.searchByLift || ubVal >minValue)){	
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
 				float leverage = ruleSup - conSup * antSup;
-				float lift = ruleSup/(conSup * antSup);
+				float lift = ruleSup / (conSup * antSup);
 				float lVal = (float)(Globals.searchByLift? lift : leverage); 
 				q.append(lVal, i);
 				
@@ -493,41 +480,40 @@ public class Find_Itemsets {
 
 			//Ensure the consequent will be on top of the queue
 			ItemQElem tmp = new ItemQElem(Globals.conUbVal, Globals.consequentID);
-			Collections.reverse(newq);
 			newq.add(tmp);
 			Collections.reverse(newq);
 				
 		}
 		
 //		//TODO remove after testing
-//		PrintStream queuef = null;
-//		try {
-//			queuef = new PrintStream(new File("File/queue.csv"));
-//			StringBuffer sb = new StringBuffer();
-//			sb.append("Index, ");
-//			sb.append("Item Name, ");
-//			sb.append("Upper bound value\n");
-//			
-//			
-//			for (int j = 0; j < q.size(); j++){
-//				ItemQElem elem = q.get(j);
-//				
-//				sb.append(elem.item);
-//				sb.append(", ");
-//				sb.append(Globals.itemNames.get(elem.item));
-//				sb.append(", ");
-//				sb.append(elem.ubVal);
-//				sb.append("\n");
-//			}
-//			
-//			queuef.print(sb.toString());
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} finally {
-//			if (queuef != null){
-//				queuef.close();
-//			}
-//		}
+		PrintStream queuef = null;
+		try {
+			queuef = new PrintStream(new File("File/queue.csv"));
+			StringBuffer sb = new StringBuffer();
+			sb.append("Index, ");
+			sb.append("Item Name, ");
+			sb.append("Upper bound value\n");
+			
+			
+			for (int j = 0; j < q.size(); j++){
+				ItemQElem elem = q.get(j);
+				
+				sb.append(elem.item);
+				sb.append(", ");
+				sb.append(Globals.itemNames.get(elem.item));
+				sb.append(", ");
+				sb.append(elem.ubVal);
+				sb.append("\n");
+			}
+			
+			queuef.print(sb.toString());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			if (queuef != null){
+				queuef.close();
+			}
+		}
 //		//TODO remove after testing
 		
 		// remember the current minValue, and output an update if it improves in this iteration of the loop
@@ -537,8 +523,10 @@ public class Find_Itemsets {
 		
 		// we are stepping through all associations of i with j<i, so the first value of i that will have effect is 1
 		for (i = 1; i < q.size(); i++){
-		//for (i = 1; i < q.size() && q.get(i).ubVal > minValue; i++){	
+		//for (i = 1; i < q.size() && (q.get(i).ubVal > minValue || Globals.searchByLift); i++){	
+			
 			//System.out.println("q.get(i).ubVal: "+ q.get(i).ubVal + ", minValue: " +  minValue);
+			
 			int item = q.get(i).item;
 			
 			is = new ItemsetRec();
@@ -548,7 +536,7 @@ public class Find_Itemsets {
 			Tidset newCover = new Tidset();
 			newCover = Globals.tids.get(item);
 			
-			opus(is, newCover, newq, newCover.size(), false, 0);
+			opus(is, newCover, newq, newCover.size(), 0);
 			
 			newq.append(q.get(i).ubVal, item);
 			

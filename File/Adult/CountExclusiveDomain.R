@@ -61,8 +61,6 @@ dim(filter(Adult_NoMacro, Occupation != "Exec-managerial",
            `Age-Category` == "Age41-50",
            `EduNumEducation-Num` == "EduNum15"))[1]
 
-
-
 #1951
 dim(filter(Adult_NoMacro, Occupation != "Exec-managerial",
            `Hours-Category` != "Hour36-50",
@@ -100,3 +98,11 @@ dim(filter(Adult_NoMacro, Occupation != "Exec-managerial",
            `Age-Category` == "Age41-50",
            `EduNumEducation-Num` == "EduNum15"))[1]
 #################################################################
+
+dim(filter(Adult_NoMacro, Class == ">50K", `Marital-status` == "Married-civ-spouse", Relationship == "Husband"))[1]
+           
+
+dim(filter(Adult_NoMacro, Relationship == "Husband", Sex == "Male"))[1]
+           
+
+dim(filter(Adult_NoMacro, Class == ">50K", Relationship == "Husband",Occupation == "Exec-managerial"))[1]

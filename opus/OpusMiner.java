@@ -133,6 +133,8 @@ public class OpusMiner {
 //				sb.append(j);
 //				sb.append(",");
 //				sb.append(Globals.itemNames.get(j));
+//				sb.append(",");
+//				sb.append(Globals.tids.get(j).size());
 //				sb.append("\n");
 //			}
 //			mappingf.print(sb.toString());

@@ -143,7 +143,9 @@ Hence, the redundancy test here means the superset of current itemset will be re
 	
 	<Xuelin> Yup, this could be the story, but should also explain mathematically why the itemset is not "interesting".
 	 
+14. In the upperbound calculation, why need to separate the 0.5 threshold? especially when greater than 0.5
 
+15. There's bug in calculating the total number of transactions? load_data.cpp, line 49
 
 
 #########################################################################################
