@@ -141,11 +141,15 @@ Hence, the redundancy test here means the superset of current itemset will be re
 	Same theory can apply in Output_Lift, ">50K & field1 = Age41-50 & field4 = EduNum15 & field2 = Self-emp-inc" (failed the test)
 	and ">50K & field1 = Age41-50 & field6 = Exec-managerial & field4 = EduNum15 & field2 = Self-emp-inc" (pass the test).
 	
-	<Xuelin> Yup, this could be the story, but should also explain mathematically why the itemset is not "interesting".
+	<Xuelin> Yup, this could be the story, but should also explain mathematically why the itemset is not "interesting". 
+	(Use exclusive domain calculation to explain)
 	 
 14. In the upperbound calculation, why need to separate the 0.5 threshold? especially when greater than 0.5
 
 15. There's bug in calculating the total number of transactions? load_data.cpp, line 49
+Change the logic to make total number of transactions correct no matter there's empty line at the end of the file.
+
+
 
 
 #########################################################################################

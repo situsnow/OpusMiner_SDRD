@@ -308,8 +308,6 @@ public class Find_Itemsets {
 				currItemset = Globals.tids.get(item);
 			}
 			
-			
-			
 			//Check if itemset: {1-itemset, consequent} has been checked before, if true, skip calculation
 			if (is.size() == 1 && (Globals.consequentID == item || is.contains(Globals.consequentID))){
 				is.add(item);
@@ -421,26 +419,28 @@ public class Find_Itemsets {
 			float antSup = Utils.countToSup(Globals.tids.get(i).size());
 			
 			float ubVal = 0;
-			//Since when searchByLift is true, the upper bound value is not checked against the minValue, makes no sense to calculate here.
-//			if (Globals.searchByLift){
-//				ubVal = (float) (1.0 / conSup);
-//			}else 
-			if (antSup <= 0.5){
-				ubVal = Math.min(conSup, antSup) - conSup * antSup;
-			}else{
-				ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
-			}
+
+			//for calculation of search by leverage only
+			ubVal = Math.min(conSup, antSup) - conSup * Math.min(conSup, antSup);
 			
+			if(!Globals.searchByLift && ubVal < minValue){
+				//if current itemset's upper bound value is less than the minimum k-th itemsets in memory, ignore
+				continue;
+			}
 			// make sure that the support is high enough for it to be possible to create a significant itemset
 			//c : How many transactions that current item or +consequent occurs
 			Tidset newCover = new Tidset();
 			Tidset.intersection(newCover, Globals.consequentTids, Globals.tids.get(i));
 			int c = newCover.size();
+			float ruleSup = Utils.countToSup(c);
+			ubVal = ruleSup - conSup * Math.min(conSup, antSup);
+			
+			
 			double p = Utils.fisher(c, Globals.consequentTids.size(), Globals.tids.get(i).size());
 			//TODO: In original OPUS_MINER, the only pruning criteria is the FISHER EXACT TEST here, so it's more loose.
 			
 			//only skip the checking of ubVal when search by lift
-			float ruleSup = Utils.countToSup(c);
+			
 			if (p <= Globals.getAlpha(2) && (Globals.searchByLift || ubVal >minValue)){	
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
 				float leverage = ruleSup - conSup * antSup;

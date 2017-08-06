@@ -16,7 +16,7 @@ If you publish results obtained by using this software please cite
   Output
 
 File/input/Adult.csv: 90 items, 32561 transactions
-Found 100 non-redundant productive itemsets in 22 seconds
+Found 100 non-redundant productive itemsets in 19 seconds
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
