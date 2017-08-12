@@ -13,8 +13,11 @@ public class Filter_Itemsets {
 	public static boolean checkSS2(ArrayList<Tidset> uniqueTids, final int no, Tidset tidsleft, Tidset tidsright, 
 			final int availabletids, final int count, double alpha){
 		if (no == 0){
-			if (Fisher.fisherTest(availabletids - tidsleft.size() - tidsright.size() + count, tidsleft.size() - count, 
-					tidsright.size() - count, count) > alpha){
+			//if (Fisher.fisherTest(availabletids - tidsleft.size() - tidsright.size() + count, tidsleft.size() - count, 
+			//tidsright.size() - count, count) > alpha){
+			double p = Fisher.fisherTest(availabletids - tidsleft.size() - tidsright.size() + count, tidsleft.size() - count, 
+					tidsright.size() - count, count);
+			if (p > alpha){
 				return false;
 			}else{
 				return true;
@@ -26,6 +29,13 @@ public class Filter_Itemsets {
 		Tidset.intersection(newtids, uniqueTids.get(no - 1), tidsleft);
 		
 		if (!checkSS2(uniqueTids, no - 1, newtids, tidsright, availabletids, count, alpha)){
+			return false;
+		}
+		
+		newtids = new Tidset();
+		Tidset.intersection(newtids, uniqueTids.get(no - 1), tidsright);
+		
+		if (!checkSS2(uniqueTids, no - 1, tidsleft, newtids, availabletids, count, alpha)){
 			return false;
 		}
 		
@@ -51,8 +61,8 @@ public class Filter_Itemsets {
 			
 			Collections.sort(supsettids);
 			temp.removeAll(supsettids);
-			// there cannot be a significant association from adding this tidset
 			if (temp.size() == 0){
+				// there cannot be a significant association from adding this tidset
 				result = false;
 				break;
 			}
@@ -67,7 +77,7 @@ public class Filter_Itemsets {
 			uniqueCov = uniqueTids.get(0);
 			
 			// calculate uniqueCov
-			for (i = 0; i < is.size(); i++){
+			for (i = 1; i < is.size(); i++){
 				Tidset.dintersection(uniqueCov, uniqueTids.get(i));
 			}
 			
@@ -124,6 +134,9 @@ public class Filter_Itemsets {
 						Collections.sort(subset);
 						Collections.sort(supset);
 						
+//						if (subset.contains(14) && subset.contains(56) && subset.size() == 3){
+//							System.out.println("stop");
+//						}
 						for (it = 0; it < supset.size(); it++){
 							//The original logic in C++ is : if (subset_it->find(*it) == subset_it->end()) {
 							if (!subset.contains(supset.get(it))){

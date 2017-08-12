@@ -127,9 +127,7 @@ Hence, the redundancy test here means the superset of current itemset will be re
 12. From the result of "search by lift", itemsets are with small support but strong strength - sup(rule) = sup(ant)
 
 	<Xuelin> That's the way lift will take effect on.
-
-######################################TO BE CONFIRMED###################################################
-
+	
 13. The self-sufficient itemsets who form the rules and meet the "necessary and sufficient" principle.
 	E.g. 
 	In Output_Leverage, ">50K/field9 = Male/field5 = Married-civ-spouse" (failed test for self sufficiency) are strong rule 
@@ -143,13 +141,34 @@ Hence, the redundancy test here means the superset of current itemset will be re
 	
 	<Xuelin> Yup, this could be the story, but should also explain mathematically why the itemset is not "interesting". 
 	(Use exclusive domain calculation to explain)
-	 
-14. In the upperbound calculation, why need to separate the 0.5 threshold? especially when greater than 0.5
 
-15. There's bug in calculating the total number of transactions? load_data.cpp, line 49
+14. There's bug in calculating the total number of transactions? load_data.cpp, line 49
 Change the logic to make total number of transactions correct no matter there's empty line at the end of the file.
 
+######################################TO BE CONFIRMED###################################################
+15. With layered critical value or without, the rules retrieved is different, how to explain this phenomenon?
+<Xuelin> Compared with Bonferroni test where alfa in each hypothesis test will be divided by the total number of tests,
+the layered critical value strategy will have lower probability to accept the itemsets in deeper levels within the lattice searching
+space, and it's a trade-off between the larger search space (more rules will be found).
 
+One should understand that with lower alfa value, slightly higher p-value of the null hypothesis will exceed this current alfa,
+which results in "Fail to reject" the null hypothesis (Reject alternative hypothesis).
+
+In statistical hypothesis testing, Type-I error happens due to reject the null hypothesis in spite of it’s true, 
+which means the accepted patterns are likely to happen occasionally and numerous spurious patterns will be found by algorithms. 
+
+In contrast, Type-II error occurs when failing to reject the null hypothesis while alternative hypothesis is true. 
+In such case, the true productive patterns will be discarded.
+
+For example, there are {a,b,c,d,e} four items in the searching space.
+In level 1, we have {a}, {b}, {c}, {d}, {e}, five 1-itemsets
+In level 2, we have {ab}, {ac}, {ad}, {ae}, {bc}, {bd}, {be}, {cd}, {ce}, {de} ten 2-itemsets
+In level 3, we have {abc}, {abd}, {abe}, {acd}, {ace}, {ade}, {bcd}, {bce}, {cde} nice 3-itemsets
+In level 4, we have {abcd}, {abce}, {acde}, three 4-itemsets
+In level 5, we have {abcde}, one 1-itemset
+
+With Bonferroni test, all alfa in the hypothesis tests will be, alfa' = alfa / (5 + 10 + 9 + 3 + 1)
+With Layered critical value approach,
 
 
 #########################################################################################
