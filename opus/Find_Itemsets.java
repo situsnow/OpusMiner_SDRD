@@ -444,7 +444,7 @@ public class Find_Itemsets {
 				float leverage = ruleSup - conSup * antSup;
 				float lift = ruleSup / (conSup * antSup);
 				float lVal = (float)(Globals.searchByLift? lift : leverage); 
-				q.append(lVal, i);
+				q.append(ubVal, i);
 				
 				//Save the 2-itemset {1-itemset, consequent} to memory
 				ItemsetRec is = new ItemsetRec();
@@ -520,8 +520,8 @@ public class Find_Itemsets {
 		ItemsetRec is;
 		
 		// we are stepping through all associations of i with j<i, so the first value of i that will have effect is 1
-		for (i = 1; i < q.size(); i++){
-		//for (i = 1; i < q.size() && (q.get(i).ubVal > minValue || Globals.searchByLift); i++){	
+		//for (i = 1; i < q.size(); i++){
+		for (i = 1; i < q.size() && (q.get(i).ubVal > minValue || Globals.searchByLift); i++){	
 			
 			//System.out.println("q.get(i).ubVal: "+ q.get(i).ubVal + ", minValue: " +  minValue);
 			

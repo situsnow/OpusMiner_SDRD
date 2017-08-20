@@ -1,0 +1,101 @@
+Rule Size,Rule ID,Antecedent,Consequent,Antecedent Coverage %,Antecedent Coverage,Support %,Support,Confidence,Leverage,Lift,p-value,Consequent Coverage %,Consequent Coverage
+3,0,field3 = Prof-school & field7 = Husband,field12 = >50K,0.01182,385,0.00995,324,field12 = >50K,0.0071,3.49471,5.56E-16,0.24081,7841
+3,1,field4 = EduNum15 & field7 = Husband,field12 = >50K,0.01182,385,0.00995,324,field12 = >50K,0.0071,3.49471,5.56E-16,0.24081,7841
+3,2,field3 = Prof-school & field5 = Married-civ-spouse,field12 = >50K,0.01265,412,0.01063,346,field12 = >50K,0.00758,3.48743,1.54E-18,0.24081,7841
+3,3,field4 = EduNum15 & field5 = Married-civ-spouse,field12 = >50K,0.01265,412,0.01063,346,field12 = >50K,0.00758,3.48743,1.54E-18,0.24081,7841
+3,4,field4 = EduNum16 & field7 = Husband,field12 = >50K,0.00814,265,0.00682,222,field12 = >50K,0.00486,3.47883,3.12E-9,0.24081,7841
+3,5,field3 = Doctorate & field7 = Husband,field12 = >50K,0.00814,265,0.00682,222,field12 = >50K,0.00486,3.47883,3.12E-9,0.24081,7841
+3,6,field3 = Doctorate & field5 = Married-civ-spouse,field12 = >50K,0.00878,286,0.00734,239,field12 = >50K,0.00522,3.47023,1.36E-10,0.24081,7841
+3,7,field4 = EduNum16 & field5 = Married-civ-spouse,field12 = >50K,0.00878,286,0.00734,239,field12 = >50K,0.00522,3.47023,1.36E-10,0.24081,7841
+4,8,field4 = EduNum14 & field6 = Exec-managerial & field9 = Male,field12 = >50K,0.01207,393,0.00986,321,field12 = >50K,0.00695,3.39187,4.93E-12,0.24081,7841
+4,9,field3 = Masters & field6 = Exec-managerial & field9 = Male,field12 = >50K,0.01207,393,0.00986,321,field12 = >50K,0.00695,3.39187,4.93E-12,0.24081,7841
+3,00000a,field3 = Masters & field7 = Wife,field12 = >50K,0.00344,112,0.00279,91,field12 = >50K,0.00197,3.37404,2.61E-14,0.24081,7841
+3,00000b,field4 = EduNum14 & field7 = Wife,field12 = >50K,0.00344,112,0.00279,91,field12 = >50K,0.00197,3.37404,2.61E-14,0.24081,7841
+4,00000c,field3 = Bachelors & field6 = Exec-managerial & field7 = Husband,field12 = >50K,0.02371,772,0.01876,611,field12 = >50K,0.01306,3.28663,1.39E-82,0.24081,7841
+4,00000d,field4 = EduNum13 & field6 = Exec-managerial & field7 = Husband,field12 = >50K,0.02371,772,0.01876,611,field12 = >50K,0.01306,3.28663,1.39E-82,0.24081,7841
+3,00000e,field4 = EduNum15 & field9 = Male,field12 = >50K,0.01486,484,0.0117,381,field12 = >50K,0.00812,3.26893,4.46E-10,0.24081,7841
+3,00000f,field3 = Prof-school & field9 = Male,field12 = >50K,0.01486,484,0.0117,381,field12 = >50K,0.00812,3.26893,4.46E-10,0.24081,7841
+4,10,field3 = Bachelors & field5 = Married-civ-spouse & field6 = Exec-managerial,field12 = >50K,0.02607,849,0.02039,664,field12 = >50K,0.01411,3.24778,1.08E-95,0.24081,7841
+4,11,field4 = EduNum13 & field5 = Married-civ-spouse & field6 = Exec-managerial,field12 = >50K,0.02607,849,0.02039,664,field12 = >50K,0.01411,3.24778,1.08E-95,0.24081,7841
+3,12,field3 = Masters & field5 = Married-civ-spouse,field12 = >50K,0.0308,1003,0.02377,774,field12 = >50K,0.01635,3.20454,1.25E-103,0.24081,7841
+3,13,field4 = EduNum14 & field5 = Married-civ-spouse,field12 = >50K,0.0308,1003,0.02377,774,field12 = >50K,0.01635,3.20454,1.25E-103,0.24081,7841
+3,14,field4 = EduNum14 & field7 = Husband,field12 = >50K,0.02721,886,0.02088,680,field12 = >50K,0.01433,3.18714,8.29E-76,0.24081,7841
+3,15,field3 = Masters & field7 = Husband,field12 = >50K,0.02721,886,0.02088,680,field12 = >50K,0.01433,3.18714,8.29E-76,0.24081,7841
+3,16,field6 = Prof-specialty & field7 = Wife,field12 = >50K,0.00943,307,0.00703,229,field12 = >50K,0.00476,3.09759,6.3E-27,0.24081,7841
+3,17,field3 = Masters & field6 = Exec-managerial,field12 = >50K,0.01539,501,0.01142,372,field12 = >50K,0.00772,3.08341,3.43E-24,0.24081,7841
+3,18,field4 = EduNum14 & field6 = Exec-managerial,field12 = >50K,0.01539,501,0.01142,372,field12 = >50K,0.00772,3.08341,3.43E-24,0.24081,7841
+2,19,field4 = EduNum16,field12 = >50K,0.01268,413,0.0094,306,field12 = >50K,0.00634,3.07679,5.28E-103,0.24081,7841
+2,00001a,field3 = Doctorate,field12 = >50K,0.01268,413,0.0094,306,field12 = >50K,0.00634,3.07679,5.28E-103,0.24081,7841
+2,00001b,field4 = EduNum15,field12 = >50K,0.01769,576,0.01299,423,field12 = >50K,0.00873,3.04961,3.57E-140,0.24081,7841
+2,00001c,field3 = Prof-school,field12 = >50K,0.01769,576,0.01299,423,field12 = >50K,0.00873,3.04961,3.57E-140,0.24081,7841
+4,00001d,field1 = Age51-60 & field6 = Prof-specialty & field9 = Male,field12 = >50K,0.01158,377,0.00835,272,field12 = >50K,0.00557,2.99608,7.82E-22,0.24081,7841
+3,00001e,field5 = Married-civ-spouse & field6 = Prof-specialty,field12 = >50K,0.06529,2126,0.04628,1507,field12 = >50K,0.03056,2.94358,8.24E-277,0.24081,7841
+3,00001f,field6 = Prof-specialty & field7 = Husband,field12 = >50K,0.0554,1804,0.03919,1276,field12 = >50K,0.02585,2.93725,2.04E-195,0.24081,7841
+4,20,field1 = Age51-60 & field6 = Exec-managerial & field9 = Male,field12 = >50K,0.01628,530,0.01146,373,field12 = >50K,0.00754,2.92253,4.89E-16,0.24081,7841
+4,21,field1 = Age41-50 & field6 = Exec-managerial & field9 = Male,field12 = >50K,0.02706,881,0.0188,612,field12 = >50K,0.01228,2.88471,5.68E-34,0.24081,7841
+3,22,field6 = Exec-managerial & field7 = Husband,field12 = >50K,0.06717,2187,0.04619,1504,field12 = >50K,0.03002,2.85578,2.31E-179,0.24081,7841
+4,23,field1 = Age41-50 & field6 = Prof-specialty & field9 = Male,field12 = >50K,0.02325,757,0.01597,520,field12 = >50K,0.01037,2.85255,1.33E-34,0.24081,7841
+3,24,field5 = Married-civ-spouse & field6 = Exec-managerial,field12 = >50K,0.07506,2444,0.05117,1666,field12 = >50K,0.03309,2.83074,1.32E-222,0.24081,7841
+3,25,field2 = Self-emp-inc & field7 = Husband,field12 = >50K,0.02414,786,0.0164,534,field12 = >50K,0.01059,2.82127,2.39E-37,0.24081,7841
+3,26,field3 = Bachelors & field7 = Husband,field12 = >50K,0.07472,2433,0.05055,1646,field12 = >50K,0.03256,2.8094,7.77E-286,0.24081,7841
+3,27,field4 = EduNum13 & field7 = Husband,field12 = >50K,0.07472,2433,0.05055,1646,field12 = >50K,0.03256,2.8094,7.77E-286,0.24081,7841
+3,28,field2 = Self-emp-inc & field5 = Married-civ-spouse,field12 = >50K,0.02571,837,0.01738,566,field12 = >50K,0.01119,2.80813,6.44E-45,0.24081,7841
+3,29,field4 = EduNum13 & field7 = Wife,field12 = >50K,0.00937,305,0.0063,205,field12 = >50K,0.00404,2.79113,9.62E-15,0.24081,7841
+3,00002a,field3 = Bachelors & field7 = Wife,field12 = >50K,0.00937,305,0.0063,205,field12 = >50K,0.00404,2.79113,9.62E-15,0.24081,7841
+3,00002b,field3 = Bachelors & field5 = Married-civ-spouse,field12 = >50K,0.08501,2768,0.05697,1855,field12 = >50K,0.0365,2.78294,0.0,0.24081,7841
+3,00002c,field4 = EduNum13 & field5 = Married-civ-spouse,field12 = >50K,0.08501,2768,0.05697,1855,field12 = >50K,0.0365,2.78294,0.0,0.24081,7841
+4,00002d,field4 = EduNum13 & field6 = Exec-managerial & field9 = Male,field12 = >50K,0.03185,1037,0.02101,684,field12 = >50K,0.01334,2.73907,3.77E-33,0.24081,7841
+4,00002e,field3 = Bachelors & field6 = Exec-managerial & field9 = Male,field12 = >50K,0.03185,1037,0.02101,684,field12 = >50K,0.01334,2.73907,3.77E-33,0.24081,7841
+3,00002f,field3 = Masters & field9 = Male,field12 = >50K,0.03645,1187,0.02396,780,field12 = >50K,0.01518,2.72879,4.22E-36,0.24081,7841
+3,30,field4 = EduNum14 & field9 = Male,field12 = >50K,0.03645,1187,0.02396,780,field12 = >50K,0.01518,2.72879,4.22E-36,0.24081,7841
+4,31,field1 = Age51-60 & field4 = EduNum13 & field9 = Male,field12 = >50K,0.01373,447,0.00897,292,field12 = >50K,0.00566,2.7127,9.28E-13,0.24081,7841
+4,32,field1 = Age51-60 & field3 = Bachelors & field9 = Male,field12 = >50K,0.01373,447,0.00897,292,field12 = >50K,0.00566,2.7127,9.28E-13,0.24081,7841
+3,33,field2 = Federal-gov & field7 = Husband,field12 = >50K,0.01318,429,0.00854,278,field12 = >50K,0.00537,2.691,3.93E-52,0.24081,7841
+3,34,field2 = Federal-gov & field5 = Married-civ-spouse,field12 = >50K,0.01447,471,0.00934,304,field12 = >50K,0.00585,2.68027,4.22E-62,0.24081,7841
+4,35,field1 = Age41-50 & field3 = Bachelors & field9 = Male,field12 = >50K,0.03111,1013,0.01981,645,field12 = >50K,0.01232,2.64409,3.03E-22,0.24081,7841
+4,36,field1 = Age41-50 & field4 = EduNum13 & field9 = Male,field12 = >50K,0.03111,1013,0.01981,645,field12 = >50K,0.01232,2.64409,3.03E-22,0.24081,7841
+3,37,field1 = Age51-60 & field6 = Exec-managerial,field12 = >50K,0.02061,671,0.01287,419,field12 = >50K,0.00791,2.59309,9.47E-16,0.24081,7841
+3,38,field6 = Exec-managerial & field10 = Hour51-70,field12 = >50K,0.02138,696,0.01333,434,field12 = >50K,0.00818,2.58945,2.47E-33,0.24081,7841
+3,39,field5 = Married-civ-spouse & field6 = Tech-support,field12 = >50K,0.01241,404,0.00749,244,field12 = >50K,0.00451,2.50804,1.68E-71,0.24081,7841
+3,00003a,field6 = Tech-support & field7 = Husband,field12 = >50K,0.01075,350,0.00648,211,field12 = >50K,0.00389,2.50346,3.57E-53,0.24081,7841
+3,00003b,field2 = Self-emp-inc & field9 = Male,field12 = >50K,0.03013,981,0.01784,581,field12 = >50K,0.01059,2.45942,2.06E-10,0.24081,7841
+3,00003c,field6 = Prof-specialty & field10 = Hour51-70,field12 = >50K,0.01582,515,0.00937,305,field12 = >50K,0.00556,2.45934,3.63E-17,0.24081,7841
+3,00003d,field1 = Age41-50 & field6 = Exec-managerial,field12 = >50K,0.03652,1189,0.02162,704,field12 = >50K,0.01283,2.45877,4.58E-19,0.24081,7841
+3,00003e,field1 = Age51-60 & field6 = Prof-specialty,field12 = >50K,0.01704,555,0.00995,324,field12 = >50K,0.00585,2.42426,4.95E-27,0.24081,7841
+3,00003f,field6 = Exec-managerial & field9 = Male,field12 = >50K,0.08928,2907,0.05184,1688,field12 = >50K,0.03034,2.41131,2.74E-88,0.24081,7841
+4,40,field1 = Age41-50 & field9 = Male & field10 = Hour51-70,field12 = >50K,0.02294,747,0.01321,430,field12 = >50K,0.00768,2.39042,4.88E-11,0.24081,7841
+3,41,field1 = Age51-60 & field3 = Bachelors,field12 = >50K,0.01757,572,0.0101,329,field12 = >50K,0.00587,2.3885,7.66E-26,0.24081,7841
+3,42,field1 = Age51-60 & field4 = EduNum13,field12 = >50K,0.01757,572,0.0101,329,field12 = >50K,0.00587,2.3885,7.66E-26,0.24081,7841
+3,43,field3 = Bachelors & field6 = Exec-managerial,field12 = >50K,0.04204,1369,0.02392,779,field12 = >50K,0.0138,2.36298,6.69E-15,0.24081,7841
+3,44,field4 = EduNum13 & field6 = Exec-managerial,field12 = >50K,0.04204,1369,0.02392,779,field12 = >50K,0.0138,2.36298,6.69E-15,0.24081,7841
+3,45,field1 = Age41-50 & field4 = EduNum13,field12 = >50K,0.04023,1310,0.02273,740,field12 = >50K,0.01304,2.34578,1.25E-36,0.24081,7841
+3,46,field1 = Age41-50 & field3 = Bachelors,field12 = >50K,0.04023,1310,0.02273,740,field12 = >50K,0.01304,2.34578,1.25E-36,0.24081,7841
+3,47,field6 = Prof-specialty & field9 = Male,field12 = >50K,0.08062,2625,0.04527,1474,field12 = >50K,0.02586,2.33182,1.56E-84,0.24081,7841
+3,48,field7 = Husband & field10 = Hour51-70,field12 = >50K,0.05918,1927,0.03311,1078,field12 = >50K,0.01886,2.32308,6.94E-87,0.24081,7841
+3,49,field3 = Bachelors & field10 = Hour51-70,field12 = >50K,0.02076,676,0.01161,378,field12 = >50K,0.00661,2.32205,1.07E-15,0.24081,7841
+3,00004a,field4 = EduNum13 & field10 = Hour51-70,field12 = >50K,0.02076,676,0.01161,378,field12 = >50K,0.00661,2.32205,1.07E-15,0.24081,7841
+3,00004b,field1 = Age41-50 & field6 = Prof-specialty,field12 = >50K,0.03553,1157,0.01981,645,field12 = >50K,0.01125,2.31501,1.83E-18,0.24081,7841
+2,00004c,field2 = Self-emp-inc,field12 = >50K,0.03427,1116,0.0191,622,field12 = >50K,0.01085,2.31447,6.26E-118,0.24081,7841
+3,00004d,field5 = Married-civ-spouse & field10 = Hour51-70,field12 = >50K,0.06173,2010,0.03437,1119,field12 = >50K,0.0195,2.31185,2.5E-94,0.24081,7841
+2,00004e,field3 = Masters,field12 = >50K,0.05292,1723,0.02945,959,field12 = >50K,0.01671,2.31132,2.03E-184,0.24081,7841
+2,00004f,field4 = EduNum14,field12 = >50K,0.05292,1723,0.02945,959,field12 = >50K,0.01671,2.31132,2.03E-184,0.24081,7841
+3,50,field1 = Age41-50 & field7 = Husband,field12 = >50K,0.1152,3751,0.06345,2066,field12 = >50K,0.03571,2.28723,2.65E-229,0.24081,7841
+3,51,field1 = Age51-60 & field10 = Hour51-70,field12 = >50K,0.01413,460,0.00777,253,field12 = >50K,0.00437,2.28396,2.86E-9,0.24081,7841
+3,52,field1 = Age41-50 & field5 = Married-civ-spouse,field12 = >50K,0.12841,4181,0.07054,2297,field12 = >50K,0.03962,2.28143,1.09E-301,0.24081,7841
+3,53,field1 = Age41-50 & field10 = Hour51-70,field12 = >50K,0.02687,875,0.01425,464,field12 = >50K,0.00778,2.2021,6.37E-14,0.24081,7841
+3,54,field6 = Sales & field7 = Husband,field12 = >50K,0.04625,1506,0.02414,786,field12 = >50K,0.013,2.16732,4.32E-187,0.24081,7841
+3,55,field1 = Age51-60 & field7 = Husband,field12 = >50K,0.07395,2408,0.03808,1240,field12 = >50K,0.02027,2.13841,4.11E-113,0.24081,7841
+3,56,field1 = Age51-60 & field5 = Married-civ-spouse,field12 = >50K,0.08065,2626,0.04109,1338,field12 = >50K,0.02167,2.11586,1.87E-134,0.24081,7841
+3,57,field4 = EduNum13 & field9 = Male,field12 = >50K,0.11474,3736,0.0578,1882,field12 = >50K,0.03017,2.09189,8.86E-95,0.24081,7841
+3,58,field3 = Bachelors & field9 = Male,field12 = >50K,0.11474,3736,0.0578,1882,field12 = >50K,0.03017,2.09189,8.86E-95,0.24081,7841
+3,59,field2 = Federal-gov & field9 = Male,field12 = >50K,0.01981,645,0.00967,315,field12 = >50K,0.0049,2.02804,8.35E-22,0.24081,7841
+2,00005a,field6 = Exec-managerial,field12 = >50K,0.12487,4066,0.06044,1968,field12 = >50K,0.03037,2.00994,1.85E-289,0.24081,7841
+3,00005b,field1 = Age32-40 & field4 = EduNum13,field12 = >50K,0.04441,1446,0.02138,696,field12 = >50K,0.01068,1.99879,1.25E-9,0.24081,7841
+3,00005c,field1 = Age32-40 & field3 = Bachelors,field12 = >50K,0.04441,1446,0.02138,696,field12 = >50K,0.01068,1.99879,1.25E-9,0.24081,7841
+2,00005d,field7 = Wife,field12 = >50K,0.04816,1568,0.02288,745,field12 = >50K,0.01128,1.97304,2.04E-95,0.24081,7841
+3,00005e,field1 = Age41-50 & field9 = Male,field12 = >50K,0.15138,4929,0.0703,2289,field12 = >50K,0.03385,1.92847,5.42E-120,0.24081,7841
+3,00005f,field9 = Male & field10 = Hour51-70,field12 = >50K,0.08182,2664,0.03771,1228,field12 = >50K,0.01801,1.91421,2.88E-24,0.24081,7841
+3,60,field5 = Married-civ-spouse & field11 = United-States,field12 = >50K,0.41055,13368,0.18786,6117,field12 = >50K,0.089,1.9002,9.66E-15,0.24081,7841
+3,61,field7 = Husband & field11 = United-States,field12 = >50K,0.36427,11861,0.16661,5425,field12 = >50K,0.07889,1.89935,5.92E-10,0.24081,7841
+3,62,field1 = Age51-60 & field9 = Male,field12 = >50K,0.09146,2978,0.04171,1358,field12 = >50K,0.01968,1.89366,3.01E-73,0.24081,7841
+3,63,field5 = Married-civ-spouse & field8 = White,field12 = >50K,0.41184,13410,0.18749,6105,field12 = >50K,0.08832,1.89053,6.53E-10,0.24081,7841

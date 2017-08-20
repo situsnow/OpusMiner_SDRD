@@ -1,4 +1,11 @@
-﻿Questions of original OpusMiner:
+﻿######################################TO BE CONFIRMED###################################################
+
+
+17. There's no same itemsets found between OpusMiner and BigML when search by lift.
+
+ 
+#########################################################################################
+Questions of original OpusMiner:
 #########################################################################################
 1. Command -p was not indicated in usageStr and what does command -p do? : in opus_miner.cpp, line 80 
 
@@ -145,7 +152,6 @@ Hence, the redundancy test here means the superset of current itemset will be re
 14. There's bug in calculating the total number of transactions? load_data.cpp, line 49
 Change the logic to make total number of transactions correct no matter there's empty line at the end of the file.
 
-######################################TO BE CONFIRMED###################################################
 15. With layered critical value or without, the rules retrieved is different, how to explain this phenomenon?
 <Xuelin> Compared with Bonferroni test where alfa in each hypothesis test will be divided by the total number of tests,
 the layered critical value strategy will have lower probability to accept the itemsets in deeper levels within the lattice searching
@@ -163,14 +169,26 @@ In such case, the true productive patterns will be discarded.
 For example, there are {a,b,c,d,e} four items in the searching space.
 In level 1, we have {a}, {b}, {c}, {d}, {e}, five 1-itemsets
 In level 2, we have {ab}, {ac}, {ad}, {ae}, {bc}, {bd}, {be}, {cd}, {ce}, {de} ten 2-itemsets
-In level 3, we have {abc}, {abd}, {abe}, {acd}, {ace}, {ade}, {bcd}, {bce}, {cde} nice 3-itemsets
+In level 3, we have {abc}, {abd}, {abe}, {acd}, {ace}, {ade}, {bcd}, {bce}, {cde} nine 3-itemsets
 In level 4, we have {abcd}, {abce}, {acde}, three 4-itemsets
 In level 5, we have {abcde}, one 1-itemset
 
-With Bonferroni test, all alfa in the hypothesis tests will be, alfa' = alfa / (5 + 10 + 9 + 3 + 1)
-With Layered critical value approach,
+With Bonferroni test, all alfa in the hypothesis tests will be, alfa' = alfa / (5 + 10 + 9 + 3 + 1) = alfa / 28
+With Layered critical value approach:
+In first level, alfa' = alfa / (2^1 * 5) = alfa / 10
+In second level, alfa' = alfa / (2^2 * 10) = alfa / 40
+In third level, alfa' = alfa / (2^3 * 9) = alfa / 72
+In fourth level, alfa' = alfa / (2^4 * 3) = alfa / 48
+In fith level, alfa' = alfa / (2^5 * 1) = alfa / 32
+which means, it will have smaller alfa value compared with Bonferroni test, and the FISHER EXACT TEST will have higher probability to "Fail to reject" the 
+null hypothesis (disregard current itemset). It's a trade-off while in larger datasets (more itemsets found).
 
+16. Why the FISHER EXACT TEST in filter itemsets equal to the meaning of "Independent productive" test in 
+Self-sufficient itemset principle?
 
+The FISHER EXACT TEST gives the hypothesis that two exclusive subsets of current itemset, which also excludes
+the exclusive domain (Alternative hypothesis: of all the exclusive items in productive/non-redundant supersets, the rest of the excluded
+transactions might also make current itemset independent productive)
 #########################################################################################
 replace leverage/lift with mutual information
 Before OpusMiner: identify which variable is consequent (get rid of it or use flag to identify it), perform only one type of consequent domain (e.g poison first)

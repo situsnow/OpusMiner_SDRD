@@ -1,24 +1,14 @@
 
-dim(filter(Adult_NoMacro, `EduNumEducation-Num` == "EduNum14",
-           Occupation == "Exec-managerial",
-           `Hours-Category` == "Hour51-70",
-           Class == ">50K",
-           
+dim(filter(Adult_R,
+           field3 == "Masters",
+           field6 == "Exec-managerial",
+           #field7 == "Husband",
+           #field11 == "United-States",
+           field12 == "2",
+           field10 != "Hour51-70"
            ))[1]
 
-
-dim(filter(Adult_NoMacro, 
-           `EduNumEducation-Num` == "EduNum14",
-           Occupation == "Exec-managerial",
-           Race != "White",
-           `Marital-status` != "Married-civ-spouse",
-           Relationship != "Husband",
-           `Age-Category` != "Age41-50",
-           `Age-Category` != "Age51-60"
+dim(filter(Adult_R,
+           field10 != "Hour51-70"
 ))[1]
 
-#Race != "White",
-#`Marital-status` != "Married-civ-spouse"
-#Relationship != "Husband"
-#`Age-Category` != "Age41-50"
-#`Age-Category` != "Age51-60"
