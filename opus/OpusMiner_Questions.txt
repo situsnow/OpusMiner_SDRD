@@ -1,7 +1,12 @@
 ﻿######################################TO BE CONFIRMED###################################################
 
 
-17. There's no same itemsets found between OpusMiner and BigML when search by lift.
+17. There's no same itemsets found between OpusMiner and BigML when search by lift. The support/confidence could not change
+in BigML
+
+18. Should I add a comparison section in the final thesis to compare Classification and Supervised Descriptive Rule Discovery?
+
+19: duplicate itemsets in filter_itemsets.java?
 
  
 #########################################################################################

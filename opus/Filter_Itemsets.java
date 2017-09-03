@@ -5,41 +5,18 @@ import java.util.Collections;
 
 public class Filter_Itemsets {
 
-//	public static boolean sizegt(Itemset i1, Itemset i2){
-//		return i1.size() > i2.size();
-//	}
-	
-	// check all combinations of intersections of partitions of tidsavail moved to either tidsleft or tidsright
-	public static boolean checkSS2(ArrayList<Tidset> uniqueTids, final int no, Tidset tidsleft, Tidset tidsright, 
+
+	//check one combination of current itemsets: {antecedents} + {consequent}
+	public static boolean checkSS2(Tidset tidsleft, Tidset tidsright, 
 			final int availabletids, final int count, double alpha){
-		if (no == 0){
-			//if (Fisher.fisherTest(availabletids - tidsleft.size() - tidsright.size() + count, tidsleft.size() - count, 
-			//tidsright.size() - count, count) > alpha){
-			double p = Fisher.fisherTest(availabletids - tidsleft.size() - tidsright.size() + count, tidsleft.size() - count, 
-					tidsright.size() - count, count);
-			if (p > alpha){
-				return false;
-			}else{
-				return true;
-			}
-		}
-		
-		// first try with the tidset committed to the left then try with it committed to the right
-		Tidset newtids = new Tidset();
-		Tidset.intersection(newtids, uniqueTids.get(no - 1), tidsleft);
-		
-		if (!checkSS2(uniqueTids, no - 1, newtids, tidsright, availabletids, count, alpha)){
+
+		double p = Fisher.fisherTest(availabletids - tidsleft.size() - tidsright.size() + count, tidsleft.size() - count, 
+				tidsright.size() - count, count);
+		if (p > alpha){
 			return false;
+		}else{
+			return true;
 		}
-		
-		newtids = new Tidset();
-		Tidset.intersection(newtids, uniqueTids.get(no - 1), tidsright);
-		
-		if (!checkSS2(uniqueTids, no - 1, tidsleft, newtids, availabletids, count, alpha)){
-			return false;
-		}
-		
-		return true;
 	}
 	
 	// check whether itemset is is self sufficient given that it has supersets that cover the TIDs in supsettids
@@ -72,30 +49,29 @@ public class Filter_Itemsets {
 		}
 		
 		if (result){
-			// set up a process that will check whether uniqueCov.size() is significantly greater than can be predicted by assuming independence between any partition of is
+			// set up a process that will check whether uniqueCov.size() is significantly greater than can be predicted by 
+			//assuming independence between any partition of is
 			Tidset uniqueCov = new Tidset();// this is the TIDs covered by is that are not in supsettids
-			uniqueCov = uniqueTids.get(0);
 			
-			// calculate uniqueCov
-			for (i = 1; i < is.size(); i++){
-				Tidset.dintersection(uniqueCov, uniqueTids.get(i));
+			
+			Tidset antCov = new Tidset();
+			antCov = uniqueTids.get(1); //there will be at least one item in antecedent
+			
+			// calculate antecedent cover
+			for (i = 2; i < is.size(); i++){
+				Tidset.dintersection(antCov, uniqueTids.get(i));
 			}
+			// calculate uniqueCov
+			Tidset.intersection(uniqueCov, antCov, uniqueTids.get(0));
 			
 			// this is the cover of the items committed to the right - initialise it to the last unique TID
-			Tidset tidsright = uniqueTids.get(uniqueTids.size() - 1);
+			//In the context of SDRD, the first element will always be the consequent
+			Tidset tidsright = uniqueTids.get(0);
 			
-			// start with the last item committed to the right, then successively commit eeach item first to the left then to the right
-			for (i = uniqueTids.size() - 2; i >= 0; i--){
-				result = checkSS2(uniqueTids, i, uniqueTids.get(i), tidsright, 
+			result = checkSS2(antCov, tidsright, 
 						Globals.noOfTransactions - supsettids.size(), uniqueCov.size(), Globals.getAlpha(is.size()));
 				
-				if (!result)
-					return false;
 				
-				if (i > 0){
-					Tidset.dintersection(tidsright, uniqueTids.get(i));
-				}
-			}
 		}
 		
 		return result;
@@ -134,9 +110,11 @@ public class Filter_Itemsets {
 						Collections.sort(subset);
 						Collections.sort(supset);
 						
-//						if (subset.contains(14) && subset.contains(56) && subset.size() == 3){
-//							System.out.println("stop");
-//						}
+						//TODO remove after test
+						if (subset.contains(7) && subset.contains(8) && subset.contains(12) && subset.contains(14) &&
+								subset.contains(15) && subset.contains(32) && subset.size() == 7){
+							System.out.println("stop");
+						}
 						for (it = 0; it < supset.size(); it++){
 							//The original logic in C++ is : if (subset_it->find(*it) == subset_it->end()) {
 							if (!subset.contains(supset.get(it))){

@@ -31,68 +31,68 @@ public class ExtractRules {
 		/**
 		 * BigML
 		 */
-		String bigMLOutput = "File/Adult/Sorted/BigML-Association-SearchByLift.csv";
+		//String bigMLOutput = "File/Adult/Sorted/BigML-Association-SearchByLift.csv";
 		//String bigMLSorted = "File/Adult/Sorted/BigML-Association-SearchByLift-Sorted.csv";
 		
-		ArrayList<BigMLRules> bigMLRuleList = ExtractRules.readBigMLResult(bigMLOutput);
+		//ArrayList<BigMLRules> bigMLRuleList = ExtractRules.readBigMLResult(bigMLOutput);
 		
 		//ExtractRules.writeBigMLResult(bigMLSorted, bigMLRuleList);
 		
 		ArrayList<OpusRules> opusRule1 = opusRuleMap.get(1);
 		ArrayList<OpusRules> opusRule2 = opusRuleMap.get(2);
-		
-		System.out.print("Self-sufficiency rule in BIGML:\n");
-		for (OpusRules opusR : opusRule1){
-			for (int i = 0; i < bigMLRuleList.size(); i++){
-				BigMLRules bigMLR = bigMLRuleList.get(i);
-				
-				String antR = opusR.getRule().substring(7);
-				
-				if (bigMLR.getAnt().equals(antR)){
-					System.out.println("Index: " + i + ", " + bigMLR.getAnt());
-				}
-			}
-		}
-		
-		System.out.print("Non-Self-sufficiency rule in BIGML:\n");
-		for (OpusRules opusR : opusRule2){
-			for (int i = 0; i < bigMLRuleList.size(); i++){
-				BigMLRules bigMLR = bigMLRuleList.get(i);
-				String antR = opusR.getRule().substring(7);
-				if (bigMLR.getAnt().equals(antR)){
-					System.out.println("Index: " + i + ", " + bigMLR.getAnt());
-				}
-			}
-		}
-		
-		/**
-		 * Apriori
-		 */
-		//String aprioriOutput = "File/Adult/Sorted/Apriori_output.csv";
-		//ArrayList<AprioriRules> aprioriRuleList = ExtractRules.readAprioriResult(aprioriOutput);
-//		System.out.print("Self-sufficiency rule in Apriori:\n");
+//		
+//		System.out.print("Self-sufficiency rule in BIGML:\n");
 //		for (OpusRules opusR : opusRule1){
-//			for (int i = 0; i < aprioriRuleList.size(); i++){
-//				AprioriRules aprioriR = aprioriRuleList.get(i);
+//			for (int i = 0; i < bigMLRuleList.size(); i++){
+//				BigMLRules bigMLR = bigMLRuleList.get(i);
 //				
 //				String antR = opusR.getRule().substring(7);
 //				
-//				if (aprioriR.getRule().equals(antR)){
-//					System.out.println("Index: " + i + ", " + aprioriR.getRule());
+//				if (bigMLR.getAnt().equals(antR)){
+//					System.out.println("Index: " + i + ", " + bigMLR.getAnt());
 //				}
 //			}
 //		}
 //		
-//		System.out.print("Non-Self-sufficiency rule in Apriori:\n");
+//		System.out.print("Non-Self-sufficiency rule in BIGML:\n");
 //		for (OpusRules opusR : opusRule2){
-//			for (int i = 0; i < aprioriRuleList.size(); i++){
-//				AprioriRules aprioriR = aprioriRuleList.get(i);
+//			for (int i = 0; i < bigMLRuleList.size(); i++){
+//				BigMLRules bigMLR = bigMLRuleList.get(i);
 //				String antR = opusR.getRule().substring(7);
-//				if (aprioriR.getRule().equals(antR)){
-//					System.out.println("Index: " + i + ", " + aprioriR.getRule());
+//				if (bigMLR.getAnt().equals(antR)){
+//					System.out.println("Index: " + i + ", " + bigMLR.getAnt());
 //				}
 //			}
 //		}
+		
+		/**
+		 * Apriori
+		 */
+		String aprioriOutput = "File/Adult/Sorted/Apriori_output.csv";
+		ArrayList<AprioriRules> aprioriRuleList = ExtractRules.readAprioriResult(aprioriOutput);
+		System.out.print("Self-sufficiency rule in Apriori:\n");
+		for (OpusRules opusR : opusRule1){
+			for (int i = 0; i < aprioriRuleList.size(); i++){
+				AprioriRules aprioriR = aprioriRuleList.get(i);
+				
+				String antR = opusR.getRule().substring(7);
+				
+				if (aprioriR.getRule().equals(antR)){
+					System.out.println("Index: " + i + ", " + aprioriR.getRule());
+				}
+			}
+		}
+		
+		System.out.print("Non-Self-sufficiency rule in Apriori:\n");
+		for (OpusRules opusR : opusRule2){
+			for (int i = 0; i < aprioriRuleList.size(); i++){
+				AprioriRules aprioriR = aprioriRuleList.get(i);
+				String antR = opusR.getRule().substring(7);
+				if (aprioriR.getRule().equals(antR)){
+					System.out.println("Index: " + i + ", " + aprioriR.getRule());
+				}
+			}
+		}
 		
 		
 		
