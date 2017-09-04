@@ -21,78 +21,81 @@ public class ExtractRules {
 		/**
 		 * OpusMinder
 		 */
-		String opusOutput = "File/Adult/Sorted/Output_Lift.csv";
-		//String opusSorted = "File/Adult/Sorted/Output_Lift_Layered-Sorted.csv";
+		//OpusMiner_Leverage.csv
+		String opusOutput = "File/Adult/Exp-LE50K/OpusMiner_Lift.csv";
+		//String opusSorted = "File/Adult/Exp-LE50K/Output_Lift_Layered-Sorted.csv";
 		
 		Map<Integer, ArrayList<OpusRules>> opusRuleMap = ExtractRules.readOpusResult(opusOutput);
 		
 		//ExtractRules.writeOpusResult(opusSorted, ruleMap);
+		
+		ArrayList<OpusRules> opusRule1 = opusRuleMap.get(1);
+		ArrayList<OpusRules> opusRule2 = opusRuleMap.get(2);
 				
 		/**
 		 * BigML
 		 */
-		//String bigMLOutput = "File/Adult/Sorted/BigML-Association-SearchByLift.csv";
-		//String bigMLSorted = "File/Adult/Sorted/BigML-Association-SearchByLift-Sorted.csv";
+		String bigMLOutput = "File/Adult/Exp-LE50K/BigML-Lift.csv";
+		//String bigMLSorted = "File/Adult/Exp-LE50K/BigML-Association-SearchByLift-Sorted.csv";
 		
-		//ArrayList<BigMLRules> bigMLRuleList = ExtractRules.readBigMLResult(bigMLOutput);
+		ArrayList<BigMLRules> bigMLRuleList = ExtractRules.readBigMLResult(bigMLOutput);
 		
 		//ExtractRules.writeBigMLResult(bigMLSorted, bigMLRuleList);
 		
-		ArrayList<OpusRules> opusRule1 = opusRuleMap.get(1);
-		ArrayList<OpusRules> opusRule2 = opusRuleMap.get(2);
-//		
-//		System.out.print("Self-sufficiency rule in BIGML:\n");
-//		for (OpusRules opusR : opusRule1){
-//			for (int i = 0; i < bigMLRuleList.size(); i++){
-//				BigMLRules bigMLR = bigMLRuleList.get(i);
-//				
-//				String antR = opusR.getRule().substring(7);
-//				
-//				if (bigMLR.getAnt().equals(antR)){
-//					System.out.println("Index: " + i + ", " + bigMLR.getAnt());
-//				}
-//			}
-//		}
-//		
-//		System.out.print("Non-Self-sufficiency rule in BIGML:\n");
-//		for (OpusRules opusR : opusRule2){
-//			for (int i = 0; i < bigMLRuleList.size(); i++){
-//				BigMLRules bigMLR = bigMLRuleList.get(i);
-//				String antR = opusR.getRule().substring(7);
-//				if (bigMLR.getAnt().equals(antR)){
-//					System.out.println("Index: " + i + ", " + bigMLR.getAnt());
-//				}
-//			}
-//		}
+		
+		
+		System.out.print("Self-sufficiency rule in BIGML:\n");
+		for (OpusRules opusR : opusRule1){
+			for (int i = 0; i < bigMLRuleList.size(); i++){
+				BigMLRules bigMLR = bigMLRuleList.get(i);
+				
+				String antR = opusR.getRule().substring(8);
+				
+				if (bigMLR.getAnt().equals(antR)){
+					System.out.println("Index: " + i + ", " + bigMLR.getAnt());
+				}
+			}
+		}
+		
+		System.out.print("Non-Self-sufficiency rule in BIGML:\n");
+		for (OpusRules opusR : opusRule2){
+			for (int i = 0; i < bigMLRuleList.size(); i++){
+				BigMLRules bigMLR = bigMLRuleList.get(i);
+				String antR = opusR.getRule().substring(8);
+				if (bigMLR.getAnt().equals(antR)){
+					System.out.println("Index: " + i + ", " + bigMLR.getAnt());
+				}
+			}
+		}
 		
 		/**
 		 * Apriori
 		 */
-		String aprioriOutput = "File/Adult/Sorted/Apriori_output.csv";
-		ArrayList<AprioriRules> aprioriRuleList = ExtractRules.readAprioriResult(aprioriOutput);
-		System.out.print("Self-sufficiency rule in Apriori:\n");
-		for (OpusRules opusR : opusRule1){
-			for (int i = 0; i < aprioriRuleList.size(); i++){
-				AprioriRules aprioriR = aprioriRuleList.get(i);
-				
-				String antR = opusR.getRule().substring(7);
-				
-				if (aprioriR.getRule().equals(antR)){
-					System.out.println("Index: " + i + ", " + aprioriR.getRule());
-				}
-			}
-		}
-		
-		System.out.print("Non-Self-sufficiency rule in Apriori:\n");
-		for (OpusRules opusR : opusRule2){
-			for (int i = 0; i < aprioriRuleList.size(); i++){
-				AprioriRules aprioriR = aprioriRuleList.get(i);
-				String antR = opusR.getRule().substring(7);
-				if (aprioriR.getRule().equals(antR)){
-					System.out.println("Index: " + i + ", " + aprioriR.getRule());
-				}
-			}
-		}
+//		String aprioriOutput = "File/Adult/Exp-LE50K/WEKA-PredictiveApriori.csv";
+//		ArrayList<AprioriRules> aprioriRuleList = ExtractRules.readAprioriResult(aprioriOutput);
+//		System.out.print("Self-sufficiency rule in Apriori:\n");
+//		for (OpusRules opusR : opusRule1){
+//			for (int i = 0; i < aprioriRuleList.size(); i++){
+//				AprioriRules aprioriR = aprioriRuleList.get(i);
+//				
+//				String antR = opusR.getRule().substring(8);
+//				
+//				if (aprioriR.getAntecedent().equals(antR)){
+//					System.out.println("Index: " + i + ", " + aprioriR.getAntecedent());
+//				}
+//			}
+//		}
+//		
+//		System.out.print("Non-Self-sufficiency rule in Apriori:\n");
+//		for (OpusRules opusR : opusRule2){
+//			for (int i = 0; i < aprioriRuleList.size(); i++){
+//				AprioriRules aprioriR = aprioriRuleList.get(i);
+//				String antR = opusR.getRule().substring(7);
+//				if (aprioriR.getAntecedent().equals(antR)){
+//					System.out.println("Index: " + i + ", " + aprioriR.getAntecedent());
+//				}
+//			}
+//		}
 		
 		
 		
@@ -109,6 +112,9 @@ public class ExtractRules {
 			
 			ArrayList<OpusRules> ruleList = new ArrayList<OpusRules>();
 			ArrayList<OpusRules> filteredRuleList = new ArrayList<OpusRules>();
+			
+			//skip first line
+			c = fileReader.readLine();
 			while ((c = fileReader.readLine()) != null){
 				String[] cells = c.split(",");
 				
@@ -278,6 +284,7 @@ public class ExtractRules {
 		Map<Integer, String> fieldMap = new HashMap<Integer, String>();
 		for (int i = 0; i < items.length; i++){
 			String item = items[i].trim();
+			item = item.replace("\"", "");
 			int index = Integer.parseInt(item.substring(5, item.indexOf(" = ")));
 			
 			fieldMap.put(index, item);
@@ -453,10 +460,11 @@ public class ExtractRules {
 				if (cells != null){
 					AprioriRules rule = new AprioriRules();
 					rule.setIndex(Integer.parseInt(cells[0]));
-					rule.setRule(cells[1]);
-					rule.setSupport(Float.parseFloat(cells[2]));
-					rule.setConfidence(Float.parseFloat(cells[3]));
-					rule.setLift(Float.parseFloat(cells[4]));
+					rule.setAntecedent(cells[1]);
+					rule.setAnt_cov(Integer.parseInt(cells[2]));
+					rule.setConsequent(cells[3]);
+					rule.setCon_cov(Integer.parseInt(cells[4]));
+					rule.setConfidence(Float.parseFloat(cells[5]));
 					
 					ruleList.add(rule);
 				}

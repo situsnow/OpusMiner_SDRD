@@ -1,12 +1,14 @@
 ﻿######################################TO BE CONFIRMED###################################################
+19. What is same antecendents were retrieved for different consequent (if there are more than 2 consequents)?
+
+20. Differences between SDRD and 
+Ma, B. L. W. H. Y., & Liu, B. (1998, August). Integrating classification and association rule mining. 
+In Proceedings of the fourth international conference on knowledge discovery and data mining. 
+
+21. Only one type of consequent will be retrieved from WEKA Apriori.
 
 
-17. There's no same itemsets found between OpusMiner and BigML when search by lift. The support/confidence could not change
-in BigML
-
-18. Should I add a comparison section in the final thesis to compare Classification and Supervised Descriptive Rule Discovery?
-
-19: duplicate itemsets in filter_itemsets.java?
+30: duplicate itemsets in filter_itemsets.java?
 
  
 #########################################################################################
@@ -194,6 +196,16 @@ Self-sufficient itemset principle?
 The FISHER EXACT TEST gives the hypothesis that two exclusive subsets of current itemset, which also excludes
 the exclusive domain (Alternative hypothesis: of all the exclusive items in productive/non-redundant supersets, the rest of the excluded
 transactions might also make current itemset independent productive)
+
+17. Should I add a comparison section in the final thesis to compare Classification and Supervised Descriptive Rule Discovery?
+<Geoff> You should mention the difference between SDRD and classification, but it only needs a paragraph, not a section.
+
+18. There's no same itemsets found between OpusMiner and BigML when search by lift. The support/confidence could not change
+in BigML
+<Geoff>I think that comparing speed with BigML is worth doing.  It is fine that it is only approximate as they are running on AWS and so have different compute power.  Just note all this in the thesis.
+ 
+With search by lift fine to note that it is not possible to get equivalent results.
+
 #########################################################################################
 replace leverage/lift with mutual information
 Before OpusMiner: identify which variable is consequent (get rid of it or use flag to identify it), perform only one type of consequent domain (e.g poison first)

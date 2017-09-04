@@ -1,0 +1,101 @@
+Index,Antecedent,Ant_Sup,Consequent,Rule_Sup,Confidence
+1,field1 = Age17-23 & field6 = Handlers-cleaners & field8 = White & field9 = Male & field11 = United-States,299,field12 = < = 50K,299,0.99499
+2,field3 = HS-grad & field5 = Never-married & field6 = Handlers-cleaners & field11 = United-States,298,field12 = < = 50K,298,0.99499
+3,field4 = EduNum9 & field5 = Never-married & field6 = Handlers-cleaners & field11 = United-States,298,field12 = < = 50K,298,0.99499
+4,field1 = Age17-23 & field6 = Other-service & field7 = Own-child & field8 = White & field9 = Female,298,field12 = < = 50K,298,0.99499
+5,field1 = Age17-23 & field3 = Some-college & field9 = Female & field10 = Hour21-35,297,field12 = < = 50K,297,0.99499
+6,field1 = Age17-23 & field4 = EduNum10 & field9 = Female & field10 = Hour21-35,297,field12 = < = 50K,297,0.99499
+7,field6 = Other-service & field7 = Own-child & field8 = White & field10 = Hour1-20,297,field12 = < = 50K,297,0.99499
+8,field1 = Age17-23 & field2 = Private & field6 = Other-service & field7 = Own-child & field9 = Female,297,field12 = < = 50K,297,0.99499
+9,field1 = Age17-23 & field3 = HS-grad & field5 = Never-married & field10 = Hour21-35,296,field12 = < = 50K,296,0.99499
+10,field1 = Age17-23 & field4 = EduNum9 & field5 = Never-married & field10 = Hour21-35,296,field12 = < = 50K,296,0.99499
+11,field1 = Age24-31 & field3 = HS-grad & field7 = Own-child & field10 = Hour36-50 & field11 = United-States,296,field12 = < = 50K,296,0.99499
+12,field1 = Age24-31 & field4 = EduNum9 & field7 = Own-child & field10 = Hour36-50 & field11 = United-States,296,field12 = < = 50K,296,0.99499
+13,field1 = Age17-23 & field2 = Private & field3 = Some-college & field6 = Sales,295,field12 = < = 50K,295,0.99499
+14,field1 = Age17-23 & field2 = Private & field4 = EduNum10 & field6 = Sales,295,field12 = < = 50K,295,0.99499
+15,field1 = Age17-23 & field5 = Never-married & field6 = Handlers-cleaners & field8 = White & field11 = United-States,295,field12 = < = 50K,295,0.99499
+16,field1 = Age17-23 & field3 = Some-college & field6 = ? & field11 = United-States,294,field12 = < = 50K,294,0.99498
+17,field1 = Age17-23 & field4 = EduNum10 & field6 = ? & field11 = United-States,294,field12 = < = 50K,294,0.99498
+18,field1 = Age17-23 & field2 = Private & field6 = Other-service & field8 = White & field10 = Hour1-20,294,field12 = < = 50K,294,0.99498
+19,field1 = Age17-23 & field6 = Adm-clerical & field7 = Own-child & field9 = Female,293,field12 = < = 50K,293,0.99498
+20,field1 = Age17-23 & field2 = Private & field3 = HS-grad & field7 = Not-in-family,292,field12 = < = 50K,292,0.99498
+21,field1 = Age17-23 & field2 = Private & field4 = EduNum9 & field7 = Not-in-family,292,field12 = < = 50K,292,0.99498
+22,field1 = Age17-23 & field2 = ? & field3 = Some-college & field11 = United-States,292,field12 = < = 50K,292,0.99498
+23,field1 = Age17-23 & field2 = ? & field4 = EduNum10 & field11 = United-States,292,field12 = < = 50K,292,0.99498
+24,field1 = Age17-23 & field3 = HS-grad & field7 = Own-child & field9 = Female,291,field12 = < = 50K,291,0.99498
+25,field1 = Age17-23 & field4 = EduNum9 & field7 = Own-child & field9 = Female,291,field12 = < = 50K,291,0.99498
+26,field1 = Age17-23 & field2 = Private & field7 = Own-child & field9 = Female & field10 = Hour21-35,291,field12 = < = 50K,291,0.99498
+27,field3 = 11th & field10 = Hour1-20 & field11 = United-States,290,field12 = < = 50K,290,0.99498
+28,field4 = EduNum7 & field10 = Hour1-20 & field11 = United-States,290,field12 = < = 50K,290,0.99498
+29,field1 = Age17-23 & field6 = ? & field9 = Male,289,field12 = < = 50K,289,0.99498
+30,field5 = Never-married & field6 = Sales & field10 = Hour1-20,287,field12 = < = 50K,287,0.99498
+31,field6 = ? & field7 = Own-child & field9 = Male,287,field12 = < = 50K,287,0.99498
+32,field1 = Age17-23 & field2 = ? & field9 = Male,284,field12 = < = 50K,284,0.99498
+33,field1 = Age17-23 & field5 = Never-married & field6 = ? & field9 = Female,284,field12 = < = 50K,284,0.99498
+34,field2 = ? & field7 = Own-child & field9 = Male,283,field12 = < = 50K,283,0.99498
+35,field1 = Age17-23 & field2 = ? & field5 = Never-married & field9 = Female,283,field12 = < = 50K,283,0.99498
+36,field1 = Age17-23 & field3 = HS-grad & field5 = Never-married & field7 = Not-in-family & field8 = White,283,field12 = < = 50K,283,0.99498
+37,field3 = Some-college & field6 = ? & field7 = Own-child,281,field12 = < = 50K,281,0.99498
+38,field4 = EduNum10 & field6 = ? & field7 = Own-child,281,field12 = < = 50K,281,0.99498
+39,field2 = Private & field3 = HS-grad & field5 = Never-married & field6 = Machine-op-inspct,280,field12 = < = 50K,280,0.99498
+40,field2 = Private & field4 = EduNum9 & field5 = Never-married & field6 = Machine-op-inspct,280,field12 = < = 50K,280,0.99498
+41,field2 = ? & field3 = Some-college & field7 = Own-child,279,field12 = < = 50K,279,0.99498
+42,field2 = ? & field4 = EduNum10 & field7 = Own-child,279,field12 = < = 50K,279,0.99498
+43,field1 = Age17-23 & field2 = Private & field3 = HS-grad & field10 = Hour21-35,278,field12 = < = 50K,278,0.99498
+44,field1 = Age17-23 & field2 = Private & field4 = EduNum9 & field10 = Hour21-35,278,field12 = < = 50K,278,0.99498
+45,field1 = Age17-23 & field3 = Some-college & field6 = ? & field8 = White,278,field12 = < = 50K,278,0.99498
+46,field1 = Age17-23 & field4 = EduNum10 & field6 = ? & field8 = White,278,field12 = < = 50K,278,0.99498
+47,field1 = Age17-23 & field2 = ? & field3 = Some-college & field8 = White,277,field12 = < = 50K,277,0.99498
+48,field1 = Age17-23 & field2 = ? & field4 = EduNum10 & field8 = White,277,field12 = < = 50K,277,0.99498
+49,field1 = Age17-23 & field6 = Handlers-cleaners & field7 = Own-child,275,field12 = < = 50K,275,0.99498
+50,field1 = Age17-23 & field3 = HS-grad & field8 = White & field10 = Hour21-35,271,field12 = < = 50K,271,0.99498
+51,field1 = Age17-23 & field4 = EduNum9 & field8 = White & field10 = Hour21-35,271,field12 = < = 50K,271,0.99498
+52,field1 = Age17-23 & field2 = Private & field6 = Sales & field9 = Male,270,field12 = < = 50K,270,0.99498
+53,field1 = Age17-23 & field7 = Not-in-family & field10 = Hour21-35,269,field12 = < = 50K,269,0.99498
+54,field3 = 11th & field8 = White & field10 = Hour1-20,267,field12 = < = 50K,267,0.99498
+55,field4 = EduNum7 & field8 = White & field10 = Hour1-20,267,field12 = < = 50K,267,0.99498
+56,field1 = Age17-23 & field2 = Private & field3 = Some-college & field5 = Never-married & field6 = Adm-clerical,261,field12 = < = 50K,261,0.99498
+57,field1 = Age17-23 & field3 = 10th,260,field12 = < = 50K,260,0.99498
+58,field1 = Age17-23 & field4 = EduNum6,260,field12 = < = 50K,260,0.99498
+59,field3 = HS-grad & field6 = Other-service & field7 = Own-child,260,field12 = < = 50K,260,0.99498
+60,field4 = EduNum9 & field6 = Other-service & field7 = Own-child,260,field12 = < = 50K,260,0.99498
+61,field3 = 11th & field5 = Never-married & field10 = Hour1-20,256,field12 = < = 50K,256,0.99498
+62,field4 = EduNum7 & field5 = Never-married & field10 = Hour1-20,256,field12 = < = 50K,256,0.99498
+63,field1 = Age17-23 & field3 = Some-college & field6 = Sales & field8 = White,254,field12 = < = 50K,254,0.99498
+64,field1 = Age17-23 & field3 = 11th & field10 = Hour1-20,252,field12 = < = 50K,252,0.99498
+65,field1 = Age17-23 & field4 = EduNum7 & field10 = Hour1-20,252,field12 = < = 50K,252,0.99498
+66,field1 = Age17-23 & field6 = Sales & field10 = Hour1-20,251,field12 = < = 50K,251,0.99498
+67,field1 = Age17-23 & field2 = Private & field7 = Other-relative,250,field12 = < = 50K,250,0.99497
+68,field2 = Private & field6 = Machine-op-inspct & field7 = Own-child,250,field12 = < = 50K,250,0.99497
+69,field3 = 11th & field5 = Never-married & field9 = Female,248,field12 = < = 50K,248,0.99497
+70,field4 = EduNum7 & field5 = Never-married & field9 = Female,248,field12 = < = 50K,248,0.99497
+71,field5 = Never-married & field6 = Adm-clerical & field10 = Hour1-20,244,field12 = < = 50K,244,0.99497
+72,field1 = Age17-23 & field3 = HS-grad & field6 = Other-service,243,field12 = < = 50K,243,0.99497
+73,field1 = Age17-23 & field4 = EduNum9 & field6 = Other-service,243,field12 = < = 50K,243,0.99497
+74,field2 = Private & field3 = 11th & field10 = Hour1-20,243,field12 = < = 50K,243,0.99497
+75,field2 = Private & field4 = EduNum7 & field10 = Hour1-20,243,field12 = < = 50K,243,0.99497
+76,field6 = Sales & field7 = Own-child & field10 = Hour1-20,243,field12 = < = 50K,243,0.99497
+77,field3 = HS-grad & field5 = Never-married & field10 = Hour1-20,238,field12 = < = 50K,238,0.99497
+78,field4 = EduNum9 & field5 = Never-married & field10 = Hour1-20,238,field12 = < = 50K,238,0.99497
+79,field2 = ? & field5 = Never-married & field7 = Own-child & field9 = Female,235,field12 = < = 50K,235,0.99497
+80,field3 = 11th & field7 = Own-child & field10 = Hour1-20,232,field12 = < = 50K,232,0.99497
+81,field4 = EduNum7 & field7 = Own-child & field10 = Hour1-20,232,field12 = < = 50K,232,0.99497
+82,field1 = Age17-23 & field6 = Sales & field10 = Hour36-50,229,field12 = < = 50K,229,0.99497
+83,field1 = Age17-23 & field5 = Never-married & field6 = Other-service & field10 = Hour36-50,229,field12 = < = 50K,229,0.99497
+84,field1 = Age17-23 & field2 = ? & field5 = Never-married & field6 = ? & field10 = Hour36-50,227,field12 = < = 50K,227,0.99497
+85,field1 = Age17-23 & field6 = Sales & field10 = Hour21-35,226,field12 = < = 50K,226,0.99497
+86,field1 = Age24-31 & field5 = Never-married & field10 = Hour1-20,221,field12 = < = 50K,221,0.99496
+87,field1 = Age24-31 & field6 = Adm-clerical & field7 = Not-in-family & field9 = Female,220,field12 = < = 50K,220,0.99496
+88,field1 = Age17-23 & field3 = Some-college & field4 = EduNum10 & field9 = Male & field10 = Hour1-20,220,field12 = < = 50K,220,0.99496
+89,field1 = Age17-23 & field3 = Some-college & field5 = Never-married & field6 = Adm-clerical & field7 = Own-child,218,field12 = < = 50K,218,0.99496
+90,field3 = 11th & field7 = Own-child & field8 = White & field9 = Male,217,field12 = < = 50K,217,0.99496
+91,field1 = Age17-23 & field2 = ? & field7 = Own-child & field9 = Female,215,field12 = < = 50K,215,0.99496
+92,field1 = Age17-23 & field3 = HS-grad & field4 = EduNum9 & field7 = Not-in-family & field10 = Hour36-50,215,field12 = < = 50K,215,0.99496
+93,field1 = Age17-23 & field3 = 11th & field9 = Female,212,field12 = < = 50K,212,0.99496
+94,field1 = Age17-23 & field4 = EduNum7 & field9 = Female,212,field12 = < = 50K,212,0.99496
+95,field3 = HS-grad & field7 = Own-child & field8 = Black,209,field12 = < = 50K,209,0.99496
+96,field4 = EduNum9 & field7 = Own-child & field8 = Black,209,field12 = < = 50K,209,0.99496
+97,field1 = Age17-23 & field3 = HS-grad & field6 = Adm-clerical,207,field12 = < = 50K,207,0.99496
+98,field1 = Age17-23 & field4 = EduNum9 & field6 = Adm-clerical,207,field12 = < = 50K,207,0.99496
+99,field1 = Age24-31 & field5 = Never-married & field6 = Handlers-cleaners,206,field12 = < = 50K,206,0.99496
+100,field3 = 10th & field5 = Never-married & field7 = Own-child,202,field12 = < = 50K,202,0.99495
