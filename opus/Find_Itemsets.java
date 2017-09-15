@@ -1,5 +1,8 @@
 package opus;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -257,6 +260,9 @@ public class Find_Itemsets {
 	}
 	
 	public static void insert_itemset(ItemsetRec is){
+		if (OpusMiner.itemsets.size() >= Globals.k && OpusMiner.itemsets.peek().value > is.value)
+			return;
+		
 		if (OpusMiner.itemsets.size() >= Globals.k){
 			OpusMiner.itemsets.poll();
 		}
@@ -282,16 +288,24 @@ public class Find_Itemsets {
 		int i;
 		float parentSup = Utils.countToSup(cover.size());
 		
+		//As now the program traversing the lattice, the consequent shouldn't included in the depth.
 		int depth = is.size() + 1;
+		//int depth = is.size() + 1;
 		
 		ItemQClass newQ = new ItemQClass();
 		
-		boolean filteredCon = false;
+		//boolean filteredCon = false;
 		for (i = 0; i < q.size(); i++){
+			//TODO 
+			
+			if (is.size() == 1 && is.contains(24) && q.get(i).item == 16){
+				System.out.println("Stops here..");
+			}
+			//TODO
 			
 			//if the "antecedent" is failed in previous iteration, means currently, the itemset which include the consequent do not need to consider at all
-			if(filteredCon)
-				continue;
+			//if(filteredCon)
+				//continue;
 			
 			Tidset newCover = new Tidset();
 			int item = q.get(i).item;
@@ -324,7 +338,7 @@ public class Find_Itemsets {
 			float new_sup = Utils.countToSup(count);
 			float ubVal = 0;
 			if (item != Globals.consequentID){
-				//At this moment, the current itemset is excluded the consequent.
+				//At this moment, the current itemset is excluded the consequent. Otherwise, this overall itemset had been checked in immediate previous step.
 				Tidset ruleCover = new Tidset();
 				Tidset.intersection(ruleCover, newCover, Globals.consequentTids);
 				// this is a lower bound on the p value that may be obtained for this itemset or any superset
@@ -343,54 +357,57 @@ public class Find_Itemsets {
 				//check whether current itemset include consequent, if no, the newMaxItemCount will still be always the cover size of consequent
 				//If it cannot pass, skip the superset checking once and for all (current itemset + consequent).
 				proceedFlag = lb_p <= Globals.getAlpha(depth) && (Globals.searchByLift || ubVal > minValue); 
+				
+				if (proceedFlag == false)
+					continue;
 
 			}
 			
 			// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
-			if (proceedFlag){
+			//if (proceedFlag){
 				// only continue if there is any possibility of this itemset or its supersets entering the list of best itemsets
 				
-				is.add(item);
-				
-				checkImmediateSubsets(is, count);
-				
-				if (!apriori){
-					//only save those with oriented consequent itemsets.
-					if (is.contains(Globals.consequentID) && 
-							checkSubsets(item, is, count, new_sup, cover.size(), parentSup, Globals.getAlpha(depth))){
-							is.count = count;
-							is.value = val;
-							is.p = p;
-							is.leverage = levVal;
-							is.lift = lifVal;
-							is.antSup = parentSup;
-							is.strength = new_sup / parentSup;
-							insert_itemset(is);
-					}
-					
-					// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
-					if (!redundant){
-						ItemsetRec tmp_rec = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient, 
-								is.leverage, is.lift, is.antSup, is.strength);
-						tmp_rec.addAll(is);
-						Collections.sort(tmp_rec);
-						TIDCount.put(tmp_rec, count);
-						
-						if (!newQ.isEmpty()){
-							// there are only more nodes to expand if there is a queue of items to consider expanding it with
-							opus(is, newCover, newQ, count, ubVal);
-						}
-						
-						//if item is consequent, the ubVal will be 0, but it does not matter as consequent will always order on top of queue
-						newQ.add(ubVal > 0?ubVal:preUbVal, item);
-					}
+			is.add(item);
+			
+			checkImmediateSubsets(is, count);
+			
+			if (!apriori){
+				//only save those with oriented consequent itemsets.
+				if (is.contains(Globals.consequentID) && 
+						checkSubsets(item, is, count, new_sup, cover.size(), parentSup, Globals.getAlpha(depth))){
+						is.count = count;
+						is.value = val;
+						is.p = p;
+						is.leverage = levVal;
+						is.lift = lifVal;
+						is.antSup = parentSup;
+						is.strength = new_sup / parentSup;
+						insert_itemset(is);
 				}
 				
-				is.remove(new Integer(item));
-			}else{
-				//only when k-itemset (exlude consequent) failed the test, will reach here.
-				filteredCon = true;
+				// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
+				if (!redundant){
+					ItemsetRec tmp_rec = new ItemsetRec(is.count, is.value, is.p, is.selfSufficient, 
+							is.leverage, is.lift, is.antSup, is.strength);
+					tmp_rec.addAll(is);
+					Collections.sort(tmp_rec);
+					TIDCount.put(tmp_rec, count);
+					
+					if (!newQ.isEmpty()){
+						// there are only more nodes to expand if there is a queue of items to consider expanding it with
+						opus(is, newCover, newQ, count, ubVal);
+					}
+					
+					//if item is consequent, the ubVal will be 0, but it does not matter as consequent will always order on top of queue
+					newQ.add(ubVal > 0?ubVal:preUbVal, item);
+				}
 			}
+			
+			is.remove(new Integer(item));
+			//}else{
+				//only when k-itemset (exlude consequent) failed the test, will reach here.
+				//filteredCon = true;
+			//}
 		}
 	}
 	
@@ -484,34 +501,34 @@ public class Find_Itemsets {
 		}
 		
 //		//TODO remove after testing
-//		PrintStream queuef = null;
-//		try {
-//			queuef = new PrintStream(new File("File/queue.csv"));
-//			StringBuffer sb = new StringBuffer();
-//			sb.append("Index, ");
-//			sb.append("Item Name, ");
-//			sb.append("Upper bound value\n");
-//			
-//			
-//			for (int j = 0; j < q.size(); j++){
-//				ItemQElem elem = q.get(j);
-//				
-//				sb.append(elem.item);
-//				sb.append(", ");
-//				sb.append(Globals.itemNames.get(elem.item));
-//				sb.append(", ");
-//				sb.append(elem.ubVal);
-//				sb.append("\n");
-//			}
-//			
-//			queuef.print(sb.toString());
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} finally {
-//			if (queuef != null){
-//				queuef.close();
-//			}
-//		}
+		PrintStream queuef = null;
+		try {
+			queuef = new PrintStream(new File("File/queue.csv"));
+			StringBuffer sb = new StringBuffer();
+			sb.append("Index, ");
+			sb.append("Item Name, ");
+			sb.append("Upper bound value\n");
+			
+			
+			for (int j = 0; j < q.size(); j++){
+				ItemQElem elem = q.get(j);
+				
+				sb.append(elem.item);
+				sb.append(", ");
+				sb.append(Globals.itemNames.get(elem.item));
+				sb.append(", ");
+				sb.append(elem.ubVal);
+				sb.append("\n");
+			}
+			
+			queuef.print(sb.toString());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			if (queuef != null){
+				queuef.close();
+			}
+		}
 //		//TODO remove after testing
 		
 		// remember the current minValue, and output an update if it improves in this iteration of the loop

@@ -126,19 +126,19 @@ public class OpusMiner {
 			Load_Data.load_data(inputFileName);
 			
 			//TODO delete after testing
-//			PrintStream mappingf = new PrintStream(new File("File/mapping.csv"));
-//			StringBuffer sb = new StringBuffer();
-//			sb.append("Index,ItemName\n");
-//			for (int j = 0; j < Globals.noOfItems; j++){
-//				sb.append(j);
-//				sb.append(",");
-//				sb.append(Globals.itemNames.get(j));
-//				sb.append(",");
-//				sb.append(Globals.tids.get(j).size());
-//				sb.append("\n");
-//			}
-//			mappingf.print(sb.toString());
-//			mappingf.close();
+			PrintStream mappingf = new PrintStream(new File("File/mapping.csv"));
+			StringBuffer sb = new StringBuffer();
+			sb.append("Index,ItemName\n");
+			for (int j = 0; j < Globals.noOfItems; j++){
+				sb.append(j);
+				sb.append(",");
+				sb.append(Globals.itemNames.get(j));
+				sb.append(",");
+				sb.append(Globals.tids.get(j).size());
+				sb.append("\n");
+			}
+			mappingf.print(sb.toString());
+			mappingf.close();
 			//TODO delete after testing
 			
 			System.out.print(String.format("%d transactions, %d items\n", 

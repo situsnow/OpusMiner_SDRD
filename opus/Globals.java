@@ -51,6 +51,7 @@ public class Globals {
 		if (depth > noOfItems){
 			alpha.add(0.0);
 		}else if (depth == noOfItems){
+			// at deepest level so might as well use as much of the rest of the probability mass as possible
 			double tmp = alpha.get(alpha.size() - 1);
 			alpha.add(tmp);
 		}else{

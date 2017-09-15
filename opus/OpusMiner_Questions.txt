@@ -11,6 +11,11 @@ In Proceedings of the fourth international conference on knowledge discovery and
 
 21. Only one type of consequent will be retrieved from WEKA Apriori - Classification Association Rule.
 
+22. Why in the alpha calculation, the power of 2 needs to minus 1? Global.cpp, line 47
+
+23. When inserting the candidate self-sufficient itemset into memory, the only criteria is whether current K exceeds but do not check if
+the minimum value in memory is greater or smaller than current itemset.
+
 #########################################################################################
 Questions of original OpusMiner:
 #########################################################################################
