@@ -1,20 +1,17 @@
 ﻿######################################TO BE CONFIRMED###################################################
-19. What is same antecendents were retrieved for different consequent (if there are more than 2 consequents)?
-
-<Geoff>Discussing why it might happen and the reason behind it (distribution).
-
-20. Differences between SDRD and 
-Ma, B. L. W. H. Y., & Liu, B. (1998, August). Integrating classification and association rule mining. 
-In Proceedings of the fourth international conference on knowledge discovery and data mining. 
-
-<Geoff> Classification is for Preditive 
-
-21. Only one type of consequent will be retrieved from WEKA Apriori - Classification Association Rule.
 
 22. Why in the alpha calculation, the power of 2 needs to minus 1? Global.cpp, line 47
+Meanwhile, in the SDRD program, when search in the first layer of lattice (1-itemset + consequent), it will already exclude some items with p value less than
+alfa (with depth of 2), but in the following alfa calcualtion, the size of L will be still calculated with total number of items, is it correct?
 
-23. When inserting the candidate self-sufficient itemset into memory, the only criteria is whether current K exceeds but do not check if
-the minimum value in memory is greater or smaller than current itemset.
+23. The logic differences between OpusMiner-SDRD and BigML/Opus
+
+	I. The lift/leverage value is the smallest value of all combinations between all items inside itemset in BigML/Opus;
+	   However, in OpusMiner-SDRD the lift/leverage value is the combination of antecedent and consequent
+	II. The p value is the greatest value of all combinations between all items inside itemset in BigML/Opus;
+	   It's also true in SDRD.
+	   
+24. Validate why the p value is different between BigML and OpusMiner.
 
 #########################################################################################
 Questions of original OpusMiner:
@@ -210,6 +207,17 @@ in BigML
 <Geoff>I think that comparing speed with BigML is worth doing.  It is fine that it is only approximate as they are running on AWS and so have different compute power.  Just note all this in the thesis.
  
 With search by lift fine to note that it is not possible to get equivalent results.
+
+19. What if same antecendents were retrieved for different consequent (if there are more than 2 consequents)?
+
+<Geoff>Discussing why it might happen and the reason behind it (distribution).
+
+20. Differences between SDRD and 
+Ma, B. L. W. H. Y., & Liu, B. (1998, August). Integrating classification and association rule mining. 
+In Proceedings of the fourth international conference on knowledge discovery and data mining. 
+
+<Geoff> Classification is for Preditive 
+
 
 #########################################################################################
 replace leverage/lift with mutual information

@@ -17,7 +17,7 @@ If you publish results obtained by using this software please cite
   Output
 
 File/input/Adult.csv: 132 items, 32561 transactions
-Found 500 non-redundant productive itemsets in 163 seconds
+Found 500 non-redundant productive itemsets in 159 seconds
 Alpha for size 2 = 0.000189394
 Alpha for size 3 = 1.44576e-06
 Alpha for size 4 = 1.66818e-08

@@ -3,7 +3,15 @@ library(dplyr)
 # field12 == 2 means ">50K"
 dim(filter(Adult_R,
            #field4 == "EduNum7",
-           field10 == "Hour1-20"
-           #field12 == 1
+           field10 == "Hour1-20",
+           field12 == 1
            ))[1]
 
+
+
+
+dim(filter(Adult_R,
+           field1 == "Age17-23",
+           field10 == "Hour1-20",
+           #field12 == 1
+))[1]

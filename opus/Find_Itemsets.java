@@ -209,11 +209,8 @@ public class Find_Itemsets {
 		assert (is.size() > 1);
 		
 		int itemCnt;
-		if (Globals.consequentID == item){
-			itemCnt = Globals.consequentTids.size();
-		}else{
-			itemCnt = Globals.tids.get(item).size();
-		}
+		// the item here will always equal to the consequent
+		itemCnt = Globals.consequentTids.size();
 		
 		//In Supervised Descriptive Rule Discovery, the val calculation only need to use one combination 
 				//sup (antecedent + consequent) - sup (antecedent) * sup (consequent)
@@ -260,6 +257,8 @@ public class Find_Itemsets {
 	}
 	
 	public static void insert_itemset(ItemsetRec is){
+		
+		// As when search by lift, current itemset's value will not checked against the minValue, need to double check here
 		if (OpusMiner.itemsets.size() >= Globals.k && OpusMiner.itemsets.peek().value > is.value)
 			return;
 		
@@ -296,12 +295,6 @@ public class Find_Itemsets {
 		
 		//boolean filteredCon = false;
 		for (i = 0; i < q.size(); i++){
-			//TODO 
-			
-			if (is.size() == 1 && is.contains(24) && q.get(i).item == 16){
-				System.out.println("Stops here..");
-			}
-			//TODO
 			
 			//if the "antecedent" is failed in previous iteration, means currently, the itemset which include the consequent do not need to consider at all
 			//if(filteredCon)
@@ -341,14 +334,17 @@ public class Find_Itemsets {
 				//At this moment, the current itemset is excluded the consequent. Otherwise, this overall itemset had been checked in immediate previous step.
 				Tidset ruleCover = new Tidset();
 				Tidset.intersection(ruleCover, newCover, Globals.consequentTids);
-				// this is a lower bound on the p value that may be obtained for this itemset or any superset
+				
+				// this is the actual p value for current k-itemset and consequent
+				// Originally in OpusMiner, this is a lower bound on the p value that may be obtained for this itemset or any superset
 				double lb_p = Utils.fisher(ruleCover.size(), Globals.consequentTids.size(), count);
 				
-				// calculate an upper bound on the value that can be obtained by this itemset or any superset
 				float conSup = Utils.countToSup(Globals.consequentTids.size());
 				//actually the consequent id will always in item as the itemset is sorted by id (consequent is with -1, will already on top) 
 				//And when the skipFlag is false, means currently is checking itemset without consequent, so the new_sup is actually the
 				//support of antecedent in final rule
+				
+				// calculate an upper bound on the value that can be obtained by this itemset or any superset
 				if (new_sup <= 0.5){
 					ubVal = Math.min(conSup, new_sup) - conSup * new_sup;
 				}else{
@@ -363,10 +359,6 @@ public class Find_Itemsets {
 
 			}
 			
-			// performing OPUS pruning - if this test fails, the item will not be included in any superset of is
-			//if (proceedFlag){
-				// only continue if there is any possibility of this itemset or its supersets entering the list of best itemsets
-				
 			is.add(item);
 			
 			checkImmediateSubsets(is, count);
@@ -427,10 +419,17 @@ public class Find_Itemsets {
 		
 		Globals.conUbVal = conUbVal;
 		// initialize q - the queue of items ordered on an upper bound on value
+		
 		for (i = 0; i < Globals.noOfItems; i++){
+			//first check if each item can pass the significant test alone
+			int itemCover = Globals.tids.get(i).size();
+			
+			if (Utils.fisher(itemCover, itemCover, itemCover) > Globals.getAlpha(2)){
+				continue;
+			}
 			
 			//In first level of lattice, only need to check if single item can pass the Fisher Exact Test
-			float antSup = Utils.countToSup(Globals.tids.get(i).size());
+			float antSup = Utils.countToSup(itemCover);
 			
 			float ubVal = 0;
 
@@ -454,9 +453,11 @@ public class Find_Itemsets {
 			
 			//In original OPUS_MINER, the only pruning criteria is the FISHER EXACT TEST here, so it's more loose.
 			
-			//only skip the checking of ubVal when search by lift
+			//only skip the checking of ubVal when search by leverage
 			
-			if (p <= Globals.getAlpha(2) && (Globals.searchByLift || ubVal >minValue)){	
+			//Since the upper bound value was already checked in previous section, can skip here
+			//if (p <= Globals.getAlpha(2) && (Globals.searchByLift || ubVal >minValue)){
+			if (p <= Globals.getAlpha(2)){	
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
 				float leverage = ruleSup - conSup * antSup;
 				float lift = ruleSup / (conSup * antSup);

@@ -22,7 +22,7 @@ public class ExtractRules {
 		 * OpusMinder
 		 */
 		//OpusMiner_Leverage.csv
-		String opusOutput = "File/Adult/Exp-LE50K/OpusMiner_Lift.csv";
+		String opusOutput = "File/Adult/Exp-LE50K/Output_Lift500.csv";
 		//String opusSorted = "File/Adult/Exp-LE50K/Output_Lift_Layered-Sorted.csv";
 		
 		Map<Integer, ArrayList<OpusRules>> opusRuleMap = ExtractRules.readOpusResult(opusOutput);
