@@ -156,6 +156,7 @@ public class Find_Itemsets {
 //			if (this_val <= minValue) return false;
 //		}
 		
+		//Bookmark this change
 		double this_p = Utils.fisher(cnt, sofarCnt, remainingCnt);
 		
 		if (this_p > p && p > alpha){
