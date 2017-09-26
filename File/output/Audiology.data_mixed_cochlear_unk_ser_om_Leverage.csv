@@ -1,0 +1,64 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s mixed_cochlear_unk_ser_om
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 38 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+mixed_cochlear_unk_ser_om & field7 = t & field66 = b,3, 0.013098, 75.333336,5.26759e-07,0.013274,1.000000
+mixed_cochlear_unk_ser_om & field7 = t & field3 = t,3, 0.013039, 56.500000,2.10704e-06,0.017699,0.750000
+mixed_cochlear_unk_ser_om & field6 = mild & field66 = b,3, 0.012981, 45.200001,5.26759e-06,0.022124,0.600000
+mixed_cochlear_unk_ser_om & field66 = b & field4 = absent,3, 0.012922, 37.666668,1.05352e-05,0.026549,0.500000
+mixed_cochlear_unk_ser_om & field66 = b & field59 = absent,3, 0.012863, 32.285713,1.84366e-05,0.030973,0.428571
+mixed_cochlear_unk_ser_om & field3 = t & field66 = b,3, 0.012863, 32.285713,1.84366e-05,0.030973,0.428571
+mixed_cochlear_unk_ser_om & field7 = t & field59 = absent,3, 0.012804, 28.250000,2.94985e-05,0.035398,0.375000
+mixed_cochlear_unk_ser_om & field7 = t & field4 = absent,3, 0.012687, 22.600000,6.32111e-05,0.044248,0.300000
+mixed_cochlear_unk_ser_om & field7 = t & field5 = absent,3, 0.012628, 20.545454,8.69153e-05,0.048673,0.272727
+mixed_cochlear_unk_ser_om & field3 = t & field6 = mild,3, 0.012393, 15.066668,0.000239676,0.066372,0.200000
+mixed_cochlear_unk_ser_om & field3 = t & field4 = absent,3, 0.012041, 10.761905,0.000700590,0.092920,0.142857
+mixed_cochlear_unk_ser_om & field3 = t & field59 = absent,3, 0.011865, 9.416667,0.00106616,0.106195,0.125000
+mixed_cochlear_unk_ser_om & field3 = t & field5 = absent,3, 0.011806, 9.040000,0.00121155,0.110619,0.120000
+mixed_cochlear_unk_ser_om & field6 = mild & field4 = absent,3, 0.011747, 8.692307,0.00136957,0.115044,0.115385
+mixed_cochlear_unk_ser_om & field6 = mild & field59 = absent,3, 0.011688, 8.370371,0.00154077,0.119469,0.111111
+mixed_cochlear_unk_ser_om & field5 = absent & field6 = mild,3, 0.011630, 8.071428,0.00172566,0.123894,0.107143
+mixed_cochlear_unk_ser_om & field7 = t & field6 = mild,3, 0.011571, 7.793104,0.00192478,0.128319,0.103448
+mixed_cochlear_unk_ser_om & field5 = absent & field4 = absent,3, 0.011160, 6.277778,0.00376106,0.159292,0.083333
+mixed_cochlear_unk_ser_om & field5 = absent & field59 = absent,3, 0.011101, 6.108109,0.00409292,0.163717,0.081081
+mixed_cochlear_unk_ser_om & field4 = absent & field59 = absent,3, 0.010514, 4.808511,0.00854140,0.207965,0.063830
+mixed_cochlear_unk_ser_om & field59 = absent,3, 0.010103, 4.185185,0.0130657,0.238938,0.055556
+mixed_cochlear_unk_ser_om & field4 = absent,3, 0.009926, 3.964912,0.0154130,0.252212,0.052632
+mixed_cochlear_unk_ser_om & field2 = moderate & field66 = b,2, 0.008615, 37.666668,0.000703751,0.017699,0.500000
+mixed_cochlear_unk_ser_om & field7 = t & field2 = moderate,2, 0.008497, 25.111111,0.00174884,0.026549,0.333333
+mixed_cochlear_unk_ser_om & field2 = moderate & field6 = mild,2, 0.008262, 15.066667,0.00518331,0.044248,0.200000
+mixed_cochlear_unk_ser_om & field2 = moderate & field3 = t,2, 0.008203, 13.696969,0.00631584,0.048673,0.181818
+mixed_cochlear_unk_ser_om & field2 = moderate & field4 = absent,2, 0.008203, 13.696969,0.00631584,0.048673,0.181818
+mixed_cochlear_unk_ser_om & field2 = moderate & field59 = absent,2, 0.008086, 11.589744,0.00890223,0.057522,0.153846
+mixed_cochlear_unk_ser_om & field2 = moderate & field5 = absent,2, 0.008027, 10.761905,0.0103540,0.061947,0.142857
+mixed_cochlear_unk_ser_om & field70 = p35,1, 0.004366, 75.333336,0.0132743,0.004425,1.000000
+mixed_cochlear_unk_ser_om & field70 = p81,1, 0.004366, 75.333336,0.0132743,0.004425,1.000000
+mixed_cochlear_unk_ser_om & field70 = p102,1, 0.004366, 75.333336,0.0132743,0.004425,1.000000
+
+6 itemsets failed test for self sufficiency
+mixed_cochlear_unk_ser_om & field66 = b,3, 0.012804, 28.250000,2.94985e-05,0.035398,0.375000
+mixed_cochlear_unk_ser_om & field3 = t,3, 0.011747, 8.692307,0.00136957,0.115044,0.115385
+mixed_cochlear_unk_ser_om & field5 = absent,3, 0.010514, 4.808511,0.00854140,0.207965,0.063830
+mixed_cochlear_unk_ser_om & field7 = t,3, 0.010338, 4.520000,0.0103245,0.221239,0.060000
+mixed_cochlear_unk_ser_om & field6 = mild,3, 0.009750, 3.766667,0.0180257,0.265487,0.050000
+mixed_cochlear_unk_ser_om & field2 = moderate,2, 0.007616, 7.174603,0.0233776,0.092920,0.095238
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 38 itemsets
+

@@ -1,0 +1,127 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s very_recom
+  Nursery.data.csv
+  Nursery.data
+
+File/input/Nursery.data.csv: 31 items, 5222 transactions
+Found 100 non-redundant productive itemsets in 4 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+very_recom & field6 = convenient & field7 = nonprob & field2 = less_proper & field1 = pretentious,3, 0.000505, 8.258303,0.00413933,0.001340,0.428571
+very_recom & field3 = complete & field4 = 1 & field6 = convenient & field7 = nonprob & field2 = less_proper,6, 0.000990, 7.226015,9.52172e-05,0.003064,0.375000
+very_recom & field3 = complete & field4 = 1 & field6 = convenient & field7 = nonprob & field1 = pretentious,6, 0.000990, 7.226015,9.52172e-05,0.003064,0.375000
+very_recom & field3 = complete & field4 = 1 & field7 = nonprob & field1 = pretentious,11, 0.001798, 6.837519,2.01152e-07,0.005936,0.354839
+very_recom & field3 = complete & field4 = 1 & field7 = nonprob & field2 = less_proper,11, 0.001798, 6.837519,2.01152e-07,0.005936,0.354839
+very_recom & field2 = proper & field3 = complete & field4 = 1 & field6 = convenient & field7 = slightly_prob & field1 = pretentious,3, 0.000485, 6.423124,0.00919242,0.001723,0.333333
+very_recom & field2 = proper & field3 = complete & field4 = 1 & field6 = convenient & field7 = nonprob & field1 = pretentious,3, 0.000485, 6.423124,0.00919242,0.001723,0.333333
+very_recom & field2 = proper & field3 = complete & field4 = 1 & field7 = slightly_prob & field1 = pretentious,6, 0.000970, 6.423124,0.000202084,0.003447,0.333333
+very_recom & field4 = 1 & field5 = convenient & field6 = convenient & field7 = slightly_prob & field2 = less_proper,5, 0.000808, 6.423124,0.000708528,0.002872,0.333333
+very_recom & field3 = complete & field4 = 1 & field6 = convenient & field7 = slightly_prob & field2 = less_proper,5, 0.000808, 6.423124,0.000708528,0.002872,0.333333
+very_recom & field3 = complete & field5 = convenient & field6 = convenient & field7 = nonprob & field2 = less_proper,5, 0.000808, 6.423124,0.000708528,0.002872,0.333333
+very_recom & field2 = proper & field3 = complete & field4 = 1 & field7 = nonprob & field1 = pretentious,6, 0.000970, 6.423124,0.000202084,0.003447,0.333333
+very_recom & field4 = 1 & field5 = convenient & field6 = convenient & field7 = nonprob & field2 = less_proper,5, 0.000808, 6.423124,0.000708528,0.002872,0.333333
+very_recom & field3 = complete & field4 = 1 & field6 = convenient & field7 = nonprob & field2 = improper,3, 0.000485, 6.423124,0.00919242,0.001723,0.333333
+very_recom & field3 = complete & field4 = 1 & field6 = convenient & field7 = slightly_prob & field2 = improper,3, 0.000485, 6.423124,0.00919242,0.001723,0.333333
+very_recom & field3 = complete & field5 = convenient & field6 = convenient & field7 = slightly_prob & field2 = less_proper,5, 0.000808, 6.423124,0.000708528,0.002872,0.333333
+very_recom & field3 = complete & field4 = 1 & field7 = slightly_prob & field2 = improper,6, 0.000970, 6.423124,0.000202084,0.003447,0.333333
+very_recom & field3 = complete & field4 = 1 & field7 = nonprob & field2 = improper,6, 0.000970, 6.423124,0.000202084,0.003447,0.333333
+very_recom & field3 = complete & field4 = 1 & field7 = slightly_prob & field2 = less_proper,10, 0.001617, 6.423124,1.43256e-06,0.005745,0.333333
+very_recom & field3 = complete & field4 = 1 & field7 = slightly_prob & field1 = pretentious,10, 0.001617, 6.423124,1.43256e-06,0.005745,0.333333
+very_recom & field2 = proper & field4 = 1 & field5 = convenient & field6 = convenient & field7 = nonprob & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field2 = proper & field5 = convenient & field6 = convenient & field7 = slightly_prob & field4 = 2 & field3 = completed,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field3 = complete & field4 = 1 & field5 = convenient & field7 = slightly_prob & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field3 = complete & field4 = 1 & field5 = convenient & field6 = convenient & field7 = slightly_prob & field2 = less_proper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field3 = complete & field4 = 1 & field5 = convenient & field6 = convenient & field7 = nonprob & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field4 = 1 & field5 = convenient & field6 = convenient & field7 = slightly_prob & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field2 = proper & field3 = complete & field5 = convenient & field6 = convenient & field7 = nonprob & field4 = 2,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field3 = complete & field4 = 1 & field5 = convenient & field6 = convenient & field7 = nonprob & field2 = less_proper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field4 = 1 & field5 = convenient & field6 = convenient & field7 = slightly_prob & field3 = completed,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field5 = convenient & field6 = convenient & field7 = nonprob & field4 = 2 & field3 = completed,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field3 = complete & field5 = convenient & field6 = convenient & field7 = slightly_prob & field4 = 2,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field3 = complete & field5 = convenient & field6 = convenient & field7 = nonprob & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field2 = proper & field3 = complete & field4 = 1 & field5 = convenient & field7 = nonprob & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field3 = complete & field5 = convenient & field6 = convenient & field7 = slightly_prob & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field3 = complete & field4 = 1 & field5 = convenient & field6 = convenient & field7 = slightly_prob & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field4 = 1 & field5 = convenient & field6 = convenient & field7 = nonprob & field3 = completed,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field3 = completed & field2 = improper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field3 = completed & field2 = improper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field3 = complete & field5 = convenient & field7 = slightly_prob & field4 = 2 & field2 = improper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field5 = convenient & field7 = slightly_prob & field4 = 2 & field3 = completed & field2 = less_proper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field3 = complete & field5 = convenient & field7 = nonprob & field4 = 2 & field2 = improper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field4 = 1 & field5 = convenient & field7 = nonprob & field3 = completed & field2 = less_proper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field3 = complete & field5 = convenient & field7 = slightly_prob & field4 = 2,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field3 = complete & field5 = convenient & field7 = nonprob & field4 = 2 & field2 = less_proper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field4 = 2 & field2 = less_proper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field7 = slightly_prob & field4 = 2 & field3 = completed & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field4 = 1 & field5 = convenient & field7 = slightly_prob & field3 = completed & field2 = less_proper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field4 = 1 & field5 = convenient & field7 = slightly_prob & field3 = completed & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field5 = convenient & field7 = nonprob & field4 = 2 & field3 = completed,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field2 = proper & field3 = complete & field5 = convenient & field7 = nonprob & field4 = 2,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field2 = proper & field5 = convenient & field6 = convenient & field7 = slightly_prob & field3 = completed,8, 0.001293, 6.423124,1.68647e-05,0.004596,0.333333
+very_recom & field2 = proper & field5 = convenient & field6 = convenient & field7 = slightly_prob & field4 = 2,8, 0.001293, 6.423124,1.68647e-05,0.004596,0.333333
+very_recom & field2 = proper & field4 = 1 & field5 = convenient & field7 = nonprob & field3 = completed,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field4 = 2 & field2 = improper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field3 = complete & field4 = 1 & field5 = convenient & field7 = nonprob & field2 = less_proper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field7 = nonprob & field4 = 2 & field3 = completed & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field4 = 1 & field5 = convenient & field7 = slightly_prob & field3 = completed,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field2 = proper & field5 = convenient & field6 = convenient & field7 = nonprob & field3 = completed,8, 0.001293, 6.423124,1.68647e-05,0.004596,0.333333
+very_recom & field3 = complete & field4 = 1 & field5 = convenient & field7 = slightly_prob & field2 = less_proper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field2 = proper & field5 = convenient & field6 = convenient & field7 = nonprob & field4 = 2,8, 0.001293, 6.423124,1.68647e-05,0.004596,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field4 = 2 & field2 = improper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field3 = completed & field2 = less_proper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field3 = completed & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field4 = 2 & field2 = less_proper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field2 = proper & field5 = convenient & field7 = slightly_prob & field4 = 2 & field3 = completed,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field3 = complete & field4 = 1 & field5 = convenient & field7 = nonprob & field2 = improper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field5 = convenient & field7 = nonprob & field4 = 2 & field3 = completed & field2 = less_proper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field4 = 2 & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field3 = complete & field5 = convenient & field7 = slightly_prob & field4 = 2 & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field3 = completed & field2 = less_proper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field4 = 2 & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field3 = complete & field5 = convenient & field7 = slightly_prob & field4 = 2 & field2 = less_proper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field4 = 1 & field5 = convenient & field6 = convenient & field7 = nonprob & field2 = improper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field3 = complete & field4 = 1 & field5 = convenient & field7 = slightly_prob & field2 = improper,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field4 = 1 & field5 = convenient & field6 = convenient & field7 = slightly_prob & field2 = improper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field3 = completed & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field4 = 1 & field5 = convenient & field7 = nonprob & field3 = completed & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field5 = convenient & field6 = convenient & field7 = slightly_prob & field1 = pretentious,16, 0.002587, 6.423124,8.97820e-10,0.009192,0.333333
+very_recom & field3 = complete & field5 = convenient & field7 = nonprob & field4 = 2 & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field2 = proper & field5 = convenient & field6 = convenient & field7 = nonprob & field1 = pretentious,16, 0.002587, 6.423124,8.97820e-10,0.009192,0.333333
+very_recom & field3 = complete & field5 = convenient & field6 = convenient & field7 = slightly_prob & field2 = improper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field3 = complete & field5 = convenient & field6 = convenient & field7 = nonprob & field2 = improper,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field2 = improper,16, 0.002587, 6.423124,8.97820e-10,0.009192,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field2 = less_proper,17, 0.002749, 6.423124,2.62108e-10,0.009766,0.333333
+very_recom & field6 = convenient & field7 = slightly_prob & field2 = less_proper & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field2 = improper,16, 0.002587, 6.423124,8.97820e-10,0.009192,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field2 = less_proper,17, 0.002749, 6.423124,2.62108e-10,0.009766,0.333333
+very_recom & field5 = convenient & field7 = slightly_prob & field2 = less_proper & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+very_recom & field5 = convenient & field7 = nonprob & field2 = less_proper & field1 = pretentious,2, 0.000323, 6.423124,0.0350352,0.001149,0.333333
+
+11 itemsets failed test for self sufficiency
+very_recom & field7 = nonprob & field2 = less_proper & field1 = pretentious,5, 0.000828, 7.411297,0.000330915,0.002489,0.384615
+very_recom & field4 = 1 & field5 = convenient & field6 = convenient & field7 = nonprob & field1 = pretentious,5, 0.000808, 6.423124,0.000708528,0.002872,0.333333
+very_recom & field4 = 1 & field5 = convenient & field6 = convenient & field7 = slightly_prob & field1 = pretentious,5, 0.000808, 6.423124,0.000708528,0.002872,0.333333
+very_recom & field3 = complete & field4 = 1 & field6 = convenient & field7 = slightly_prob & field1 = pretentious,5, 0.000808, 6.423124,0.000708528,0.002872,0.333333
+very_recom & field3 = complete & field5 = convenient & field6 = convenient & field7 = slightly_prob & field1 = pretentious,5, 0.000808, 6.423124,0.000708528,0.002872,0.333333
+very_recom & field3 = complete & field5 = convenient & field6 = convenient & field7 = nonprob & field1 = pretentious,5, 0.000808, 6.423124,0.000708528,0.002872,0.333333
+very_recom & field3 = complete & field4 = 1 & field5 = convenient & field7 = nonprob & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field3 = complete & field4 = 1 & field5 = convenient & field7 = slightly_prob & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field1 = pretentious,17, 0.002749, 6.423124,2.62108e-10,0.009766,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field1 = pretentious,17, 0.002749, 6.423124,2.62108e-10,0.009766,0.333333
+very_recom & field7 = slightly_prob & field2 = less_proper & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
+
+5 seconds (0 input, 2 search, 1 filter, 0 output) for 100 itemsets
+

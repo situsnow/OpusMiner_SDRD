@@ -1,0 +1,68 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s cochlear_poss_noise
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 41 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+cochlear_poss_noise & field4 = normal & field2 = normal & field58 = t,8, 0.032266, 11.300000,8.45925e-10,0.035398,1.000000
+cochlear_poss_noise & field6 = ? & field58 = t,6, 0.024199, 11.300000,2.23938e-07,0.026549,1.000000
+cochlear_poss_noise & field58 = t & field38 = t,3, 0.012100, 11.300000,0.000600506,0.013274,1.000000
+cochlear_poss_noise & field63 = t,2, 0.008066, 11.300000,0.00747296,0.008850,1.000000
+cochlear_poss_noise & field1 = f & field58 = t,12, 0.048007, 10.430769,5.74159e-14,0.057522,0.923077
+cochlear_poss_noise & field4 = normal & field58 = t,11, 0.043974, 10.358334,1.26103e-12,0.053097,0.916667
+cochlear_poss_noise & field66 = a & field58 = t,12, 0.047615, 9.685715,3.87985e-13,0.061947,0.857143
+cochlear_poss_noise & field15 = t & field58 = t,12, 0.047615, 9.685715,3.87985e-13,0.061947,0.857143
+cochlear_poss_noise & field15 = t & field38 = t,5, 0.019383, 8.071428,6.16623e-05,0.030973,0.714286
+cochlear_poss_noise & field1 = f & field15 = t,20, 0.074791, 6.457143,1.55474e-19,0.154867,0.571429
+cochlear_poss_noise & field2 = normal & field15 = t,14, 0.051766, 6.084615,3.90519e-11,0.115044,0.538462
+cochlear_poss_noise & field4 = normal & field6 = ? & field38 = t,3, 0.010925, 5.650000,0.0100666,0.026549,0.500000
+cochlear_poss_noise & field6 = ? & field15 = t,12, 0.042525, 5.022223,4.62110e-08,0.119469,0.444444
+cochlear_poss_noise & field4 = normal & field15 = t,17, 0.058775, 4.573810,1.27400e-11,0.185841,0.404762
+cochlear_poss_noise & field66 = a & field15 = t,20, 0.067742, 4.264151,9.68642e-15,0.234513,0.377358
+cochlear_poss_noise & field4 = normal & field6 = ? & field2 = normal,8, 0.026784, 4.109091,0.000131814,0.097345,0.363636
+cochlear_poss_noise & field1 = f & field38 = t,5, 0.016642, 4.035714,0.00389382,0.061947,0.357143
+cochlear_poss_noise & field4 = normal & field2 = normal & field38 = t,3, 0.009359, 3.390000,0.0477635,0.044248,0.300000
+cochlear_poss_noise & field1 = f & field6 = ?,12, 0.035868, 3.081818,2.89651e-05,0.194690,0.272727
+cochlear_poss_noise & field1 = f & field4 = normal,17, 0.050161, 3.001563,4.82409e-08,0.283186,0.265625
+cochlear_poss_noise & field66 = a & field38 = t,5, 0.014292, 2.825000,0.0210911,0.088496,0.250000
+cochlear_poss_noise & field38 = t,5, 0.013901, 2.690476,0.0260716,0.092920,0.238095
+cochlear_poss_noise & field1 = f & field2 = normal,14, 0.037278, 2.511111,4.82783e-05,0.278761,0.222222
+cochlear_poss_noise & field1 = f & field66 = a,20, 0.046989, 2.132076,9.30924e-08,0.469027,0.188679
+cochlear_poss_noise & field66 = a & field2 = normal,14, 0.031404, 2.028205,0.000778570,0.345133,0.179487
+cochlear_poss_noise & field6 = ? & field66 = a,12, 0.024512, 1.857534,0.00717784,0.323009,0.164384
+cochlear_poss_noise & field4 = normal & field66 = a,17, 0.024708, 1.489147,0.00610765,0.570796,0.131783
+
+14 itemsets failed test for self sufficiency
+cochlear_poss_noise & field2 = normal & field58 = t,9, 0.035907, 10.170000,4.44403e-10,0.044248,0.900000
+cochlear_poss_noise & field58 = t,12, 0.047224, 9.040000,1.87243e-12,0.066372,0.800000
+cochlear_poss_noise & field6 = ? & field38 = t,3, 0.010142, 4.237500,0.0250624,0.035398,0.375000
+cochlear_poss_noise & field15 = t,20, 0.064218, 3.645161,4.40700e-13,0.274336,0.322581
+cochlear_poss_noise & field6 = ? & field2 = normal,9, 0.027684, 3.280645,0.000322081,0.137168,0.290323
+cochlear_poss_noise & field2 = normal & field38 = t,4, 0.012217, 3.228571,0.0252336,0.061947,0.285714
+cochlear_poss_noise & field4 = normal & field38 = t,4, 0.011434, 2.825000,0.0406957,0.070796,0.250000
+cochlear_poss_noise & field4 = normal & field2 = normal,11, 0.028311, 2.390385,0.00114784,0.230089,0.211538
+cochlear_poss_noise & field4 = normal & field6 = ?,11, 0.026353, 2.180702,0.00276896,0.252212,0.192982
+cochlear_poss_noise & field2 = normal,14, 0.029446, 1.906024,0.00166875,0.367257,0.168675
+cochlear_poss_noise & field6 = ?,12, 0.023729, 1.808000,0.00928671,0.331858,0.160000
+cochlear_poss_noise & field1 = f,20, 0.036025, 1.686567,1.54162e-05,0.592920,0.149254
+cochlear_poss_noise & field4 = normal,17, 0.023925, 1.466412,0.00764158,0.579646,0.129771
+cochlear_poss_noise & field66 = a,20, 0.014488, 1.195767,0.0234816,0.836283,0.105820
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 41 itemsets
+

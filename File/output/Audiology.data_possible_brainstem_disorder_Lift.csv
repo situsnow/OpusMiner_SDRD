@@ -1,0 +1,59 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s possible_brainstem_disorder
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 32 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+possible_brainstem_disorder & field38 = t & field65 = f,2, 0.008693, 56.500000,0.000235988,0.008850,1.000000
+possible_brainstem_disorder & field65 = f & field14 = t,4, 0.017386, 56.500000,9.44860e-09,0.017699,1.000000
+possible_brainstem_disorder & field70 = p91,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+possible_brainstem_disorder & field8 = degraded,2, 0.008693, 56.500000,0.000235988,0.008850,1.000000
+possible_brainstem_disorder & field70 = p120,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+possible_brainstem_disorder & field70 = p141,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+possible_brainstem_disorder & field70 = p198,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+possible_brainstem_disorder & field69 = t,2, 0.008693, 56.500000,0.000235988,0.008850,1.000000
+possible_brainstem_disorder & field2 = normal & field65 = f,4, 0.017229, 37.666668,1.41729e-07,0.026549,0.666667
+possible_brainstem_disorder & field38 = t & field14 = t,2, 0.008615, 37.666668,0.000703751,0.013274,0.666667
+possible_brainstem_disorder & field65 = f & field18 = t,2, 0.008615, 37.666668,0.000703751,0.013274,0.666667
+possible_brainstem_disorder & field2 = normal & field14 = t,4, 0.017151, 32.285713,3.30701e-07,0.030973,0.571429
+possible_brainstem_disorder & field2 = normal & field18 = t,2, 0.008536, 28.250000,0.00139910,0.017699,0.500000
+possible_brainstem_disorder & field64 = normal & field65 = f,4, 0.017073, 28.250000,6.61402e-07,0.035398,0.500000
+possible_brainstem_disorder & field64 = normal & field14 = t,4, 0.016994, 25.111111,1.19052e-06,0.039823,0.444444
+possible_brainstem_disorder & field64 = normal & field18 = t,2, 0.008380, 18.833334,0.00345597,0.026549,0.333333
+possible_brainstem_disorder & field65 = f,4, 0.016759, 18.833334,4.67706e-06,0.053097,0.333333
+possible_brainstem_disorder & field14 = t,4, 0.016759, 18.833334,4.67706e-06,0.053097,0.333333
+possible_brainstem_disorder & field65 = f & field10 = t,2, 0.008301, 16.142857,0.00480925,0.030973,0.285714
+possible_brainstem_disorder & field10 = t & field18 = t,2, 0.008301, 16.142857,0.00480925,0.030973,0.285714
+possible_brainstem_disorder & field10 = t & field14 = t,2, 0.008223, 14.125000,0.00637367,0.035398,0.250000
+possible_brainstem_disorder & field18 = t & field14 = t,2, 0.008223, 14.125000,0.00637367,0.035398,0.250000
+possible_brainstem_disorder & field2 = normal & field10 = t,2, 0.008145, 12.555555,0.00814516,0.039823,0.222222
+possible_brainstem_disorder & field18 = t,2, 0.007988, 10.272727,0.0122934,0.048673,0.181818
+possible_brainstem_disorder & field64 = normal & field38 = t,2, 0.007910, 9.416667,0.0146622,0.053097,0.166667
+possible_brainstem_disorder & field64 = normal & field10 = t,2, 0.007910, 9.416667,0.0146622,0.053097,0.166667
+possible_brainstem_disorder & field2 = normal & field38 = t,2, 0.007753, 8.071428,0.0199694,0.061947,0.142857
+possible_brainstem_disorder & field10 = t,2, 0.007283, 5.650000,0.0401710,0.088496,0.100000
+possible_brainstem_disorder & field38 = t,2, 0.007205, 5.380952,0.0441225,0.092920,0.095238
+possible_brainstem_disorder & field64 = normal & field2 = normal,4, 0.013627, 4.346154,0.00255797,0.230089,0.076923
+
+2 itemsets failed test for self sufficiency
+possible_brainstem_disorder & field2 = normal,4, 0.011199, 2.722892,0.0173629,0.367257,0.048193
+possible_brainstem_disorder & field64 = normal,4, 0.010572, 2.483517,0.0252530,0.402655,0.043956
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 32 itemsets
+

@@ -1,0 +1,122 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -p
+  -k 100
+  -s very_recom
+  Nursery.data.csv
+  Nursery.data
+
+File/input/Nursery.data.csv: 31 items, 5222 transactions
+Found 91 non-redundant productive itemsets in 3 seconds
+Alpha for size 2 = 5.37634e-05
+Alpha for size 3 = 2.78087e-06
+Alpha for size 4 = 1.98633e-07
+Alpha for size 5 = 1.83920e-08
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+very_recom & field5 = convenient & field8 = recommended,170, 0.026771, 5.628511,8.76616e-101,0.111452,0.292096
+very_recom & field6 = convenient & field8 = recommended,179, 0.025622, 3.960066,5.72170e-79,0.166794,0.205511
+very_recom & field7 = nonprob & field8 = recommended,136, 0.020270, 4.510559,2.94011e-62,0.111260,0.234079
+very_recom & field8 = recommended & field7 = slightly_prob,135, 0.020088, 4.485113,2.35279e-61,0.111069,0.232759
+very_recom & field4 = 1 & field8 = recommended,127, 0.019898, 5.499349,1.41140e-68,0.085216,0.285393
+very_recom & field2 = proper & field8 = recommended,130, 0.019170, 4.348990,7.98947e-57,0.110303,0.225694
+very_recom & field3 = complete & field8 = recommended,103, 0.015302, 4.460102,3.10535e-44,0.085216,0.231461
+very_recom & field8 = recommended & field1 = pretentious,75, 0.011371, 4.801339,1.65621e-33,0.057641,0.249169
+very_recom & field8 = recommended & field2 = less_proper,75, 0.011371, 4.801339,1.65621e-33,0.057641,0.249169
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob,64, 0.009364, 4.237937,4.90402e-25,0.055726,0.219931
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob,64, 0.009364, 4.237937,4.90402e-25,0.055726,0.219931
+very_recom & field2 = proper & field5 = convenient & field6 = convenient & field7 = nonprob,31, 0.004982, 6.222401,1.98899e-17,0.018384,0.322917
+very_recom & field2 = proper & field5 = convenient & field6 = convenient & field7 = slightly_prob,31, 0.004982, 6.222401,1.98899e-17,0.018384,0.322917
+very_recom & field4 = 1 & field6 = convenient & field7 = nonprob,34, 0.004295, 2.937931,7.34378e-09,0.042704,0.152466
+very_recom & field3 = complete & field4 = 1 & field7 = nonprob,28, 0.004159, 4.459028,8.14320e-12,0.023171,0.231405
+very_recom & field2 = proper & field4 = 1 & field7 = slightly_prob,29, 0.004122, 3.880637,1.28934e-10,0.027576,0.201389
+very_recom & field2 = proper & field4 = 1 & field7 = nonprob,29, 0.004122, 3.880637,1.28934e-10,0.027576,0.201389
+very_recom & field4 = 1 & field6 = convenient & field7 = slightly_prob,33, 0.004113, 2.864366,2.38052e-08,0.042512,0.148649
+very_recom & field4 = 1 & field5 = convenient & field7 = nonprob,29, 0.004063, 3.725412,3.62259e-10,0.028725,0.193333
+very_recom & field4 = 1 & field5 = convenient & field7 = slightly_prob,29, 0.004063, 3.725412,3.62259e-10,0.028725,0.193333
+very_recom & field3 = complete & field4 = 1 & field7 = slightly_prob,27, 0.003978, 4.335609,3.96971e-11,0.022980,0.225000
+very_recom & field4 = 1 & field5 = convenient & field6 = convenient,32, 0.003892, 2.740533,1.15376e-07,0.043087,0.142222
+very_recom & field3 = complete & field5 = convenient & field6 = convenient,32, 0.003892, 2.740533,1.15376e-07,0.043087,0.142222
+very_recom & field2 = proper & field4 = 1 & field5 = convenient,26, 0.003548, 3.479192,1.42401e-08,0.027576,0.180556
+very_recom & field3 = complete & field5 = convenient & field7 = nonprob,25, 0.003297, 3.211562,1.42428e-07,0.028725,0.166667
+very_recom & field3 = complete & field5 = convenient & field7 = slightly_prob,25, 0.003297, 3.211562,1.42428e-07,0.028725,0.166667
+very_recom & field2 = proper & field3 = complete & field4 = 1,22, 0.003140, 3.925242,2.00211e-08,0.020682,0.203704
+very_recom & field3 = complete & field4 = 1 & field2 = less_proper,21, 0.003117, 4.446778,4.00464e-09,0.017426,0.230769
+very_recom & field3 = complete & field4 = 1 & field1 = pretentious,21, 0.003117, 4.446778,4.00464e-09,0.017426,0.230769
+very_recom & field4 = 1 & field7 = nonprob & field2 = less_proper,20, 0.002985, 4.533970,6.65396e-09,0.016277,0.235294
+very_recom & field4 = 1 & field7 = nonprob & field1 = pretentious,20, 0.002985, 4.533970,6.65396e-09,0.016277,0.235294
+very_recom & field4 = 1 & field7 = slightly_prob & field2 = less_proper,19, 0.002804, 4.358549,3.22402e-08,0.016086,0.226190
+very_recom & field4 = 1 & field7 = slightly_prob & field1 = pretentious,19, 0.002804, 4.358549,3.22402e-08,0.016086,0.226190
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field2 = less_proper,17, 0.002749, 6.423124,2.62108e-10,0.009766,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field2 = less_proper,17, 0.002749, 6.423124,2.62108e-10,0.009766,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & field1 = pretentious,17, 0.002749, 6.423124,2.62108e-10,0.009766,0.333333
+very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field1 = pretentious,17, 0.002749, 6.423124,2.62108e-10,0.009766,0.333333
+
+54 itemsets failed test for self sufficiency
+very_recom & field8 = recommended,271, 0.034594, 2.999425,1.51321e-136,0.333397,0.155658
+very_recom & field5 = convenient & field6 = convenient,128, 0.015836, 2.825292,1.58501e-33,0.167177,0.146621
+very_recom & field5 = convenient,170, 0.015203, 1.876170,3.87352e-24,0.334355,0.097365
+very_recom & field4 = 1,127, 0.011073, 1.835867,5.27036e-15,0.255266,0.095274
+very_recom & field5 = convenient & field7 = slightly_prob,85, 0.010493, 2.814255,1.44339e-20,0.111452,0.146048
+very_recom & field5 = convenient & field7 = nonprob,85, 0.010493, 2.814255,1.44339e-20,0.111452,0.146048
+very_recom & field2 = proper & field5 = convenient,82, 0.009979, 2.743209,4.76785e-19,0.110303,0.142361
+very_recom & field2 = proper & field5 = convenient & field6 = convenient,62, 0.009011, 4.148268,1.08268e-23,0.055151,0.215278
+very_recom & field7 = nonprob,136, 0.008742, 1.505247,3.03748e-09,0.333397,0.078116
+very_recom & field6 = convenient & field7 = nonprob,90, 0.008579, 1.991095,5.68500e-12,0.166794,0.103330
+very_recom & field7 = slightly_prob,135, 0.008560, 1.495038,6.15273e-09,0.333206,0.077586
+very_recom & field6 = convenient & field7 = slightly_prob,89, 0.008397, 1.971235,1.41823e-11,0.166603,0.102299
+very_recom & field6 = convenient,179, 0.008330, 1.321033,3.18663e-08,0.500000,0.068556
+very_recom & field2 = proper & field6 = convenient,86, 0.007882, 1.918016,1.66971e-10,0.165454,0.099537
+very_recom & field4 = 1 & field7 = nonprob,64, 0.007833, 2.771325,6.75134e-15,0.085216,0.143820
+very_recom & field2 = proper,130, 0.007722, 1.449663,1.31614e-07,0.330908,0.075231
+very_recom & field4 = 1 & field7 = slightly_prob,63, 0.007652, 2.734168,2.24670e-14,0.085025,0.141892
+very_recom & field3 = complete & field4 = 1,55, 0.006945, 2.935777,7.02612e-14,0.069131,0.152355
+very_recom & field2 = proper & field4 = 1,58, 0.006814, 2.587091,3.50969e-12,0.082727,0.134259
+very_recom & field2 = proper & field7 = nonprob,65, 0.006723, 2.174495,3.60728e-10,0.110303,0.112847
+very_recom & field2 = proper & field7 = slightly_prob,65, 0.006723, 2.174495,3.60728e-10,0.110303,0.112847
+very_recom & field4 = 1 & field5 = convenient,58, 0.006635, 2.483608,1.99312e-11,0.086174,0.128889
+very_recom & field3 = complete,103, 0.006477, 1.488931,2.22741e-06,0.255266,0.077269
+very_recom & field4 = 1 & field6 = convenient,67, 0.006202, 1.935604,2.60725e-08,0.127729,0.100450
+very_recom & field2 = proper & field5 = convenient & field7 = nonprob,41, 0.005943, 4.114813,1.42049e-15,0.036768,0.213542
+very_recom & field2 = proper & field5 = convenient & field7 = slightly_prob,41, 0.005943, 4.114813,1.42049e-15,0.036768,0.213542
+very_recom & field5 = convenient & field1 = pretentious,46, 0.005768, 2.896703,1.81210e-11,0.058598,0.150327
+very_recom & field5 = convenient & field2 = less_proper,46, 0.005768, 2.896703,1.81210e-11,0.058598,0.150327
+very_recom & field3 = complete & field7 = nonprob,52, 0.005535, 2.251702,9.61698e-09,0.085216,0.116854
+very_recom & field1 = pretentious,75, 0.005398, 1.602220,7.87594e-06,0.172731,0.083149
+very_recom & field2 = less_proper,75, 0.005398, 1.602220,7.87594e-06,0.172731,0.083149
+very_recom & field2 = proper & field6 = convenient & field7 = slightly_prob,43, 0.005372, 2.877024,1.14899e-10,0.055151,0.149306
+very_recom & field2 = proper & field6 = convenient & field7 = nonprob,43, 0.005372, 2.877024,1.14899e-10,0.055151,0.149306
+very_recom & field3 = complete & field7 = slightly_prob,51, 0.005354, 2.213374,2.47176e-08,0.085025,0.114865
+very_recom & field3 = complete & field5 = convenient,50, 0.005103, 2.141041,1.03594e-07,0.086174,0.111111
+very_recom & field5 = convenient & field6 = convenient & field1 = pretentious,34, 0.004990, 4.282083,1.38722e-13,0.029299,0.222222
+very_recom & field5 = convenient & field6 = convenient & field2 = less_proper,34, 0.004990, 4.282083,1.38722e-13,0.029299,0.222222
+very_recom & field4 = 1 & field2 = less_proper,39, 0.004954, 2.970377,3.59790e-10,0.048449,0.154150
+very_recom & field4 = 1 & field1 = pretentious,39, 0.004954, 2.970377,3.59790e-10,0.048449,0.154150
+very_recom & field6 = convenient & field1 = pretentious,49, 0.004901, 2.093568,2.88318e-07,0.086365,0.108647
+very_recom & field6 = convenient & field2 = less_proper,49, 0.004901, 2.093568,2.88318e-07,0.086365,0.108647
+very_recom & field2 = proper & field3 = complete,46, 0.004516, 2.051831,1.27668e-06,0.082727,0.106481
+very_recom & field7 = nonprob & field2 = less_proper,38, 0.004286, 2.432678,1.73520e-07,0.057641,0.126246
+very_recom & field7 = nonprob & field1 = pretentious,38, 0.004286, 2.432678,1.73520e-07,0.057641,0.126246
+very_recom & field7 = slightly_prob & field2 = less_proper,37, 0.004104, 2.376556,4.67621e-07,0.057449,0.123333
+very_recom & field7 = slightly_prob & field1 = pretentious,37, 0.004104, 2.376556,4.67621e-07,0.057449,0.123333
+very_recom & field3 = complete & field2 = less_proper,33, 0.003805, 2.513396,5.74576e-07,0.048449,0.130435
+very_recom & field3 = complete & field1 = pretentious,33, 0.003805, 2.513396,5.74576e-07,0.048449,0.130435
+very_recom & field5 = convenient & field7 = nonprob & field2 = less_proper,23, 0.003391, 4.345055,1.14678e-09,0.019533,0.225490
+very_recom & field5 = convenient & field7 = slightly_prob & field2 = less_proper,23, 0.003391, 4.345055,1.14678e-09,0.019533,0.225490
+very_recom & field5 = convenient & field7 = nonprob & field1 = pretentious,23, 0.003391, 4.345055,1.14678e-09,0.019533,0.225490
+very_recom & field5 = convenient & field7 = slightly_prob & field1 = pretentious,23, 0.003391, 4.345055,1.14678e-09,0.019533,0.225490
+very_recom & field6 = convenient & field7 = nonprob & field2 = less_proper,25, 0.003287, 3.190293,1.62827e-07,0.028916,0.165563
+very_recom & field6 = convenient & field7 = nonprob & field1 = pretentious,25, 0.003287, 3.190293,1.62827e-07,0.028916,0.165563
+
+3 seconds (0 input, 1 search, 1 filter, 0 output) for 91 itemsets
+

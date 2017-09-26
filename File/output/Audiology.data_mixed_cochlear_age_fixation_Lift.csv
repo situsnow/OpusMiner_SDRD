@@ -1,0 +1,48 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s mixed_cochlear_age_fixation
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 21 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+mixed_cochlear_age_fixation & field3 = t & field6 = moderate,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+mixed_cochlear_age_fixation & field59 = ? & field66 = as,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+mixed_cochlear_age_fixation & field4 = ? & field66 = as,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+mixed_cochlear_age_fixation & field66 = as & field6 = moderate,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+mixed_cochlear_age_fixation & field49 = t,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+mixed_cochlear_age_fixation & field70 = p3,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+mixed_cochlear_age_fixation & field70 = t22,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+mixed_cochlear_age_fixation & field3 = t & field59 = ?,1, 0.004346, 56.500000,0.0176598,0.008850,0.500000
+mixed_cochlear_age_fixation & field5 = absent & field6 = moderate,1, 0.004346, 56.500000,0.0176598,0.008850,0.500000
+mixed_cochlear_age_fixation & field3 = t & field4 = ?,1, 0.004346, 56.500000,0.0176598,0.008850,0.500000
+mixed_cochlear_age_fixation & field4 = ? & field5 = absent,1, 0.004346, 56.500000,0.0176598,0.008850,0.500000
+mixed_cochlear_age_fixation & field5 = absent & field59 = ?,1, 0.004307, 37.666668,0.0264307,0.013274,0.333333
+mixed_cochlear_age_fixation & field3 = t & field66 = as,2, 0.008262, 15.066668,0.00412979,0.066372,0.133333
+mixed_cochlear_age_fixation & field5 = absent & field66 = as,2, 0.008184, 13.294117,0.00534907,0.075221,0.117647
+mixed_cochlear_age_fixation & field3 = t & field5 = absent,2, 0.007871, 9.040000,0.0117994,0.110619,0.080000
+
+6 itemsets failed test for self sufficiency
+mixed_cochlear_age_fixation & field4 = ?,1, 0.004268, 28.250000,0.0351622,0.017699,0.250000
+mixed_cochlear_age_fixation & field6 = moderate,1, 0.004268, 28.250000,0.0351622,0.017699,0.250000
+mixed_cochlear_age_fixation & field59 = ?,1, 0.004229, 22.600000,0.0438545,0.022124,0.200000
+mixed_cochlear_age_fixation & field66 = as,2, 0.008145, 12.555555,0.00601770,0.079646,0.111111
+mixed_cochlear_age_fixation & field3 = t,2, 0.007831, 8.692307,0.0127827,0.115044,0.076923
+mixed_cochlear_age_fixation & field5 = absent,2, 0.007009, 4.808511,0.0425172,0.207965,0.042553
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 21 itemsets
+

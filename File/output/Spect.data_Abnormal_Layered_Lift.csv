@@ -1,0 +1,62 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -p
+  -k 100
+  -s Abnormal
+  Spect.data.csv
+  Spect.data
+
+File/input/Spect.data.csv: 45 items, 267 transactions
+Found 29 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 2.52525e-05
+Alpha for size 3 = 8.80902e-07
+Alpha for size 4 = 4.19477e-08
+Alpha for size 5 = 2.55779e-09
+Alpha for size 6 = 1.91834e-10
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+Abnormal & field9 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0,34, 0.074107, 2.392095,1.23424e-10,0.258427,0.492754
+Abnormal & field14 = 0,48, 0.075622, 1.726061,2.35602e-10,0.505618,0.355556
+Abnormal & field9 = 0,47, 0.057989, 1.491266,7.78901e-07,0.573034,0.307190
+Abnormal & field23 = 0,47, 0.054903, 1.453272,2.48232e-06,0.588015,0.299363
+Abnormal & field22 = 0,50, 0.056110, 1.427807,4.60077e-07,0.636704,0.294118
+Abnormal & field17 = 0,51, 0.049054, 1.345553,3.55458e-06,0.689139,0.277174
+
+23 itemsets failed test for self sufficiency
+Abnormal & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0,37, 0.079171, 2.332704,1.80298e-11,0.288390,0.480519
+Abnormal & field9 = 0 & field22 = 0 & field23 = 0 & field17 = 0,37, 0.077628, 2.273648,5.32400e-11,0.295880,0.468354
+Abnormal & field9 = 0 & field14 = 0 & field23 = 0 & field17 = 0,35, 0.073223, 2.265455,4.04407e-10,0.280899,0.466667
+Abnormal & field9 = 0 & field14 = 0 & field22 = 0 & field17 = 0,41, 0.085665, 2.261777,9.79990e-13,0.329588,0.465909
+Abnormal & field14 = 0 & field23 = 0 & field17 = 0,38, 0.078287, 2.222563,5.21447e-11,0.310861,0.457831
+Abnormal & field14 = 0 & field22 = 0 & field17 = 0,44, 0.089958, 2.202062,9.96933e-14,0.363296,0.453608
+Abnormal & field9 = 0 & field23 = 0 & field17 = 0,38, 0.075972, 2.145032,2.32862e-10,0.322097,0.441860
+Abnormal & field9 = 0 & field22 = 0 & field17 = 0,44, 0.086872, 2.114852,7.93615e-13,0.378277,0.435644
+Abnormal & field9 = 0 & field14 = 0 & field17 = 0,42, 0.082467, 2.101968,1.04984e-11,0.363296,0.432990
+Abnormal & field14 = 0 & field17 = 0,45, 0.086760, 2.060892,8.79538e-13,0.397004,0.424528
+Abnormal & field14 = 0 & field22 = 0 & field23 = 0,39, 0.072774, 1.992919,1.98654e-09,0.355805,0.410526
+Abnormal & field22 = 0 & field23 = 0 & field17 = 0,40, 0.072662, 1.941818,2.46386e-09,0.374532,0.400000
+Abnormal & field9 = 0 & field22 = 0 & field23 = 0,38, 0.068257, 1.921591,1.90414e-08,0.359551,0.395833
+Abnormal & field9 = 0 & field14 = 0 & field22 = 0,42, 0.074752, 1.905523,9.36996e-10,0.400749,0.392523
+Abnormal & field9 = 0 & field17 = 0,46, 0.081247, 1.892450,2.10627e-11,0.441948,0.389830
+Abnormal & field14 = 0 & field23 = 0,41, 0.071778, 1.877702,4.29486e-09,0.397004,0.386792
+Abnormal & field14 = 0 & field22 = 0,46, 0.080475, 1.876547,3.23328e-11,0.445693,0.386555
+Abnormal & field9 = 0 & field23 = 0,39, 0.065059, 1.803117,1.03779e-07,0.393258,0.371429
+Abnormal & field9 = 0 & field14 = 0,43, 0.069239, 1.754164,1.47140e-08,0.445693,0.361345
+Abnormal & field22 = 0 & field17 = 0,47, 0.074962, 1.741707,4.57124e-10,0.490637,0.358779
+Abnormal & field23 = 0 & field17 = 0,43, 0.067696, 1.725169,3.02329e-08,0.453184,0.355372
+Abnormal & field9 = 0 & field22 = 0,45, 0.070558, 1.720115,6.15775e-09,0.475655,0.354331
+Abnormal & field22 = 0 & field23 = 0,43, 0.063067, 1.643665,2.32908e-07,0.475655,0.338583
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 29 itemsets
+

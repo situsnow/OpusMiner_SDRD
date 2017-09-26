@@ -1,0 +1,43 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -p
+  -k 100
+  -s unacc
+  Car.data.csv
+  Car.data
+
+File/input/Car.data.csv: 24 items, 1728 transactions
+Found 15 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 9.05797e-05
+Alpha for size 3 = 6.17589e-06
+Alpha for size 4 = 5.88180e-07
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+unacc & field6 = low,576, 0.099923, 1.428099,1.03674e-114,0.333333,1.000000
+unacc & field4 = 2,576, 0.099923, 1.428099,1.03674e-114,0.333333,1.000000
+unacc & field4 = 2 & field6 = low,192, 0.033308, 1.428099,1.30716e-32,0.111111,1.000000
+unacc & field5 = small & field6 = low,192, 0.033308, 1.428099,1.30716e-32,0.111111,1.000000
+unacc & field4 = 2 & field5 = small,192, 0.033308, 1.428099,1.30716e-32,0.111111,1.000000
+unacc & field2 = vhigh,360, 0.033275, 1.190083,3.45407e-13,0.250000,0.833333
+unacc & field1 = vhigh,360, 0.033275, 1.190083,3.45407e-13,0.250000,0.833333
+unacc & field5 = small,450, 0.027006, 1.115702,8.76227e-08,0.333333,0.781250
+unacc & field1 = vhigh & field4 = 2,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field2 = vhigh & field4 = 2,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field1 = vhigh & field6 = low,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field2 = vhigh & field6 = low,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field1 = vhigh & field2 = vhigh,108, 0.018736, 1.428099,4.27771e-18,0.062500,1.000000
+unacc & field1 = vhigh & field5 = small,130, 0.016879, 1.289256,1.32384e-09,0.083333,0.902778
+unacc & field2 = vhigh & field5 = small,130, 0.016879, 1.289256,1.32384e-09,0.083333,0.902778
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 15 itemsets
+

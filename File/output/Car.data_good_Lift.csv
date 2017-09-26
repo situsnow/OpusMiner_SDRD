@@ -1,0 +1,58 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s good
+  Car.data.csv
+  Car.data
+
+File/input/Car.data.csv: 24 items, 1728 transactions
+Found 31 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+good & field6 = med & field4 = more & field2 = low & field1 = low,7, 0.003774, 14.608695,8.07352e-08,0.006944,0.583333
+good & field6 = high & field4 = 4 & field2 = low & field1 = low,6, 0.003195, 12.521739,2.49613e-06,0.006944,0.500000
+good & field6 = med & field4 = 4 & field2 = low & field1 = low,6, 0.003195, 12.521739,2.49613e-06,0.006944,0.500000
+good & field4 = more & field2 = low & field1 = low,11, 0.005534, 7.652174,4.99988e-08,0.020833,0.305556
+good & field6 = med & field4 = more & field2 = low,14, 0.006993, 7.304348,1.14352e-09,0.027778,0.291667
+good & field6 = med & field4 = more & field1 = low,14, 0.006993, 7.304348,1.14352e-09,0.027778,0.291667
+good & field6 = high & field2 = low & field1 = low,10, 0.004955, 6.956521,5.92976e-07,0.020833,0.277778
+good & field6 = med & field4 = 4 & field1 = low,12, 0.005835, 6.260870,1.39588e-07,0.027778,0.250000
+good & field6 = high & field4 = 4 & field2 = low,12, 0.005835, 6.260870,1.39588e-07,0.027778,0.250000
+good & field6 = med & field4 = 4 & field2 = low,12, 0.005835, 6.260870,1.39588e-07,0.027778,0.250000
+good & field6 = high & field4 = 4 & field1 = low,12, 0.005835, 6.260870,1.39588e-07,0.027778,0.250000
+good & field4 = more & field2 = low,22, 0.009404, 3.826087,7.79069e-09,0.083333,0.152778
+good & field4 = more & field1 = low,22, 0.009404, 3.826087,7.79069e-09,0.083333,0.152778
+good & field6 = high & field2 = low,20, 0.008247, 3.478261,2.44250e-07,0.083333,0.138889
+good & field6 = high & field1 = low,20, 0.008247, 3.478261,2.44250e-07,0.083333,0.138889
+
+16 itemsets failed test for self sufficiency
+good & field6 = med & field2 = low & field1 = low,13, 0.006691, 9.043478,2.33305e-10,0.020833,0.361111
+good & field4 = 4 & field2 = low & field1 = low,12, 0.006113, 8.347826,3.65808e-09,0.020833,0.333333
+good & field2 = low & field1 = low,23, 0.010815, 5.333333,2.31306e-12,0.062500,0.212963
+good & field6 = med & field2 = low,26, 0.011719, 4.521739,3.33262e-12,0.083333,0.180556
+good & field6 = med & field1 = low,26, 0.011719, 4.521739,3.33262e-12,0.083333,0.180556
+good & field4 = 4 & field2 = low,24, 0.010561, 4.173913,1.85610e-10,0.083333,0.166667
+good & field4 = 4 & field1 = low,24, 0.010561, 4.173913,1.85610e-10,0.083333,0.166667
+good & field6 = med & field4 = more,21, 0.007716, 2.739130,6.93767e-06,0.111111,0.109375
+good & field2 = low,46, 0.016638, 2.666667,1.03264e-13,0.250000,0.106481
+good & field1 = low,46, 0.016638, 2.666667,1.03264e-13,0.250000,0.106481
+good & field6 = med & field4 = 4,18, 0.005980, 2.347826,0.000305493,0.111111,0.093750
+good & field6 = high & field4 = 4,18, 0.005980, 2.347826,0.000305493,0.111111,0.093750
+good & field6 = med,39, 0.009259, 1.695652,4.52792e-05,0.333333,0.067708
+good & field4 = 4,36, 0.007523, 1.565217,0.000758927,0.333333,0.062500
+good & field4 = more,33, 0.005787, 1.434783,0.00764755,0.333333,0.057292
+good & field6 = high,30, 0.004051, 1.304348,0.0470609,0.333333,0.052083
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 31 itemsets
+

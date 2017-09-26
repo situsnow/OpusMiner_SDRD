@@ -1,0 +1,37 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -p
+  -k 100
+  -s acc
+  Car.data.csv
+  Car.data
+
+File/input/Car.data.csv: 24 items, 1728 transactions
+Found 8 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 9.05797e-05
+Alpha for size 3 = 6.17589e-06
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+acc & field6 = high & field4 = 4,108, 0.037809, 2.531250,4.60237e-28,0.111111,0.562500
+acc & field6 = high & field4 = more,96, 0.030864, 2.250000,1.30113e-19,0.111111,0.500000
+acc & field6 = med & field4 = 4,90, 0.027392, 2.109375,5.71898e-16,0.111111,0.468750
+acc & field6 = med & field4 = more,90, 0.027392, 2.109375,5.71898e-16,0.111111,0.468750
+
+4 itemsets failed test for self sufficiency
+acc & field6 = high,204, 0.043981, 1.593750,5.87939e-20,0.333333,0.354167
+acc & field4 = 4,198, 0.040509, 1.546875,3.19333e-17,0.333333,0.343750
+acc & field4 = more,186, 0.033565, 1.453125,2.10243e-12,0.333333,0.322917
+acc & field6 = med,180, 0.030093, 1.406250,2.56180e-10,0.333333,0.312500
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 8 itemsets
+

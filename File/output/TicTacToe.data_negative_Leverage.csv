@@ -1,0 +1,126 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s negative
+  TicTacToe.data.csv
+  TicTacToe.data
+
+File/input/TicTacToe.data.csv: 28 items, 958 transactions
+Found 100 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+negative & field5 = o,192, 0.077423, 1.629483,1.38564e-25,0.354906,0.564706
+negative & field5 = o & field6 = x,94, 0.042050, 1.749942,4.05973e-13,0.161795,0.606452
+negative & field5 = o & field8 = x,94, 0.042050, 1.749942,4.05973e-13,0.161795,0.606452
+negative & field5 = o & field9 = o & field1 = o,50, 0.034105, 2.885542,7.33121e-25,0.052192,1.000000
+negative & field5 = o & field7 = o & field3 = o,50, 0.034105, 2.885542,7.33121e-25,0.052192,1.000000
+negative & field5 = o & field9 = o & field6 = x,43, 0.025712, 2.341100,1.17595e-12,0.055324,0.811321
+negative & field5 = o & field7 = o & field8 = x,43, 0.025712, 2.341100,1.17595e-12,0.055324,0.811321
+negative & field2 = x & field5 = o & field3 = o,43, 0.025712, 2.341100,1.17595e-12,0.055324,0.811321
+negative & field2 = x & field5 = o & field1 = o,43, 0.025712, 2.341100,1.17595e-12,0.055324,0.811321
+negative & field5 = o & field9 = o & field8 = x,43, 0.025712, 2.341100,1.17595e-12,0.055324,0.811321
+negative & field4 = x & field5 = o & field7 = o,43, 0.025712, 2.341100,1.17595e-12,0.055324,0.811321
+negative & field5 = o & field6 = x & field3 = o,43, 0.025712, 2.341100,1.17595e-12,0.055324,0.811321
+negative & field4 = x & field5 = o & field1 = o,43, 0.025712, 2.341100,1.17595e-12,0.055324,0.811321
+negative & field2 = x & field5 = o & field9 = o,42, 0.021051, 1.923695,8.42252e-08,0.065762,0.666667
+negative & field4 = x & field5 = o & field3 = o,42, 0.021051, 1.923695,8.42252e-08,0.065762,0.666667
+negative & field5 = o & field8 = x & field3 = o,42, 0.021051, 1.923695,8.42252e-08,0.065762,0.666667
+negative & field5 = o & field6 = x & field1 = o,42, 0.021051, 1.923695,8.42252e-08,0.065762,0.666667
+negative & field2 = x & field5 = o & field7 = o,42, 0.021051, 1.923695,8.42252e-08,0.065762,0.666667
+negative & field4 = x & field5 = o & field9 = o,42, 0.021051, 1.923695,8.42252e-08,0.065762,0.666667
+negative & field5 = o & field7 = o & field6 = x,42, 0.021051, 1.923695,8.42252e-08,0.065762,0.666667
+negative & field5 = o & field8 = x & field1 = o,42, 0.021051, 1.923695,8.42252e-08,0.065762,0.666667
+negative & field5 = o & field8 = x & field6 = x,39, 0.019728, 1.940278,1.83023e-07,0.060543,0.672414
+negative & field8 = x & field6 = x & field1 = o,43, 0.019563, 1.772547,1.85783e-06,0.073069,0.614286
+negative & field4 = x & field8 = x & field3 = o,43, 0.019563, 1.772547,1.85783e-06,0.073069,0.614286
+negative & field2 = x & field7 = o & field6 = x,43, 0.019563, 1.772547,1.85783e-06,0.073069,0.614286
+negative & field2 = x & field4 = x & field9 = o,43, 0.019563, 1.772547,1.85783e-06,0.073069,0.614286
+negative & field6 = x & field3 = o & field1 = o,34, 0.015956, 1.816823,1.17412e-05,0.056367,0.629630
+negative & field7 = o & field8 = x & field1 = o,34, 0.015956, 1.816823,1.17412e-05,0.056367,0.629630
+negative & field9 = o & field8 = x & field3 = o,34, 0.015956, 1.816823,1.17412e-05,0.056367,0.629630
+negative & field2 = x & field9 = o & field3 = o,34, 0.015956, 1.816823,1.17412e-05,0.056367,0.629630
+negative & field2 = x & field7 = o & field1 = o,34, 0.015956, 1.816823,1.17412e-05,0.056367,0.629630
+negative & field4 = x & field3 = o & field1 = o,34, 0.015956, 1.816823,1.17412e-05,0.056367,0.629630
+negative & field9 = o & field7 = o & field6 = x,34, 0.015956, 1.816823,1.17412e-05,0.056367,0.629630
+negative & field4 = x & field9 = o & field7 = o,34, 0.015956, 1.816823,1.17412e-05,0.056367,0.629630
+negative & field9 = o & field6 = x & field1 = o,37, 0.015832, 1.694683,4.59832e-05,0.065762,0.587302
+negative & field2 = x & field7 = o & field3 = o,37, 0.015832, 1.694683,4.59832e-05,0.065762,0.587302
+negative & field7 = o & field6 = x & field3 = o,37, 0.015832, 1.694683,4.59832e-05,0.065762,0.587302
+negative & field4 = x & field7 = o & field3 = o,37, 0.015832, 1.694683,4.59832e-05,0.065762,0.587302
+negative & field7 = o & field8 = x & field3 = o,37, 0.015832, 1.694683,4.59832e-05,0.065762,0.587302
+negative & field4 = x & field9 = o & field1 = o,37, 0.015832, 1.694683,4.59832e-05,0.065762,0.587302
+negative & field9 = o & field8 = x & field1 = o,37, 0.015832, 1.694683,4.59832e-05,0.065762,0.587302
+negative & field2 = x & field9 = o & field1 = o,37, 0.015832, 1.694683,4.59832e-05,0.065762,0.587302
+negative & field4 = x & field8 = x & field1 = o,35, 0.015191, 1.711762,5.61816e-05,0.061587,0.593220
+negative & field2 = x & field9 = o & field6 = x,35, 0.015191, 1.711762,5.61816e-05,0.061587,0.593220
+negative & field2 = x & field4 = x & field3 = o,35, 0.015191, 1.711762,5.61816e-05,0.061587,0.593220
+negative & field8 = x & field6 = x & field3 = o,35, 0.015191, 1.711762,5.61816e-05,0.061587,0.593220
+negative & field2 = x & field4 = x & field7 = o,35, 0.015191, 1.711762,5.61816e-05,0.061587,0.593220
+negative & field4 = x & field9 = o & field8 = x,35, 0.015191, 1.711762,5.61816e-05,0.061587,0.593220
+negative & field7 = o & field8 = x & field6 = x,35, 0.015191, 1.711762,5.61816e-05,0.061587,0.593220
+negative & field2 = x & field6 = x & field1 = o,35, 0.015191, 1.711762,5.61816e-05,0.061587,0.593220
+negative & field5 = o & field9 = o & field8 = x & field6 = x,22, 0.014283, 2.645080,6.04750e-09,0.025052,0.916667
+negative & field2 = x & field5 = o & field6 = x & field3 = o,22, 0.014283, 2.645080,6.04750e-09,0.025052,0.916667
+negative & field2 = x & field4 = x & field5 = o & field1 = o,22, 0.014283, 2.645080,6.04750e-09,0.025052,0.916667
+negative & field4 = x & field5 = o & field7 = o & field8 = x,22, 0.014283, 2.645080,6.04750e-09,0.025052,0.916667
+negative & field2 = x & field4 = x & field5 = o & field7 = o,22, 0.012836, 2.267212,1.79764e-06,0.029228,0.785714
+negative & field4 = x & field5 = o & field8 = x & field1 = o,22, 0.012836, 2.267212,1.79764e-06,0.029228,0.785714
+negative & field2 = x & field5 = o & field6 = x & field1 = o,22, 0.012836, 2.267212,1.79764e-06,0.029228,0.785714
+
+43 itemsets failed test for self sufficiency
+negative & field2 = x & field5 = o,94, 0.042050, 1.749942,4.05973e-13,0.161795,0.606452
+negative & field4 = x & field5 = o,94, 0.042050, 1.749942,4.05973e-13,0.161795,0.606452
+negative & field5 = o & field1 = o,70, 0.035809, 1.961048,2.85282e-13,0.107516,0.679612
+negative & field5 = o & field9 = o,70, 0.035809, 1.961048,2.85282e-13,0.107516,0.679612
+negative & field5 = o & field7 = o,70, 0.035809, 1.961048,2.85282e-13,0.107516,0.679612
+negative & field5 = o & field3 = o,70, 0.035809, 1.961048,2.85282e-13,0.107516,0.679612
+negative & field9 = o,146, 0.031215, 1.257580,1.58399e-05,0.349687,0.435821
+negative & field3 = o,146, 0.031215, 1.257580,1.58399e-05,0.349687,0.435821
+negative & field7 = o,146, 0.031215, 1.257580,1.58399e-05,0.349687,0.435821
+negative & field1 = o,146, 0.031215, 1.257580,1.58399e-05,0.349687,0.435821
+negative & field7 = o & field3 = o,62, 0.024202, 1.597354,1.43026e-06,0.116910,0.553571
+negative & field9 = o & field1 = o,62, 0.024202, 1.597354,1.43026e-06,0.116910,0.553571
+negative & field8 = x & field6 = x,61, 0.023520, 1.585748,2.50186e-06,0.115866,0.549550
+negative & field2 = x & field6 = x,61, 0.023520, 1.585748,2.50186e-06,0.115866,0.549550
+negative & field2 = x & field4 = x,61, 0.023520, 1.585748,2.50186e-06,0.115866,0.549550
+negative & field4 = x & field8 = x,61, 0.023520, 1.585748,2.50186e-06,0.115866,0.549550
+negative & field4 = x,153, 0.022967, 1.167958,0.00144936,0.394572,0.404762
+negative & field2 = x,153, 0.022967, 1.167958,0.00144936,0.394572,0.404762
+negative & field8 = x,153, 0.022967, 1.167958,0.00144936,0.394572,0.404762
+negative & field6 = x,153, 0.022967, 1.167958,0.00144936,0.394572,0.404762
+negative & field7 = o & field1 = o,55, 0.022683, 1.653175,1.43898e-06,0.100209,0.572917
+negative & field9 = o & field3 = o,55, 0.022683, 1.653175,1.43898e-06,0.100209,0.572917
+negative & field3 = o & field1 = o,55, 0.022683, 1.653175,1.43898e-06,0.100209,0.572917
+negative & field9 = o & field7 = o,55, 0.022683, 1.653175,1.43898e-06,0.100209,0.572917
+negative & field9 = o & field6 = x,69, 0.021742, 1.432391,5.96490e-05,0.145094,0.496403
+negative & field2 = x & field3 = o,69, 0.021742, 1.432391,5.96490e-05,0.145094,0.496403
+negative & field6 = x & field3 = o,69, 0.021742, 1.432391,5.96490e-05,0.145094,0.496403
+negative & field7 = o & field8 = x,69, 0.021742, 1.432391,5.96490e-05,0.145094,0.496403
+negative & field4 = x & field7 = o,69, 0.021742, 1.432391,5.96490e-05,0.145094,0.496403
+negative & field4 = x & field1 = o,69, 0.021742, 1.432391,5.96490e-05,0.145094,0.496403
+negative & field2 = x & field1 = o,69, 0.021742, 1.432391,5.96490e-05,0.145094,0.496403
+negative & field9 = o & field8 = x,69, 0.021742, 1.432391,5.96490e-05,0.145094,0.496403
+negative & field4 = x & field3 = o,82, 0.021565, 1.336805,0.000252854,0.184760,0.463277
+negative & field8 = x & field3 = o,82, 0.021565, 1.336805,0.000252854,0.184760,0.463277
+negative & field2 = x & field7 = o,82, 0.021565, 1.336805,0.000252854,0.184760,0.463277
+negative & field2 = x & field9 = o,82, 0.021565, 1.336805,0.000252854,0.184760,0.463277
+negative & field7 = o & field6 = x,82, 0.021565, 1.336805,0.000252854,0.184760,0.463277
+negative & field4 = x & field9 = o,82, 0.021565, 1.336805,0.000252854,0.184760,0.463277
+negative & field6 = x & field1 = o,82, 0.021565, 1.336805,0.000252854,0.184760,0.463277
+negative & field8 = x & field1 = o,82, 0.021565, 1.336805,0.000252854,0.184760,0.463277
+negative & field4 = x & field5 = o & field8 = x,39, 0.019728, 1.940278,1.83023e-07,0.060543,0.672414
+negative & field2 = x & field5 = o & field6 = x,39, 0.019728, 1.940278,1.83023e-07,0.060543,0.672414
+negative & field2 = x & field4 = x & field5 = o,39, 0.019728, 1.940278,1.83023e-07,0.060543,0.672414
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 100 itemsets
+

@@ -1,0 +1,125 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s EI
+  splice.data.csv
+  splice.data
+
+File/input/splice.data.csv: 289 items, 3190 transactions
+Found 100 non-redundant productive itemsets in 395 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+EI & field51 = N,3, 0.000714, 4.159061,0.0138587,0.000940,1.000000
+EI & field30 = A & field31 = G & field33 = T & field36 = G & field37 = T & field34 = G,54, 0.012858, 4.159061,8.71722e-35,0.016928,1.000000
+EI & field31 = G & field36 = G & field37 = T & field35 = A & field34 = A & field38 = G,17, 0.004048, 4.159061,2.61856e-11,0.005329,1.000000
+EI & field30 = A & field33 = T & field36 = G & field37 = T & field34 = G & field42 = G,30, 0.007143, 4.159061,1.73787e-19,0.009404,1.000000
+EI & field31 = G & field33 = T & field36 = G & field37 = T & field35 = A & field42 = G,58, 0.013810, 4.159061,2.31421e-37,0.018182,1.000000
+EI & field30 = A & field36 = G & field37 = T & field34 = A & field38 = G & field42 = G,7, 0.001667, 4.159061,4.54956e-05,0.002194,1.000000
+EI & field30 = A & field36 = G & field37 = T & field35 = A & field34 = A & field38 = G,9, 0.002143, 4.159061,2.59112e-06,0.002821,1.000000
+EI & field30 = A & field31 = G & field36 = G & field37 = T & field38 = G & field42 = G,21, 0.005000, 4.159061,8.12398e-14,0.006583,1.000000
+EI & field30 = A & field31 = G & field36 = G & field34 = G & field41 = G & field38 = G,21, 0.005000, 4.159061,8.12398e-14,0.006583,1.000000
+EI & field30 = A & field31 = G & field36 = G & field34 = G & field7 = G & field38 = G,22, 0.005238, 4.159061,1.91243e-14,0.006897,1.000000
+EI & field31 = G & field33 = T & field36 = G & field37 = T & field34 = G & field38 = G,70, 0.016667, 4.159061,3.89772e-45,0.021944,1.000000
+EI & field31 = G & field36 = G & field37 = T & field34 = G & field7 = G & field38 = G,22, 0.005238, 4.159061,1.91243e-14,0.006897,1.000000
+EI & field36 = G & field7 = G & field41 = G & field34 = A & field38 = G & field42 = G,16, 0.003810, 4.159061,1.10670e-10,0.005016,1.000000
+EI & field31 = G & field33 = T & field37 = T & field34 = G & field35 = A & field38 = G,57, 0.013572, 4.159061,1.02119e-36,0.017868,1.000000
+EI & field31 = G & field36 = G & field34 = G & field7 = G & field41 = G & field38 = G,23, 0.005476, 4.159061,4.49735e-15,0.007210,1.000000
+EI & field30 = A & field31 = G & field37 = T & field34 = G & field35 = A & field38 = G,19, 0.004524, 4.159061,1.46151e-12,0.005956,1.000000
+EI & field30 = A & field31 = G & field36 = G & field37 = T & field34 = G & field41 = G,20, 0.004762, 4.159061,3.44752e-13,0.006270,1.000000
+EI & field31 = G & field36 = G & field37 = T & field34 = A & field38 = G & field42 = G,12, 0.002857, 4.159061,3.49537e-08,0.003762,1.000000
+EI & field31 = G & field36 = G & field34 = G & field35 = A & field41 = G & field38 = G,42, 0.010000, 4.159061,4.20116e-27,0.013166,1.000000
+EI & field31 = G & field36 = G & field37 = T & field7 = G & field38 = G & field42 = G,13, 0.003095, 4.159061,8.30398e-09,0.004075,1.000000
+EI & field36 = G & field37 = T & field34 = G & field35 = A & field7 = G & field38 = G,19, 0.004524, 4.159061,1.46151e-12,0.005956,1.000000
+EI & field31 = G & field34 = G & field35 = A & field41 = G & field38 = G & field42 = G,21, 0.005000, 4.159061,8.12398e-14,0.006583,1.000000
+EI & field31 = G & field36 = G & field35 = A & field41 = G & field34 = A & field38 = G,15, 0.003572, 4.159061,4.67256e-10,0.004702,1.000000
+EI & field31 = G & field36 = G & field7 = G & field41 = G & field38 = G & field42 = G,14, 0.003333, 4.159061,1.97079e-09,0.004389,1.000000
+EI & field31 = G & field33 = T & field36 = G & field35 = A & field41 = G & field42 = G,68, 0.016191, 4.159061,7.78404e-44,0.021317,1.000000
+EI & field30 = A & field34 = G & field35 = A & field7 = G & field38 = G & field42 = G,7, 0.001667, 4.159061,4.54956e-05,0.002194,1.000000
+EI & field30 = A & field36 = G & field34 = G & field35 = A & field41 = G & field42 = G,18, 0.004286, 4.159061,6.18947e-12,0.005643,1.000000
+EI & field30 = A & field33 = T & field36 = G & field35 = A & field41 = G & field42 = G,33, 0.007858, 4.159061,2.19787e-21,0.010345,1.000000
+EI & field30 = A & field36 = G & field35 = A & field41 = G & field34 = A & field38 = G,7, 0.001667, 4.159061,4.54956e-05,0.002194,1.000000
+EI & field30 = A & field37 = T & field35 = A & field41 = G & field34 = A & field38 = G,5, 0.001191, 4.159061,0.000795632,0.001567,1.000000
+EI & field33 = T & field37 = T & field34 = G & field35 = A & field7 = G & field38 = G,19, 0.004524, 4.159061,1.46151e-12,0.005956,1.000000
+EI & field30 = A & field31 = G & field36 = G & field37 = T & field7 = G & field38 = G,19, 0.004524, 4.159061,1.46151e-12,0.005956,1.000000
+EI & field30 = A & field37 = T & field34 = G & field41 = G & field38 = G & field42 = G,6, 0.001429, 4.159061,0.000190352,0.001881,1.000000
+EI & field30 = A & field33 = T & field34 = G & field7 = G & field38 = G & field42 = G,9, 0.002143, 4.159061,2.59112e-06,0.002821,1.000000
+EI & field30 = A & field36 = G & field37 = T & field34 = G & field41 = G & field42 = G,14, 0.003333, 4.159061,1.97079e-09,0.004389,1.000000
+EI & field31 = G & field33 = T & field35 = A & field7 = G & field38 = G & field42 = G,15, 0.003572, 4.159061,4.67256e-10,0.004702,1.000000
+EI & field30 = A & field31 = G & field34 = G & field7 = G & field38 = G & field42 = G,9, 0.002143, 4.159061,2.59112e-06,0.002821,1.000000
+EI & field30 = A & field34 = G & field35 = A & field41 = G & field38 = G & field42 = G,11, 0.002619, 4.159061,1.46981e-07,0.003448,1.000000
+EI & field31 = G & field36 = G & field41 = G & field34 = A & field38 = G & field42 = G,14, 0.003333, 4.159061,1.97079e-09,0.004389,1.000000
+EI & field30 = A & field36 = G & field7 = G & field41 = G & field38 = G & field42 = G,7, 0.001667, 4.159061,4.54956e-05,0.002194,1.000000
+EI & field30 = A & field36 = G & field34 = G & field35 = A & field7 = G & field41 = G,14, 0.003333, 4.159061,1.97079e-09,0.004389,1.000000
+EI & field30 = A & field36 = G & field37 = T & field41 = G & field38 = G & field42 = G,9, 0.002143, 4.159061,2.59112e-06,0.002821,1.000000
+EI & field30 = A & field36 = G & field34 = G & field35 = A & field41 = G & field38 = G,14, 0.003333, 4.159061,1.97079e-09,0.004389,1.000000
+EI & field30 = A & field36 = G & field34 = G & field7 = G & field41 = G & field42 = G,17, 0.004048, 4.159061,2.61856e-11,0.005329,1.000000
+EI & field31 = G & field37 = T & field35 = A & field41 = G & field34 = A & field42 = G,7, 0.001667, 4.159061,4.54956e-05,0.002194,1.000000
+EI & field30 = A & field33 = T & field35 = A & field7 = G & field38 = G & field42 = G,14, 0.003333, 4.159061,1.97079e-09,0.004389,1.000000
+EI & field31 = G & field36 = G & field7 = G & field41 = G & field34 = A & field38 = G,11, 0.002619, 4.159061,1.46981e-07,0.003448,1.000000
+EI & field31 = G & field36 = G & field34 = G & field7 = G & field41 = G & field42 = G,31, 0.007381, 4.159061,4.05320e-20,0.009718,1.000000
+EI & field30 = A & field36 = G & field41 = G & field34 = A & field38 = G & field42 = G,6, 0.001429, 4.159061,0.000190352,0.001881,1.000000
+EI & field30 = A & field37 = T & field35 = A & field41 = G & field34 = A & field42 = G,7, 0.001667, 4.159061,4.54956e-05,0.002194,1.000000
+EI & field31 = G & field36 = G & field35 = A & field7 = G & field41 = G & field38 = G,19, 0.004524, 4.159061,1.46151e-12,0.005956,1.000000
+EI & field30 = A & field33 = T & field36 = G & field7 = G & field38 = G & field42 = G,20, 0.004762, 4.159061,3.44752e-13,0.006270,1.000000
+EI & field31 = G & field7 = G & field41 = G & field34 = A & field38 = G & field42 = G,8, 0.001905, 4.159061,1.08629e-05,0.002508,1.000000
+EI & field31 = G & field36 = G & field34 = G & field35 = A & field7 = G & field41 = G,42, 0.010000, 4.159061,4.20116e-27,0.013166,1.000000
+EI & field30 = A & field33 = T & field36 = G & field37 = T & field35 = A & field42 = G,34, 0.008096, 4.159061,5.11003e-22,0.010658,1.000000
+EI & field30 = A & field37 = T & field35 = A & field7 = G & field41 = G,6, 0.001429, 4.159061,0.000190352,0.001881,1.000000
+EI & field37 = T & field35 = A & field7 = G & field41 = G & field42 = G,20, 0.004762, 4.159061,3.44752e-13,0.006270,1.000000
+EI & field33 = T & field36 = G & field37 = T & field34 = G & field35 = A,142, 0.033811, 4.159061,2.70969e-93,0.044514,1.000000
+EI & field36 = G & field37 = T & field35 = A & field7 = G & field42 = G,36, 0.008572, 4.159061,2.75361e-23,0.011285,1.000000
+EI & field36 = G & field37 = T & field34 = G & field7 = G & field42 = G,26, 0.006191, 4.159061,5.81285e-17,0.008150,1.000000
+EI & field33 = T & field36 = G & field37 = T & field38 = G & field42 = G,68, 0.016191, 4.159061,7.78404e-44,0.021317,1.000000
+EI & field30 = A & field33 = T & field35 = A & field41 = G & field34 = A,31, 0.007381, 4.159061,4.05320e-20,0.009718,1.000000
+EI & field33 = T & field35 = A & field41 = G & field34 = A & field42 = G,41, 0.009762, 4.159061,1.82224e-26,0.012853,1.000000
+EI & field33 = T & field36 = G & field37 = T & field35 = A & field7 = G,67, 0.015953, 4.159061,3.47279e-43,0.021003,1.000000
+EI & field31 = G & field33 = T & field35 = A & field34 = A & field42 = G,50, 0.011905, 4.159061,3.22723e-32,0.015674,1.000000
+EI & field33 = T & field37 = T & field35 = A & field34 = A & field42 = G,27, 0.006429, 4.159061,1.36135e-17,0.008464,1.000000
+EI & field33 = T & field36 = G & field35 = A & field7 = G & field38 = G,79, 0.018810, 4.159061,5.18809e-51,0.024765,1.000000
+EI & field31 = G & field37 = T & field34 = G & field38 = G & field42 = G,34, 0.008096, 4.159061,5.11003e-22,0.010658,1.000000
+EI & field31 = G & field37 = T & field34 = G & field7 = G & field42 = G,23, 0.005476, 4.159061,4.49735e-15,0.007210,1.000000
+EI & field31 = G & field36 = G & field37 = T & field34 = G & field42 = G,59, 0.014048, 4.159061,5.23874e-38,0.018495,1.000000
+EI & field30 = A & field36 = G & field37 = T & field35 = A & field7 = G,23, 0.005476, 4.159061,4.49735e-15,0.007210,1.000000
+EI & field30 = A & field36 = G & field35 = A & field7 = G & field38 = G,39, 0.009286, 4.159061,3.41742e-25,0.012226,1.000000
+EI & field36 = G & field37 = T & field34 = G & field35 = A & field41 = G,44, 0.010477, 4.159061,2.22594e-28,0.013793,1.000000
+EI & field31 = G & field33 = T & field36 = G & field37 = T & field7 = G,79, 0.018810, 4.159061,5.18809e-51,0.024765,1.000000
+EI & field36 = G & field37 = T & field34 = G & field35 = A & field42 = G,70, 0.016667, 4.159061,3.89772e-45,0.021944,1.000000
+EI & field33 = T & field37 = T & field34 = G & field38 = G & field42 = G,49, 0.011667, 4.159061,1.41180e-31,0.015361,1.000000
+EI & field36 = G & field37 = T & field35 = A & field38 = G & field42 = G,57, 0.013572, 4.159061,1.02119e-36,0.017868,1.000000
+EI & field36 = G & field35 = A & field7 = G & field34 = A & field38 = G,37, 0.008810, 4.159061,6.38201e-24,0.011599,1.000000
+EI & field33 = T & field36 = G & field37 = T & field34 = A & field42 = G,35, 0.008334, 4.159061,1.18683e-22,0.010972,1.000000
+EI & field33 = T & field37 = T & field35 = A & field7 = G & field42 = G,36, 0.008572, 4.159061,2.75361e-23,0.011285,1.000000
+EI & field37 = T & field34 = G & field7 = G & field38 = G & field42 = G,9, 0.002143, 4.159061,2.59112e-06,0.002821,1.000000
+EI & field33 = T & field36 = G & field37 = T & field7 = G & field42 = G,50, 0.011905, 4.159061,3.22723e-32,0.015674,1.000000
+EI & field37 = T & field34 = G & field35 = A & field38 = G & field42 = G,43, 0.010239, 4.159061,9.67547e-28,0.013480,1.000000
+EI & field31 = G & field36 = G & field37 = T & field7 = G & field34 = A,28, 0.006667, 4.159061,3.18496e-18,0.008777,1.000000
+EI & field30 = A & field33 = T & field35 = A & field34 = A & field42 = G,32, 0.007619, 4.159061,9.44336e-21,0.010031,1.000000
+EI & field31 = G & field37 = T & field34 = G & field35 = A & field7 = G,33, 0.007858, 4.159061,2.19787e-21,0.010345,1.000000
+EI & field31 = G & field33 = T & field35 = A & field41 = G & field34 = A,52, 0.012382, 4.159061,1.68090e-33,0.016301,1.000000
+EI & field36 = G & field35 = A & field41 = G & field38 = G & field42 = G,42, 0.010000, 4.159061,4.20116e-27,0.013166,1.000000
+EI & field37 = T & field34 = G & field35 = A & field7 = G & field42 = G,18, 0.004286, 4.159061,6.18947e-12,0.005643,1.000000
+EI & field37 = T & field34 = G & field35 = A & field41 = G & field38 = G,27, 0.006429, 4.159061,1.36135e-17,0.008464,1.000000
+EI & field36 = G & field37 = T & field35 = A & field41 = G & field34 = A,20, 0.004762, 4.159061,3.44752e-13,0.006270,1.000000
+EI & field30 = A & field36 = G & field37 = T & field7 = G & field34 = A,19, 0.004524, 4.159061,1.46151e-12,0.005956,1.000000
+EI & field35 = A & field41 = G & field34 = A & field38 = G & field42 = G,17, 0.004048, 4.159061,2.61856e-11,0.005329,1.000000
+EI & field33 = T & field36 = G & field41 = G & field34 = A & field42 = G,67, 0.015953, 4.159061,3.47279e-43,0.021003,1.000000
+EI & field36 = G & field37 = T & field35 = A & field41 = G & field42 = G,40, 0.009524, 4.159061,7.89552e-26,0.012539,1.000000
+EI & field34 = G & field35 = A & field7 = G & field41 = G & field38 = G,22, 0.005238, 4.159061,1.91243e-14,0.006897,1.000000
+EI & field35 = A & field7 = G & field41 = G & field38 = G & field42 = G,15, 0.003572, 4.159061,4.67256e-10,0.004702,1.000000
+EI & field34 = G & field7 = G & field41 = G & field38 = G & field42 = G,8, 0.001905, 4.159061,1.08629e-05,0.002508,1.000000
+EI & field31 = G & field37 = T & field35 = A & field7 = G & field41 = G,20, 0.004762, 4.159061,3.44752e-13,0.006270,1.000000
+EI & field33 = T & field36 = G & field35 = A & field34 = A,206, 0.049050, 4.159061,1.70090e-138,0.064577,1.000000
+
+396 seconds (0 input, 395 search, 0 filter, 0 output) for 100 itemsets
+

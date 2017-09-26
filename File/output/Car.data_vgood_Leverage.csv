@@ -1,0 +1,87 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s vgood
+  Car.data.csv
+  Car.data
+
+File/input/Car.data.csv: 24 items, 1728 transactions
+Found 61 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+vgood & field6 = high & field1 = low,39, 0.019435, 7.199999,8.39318e-28,0.083333,0.270833
+vgood & field6 = high & field5 = big,40, 0.018969, 5.538461,8.65855e-24,0.111111,0.208333
+vgood & field6 = high & field4 = more,35, 0.016075, 4.846153,3.59387e-18,0.111111,0.182292
+vgood & field6 = high & field4 = 4,30, 0.013182, 4.153846,2.74133e-13,0.111111,0.156250
+vgood & field6 = high & field2 = low,26, 0.011912, 4.800000,6.30564e-13,0.083333,0.180556
+vgood & field6 = high & field1 = med,26, 0.011912, 4.800000,6.30564e-13,0.083333,0.180556
+vgood & field6 = high & field2 = med,26, 0.011912, 4.800000,6.30564e-13,0.083333,0.180556
+vgood & field4 = more & field1 = low,21, 0.009018, 3.876923,1.36205e-08,0.083333,0.145833
+vgood & field4 = 4 & field1 = low,18, 0.007282, 3.323077,2.19286e-06,0.083333,0.125000
+vgood & field5 = big & field4 = 4 & field1 = low,12, 0.005900, 6.646153,6.90951e-08,0.027778,0.250000
+vgood & field5 = big & field4 = more & field1 = low,12, 0.005900, 6.646153,6.90951e-08,0.027778,0.250000
+vgood & field4 = more & field2 = low & field1 = low,7, 0.003267, 5.169230,0.000270532,0.020833,0.194444
+vgood & field4 = more & field2 = med & field1 = low,7, 0.003267, 5.169230,0.000270532,0.020833,0.194444
+vgood & field4 = more & field2 = med & field1 = med,7, 0.003267, 5.169230,0.000270532,0.020833,0.194444
+vgood & field4 = more & field2 = low & field1 = med,7, 0.003267, 5.169230,0.000270532,0.020833,0.194444
+vgood & field5 = big & field4 = more & field2 = med & field1 = low,4, 0.002054, 8.861538,0.000719892,0.006944,0.333333
+vgood & field5 = big & field4 = more & field2 = low & field1 = low,4, 0.002054, 8.861538,0.000719892,0.006944,0.333333
+vgood & field5 = big & field4 = 4 & field2 = low & field1 = low,4, 0.002054, 8.861538,0.000719892,0.006944,0.333333
+vgood & field5 = big & field4 = 4 & field2 = med & field1 = low,4, 0.002054, 8.861538,0.000719892,0.006944,0.333333
+vgood & field5 = big & field4 = more & field2 = med & field1 = med,4, 0.002054, 8.861538,0.000719892,0.006944,0.333333
+vgood & field5 = big & field4 = 4 & field2 = med & field1 = med,4, 0.002054, 8.861538,0.000719892,0.006944,0.333333
+vgood & field5 = big & field4 = more & field2 = low & field1 = med,4, 0.002054, 8.861538,0.000719892,0.006944,0.333333
+vgood & field5 = big & field4 = 4 & field2 = low & field1 = med,4, 0.002054, 8.861538,0.000719892,0.006944,0.333333
+
+38 itemsets failed test for self sufficiency
+vgood & field6 = high,65, 0.025077, 3.000000,7.69430e-33,0.333333,0.112847
+vgood & field1 = low,39, 0.013166, 2.400000,1.04660e-09,0.250000,0.090278
+vgood & field5 = big & field1 = low,24, 0.010754, 4.430769,4.25547e-11,0.083333,0.166667
+vgood & field5 = big,40, 0.010610, 1.846154,1.92583e-06,0.333333,0.069444
+vgood & field4 = more,35, 0.007716, 1.615384,0.000412198,0.333333,0.060764
+vgood & field5 = big & field4 = more,20, 0.007395, 2.769231,9.71419e-06,0.111111,0.104167
+vgood & field5 = big & field4 = 4,20, 0.007395, 2.769231,9.71419e-06,0.111111,0.104167
+vgood & field5 = big & field2 = low,16, 0.006125, 2.953846,4.33581e-05,0.083333,0.111111
+vgood & field5 = big & field1 = med,16, 0.006125, 2.953846,4.33581e-05,0.083333,0.111111
+vgood & field5 = big & field2 = med,16, 0.006125, 2.953846,4.33581e-05,0.083333,0.111111
+vgood & field2 = low,26, 0.005642, 1.600000,0.00474167,0.250000,0.060185
+vgood & field2 = med,26, 0.005642, 1.600000,0.00474167,0.250000,0.060185
+vgood & field1 = med,26, 0.005642, 1.600000,0.00474167,0.250000,0.060185
+vgood & field2 = low & field1 = low,13, 0.005172, 3.200000,0.000113609,0.062500,0.120370
+vgood & field2 = med & field1 = low,13, 0.005172, 3.200000,0.000113609,0.062500,0.120370
+vgood & field2 = med & field1 = med,13, 0.005172, 3.200000,0.000113609,0.062500,0.120370
+vgood & field2 = low & field1 = med,13, 0.005172, 3.200000,0.000113609,0.062500,0.120370
+vgood & field4 = more & field2 = low,14, 0.004967, 2.584615,0.000608390,0.083333,0.097222
+vgood & field4 = more & field2 = med,14, 0.004967, 2.584615,0.000608390,0.083333,0.097222
+vgood & field4 = more & field1 = med,14, 0.004967, 2.584615,0.000608390,0.083333,0.097222
+vgood & field4 = 4,30, 0.004823, 1.384615,0.0194665,0.333333,0.052083
+vgood & field5 = big & field2 = low & field1 = low,8, 0.003846, 5.907692,3.40383e-05,0.020833,0.222222
+vgood & field5 = big & field2 = med & field1 = med,8, 0.003846, 5.907692,3.40383e-05,0.020833,0.222222
+vgood & field5 = big & field2 = med & field1 = low,8, 0.003846, 5.907692,3.40383e-05,0.020833,0.222222
+vgood & field5 = big & field2 = low & field1 = med,8, 0.003846, 5.907692,3.40383e-05,0.020833,0.222222
+vgood & field4 = 4 & field2 = low,12, 0.003810, 2.215384,0.00592461,0.083333,0.083333
+vgood & field4 = 4 & field1 = med,12, 0.003810, 2.215384,0.00592461,0.083333,0.083333
+vgood & field4 = 4 & field2 = med,12, 0.003810, 2.215384,0.00592461,0.083333,0.083333
+vgood & field5 = big & field4 = more & field2 = low,8, 0.003585, 4.430769,0.000296134,0.027778,0.166667
+vgood & field5 = big & field4 = 4 & field2 = low,8, 0.003585, 4.430769,0.000296134,0.027778,0.166667
+vgood & field5 = big & field4 = more & field1 = med,8, 0.003585, 4.430769,0.000296134,0.027778,0.166667
+vgood & field5 = big & field4 = 4 & field1 = med,8, 0.003585, 4.430769,0.000296134,0.027778,0.166667
+vgood & field5 = big & field4 = more & field2 = med,8, 0.003585, 4.430769,0.000296134,0.027778,0.166667
+vgood & field5 = big & field4 = 4 & field2 = med,8, 0.003585, 4.430769,0.000296134,0.027778,0.166667
+vgood & field4 = 4 & field2 = low & field1 = low,6, 0.002689, 4.430769,0.00179879,0.020833,0.166667
+vgood & field4 = 4 & field2 = med & field1 = med,6, 0.002689, 4.430769,0.00179879,0.020833,0.166667
+vgood & field4 = 4 & field2 = med & field1 = low,6, 0.002689, 4.430769,0.00179879,0.020833,0.166667
+vgood & field4 = 4 & field2 = low & field1 = med,6, 0.002689, 4.430769,0.00179879,0.020833,0.166667
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 61 itemsets
+

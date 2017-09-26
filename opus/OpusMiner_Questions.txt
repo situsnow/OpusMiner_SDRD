@@ -9,9 +9,15 @@ alfa (with depth of 2), but in the following alfa calcualtion, the size of L wil
 	I. The lift/leverage value is the smallest value of all combinations between all items inside itemset in BigML/Opus;
 	   However, in OpusMiner-SDRD the lift/leverage value is the combination of antecedent and consequent
 	II. The p value is the greatest value of all combinations between all items inside itemset in BigML/Opus;
-	   It's also true in SDRD.
+	   It's the p value where category is the "consequent" and the group is the "antecedent" in SDRD.
 	   
 24. Validate why the p value is different between BigML and OpusMiner.
+
+25. Double check the alpha' calculation with Prof. Webb. Especially with the calculation of size in level L.
+    Search all places that reference getAlpha().
+
+26. In find_itemsets.cpp, line 312, insert the item into queue and sort according to the upper bound value. But when search by lift, the upper bound does not
+exist (currently, it will be calculated by leverage). 
 
 #########################################################################################
 Questions of original OpusMiner:

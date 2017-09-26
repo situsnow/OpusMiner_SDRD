@@ -1,0 +1,58 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -p
+  -k 100
+  -s spec_prior
+  Nursery.data.csv
+  Nursery.data
+
+File/input/Nursery.data.csv: 31 items, 5222 transactions
+Found 26 non-redundant productive itemsets in 1 seconds
+Alpha for size 2 = 5.37634e-05
+Alpha for size 3 = 2.78087e-06
+Alpha for size 4 = 1.98633e-07
+Alpha for size 5 = 1.83920e-08
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+spec_prior & field8 = priority & field5 = critical & field2 = very_crit,96, 0.015715, 6.889182,1.54039e-83,0.018384,1.000000
+spec_prior & field8 = priority & field2 = very_crit,285, 0.046571, 6.817420,1.65269e-256,0.055151,0.989583
+spec_prior & field8 = priority & field7 = problematic & field2 = very_crit,95, 0.015524, 6.817419,9.97201e-81,0.018384,0.989583
+spec_prior & field8 = priority & field7 = problematic & field5 = critical & field2 = critical,30, 0.004855, 6.458608,1.61251e-23,0.006128,0.937500
+spec_prior & field8 = priority & field5 = critical & field2 = critical,90, 0.014566, 6.458608,1.30931e-69,0.018384,0.937500
+spec_prior & field7 = problematic & field5 = critical & field2 = very_crit,64, 0.009587, 4.592788,6.75458e-32,0.018384,0.666667
+spec_prior & field7 = problematic & field2 = very_crit,190, 0.028379, 4.544946,5.82157e-96,0.055151,0.659722
+spec_prior & field8 = priority & field7 = problematic & field2 = critical,63, 0.009396, 4.521026,8.38786e-31,0.018384,0.656250
+spec_prior & field8 = priority & field2 = critical,189, 0.028188, 4.521025,8.58369e-95,0.055151,0.656250
+spec_prior & field5 = critical & field2 = very_crit,188, 0.027996, 4.497105,1.24393e-93,0.055151,0.652778
+spec_prior & field7 = problematic & field5 = critical & field2 = critical,60, 0.008821, 4.305738,1.21369e-27,0.018384,0.625000
+spec_prior & field2 = very_crit,506, 0.072881, 4.034636,1.02627e-268,0.165454,0.585648
+spec_prior & field7 = problematic & field2 = critical,126, 0.016123, 3.014017,1.87202e-35,0.055151,0.437500
+spec_prior & field1 = usual & field8 = priority,474, 0.050742, 2.267689,2.46387e-107,0.275756,0.329167
+spec_prior & field2 = critical,252, 0.024241, 2.009345,3.07390e-35,0.165454,0.291667
+spec_prior & field1 = usual & field7 = problematic,316, 0.020486, 1.511793,6.82300e-20,0.275756,0.219444
+spec_prior & field1 = usual & field5 = critical,308, 0.018954, 1.473519,2.40649e-17,0.275756,0.213889
+spec_prior & field1 = usual,758, 0.025073, 1.208796,9.73963e-69,0.827269,0.175463
+
+8 itemsets failed test for self sufficiency
+spec_prior & field5 = critical & field2 = critical,120, 0.014974, 2.870492,3.17177e-31,0.055151,0.416667
+spec_prior & field8 = priority & field7 = problematic & field5 = critical,62, 0.006536, 2.224632,1.58130e-10,0.036768,0.322917
+spec_prior & field8 = priority & field5 = critical,186, 0.019608, 2.224632,3.32935e-31,0.110303,0.322917
+spec_prior & field8 = priority & field7 = problematic,158, 0.014134, 1.876708,1.14125e-17,0.111069,0.272414
+spec_prior & field8 = priority,474, 0.042403, 1.876708,1.31862e-71,0.333206,0.272414
+spec_prior & field7 = problematic & field5 = critical,124, 0.007735, 1.483088,9.00169e-07,0.110303,0.215278
+spec_prior & field7 = problematic,316, 0.012147, 1.251139,1.15650e-07,0.333206,0.181609
+spec_prior & field5 = critical,308, 0.010920, 1.227223,1.59298e-06,0.331099,0.178138
+
+2 seconds (0 input, 0 search, 1 filter, 0 output) for 26 itemsets
+

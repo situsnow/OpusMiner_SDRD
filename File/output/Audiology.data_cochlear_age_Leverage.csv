@@ -1,0 +1,126 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s cochlear_age
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 100 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+cochlear_age & field15 = f & field1 = t,54, 0.166399, 3.293927,3.72826e-37,0.287611,0.830769
+cochlear_age & field59 = normal & field1 = t,54, 0.159703, 3.015567,3.85586e-33,0.314159,0.760563
+cochlear_age & field66 = a & field1 = t,57, 0.159586, 2.722892,1.46744e-33,0.367257,0.686747
+cochlear_age & field57 = f & field1 = t,56, 0.157393, 2.741174,4.64725e-32,0.358407,0.691358
+cochlear_age & field3 = f & field1 = t,57, 0.155122, 2.597701,1.19189e-31,0.384956,0.655172
+cochlear_age & field14 = f & field1 = t,57, 0.154006, 2.568182,3.38342e-31,0.389381,0.647727
+cochlear_age & field58 = f & field1 = t,57, 0.151774, 2.511111,2.56640e-30,0.398230,0.633333
+cochlear_age & field18 = f & field1 = t,57, 0.151774, 2.511111,2.56640e-30,0.398230,0.633333
+cochlear_age & field4 = normal & field1 = t,48, 0.137618, 2.840534,2.13577e-24,0.296460,0.716418
+cochlear_age & field5 = normal & field1 = t,44, 0.123267, 2.725878,6.42959e-20,0.283186,0.687500
+cochlear_age & field15 = f & field57 = f & field59 = normal,50, 0.121916, 2.227479,2.59293e-18,0.393805,0.561798
+cochlear_age & field2 = mild & field1 = t,42, 0.115534, 2.643275,1.05838e-17,0.278761,0.666667
+cochlear_age & field2 = mild & field15 = f & field57 = f & field59 = normal,38, 0.110110, 2.897436,1.23985e-17,0.230089,0.730769
+cochlear_age & field60 = normal & field1 = t,40, 0.110032, 2.643275,1.79175e-16,0.265487,0.666667
+cochlear_age & field2 = mild & field4 = normal & field15 = f & field59 = normal,36, 0.105725, 2.973685,4.60338e-17,0.212389,0.750000
+cochlear_age & field4 = normal & field15 = f & field59 = normal,44, 0.105412, 2.180702,6.04617e-14,0.353982,0.550000
+cochlear_age & field58 = f & field59 = normal,54, 0.099440, 1.712842,1.01041e-13,0.553097,0.432000
+cochlear_age & field14 = f & field59 = normal,54, 0.097208, 1.685868,2.90094e-13,0.561947,0.425197
+cochlear_age & field18 = f & field59 = normal,54, 0.093860, 1.646964,1.34898e-12,0.575221,0.415385
+cochlear_age & field15 = f & field66 = a,54, 0.087164, 1.574303,2.50628e-11,0.601770,0.397059
+cochlear_age & field4 = normal & field57 = f,48, 0.084051, 1.654920,2.24788e-09,0.508850,0.417391
+cochlear_age & field3 = f & field15 = f,54, 0.082700, 1.529323,1.58412e-10,0.619469,0.385714
+cochlear_age & field2 = mild & field4 = normal & field5 = normal & field15 = f,29, 0.081447, 2.737678,1.64305e-11,0.185841,0.690476
+cochlear_age & field5 = normal & field15 = f & field57 = f,41, 0.079861, 1.786389,2.20674e-08,0.402655,0.450549
+cochlear_age & field4 = normal & field58 = f,48, 0.079587, 1.599292,1.32110e-08,0.526549,0.403361
+cochlear_age & field4 = normal & field14 = f,48, 0.078471, 1.585965,2.02377e-08,0.530973,0.400000
+cochlear_age & field2 = mild & field5 = normal & field15 = f & field57 = f,30, 0.076944, 2.378947,1.54358e-09,0.221239,0.600000
+cochlear_age & field15 = f & field59 = normal & field60 = normal,36, 0.075593, 1.903158,6.21992e-08,0.331858,0.480000
+cochlear_age & field2 = mild & field66 = a,42, 0.075358, 1.682084,1.40404e-07,0.438053,0.424242
+cochlear_age & field4 = normal & field15 = f & field60 = normal,35, 0.074516, 1.927388,7.72021e-08,0.318584,0.486111
+cochlear_age & field4 = normal & field18 = f,48, 0.074007, 1.534805,1.04770e-07,0.548673,0.387097
+cochlear_age & field2 = mild & field15 = f & field59 = normal & field60 = normal,27, 0.073714, 2.611040,7.67981e-10,0.181416,0.658537
+cochlear_age & field1 = t & field64 = good,24, 0.072715, 3.171930,1.10635e-11,0.132743,0.800000
+cochlear_age & field4 = normal & field15 = f & field59 = normal & field60 = normal,33, 0.072363, 1.982456,1.09362e-07,0.292035,0.500000
+cochlear_age & field2 = mild & field3 = f,42, 0.070894, 1.616760,7.31048e-07,0.455752,0.407767
+cochlear_age & field4 = normal & field66 = a,48, 0.068427, 1.475316,7.17055e-07,0.570796,0.372093
+cochlear_age & field3 = f & field4 = normal,48, 0.067311, 1.463968,1.03596e-06,0.575221,0.369231
+cochlear_age & field5 = normal & field59 = normal,44, 0.066352, 1.517010,2.95731e-06,0.508850,0.382609
+cochlear_age & field5 = normal & field15 = f & field60 = normal,32, 0.065706, 1.865841,1.54405e-06,0.300885,0.470588
+cochlear_age & field2 = mild & field58 = f,42, 0.065314, 1.541911,4.85193e-06,0.477876,0.388889
+cochlear_age & field14 = f & field15 = f,54, 0.064845, 1.372470,1.21667e-07,0.690265,0.346154
+cochlear_age & field57 = f & field66 = a,56, 0.064766, 1.353873,1.35564e-08,0.725664,0.341463
+cochlear_age & field2 = mild & field18 = f,42, 0.064198, 1.527764,6.93593e-06,0.482301,0.385321
+cochlear_age & field15 = f & field59 = normal & field64 = good,22, 0.063866, 2.907603,2.48859e-09,0.132743,0.733333
+cochlear_age & field2 = mild & field14 = f,42, 0.063082, 1.513876,9.84818e-06,0.486726,0.381818
+cochlear_age & field57 = f & field64 = good,24, 0.062671, 2.439946,9.33827e-08,0.172566,0.615385
+cochlear_age & field2 = mild & field5 = normal & field15 = f & field60 = normal,24, 0.061555, 2.378947,1.94279e-07,0.176991,0.600000
+cochlear_age & field15 = f & field18 = f,54, 0.061497, 1.346574,3.75780e-07,0.703540,0.339623
+cochlear_age & field2 = mild & field4 = normal & field60 = normal,29, 0.061360, 1.916374,3.72609e-06,0.265487,0.483333
+cochlear_age & field4 = normal & field5 = normal & field15 = f & field60 = normal,29, 0.060244, 1.884958,5.96360e-06,0.269911,0.475410
+cochlear_age & field66 = a & field64 = good,24, 0.059323, 2.265664,7.55026e-07,0.185841,0.571429
+cochlear_age & field3 = f & field64 = good,24, 0.058207, 2.212974,1.41801e-06,0.190265,0.558140
+cochlear_age & field18 = f & field64 = good,24, 0.057091, 2.162679,2.58637e-06,0.194690,0.545455
+cochlear_age & field58 = f & field64 = good,24, 0.057091, 2.162679,2.58637e-06,0.194690,0.545455
+cochlear_age & field15 = f & field58 = f,54, 0.057033, 1.313529,1.60223e-06,0.721239,0.331288
+cochlear_age & field58 = f & field66 = a,57, 0.056915, 1.291429,3.60038e-08,0.774336,0.325714
+cochlear_age & field14 = f & field66 = a,57, 0.054683, 1.276836,7.85428e-08,0.783186,0.322034
+cochlear_age & field5 = normal & field14 = f,44, 0.054076, 1.384573,0.000109478,0.557522,0.349206
+cochlear_age & field3 = f & field57 = f,56, 0.052490, 1.268772,9.15526e-07,0.774336,0.320000
+cochlear_age & field57 = f & field60 = normal,40, 0.052001, 1.416040,0.000252463,0.495575,0.357143
+cochlear_age & field18 = f & field66 = a,57, 0.051335, 1.255556,2.48086e-07,0.796460,0.316667
+cochlear_age & field5 = normal & field18 = f,44, 0.050728, 1.352373,0.000260247,0.570796,0.341085
+cochlear_age & field5 = normal & field58 = f,44, 0.050728, 1.352373,0.000260247,0.570796,0.341085
+cochlear_age & field5 = normal & field15 = f & field64 = good,18, 0.050630, 2.744940,5.37028e-07,0.115044,0.692308
+cochlear_age & field2 = mild & field15 = f & field64 = good,18, 0.050630, 2.744940,5.37028e-07,0.115044,0.692308
+cochlear_age & field4 = normal & field15 = f & field64 = good,17, 0.049554, 2.930588,2.65022e-07,0.101770,0.739130
+cochlear_age & field2 = mild & field59 = normal & field64 = good,17, 0.048438, 2.808480,7.40638e-07,0.106195,0.708333
+
+33 itemsets failed test for self sufficiency
+cochlear_age & field1 = t,57, 0.149542, 2.456522,1.80554e-29,0.407080,0.619565
+cochlear_age & field15 = f & field59 = normal,51, 0.117413, 2.084645,4.06951e-17,0.429204,0.525773
+cochlear_age & field2 = mild & field15 = f & field59 = normal,39, 0.112303, 2.863548,5.93334e-18,0.238938,0.722222
+cochlear_age & field2 = mild & field4 = normal & field15 = f,37, 0.106802, 2.876505,7.95676e-17,0.225664,0.725490
+cochlear_age & field4 = normal & field15 = f,46, 0.104217, 2.049281,1.73383e-13,0.393805,0.516854
+cochlear_age & field2 = mild & field57 = f & field59 = normal,39, 0.100027, 2.378947,2.03863e-13,0.287611,0.600000
+cochlear_age & field57 = f & field59 = normal,53, 0.099479, 1.736697,2.33206e-13,0.535398,0.438017
+cochlear_age & field2 = mild & field59 = normal,40, 0.095524, 2.172555,6.55959e-12,0.323009,0.547945
+cochlear_age & field2 = mild & field4 = normal & field59 = normal,37, 0.090062, 2.222754,4.38230e-11,0.292035,0.560606
+cochlear_age & field2 = mild & field4 = normal,38, 0.088907, 2.122066,1.38506e-10,0.314159,0.535211
+cochlear_age & field2 = mild & field15 = f & field57 = f,40, 0.088828, 2.007551,2.79330e-10,0.349558,0.506329
+cochlear_age & field2 = mild & field15 = f,41, 0.088789, 1.958571,3.55823e-10,0.367257,0.493976
+cochlear_age & field59 = normal,54, 0.084932, 1.551487,6.36407e-11,0.610619,0.391304
+cochlear_age & field2 = mild & field5 = normal & field15 = f,31, 0.078021, 2.319100,1.69171e-09,0.234513,0.584906
+cochlear_age & field4 = normal & field5 = normal & field15 = f,36, 0.077825, 1.955299,2.20555e-08,0.323009,0.493151
+cochlear_age & field5 = normal & field15 = f,42, 0.076474, 1.699248,9.10860e-08,0.433628,0.428571
+cochlear_age & field4 = normal & field59 = normal,46, 0.072970, 1.558854,2.36599e-07,0.517699,0.393162
+cochlear_age & field2 = mild & field57 = f,41, 0.070934, 1.642034,7.29670e-07,0.438053,0.414141
+cochlear_age & field2 = mild & field15 = f & field60 = normal,28, 0.066979, 2.176815,1.52932e-07,0.225664,0.549020
+cochlear_age & field2 = mild & field5 = normal & field57 = f,31, 0.066861, 1.950989,6.76949e-07,0.278761,0.492063
+cochlear_age & field15 = f & field60 = normal,38, 0.066587, 1.655678,3.05169e-06,0.402655,0.417582
+cochlear_age & field4 = normal,48, 0.066195, 1.452792,1.48862e-06,0.579646,0.366412
+cochlear_age & field2 = mild & field4 = normal & field5 = normal,30, 0.065784, 1.982456,7.56173e-07,0.265487,0.500000
+cochlear_age & field15 = f & field57 = f,53, 0.063768, 1.373466,3.70754e-07,0.676991,0.346405
+cochlear_age & field59 = normal & field64 = good,23, 0.060479, 2.464675,1.52827e-07,0.163717,0.621622
+cochlear_age & field15 = f & field64 = good,23, 0.060479, 2.464675,1.52827e-07,0.163717,0.621622
+cochlear_age & field2 = mild & field5 = normal,32, 0.060126, 1.738044,1.35174e-05,0.323009,0.438356
+cochlear_age & field2 = mild,42, 0.059735, 1.473684,2.71003e-05,0.500000,0.371681
+cochlear_age & field2 = mild & field59 = normal & field60 = normal,28, 0.059167, 1.914096,6.63393e-06,0.256637,0.482759
+cochlear_age & field15 = f,54, 0.055917, 1.305520,2.28094e-06,0.725664,0.329268
+cochlear_age & field5 = normal & field57 = f,43, 0.055231, 1.409019,8.91365e-05,0.535398,0.355372
+cochlear_age & field64 = good,24, 0.054859, 2.068650,7.94248e-06,0.203540,0.521739
+cochlear_age & field2 = mild & field64 = good,18, 0.048398, 2.548872,3.00647e-06,0.123894,0.642857
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 100 itemsets
+

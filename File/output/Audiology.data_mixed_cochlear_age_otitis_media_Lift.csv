@@ -1,0 +1,42 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s mixed_cochlear_age_otitis_media
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 15 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+mixed_cochlear_age_otitis_media & field1 = t & field66 = c,3, 0.013039, 56.500000,2.10704e-06,0.013274,1.000000
+mixed_cochlear_age_otitis_media & field59 = ? & field66 = c,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+mixed_cochlear_age_otitis_media & field33 = t,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+mixed_cochlear_age_otitis_media & field70 = p119,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+mixed_cochlear_age_otitis_media & field70 = p4,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+mixed_cochlear_age_otitis_media & field70 = p197,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+mixed_cochlear_age_otitis_media & field70 = p115,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+mixed_cochlear_age_otitis_media & field5 = absent & field66 = c,3, 0.012961, 42.375000,8.39980e-06,0.017699,0.750000
+mixed_cochlear_age_otitis_media & field1 = t & field59 = ?,2, 0.008615, 37.666668,0.000703751,0.013274,0.666667
+mixed_cochlear_age_otitis_media & field5 = absent & field59 = ?,2, 0.008615, 37.666668,0.000703751,0.013274,0.666667
+mixed_cochlear_age_otitis_media & field66 = c,3, 0.012726, 24.214287,7.27542e-05,0.030973,0.428571
+mixed_cochlear_age_otitis_media & field1 = t & field5 = absent,4, 0.016524, 15.066668,1.28973e-05,0.066372,0.266667
+
+3 itemsets failed test for self sufficiency
+mixed_cochlear_age_otitis_media & field59 = ?,2, 0.008458, 22.600000,0.00231788,0.022124,0.400000
+mixed_cochlear_age_otitis_media & field5 = absent,4, 0.014018, 4.808511,0.00168530,0.207965,0.085106
+mixed_cochlear_age_otitis_media & field1 = t,4, 0.010494, 2.456522,0.0264008,0.407080,0.043478
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 15 itemsets
+

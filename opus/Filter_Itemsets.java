@@ -69,7 +69,7 @@ public class Filter_Itemsets {
 			Tidset tidsright = uniqueTids.get(0);
 			
 			result = checkSS2(antCov, tidsright, 
-						Globals.noOfTransactions - supsettids.size(), uniqueCov.size(), Globals.getAlpha(is.size()));
+						Globals.noOfTransactions - supsettids.size(), uniqueCov.size(), Globals.getAlpha(is.size()-1));
 				
 				
 		}
@@ -110,11 +110,6 @@ public class Filter_Itemsets {
 						Collections.sort(subset);
 						Collections.sort(supset);
 						
-						//TODO remove after test
-						if (subset.contains(7) && subset.contains(8) && subset.contains(12) && subset.contains(14) &&
-								subset.contains(15) && subset.contains(32) && subset.size() == 7){
-							System.out.println("stop");
-						}
 						for (it = 0; it < supset.size(); it++){
 							//The original logic in C++ is : if (subset_it->find(*it) == subset_it->end()) {
 							if (!subset.contains(supset.get(it))){

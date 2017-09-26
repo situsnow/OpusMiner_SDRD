@@ -1,0 +1,127 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s Abnormal
+  Spect.data.csv
+  Spect.data
+
+File/input/Spect.data.csv: 45 items, 267 transactions
+Found 100 non-redundant productive itemsets in 13 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+Abnormal & field7 = 0 & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,24, 0.065971, 3.758358,2.71037e-13,0.116105,0.774194
+Abnormal & field12 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,26, 0.071147, 3.712300,2.74868e-14,0.127341,0.764706
+Abnormal & field3 = 0 & field7 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,25, 0.068173, 3.677686,1.64476e-13,0.123596,0.757576
+Abnormal & field7 = 0 & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,24, 0.065199, 3.640909,9.47845e-13,0.119850,0.750000
+Abnormal & field7 = 0 & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,24, 0.065199, 3.640909,9.47845e-13,0.119850,0.750000
+Abnormal & field3 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,24, 0.065199, 3.640909,9.47845e-13,0.119850,0.750000
+Abnormal & field8 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,27, 0.073349, 3.640909,1.56339e-14,0.134831,0.750000
+Abnormal & field7 = 0 & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0,26, 0.070376, 3.606234,9.41196e-14,0.131086,0.742857
+Abnormal & field9 = 0 & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field9 = 0 & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field4 = 0 & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field4 = 0 & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field4 = 0 & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field8 = 0 & field9 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field7 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field13 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,27, 0.072578, 3.542506,5.11054e-14,0.138577,0.729730
+Abnormal & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,27, 0.072578, 3.542506,5.11054e-14,0.138577,0.729730
+Abnormal & field9 = 0 & field12 = 0 & field22 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field9 = 0 & field12 = 0 & field13 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field4 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field20 = 0 & field6 = 0 & field5 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field8 = 0 & field9 = 0 & field12 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field21 = 0 & field2 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field21 = 0 & field2 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field15 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field7 = 0 & field9 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field8 = 0 & field9 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field15 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field8 = 0 & field9 = 0 & field14 = 0 & field23 = 0 & field15 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field9 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field8 = 0 & field9 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field4 = 0 & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field7 = 0 & field9 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field9 = 0 & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field4 = 0 & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field4 = 0 & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field9 = 0 & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field7 = 0 & field8 = 0 & field9 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field9 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field15 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field4 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field4 = 0 & field7 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field4 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field15 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,21, 0.056278, 3.515361,1.45181e-10,0.108614,0.724138
+Abnormal & field8 = 0 & field14 = 0 & field23 = 0 & field15 = 0 & field17 = 0 & field20 = 0 & field21 = 0 & field5 = 0,26, 0.069604, 3.506061,2.98183e-13,0.134831,0.722222
+Abnormal & field7 = 0 & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0,26, 0.069604, 3.506061,2.98183e-13,0.134831,0.722222
+Abnormal & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0 & field20 = 0 & field11 = 0 & field5 = 0,26, 0.069604, 3.506061,2.98183e-13,0.134831,0.722222
+Abnormal & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field21 = 0 & field11 = 0 & field5 = 0,26, 0.069604, 3.506061,2.98183e-13,0.134831,0.722222
+Abnormal & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field21 = 0 & field11 = 0 & field5 = 0,26, 0.069604, 3.506061,2.98183e-13,0.134831,0.722222
+Abnormal & field7 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field15 = 0 & field21 = 0 & field11 = 0 & field5 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+Abnormal & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+Abnormal & field8 = 0 & field9 = 0 & field12 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+Abnormal & field9 = 0 & field12 = 0 & field13 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+Abnormal & field8 = 0 & field9 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field6 = 0 & field5 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+Abnormal & field9 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field6 = 0 & field5 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+Abnormal & field8 = 0 & field9 = 0 & field23 = 0 & field15 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+Abnormal & field3 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+Abnormal & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field21 = 0 & field6 = 0 & field5 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+
+43 itemsets failed test for self sufficiency
+Abnormal & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,25, 0.068945, 3.792614,4.54346e-14,0.119850,0.781250
+Abnormal & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,25, 0.068173, 3.677686,1.64476e-13,0.123596,0.757576
+Abnormal & field7 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,25, 0.068173, 3.677686,1.64476e-13,0.123596,0.757576
+Abnormal & field7 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,25, 0.068173, 3.677686,1.64476e-13,0.123596,0.757576
+Abnormal & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,25, 0.068173, 3.677686,1.64476e-13,0.123596,0.757576
+Abnormal & field7 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,25, 0.068173, 3.677686,1.64476e-13,0.123596,0.757576
+Abnormal & field8 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,24, 0.065199, 3.640909,9.47845e-13,0.119850,0.750000
+Abnormal & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0,27, 0.073349, 3.640909,1.56339e-14,0.134831,0.750000
+Abnormal & field8 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,24, 0.065199, 3.640909,9.47845e-13,0.119850,0.750000
+Abnormal & field3 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,26, 0.070376, 3.606234,9.41196e-14,0.131086,0.742857
+Abnormal & field7 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,26, 0.070376, 3.606234,9.41196e-14,0.131086,0.742857
+Abnormal & field4 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,23, 0.062226, 3.601760,5.26250e-12,0.116105,0.741935
+Abnormal & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,23, 0.062226, 3.601760,5.26250e-12,0.116105,0.741935
+Abnormal & field9 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,23, 0.062226, 3.601760,5.26250e-12,0.116105,0.741935
+Abnormal & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,23, 0.062226, 3.601760,5.26250e-12,0.116105,0.741935
+Abnormal & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,23, 0.062226, 3.601760,5.26250e-12,0.116105,0.741935
+Abnormal & field8 = 0 & field9 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,23, 0.062226, 3.601760,5.26250e-12,0.116105,0.741935
+Abnormal & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,23, 0.062226, 3.601760,5.26250e-12,0.116105,0.741935
+Abnormal & field7 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0 & field5 = 0,25, 0.067402, 3.569519,5.45002e-13,0.127341,0.735294
+Abnormal & field8 = 0 & field9 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,25, 0.067402, 3.569519,5.45002e-13,0.127341,0.735294
+Abnormal & field9 = 0 & field13 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,25, 0.067402, 3.569519,5.45002e-13,0.127341,0.735294
+Abnormal & field8 = 0 & field9 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field4 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field8 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field9 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field7 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field8 = 0 & field14 = 0 & field23 = 0 & field15 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,22, 0.059252, 3.560000,2.81559e-11,0.112360,0.733333
+Abnormal & field7 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0,27, 0.072578, 3.542506,5.11054e-14,0.138577,0.729730
+Abnormal & field7 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0,27, 0.072578, 3.542506,5.11054e-14,0.138577,0.729730
+Abnormal & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0,27, 0.072578, 3.542506,5.11054e-14,0.138577,0.729730
+Abnormal & field13 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0 & field5 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field13 = 0 & field14 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field9 = 0 & field13 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field8 = 0 & field9 = 0 & field23 = 0 & field10 = 0 & field20 = 0 & field21 = 0 & field2 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field21 = 0 & field2 = 0 & field5 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field8 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field6 = 0 & field5 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field8 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field21 = 0 & field2 = 0 & field5 = 0,24, 0.064428, 3.530579,3.03683e-12,0.123596,0.727273
+Abnormal & field8 = 0 & field14 = 0 & field23 = 0 & field17 = 0 & field21 = 0 & field11 = 0,29, 0.077754, 3.519546,4.30410e-15,0.149813,0.725000
+Abnormal & field7 = 0 & field8 = 0 & field14 = 0 & field23 = 0 & field21 = 0 & field11 = 0 & field5 = 0,26, 0.069604, 3.506061,2.98183e-13,0.134831,0.722222
+Abnormal & field8 = 0 & field14 = 0 & field23 = 0 & field20 = 0 & field21 = 0 & field2 = 0,26, 0.069604, 3.506061,2.98183e-13,0.134831,0.722222
+Abnormal & field9 = 0 & field12 = 0 & field14 = 0 & field22 = 0 & field23 = 0 & field21 = 0 & field2 = 0 & field5 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+Abnormal & field9 = 0 & field12 = 0 & field13 = 0 & field14 = 0 & field23 = 0 & field21 = 0 & field2 = 0 & field5 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+Abnormal & field8 = 0 & field9 = 0 & field12 = 0 & field14 = 0 & field23 = 0 & field21 = 0 & field2 = 0 & field5 = 0,23, 0.061454, 3.489205,1.62888e-11,0.119850,0.718750
+
+13 seconds (0 input, 13 search, 0 filter, 0 output) for 100 itemsets
+

@@ -1,0 +1,44 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s otitis_media
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 18 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+otitis_media & field4 = absent & field59 = absent,4, 0.014018, 4.808511,0.00168530,0.207965,0.085106
+otitis_media & field59 = absent,4, 0.013470, 4.185185,0.00298813,0.238938,0.074074
+otitis_media & field4 = absent,4, 0.013235, 3.964913,0.00373229,0.252212,0.070175
+otitis_media & field3 = t & field4 = absent,3, 0.011630, 8.071428,0.00263271,0.092920,0.142857
+otitis_media & field3 = t & field59 = absent,3, 0.011395, 7.062500,0.00396344,0.106195,0.125000
+otitis_media & field60 = absent & field59 = absent,3, 0.010298, 4.460526,0.0156826,0.168142,0.078947
+otitis_media & field60 = absent & field4 = absent,3, 0.009907, 3.941860,0.0225048,0.190265,0.069767
+otitis_media & field66 = b & field4 = absent,2, 0.008380, 18.833334,0.00345597,0.026549,0.333333
+otitis_media & field66 = b & field59 = absent,2, 0.008301, 16.142857,0.00480925,0.030973,0.285714
+otitis_media & field3 = t & field66 = b,2, 0.008301, 16.142857,0.00480925,0.030973,0.285714
+otitis_media & field3 = t & field60 = absent,2, 0.007597, 7.062500,0.0260103,0.070796,0.125000
+otitis_media & field70 = p87,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+otitis_media & field70 = p101,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+otitis_media & field70 = p103,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+otitis_media & field70 = p88,1, 0.004346, 56.500000,0.0176991,0.004425,1.000000
+
+3 itemsets failed test for self sufficiency
+otitis_media & field3 = t,3, 0.011238, 6.519230,0.00505453,0.115044,0.115385
+otitis_media & field60 = absent,3, 0.009124, 3.198113,0.0410591,0.234513,0.056604
+otitis_media & field66 = b,2, 0.008223, 14.125000,0.00637367,0.035398,0.250000
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 18 itemsets
+

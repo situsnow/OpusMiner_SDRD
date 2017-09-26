@@ -1,0 +1,137 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -p
+  -k 100
+  -s loss
+  Connect-4.data.csv
+  Connect-4.data
+
+File/input/Connect-4.data.csv: 128 items, 67557 transactions
+Found 100 non-redundant productive itemsets in 3489 seconds
+Alpha for size 2 = 3.07579e-06
+Alpha for size 3 = 3.66165e-08
+Alpha for size 4 = 5.85864e-10
+Alpha for size 5 = 1.18118e-11
+Alpha for size 6 = 2.88092e-13
+Alpha for size 7 = 8.26494e-15
+Alpha for size 8 = 2.73221e-16
+Alpha for size 9 = 1.02458e-17
+Alpha for size 10 = 4.30496e-19
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+loss & field2 = b & field13 = x & field20 = o & field25 = b & field31 = b & field38 = b & field7 = x & field1 = x,30, 0.000335, 4.061136,5.39519e-19,0.000444,1.000000
+loss & field2 = b & field13 = x & field20 = o & field25 = b & field31 = b & field38 = b & field7 = x & field37 = x,33, 0.000368, 4.061136,8.02107e-21,0.000488,1.000000
+loss & field20 = o & field25 = b & field31 = b & field38 = b & field15 = o & field37 = x & field19 = o,33, 0.000368, 4.061136,8.02107e-21,0.000488,1.000000
+loss & field13 = x & field20 = o & field25 = b & field31 = b & field15 = o & field37 = x & field19 = o,39, 0.000435, 4.061136,1.77072e-24,0.000577,1.000000
+loss & field2 = b & field13 = x & field14 = o & field25 = b & field1 = x & field37 = x & field38 = x,26, 0.000290, 4.061136,1.47490e-16,0.000385,1.000000
+loss & field13 = x & field25 = b & field31 = b & field1 = x & field15 = o & field37 = x & field19 = o,39, 0.000435, 4.061136,1.77072e-24,0.000577,1.000000
+loss & field20 = o & field38 = b & field7 = x & field8 = o & field1 = x & field37 = x,33, 0.000368, 4.061136,8.02107e-21,0.000488,1.000000
+loss & field31 = b & field38 = b & field1 = x & field37 = x & field2 = x & field21 = o,26, 0.000290, 4.061136,1.47490e-16,0.000385,1.000000
+loss & field2 = b & field31 = b & field7 = x & field1 = x & field37 = x & field38 = x,40, 0.000446, 4.061136,4.35245e-25,0.000592,1.000000
+loss & field2 = b & field20 = o & field1 = x & field37 = x & field38 = x & field19 = o,27, 0.000301, 4.061136,3.62747e-17,0.000400,1.000000
+loss & field38 = b & field7 = x & field1 = x & field37 = x & field2 = x & field19 = o,29, 0.000324, 4.061136,2.19395e-18,0.000429,1.000000
+loss & field13 = x & field20 = o & field31 = b & field37 = x & field21 = o & field19 = o,24, 0.000268, 4.061136,2.43795e-15,0.000355,1.000000
+loss & field13 = x & field20 = o & field25 = b & field37 = x & field21 = o & field19 = o,30, 0.000335, 4.061136,5.39519e-19,0.000444,1.000000
+loss & field13 = x & field14 = o & field1 = x & field15 = o & field2 = x & field19 = o,45, 0.000502, 4.061136,3.90262e-28,0.000666,1.000000
+loss & field2 = b & field7 = x & field1 = x & field37 = x & field38 = x & field19 = o,29, 0.000324, 4.061136,2.19395e-18,0.000429,1.000000
+loss & field2 = b & field25 = b & field7 = x & field1 = x & field37 = x & field38 = x,40, 0.000446, 4.061136,4.35245e-25,0.000592,1.000000
+loss & field2 = b & field20 = o & field8 = o & field1 = x & field37 = x & field19 = o,38, 0.000424, 4.061136,7.20354e-24,0.000562,1.000000
+loss & field2 = b & field20 = o & field7 = x & field8 = o & field1 = x & field37 = x,35, 0.000391, 4.061136,4.84860e-22,0.000518,1.000000
+loss & field13 = x & field14 = o & field20 = o & field31 = b & field1 = x & field37 = x,39, 0.000435, 4.061136,1.77072e-24,0.000577,1.000000
+loss & field13 = x & field20 = o & field1 = x & field37 = x & field38 = x,21, 0.000234, 4.061136,1.63782e-13,0.000311,1.000000
+loss & field20 = o & field31 = b & field1 = x & field15 = o & field19 = o,66, 0.000736, 4.061136,6.12325e-41,0.000977,1.000000
+loss & field13 = x & field14 = o & field20 = o & field1 = x & field15 = o,29, 0.000324, 4.061136,2.19395e-18,0.000429,1.000000
+loss & field14 = o & field1 = x & field37 = x & field38 = x & field19 = o,36, 0.000402, 4.061136,1.19201e-22,0.000533,1.000000
+loss & field13 = x & field20 = o & field31 = b & field1 = x & field15 = o,66, 0.000736, 4.061136,6.12325e-41,0.000977,1.000000
+loss & field20 = o & field7 = x & field1 = x & field32 = o & field19 = o,54, 0.000603, 4.061136,1.27302e-33,0.000799,1.000000
+loss & field20 = o & field1 = x & field37 = x & field2 = x & field21 = o,27, 0.000301, 4.061136,3.62747e-17,0.000400,1.000000
+loss & field2 = b & field20 = o & field1 = x & field32 = o & field37 = x,22, 0.000245, 4.061136,4.02908e-14,0.000326,1.000000
+loss & field20 = o & field22 = o & field1 = x & field37 = x & field19 = o,28, 0.000312, 4.061136,8.92123e-18,0.000414,1.000000
+loss & field13 = x & field20 = o & field7 = x & field37 = x & field38 = x,21, 0.000234, 4.061136,1.63782e-13,0.000311,1.000000
+loss & field20 = o & field7 = x & field32 = o & field37 = x & field19 = o,34, 0.000379, 4.061136,1.97212e-21,0.000503,1.000000
+loss & field14 = o & field20 = o & field37 = x & field38 = x & field19 = o,44, 0.000491, 4.061136,1.58808e-27,0.000651,1.000000
+loss & field20 = o & field1 = x & field26 = o & field2 = x & field19 = o,21, 0.000234, 4.061136,1.63782e-13,0.000311,1.000000
+loss & field20 = o & field7 = x & field8 = o & field1 = x & field9 = o,25, 0.000279, 4.061136,5.99659e-16,0.000370,1.000000
+loss & field14 = o & field20 = o & field1 = x & field15 = o & field19 = o,24, 0.000268, 4.061136,2.43795e-15,0.000355,1.000000
+loss & field20 = o & field1 = x & field32 = o & field2 = x & field19 = o,26, 0.000290, 4.061136,1.47490e-16,0.000385,1.000000
+loss & field20 = o & field1 = x & field32 = o & field37 = x & field19 = o,21, 0.000234, 4.061136,1.63782e-13,0.000311,1.000000
+loss & field25 = b & field7 = x & field1 = x & field15 = o & field16 = o,42, 0.000469, 4.061136,2.62931e-26,0.000622,1.000000
+loss & field14 = o & field20 = o & field31 = b & field38 = x & field19 = o,48, 0.000536, 4.061136,5.79020e-30,0.000711,1.000000
+loss & field13 = x & field1 = x & field15 = o & field37 = x & field2 = x,21, 0.000234, 4.061136,1.63782e-13,0.000311,1.000000
+loss & field20 = o & field38 = b & field7 = x & field15 = o & field37 = x,22, 0.000245, 4.061136,4.02908e-14,0.000326,1.000000
+loss & field13 = x & field14 = o & field7 = x & field1 = x & field2 = x,23, 0.000257, 4.061136,9.91117e-15,0.000340,1.000000
+loss & field2 = b & field13 = x & field7 = x & field1 = x & field21 = o,23, 0.000257, 4.061136,9.91117e-15,0.000340,1.000000
+loss & field13 = x & field20 = o & field31 = b & field7 = x & field15 = o,56, 0.000625, 4.061136,7.68051e-35,0.000829,1.000000
+loss & field13 = x & field22 = o & field1 = x & field21 = o,55, 0.000614, 4.061136,3.12696e-34,0.000814,1.000000
+loss & field23 = x & field37 = x & field21 = o & field19 = o,18, 0.000201, 4.061136,1.09985e-11,0.000266,1.000000
+loss & field14 = o & field20 = o & field32 = o & field19 = o,21, 0.000234, 4.061136,1.63782e-13,0.000311,1.000000
+loss & field14 = o & field20 = o & field7 = x & field8 = o,31, 0.000346, 4.061136,1.32669e-19,0.000459,1.000000
+loss & field8 = o & field15 = o & field37 = x & field19 = o,27, 0.000301, 4.061136,3.62747e-17,0.000400,1.000000
+loss & field8 = o & field1 = x & field2 = x & field21 = o,22, 0.000245, 4.061136,4.02908e-14,0.000326,1.000000
+loss & field13 = x & field1 = x & field2 = x & field21 = o,37, 0.000413, 4.061136,2.93037e-23,0.000548,1.000000
+loss & field20 = o & field15 = o & field2 = x & field19 = o,23, 0.000257, 4.061136,9.91117e-15,0.000340,1.000000
+loss & field14 = o & field20 = o & field1 = x & field21 = o,23, 0.000257, 4.061136,9.91117e-15,0.000340,1.000000
+loss & field14 = o & field1 = x & field2 = x & field21 = o,23, 0.000257, 4.061136,9.91117e-15,0.000340,1.000000
+loss & field22 = o & field7 = x & field1 = x & field21 = o,50, 0.000558, 4.061136,3.49531e-31,0.000740,1.000000
+loss & field14 = o & field20 = o & field7 = x & field38 = x,29, 0.000324, 4.061136,2.19395e-18,0.000429,1.000000
+loss & field22 = o & field23 = x & field1 = x & field21 = o,50, 0.000558, 4.061136,3.49531e-31,0.000740,1.000000
+loss & field14 = o & field20 = o & field7 = x & field15 = o,30, 0.000335, 4.061136,5.39519e-19,0.000444,1.000000
+loss & field22 = o & field37 = x & field21 = o & field19 = o,87, 0.000971, 4.061136,9.41642e-54,0.001288,1.000000
+loss & field13 = x & field22 = o & field7 = x & field21 = o,49, 0.000547, 4.061136,1.42266e-30,0.000725,1.000000
+loss & field22 = o & field2 = x & field21 = o & field19 = o,42, 0.000469, 4.061136,2.62931e-26,0.000622,1.000000
+loss & field14 = o & field1 = x & field9 = o & field2 = x,24, 0.000268, 4.061136,2.43795e-15,0.000355,1.000000
+loss & field20 = o & field1 = x & field15 = o & field2 = x,25, 0.000279, 4.061136,5.99659e-16,0.000370,1.000000
+loss & field14 = o & field27 = b & field26 = o & field32 = o,19, 0.000212, 4.061136,2.70601e-12,0.000281,1.000000
+loss & field22 = o & field1 = x & field37 = x & field21 = o,40, 0.000446, 4.061136,4.35245e-25,0.000592,1.000000
+loss & field20 = o & field8 = o & field1 = x & field21 = o,22, 0.000245, 4.061136,4.02908e-14,0.000326,1.000000
+loss & field14 = o & field8 = o & field1 = x & field38 = x,30, 0.000335, 4.061136,5.39519e-19,0.000444,1.000000
+loss & field22 = o & field1 = x & field2 = x & field21 = o,49, 0.000547, 4.061136,1.42266e-30,0.000725,1.000000
+loss & field23 = x & field25 = b & field37 = x & field19 = o,32, 0.000357, 4.061136,3.26220e-20,0.000474,1.000000
+loss & field22 = o & field38 = x & field21 = o & field19 = o,22, 0.000245, 4.061136,4.02908e-14,0.000326,1.000000
+loss & field22 = o & field7 = x & field21 = o & field19 = o,144, 0.001607, 4.061136,1.41714e-88,0.002132,1.000000
+loss & field20 = o & field7 = x & field1 = x & field15 = o,27, 0.000301, 4.061136,3.62747e-17,0.000400,1.000000
+loss & field20 = o & field2 = x & field21 = o & field19 = o,22, 0.000245, 4.061136,4.02908e-14,0.000326,1.000000
+loss & field22 = o & field23 = x & field21 = o & field19 = o,75, 0.000837, 4.061136,1.98027e-46,0.001110,1.000000
+loss & field20 = o & field5 = x & field19 = o,31, 0.000346, 4.061136,1.32669e-19,0.000459,1.000000
+loss & field23 = x & field2 = x & field21 = o,21, 0.000234, 4.061136,1.63782e-13,0.000311,1.000000
+loss & field13 = x & field22 = o & field27 = b & field32 = b & field21 = o & field19 = o,162, 0.001804, 4.036221,1.70904e-97,0.002413,0.993865
+loss & field13 = x & field22 = o & field26 = b & field32 = b & field21 = o & field19 = o,154, 0.001715, 4.034935,1.27354e-92,0.002294,0.993548
+loss & field13 = x & field22 = o & field32 = b & field38 = b & field21 = o & field19 = o,146, 0.001625, 4.033509,9.43726e-88,0.002176,0.993197
+loss & field2 = b & field13 = x & field22 = o & field27 = b & field32 = b & field38 = b & field21 = o & field19 = o,126, 0.001402, 4.029159,1.37375e-75,0.001880,0.992126
+loss & field22 = o & field27 = b & field32 = b & field38 = b & field21 = o & field19 = o,246, 0.002737, 4.028385,8.33504e-147,0.003671,0.991935
+loss & field2 = b & field13 = x & field22 = o & field26 = b & field32 = b & field38 = b & field21 = o & field19 = o,118, 0.001313, 4.027009,9.95567e-71,0.001761,0.991597
+loss & field22 = o & field26 = b & field32 = b & field38 = b & field21 = o & field19 = o,234, 0.002604, 4.026720,1.73174e-139,0.003493,0.991525
+loss & field22 = o & field27 = b & field1 = x & field21 = o & field19 = o,117, 0.001302, 4.026720,4.03059e-70,0.001747,0.991525
+loss & field13 = x & field22 = o & field27 = b & field31 = b & field21 = o & field19 = o,115, 0.001279, 4.026126,6.60410e-69,0.001717,0.991379
+loss & field13 = x & field22 = o & field25 = b & field32 = b & field21 = o & field19 = o,114, 0.001268, 4.025822,2.67275e-68,0.001702,0.991304
+loss & field2 = b & field22 = o & field32 = b & field21 = o & field19 = o,226, 0.002514, 4.025512,1.30025e-134,0.003375,0.991228
+loss & field22 = o & field26 = b & field1 = x & field21 = o & field19 = o,113, 0.001257, 4.025512,1.08156e-67,0.001687,0.991228
+
+13 itemsets failed test for self sufficiency
+loss & field13 = x & field22 = o & field32 = b & field21 = o & field19 = o,163, 0.001815, 4.036373,4.20296e-98,0.002428,0.993903
+loss & field13 = x & field22 = o & field27 = b & field32 = b & field38 = b & field21 = o & field19 = o,145, 0.001614, 4.033320,3.83176e-87,0.002161,0.993151
+loss & field2 = b & field13 = x & field22 = o & field32 = b & field21 = o & field19 = o,144, 0.001603, 4.033128,1.55564e-86,0.002146,0.993103
+loss & field2 = b & field13 = x & field22 = o & field27 = b & field32 = b & field21 = o & field19 = o,143, 0.001592, 4.032934,6.31512e-86,0.002132,0.993056
+loss & field22 = o & field32 = b & field21 = o & field19 = o,282, 0.003139, 4.032537,8.69626e-169,0.004204,0.992958
+loss & field22 = o & field27 = b & field32 = b & field21 = o & field19 = o,279, 0.003106, 4.032231,5.92533e-167,0.004159,0.992883
+loss & field13 = x & field22 = o & field26 = b & field32 = b & field38 = b & field21 = o & field19 = o,137, 0.001525, 4.031708,2.82062e-82,0.002043,0.992754
+loss & field2 = b & field13 = x & field22 = o & field26 = b & field32 = b & field21 = o & field19 = o,135, 0.001503, 4.031275,4.64155e-81,0.002013,0.992647
+loss & field22 = o & field26 = b & field32 = b & field21 = o & field19 = o,267, 0.002972, 4.030942,1.26885e-159,0.003982,0.992565
+loss & field2 = b & field13 = x & field22 = o & field32 = b & field38 = b & field21 = o & field19 = o,127, 0.001413, 4.029408,3.38979e-76,0.001895,0.992188
+loss & field22 = o & field32 = b & field38 = b & field21 = o & field19 = o,249, 0.002771, 4.028776,1.23236e-148,0.003715,0.992032
+loss & field22 = o & field1 = x & field21 = o & field19 = o,118, 0.001313, 4.027009,9.95567e-71,0.001761,0.991597
+loss & field13 = x & field22 = o & field31 = b & field21 = o & field19 = o,116, 0.001291, 4.026426,1.63161e-69,0.001732,0.991453
+
+3710 seconds (220 input, 3324 search, 165 filter, 0 output) for 100 itemsets
+

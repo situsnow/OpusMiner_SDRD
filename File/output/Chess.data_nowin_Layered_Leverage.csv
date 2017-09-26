@@ -1,0 +1,133 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -p
+  -k 100
+  -s nowin
+  Chess.data.csv
+  Chess.data
+
+File/input/Chess.data.csv: 74 items, 3196 transactions
+Found 100 non-redundant productive itemsets in 2 seconds
+Alpha for size 2 = 9.25583e-06
+Alpha for size 3 = 1.92830e-07
+Alpha for size 4 = 5.43183e-09
+Alpha for size 5 = 1.93994e-10
+Alpha for size 6 = 8.43451e-12
+Alpha for size 7 = 4.34129e-13
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+nowin & field21 = f & field33 = t,862, 0.133971, 1.986960,1.38686e-284,0.284105,0.949339
+nowin & field21 = f & field10 = t,743, 0.121404, 2.092993,7.42251e-294,0.232478,1.000000
+nowin & field15 = n & field21 = f,1284, 0.091102, 1.293264,2.17656e-108,0.650188,0.617902
+nowin & field21 = f & field31 = f,1334, 0.086864, 1.262801,3.14364e-106,0.691802,0.603347
+nowin & field21 = f & field22 = f,1286, 0.086346, 1.273221,6.37244e-99,0.661452,0.608325
+nowin & field6 = f & field21 = f,934, 0.084144, 1.404350,1.02888e-83,0.435544,0.670977
+nowin & field18 = t & field21 = f,1171, 0.080263, 1.280509,1.10597e-78,0.598874,0.611808
+nowin & field15 = n & field22 = f & field33 = t,639, 0.071671, 1.558767,6.29787e-77,0.268461,0.744755
+nowin & field15 = n & field18 = t & field31 = f & field33 = t,506, 0.068178, 1.756309,3.17577e-92,0.188673,0.839138
+nowin & field18 = t & field22 = f & field31 = f & field10 = t,520, 0.065831, 1.679562,2.54247e-80,0.202753,0.802469
+nowin & field15 = n & field22 = f & field31 = f & field10 = t,539, 0.062657, 1.591147,1.96023e-67,0.221840,0.760226
+nowin & field15 = n & field18 = t & field22 = f & field33 = t,450, 0.061120, 1.767067,3.66508e-82,0.166771,0.844278
+nowin & field18 = t & field22 = f & field31 = f & field33 = t,441, 0.058902, 1.744820,1.71214e-76,0.165519,0.833648
+nowin & field15 = n & field18 = t & field31 = f & field10 = t,457, 0.056882, 1.660586,8.98463e-66,0.180225,0.793403
+nowin & field15 = n & field18 = t & field22 = f & field10 = t,454, 0.055794, 1.646826,4.05940e-63,0.180538,0.786828
+nowin & field15 = n & field18 = t & field22 = f & field31 = f & field10 = t,429, 0.052307, 1.638493,7.32110e-58,0.171464,0.782847
+nowin & field15 = n & field18 = t & field22 = f & field31 = f & field33 = t,391, 0.052078, 1.741192,4.19047e-66,0.147059,0.831915
+nowin & field21 = f & field8 = t,486, 0.052053, 1.520470,1.20369e-48,0.209324,0.726457
+nowin & field15 = n & field31 = f & field7 = t & field33 = t,332, 0.051706, 1.991042,7.31319e-92,0.109199,0.951289
+nowin & field8 = t & field10 = t,341, 0.051682, 1.939431,2.68425e-85,0.115144,0.926630
+nowin & field6 = f & field18 = t & field31 = f,639, 0.050592, 1.338761,2.05466e-35,0.312578,0.639640
+nowin & field31 = f & field8 = t & field10 = t,323, 0.049040, 1.942634,6.48575e-81,0.108886,0.928161
+nowin & field22 = f & field31 = f & field7 = t & field33 = t,318, 0.048073, 1.934801,2.50801e-78,0.107635,0.924419
+nowin & field21 = f & field7 = t,685, 0.047943, 1.288140,2.49184e-30,0.348248,0.615454
+nowin & field22 = f & field31 = f & field7 = t & field10 = t,324, 0.046512, 1.847765,3.70927e-67,0.114831,0.882834
+nowin & field15 = n & field22 = f & field7 = t & field33 = t,297, 0.045688, 1.967148,1.30107e-77,0.098874,0.939873
+nowin & field6 = f & field22 = f & field31 = f & field10 = t,375, 0.045577, 1.635151,3.50397e-49,0.150188,0.781250
+nowin & field6 = f & field31 = f & field7 = t,399, 0.044565, 1.555129,1.18610e-42,0.168023,0.743017
+nowin & field6 = f & field15 = n & field10 = t,355, 0.043953, 1.654816,1.49103e-48,0.140488,0.790646
+nowin & field22 = f & field31 = f & field8 = t & field10 = t,289, 0.043484, 1.926353,1.76906e-69,0.098248,0.920382
+nowin & field6 = f & field18 = t & field22 = f & field31 = f,506, 0.043063, 1.373611,1.97857e-30,0.241239,0.656290
+nowin & field18 = t & field31 = f & field7 = t & field10 = t,295, 0.042970, 1.871009,1.36690e-63,0.103254,0.893939
+nowin & field18 = t & field31 = f & field7 = t & field33 = t,277, 0.042869, 1.978700,9.84228e-74,0.091677,0.945392
+nowin & field6 = f & field18 = t & field33 = t,328, 0.042830, 1.716254,2.13430e-51,0.125156,0.820000
+nowin & field33 = t & field8 = t,273, 0.042813, 2.004867,1.37225e-76,0.089174,0.957895
+nowin & field15 = n & field8 = t,398, 0.042757, 1.522872,1.04316e-38,0.171151,0.727605
+nowin & field6 = f & field18 = t & field31 = f & field10 = t,319, 0.042257, 1.734194,6.61600e-52,0.120463,0.828571
+nowin & field6 = f & field31 = f & field33 = t,378, 0.042031, 1.551277,1.15488e-39,0.159574,0.741176
+nowin & field15 = n & field22 = f & field31 = f & field7 = t & field33 = t,272, 0.041902, 1.969876,4.82898e-71,0.090426,0.941176
+nowin & field15 = n & field31 = f & field7 = t & field10 = t,287, 0.041812, 1.871305,8.89979e-62,0.100438,0.894081
+nowin & field15 = n & field18 = t & field7 = t & field33 = t,266, 0.041520, 1.995470,4.44217e-73,0.087297,0.953405
+nowin & field6 = f & field7 = t & field10 = t,269, 0.041113, 1.954913,3.90902e-68,0.090113,0.934028
+nowin & field6 = f & field15 = n & field18 = t,567, 0.041070, 1.301236,4.26462e-25,0.285357,0.621711
+nowin & field6 = f & field15 = n & field33 = t,394, 0.041057, 1.499344,1.35532e-35,0.172090,0.716364
+nowin & field6 = f & field15 = n & field31 = f & field10 = t,332, 0.040644, 1.642727,9.34933e-44,0.132353,0.784870
+nowin & field15 = n & field8 = t & field10 = t,268, 0.040501, 1.934214,4.05610e-65,0.090738,0.924138
+nowin & field6 = f & field15 = n & field7 = t,335, 0.040237, 1.623039,4.69318e-42,0.135169,0.775463
+
+53 itemsets failed test for self sufficiency
+nowin & field33 = t,862, 0.088525, 1.488581,6.69846e-97,0.379224,0.711221
+nowin & field10 = t,743, 0.087319, 1.601538,6.34216e-106,0.303817,0.765191
+nowin & field21 = f,1527, 0.087305, 1.223583,1.98946e-191,0.817272,0.584610
+nowin & field15 = n & field33 = t,782, 0.084273, 1.525369,5.59521e-93,0.335732,0.728798
+nowin & field31 = f & field10 = t,687, 0.083999, 1.641423,7.88504e-105,0.274093,0.784247
+nowin & field18 = t & field33 = t,637, 0.082706, 1.709278,7.36093e-111,0.244055,0.816667
+nowin & field31 = f & field33 = t,731, 0.081770, 1.556437,5.79138e-92,0.307572,0.743642
+nowin & field22 = f & field10 = t,706, 0.081273, 1.582070,8.53283e-94,0.292240,0.755889
+nowin & field22 = f & field31 = f & field10 = t,653, 0.078443, 1.623188,1.11028e-93,0.263454,0.775534
+nowin & field15 = n & field18 = t & field33 = t,576, 0.077224, 1.749730,1.61149e-106,0.215582,0.835994
+nowin & field22 = f & field33 = t,719, 0.075923, 1.509390,1.57855e-78,0.311952,0.721164
+nowin & field18 = t & field31 = f & field33 = t,556, 0.075002, 1.757861,9.62110e-104,0.207134,0.839879
+nowin & field15 = n & field31 = f & field33 = t,666, 0.073990, 1.550538,1.68037e-79,0.281289,0.740823
+nowin & field18 = t & field10 = t,592, 0.073858, 1.663157,7.89648e-91,0.233104,0.794631
+nowin & field15 = n & field10 = t,606, 0.072857, 1.624012,4.00809e-85,0.244368,0.775928
+nowin & field18 = t & field31 = f & field10 = t,554, 0.071386, 1.700173,4.96886e-91,0.213392,0.812317
+nowin & field15 = n & field22 = f & field10 = t,576, 0.067955, 1.605278,4.56966e-76,0.234981,0.766977
+nowin & field18 = t & field22 = f & field10 = t,555, 0.067812, 1.640694,2.48706e-79,0.221527,0.783898
+nowin & field22 = f & field31 = f & field33 = t,601, 0.067256, 1.556793,1.43244e-70,0.252816,0.743812
+nowin & field15 = n & field31 = f & field10 = t,567, 0.067232, 1.610213,1.63723e-75,0.230601,0.769335
+nowin & field18 = t & field22 = f & field33 = t,511, 0.066603, 1.713973,4.57239e-85,0.195244,0.818910
+nowin & field7 = t & field33 = t,414, 0.063012, 1.947189,2.01492e-107,0.139237,0.930337
+nowin & field15 = n & field18 = t & field10 = t,484, 0.060696, 1.668877,7.95824e-72,0.189925,0.797364
+nowin & field15 = n & field22 = f & field31 = f & field33 = t,536, 0.059476, 1.549509,9.51735e-60,0.226533,0.740331
+nowin & field31 = f & field7 = t & field33 = t,378, 0.057877, 1.958295,3.42488e-99,0.126408,0.935644
+nowin & field15 = n & field7 = t & field33 = t,365, 0.056799, 1.989433,1.45341e-101,0.120150,0.950521
+nowin & field6 = f & field10 = t,448, 0.054365, 1.633556,3.97306e-60,0.179599,0.780488
+nowin & field7 = t & field10 = t,373, 0.053921, 1.858777,3.30038e-80,0.131414,0.888095
+nowin & field31 = f & field7 = t & field10 = t,358, 0.052068, 1.868557,3.73007e-78,0.125469,0.892768
+nowin & field22 = f & field7 = t & field33 = t,346, 0.051901, 1.920890,1.53314e-83,0.117960,0.917772
+nowin & field6 = f & field31 = f & field10 = t,409, 0.051132, 1.665436,1.76567e-58,0.160826,0.795720
+nowin & field6 = f & field18 = t,717, 0.049733, 1.284825,7.47956e-32,0.365457,0.613870
+nowin & field6 = f & field7 = t,428, 0.048406, 1.566085,1.04096e-47,0.178974,0.748252
+nowin & field6 = f & field22 = f & field10 = t,411, 0.048320, 1.601900,3.84634e-50,0.168023,0.765363
+nowin & field8 = t,486, 0.048017, 1.461486,2.66671e-40,0.217772,0.698276
+nowin & field22 = f & field7 = t & field10 = t,336, 0.047875, 1.836150,3.00536e-68,0.119837,0.877285
+nowin & field18 = t & field22 = f & field31 = f,863, 0.046232, 1.206582,5.50045e-26,0.468398,0.576486
+nowin & field18 = t & field7 = t & field33 = t,298, 0.046001, 1.973772,6.16263e-79,0.098874,0.943038
+nowin & field18 = t & field22 = f,960, 0.045936, 1.180537,1.02328e-25,0.532541,0.564042
+nowin & field22 = f & field8 = t & field10 = t,304, 0.045636, 1.922265,9.07662e-73,0.103567,0.918429
+nowin & field18 = t & field31 = f,1051, 0.044958, 1.158365,1.68889e-25,0.594180,0.553449
+nowin & field6 = f & field18 = t & field22 = f,565, 0.044780, 1.339231,4.30608e-30,0.276283,0.639864
+nowin & field6 = f & field31 = f,809, 0.044733, 1.214656,1.03355e-24,0.436170,0.580344
+nowin & field6 = f & field18 = t & field10 = t,345, 0.044562, 1.703025,1.00270e-52,0.132666,0.813679
+nowin & field6 = f & field33 = t,444, 0.044443, 1.470394,2.99073e-37,0.197747,0.702532
+nowin & field18 = t & field7 = t & field10 = t,305, 0.044305, 1.866558,2.49079e-65,0.107009,0.891813
+nowin & field31 = f & field8 = t,452, 0.043358, 1.442123,1.57174e-34,0.205257,0.689024
+nowin & field15 = n & field7 = t & field10 = t,294, 0.042806, 1.870334,2.84241e-63,0.102941,0.893617
+nowin & field15 = n & field7 = t,567, 0.042266, 1.312751,1.28885e-26,0.282854,0.627212
+nowin & field15 = n & field18 = t & field22 = f,787, 0.042185, 1.206729,2.86243e-22,0.427096,0.576557
+nowin & field15 = n & field18 = t,973, 0.041034, 1.155779,5.35788e-21,0.551314,0.552213
+nowin & field22 = f & field8 = t,406, 0.040925, 1.475269,4.25817e-34,0.180225,0.704861
+nowin & field6 = f & field22 = f & field31 = f,662, 0.040298, 1.241542,6.69378e-22,0.349186,0.593190
+
+4 seconds (1 input, 1 search, 1 filter, 0 output) for 100 itemsets
+

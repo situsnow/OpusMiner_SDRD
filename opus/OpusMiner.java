@@ -82,7 +82,6 @@ public class OpusMiner {
 					break;
 				case 'p':
 					// do not correct alpha for the size of the search space
-					//Layered significance value if it's true
 					Globals.correctionForMultCompare = false;
 					break;
 				case 'r':
@@ -106,10 +105,11 @@ public class OpusMiner {
 				inputFileName = "File/input/" + argv[i];
 			}else if ("".equals(outputFileName)){
 				//outputFileName = argv[i];
+				String fileSuffix = Globals.correctionForMultCompare?"":"_Layered";
 				if (Globals.searchByLift){
-					outputFileName = "File/output/" + argv[i] + "_Lift.csv";
+					outputFileName = "File/output/" + argv[i] + "_" + Globals.consequentName + fileSuffix + "_Lift.csv";
 				}else{
-					outputFileName = "File/output/" + argv[i] + "_Leverage.csv";
+					outputFileName = "File/output/" + argv[i] + "_" + Globals.consequentName + fileSuffix + "_Leverage.csv";
 				}
 				
 			}else{
@@ -126,19 +126,19 @@ public class OpusMiner {
 			Load_Data.load_data(inputFileName);
 			
 			//TODO delete after testing
-			PrintStream mappingf = new PrintStream(new File("File/mapping.csv"));
-			StringBuffer sb = new StringBuffer();
-			sb.append("Index,ItemName\n");
-			for (int j = 0; j < Globals.noOfItems; j++){
-				sb.append(j);
-				sb.append(",");
-				sb.append(Globals.itemNames.get(j));
-				sb.append(",");
-				sb.append(Globals.tids.get(j).size());
-				sb.append("\n");
-			}
-			mappingf.print(sb.toString());
-			mappingf.close();
+//			PrintStream mappingf = new PrintStream(new File("File/mapping.csv"));
+//			StringBuffer sb = new StringBuffer();
+//			sb.append("Index,ItemName\n");
+//			for (int j = 0; j < Globals.noOfItems; j++){
+//				sb.append(j);
+//				sb.append(",");
+//				sb.append(Globals.itemNames.get(j));
+//				sb.append(",");
+//				sb.append(Globals.tids.get(j).size());
+//				sb.append("\n");
+//			}
+//			mappingf.print(sb.toString());
+//			mappingf.close();
 			//TODO delete after testing
 			
 			System.out.print(String.format("%d transactions, %d items\n", 
@@ -184,7 +184,16 @@ public class OpusMiner {
 			System.out.print(String.format("%d seconds (%d input, %d search, %d filter, %d output)", 
 					t, (find_start_t.getTime() - start_t.getTime()) / 1000, (find_end_t.getTime() - find_start_t.getTime()) / 1000,
 					(print_start_t.getTime() - find_end_t.getTime()) / 1000, (end_t.getTime() - print_start_t.getTime()) / 1000));
+			
+			outf.println();
+			outf.print(String.format("%d seconds (%d input, %d search, %d filter, %d output)", 
+					t, (find_start_t.getTime() - start_t.getTime()) / 1000, (find_end_t.getTime() - find_start_t.getTime()) / 1000,
+					(print_start_t.getTime() - find_end_t.getTime()) / 1000, (end_t.getTime() - print_start_t.getTime()) / 1000));
+			
 			System.out.print(String.format(" for %d itemsets\n", (long)is.size()));
+			
+			outf.println(String.format(" for %d itemsets\n", (long)is.size()));
+			
 			
 		} catch (FileNotFoundException ex){
 			if (outf == null){

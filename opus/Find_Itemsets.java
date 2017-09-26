@@ -1,8 +1,5 @@
 package opus;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -135,13 +132,11 @@ public class Find_Itemsets {
 	 * @return
 	 */
 	public static boolean checkSubsetsX(Itemset sofar, Itemset remaining, int limit, int cnt, double new_sup, double alpha){
-		int sofarCnt;
-		int remainingCnt;
 		
 		boolean sofarFlag = getTIDCount(sofar);
-		sofarCnt = count;
+		//int sofarCnt = count;
 		boolean remainingFlag = getTIDCount(remaining);
-		remainingCnt = count;
+		//int remainingCnt = count;
 		if (!sofarFlag || !remainingFlag){
 			//As the count value will never used here, do not need to pass to neither sofarCnt or remainingCnt
 			return false;
@@ -157,11 +152,11 @@ public class Find_Itemsets {
 //		}
 		
 		//Bookmark this change
-		double this_p = Utils.fisher(cnt, sofarCnt, remainingCnt);
-		
-		if (this_p > p && p > alpha){
-			return false;
-		}
+//		double this_p = Utils.fisher(cnt, sofarCnt, remainingCnt);
+//		
+//		if (this_p > p && p > alpha){
+//			return false;
+//		}
 		
 		if (remaining.size() > 1){
 			Itemset new_remaining = new Itemset(remaining);
@@ -186,7 +181,7 @@ public class Find_Itemsets {
 			}
 		}
 		
-		return p <= alpha;
+		return true;
 		//return p <= alpha && val > minValue;
 	}
 	
@@ -290,21 +285,16 @@ public class Find_Itemsets {
 		
 		//As now the program traversing the lattice, the consequent shouldn't included in the depth.
 		int depth = is.size() + 1;
-		//int depth = is.size() + 1;
 		
 		ItemQClass newQ = new ItemQClass();
 		
 		//boolean filteredCon = false;
 		for (i = 0; i < q.size(); i++){
 			
-			//if the "antecedent" is failed in previous iteration, means currently, the itemset which include the consequent do not need to consider at all
-			//if(filteredCon)
-				//continue;
-			
 			Tidset newCover = new Tidset();
 			int item = q.get(i).item;
 			int count;
-			
+
 			Tidset currItemset = new Tidset();
 			
 			if (Globals.consequentID == item){
@@ -368,6 +358,7 @@ public class Find_Itemsets {
 				//only save those with oriented consequent itemsets.
 				if (is.contains(Globals.consequentID) && 
 						checkSubsets(item, is, count, new_sup, cover.size(), parentSup, Globals.getAlpha(depth))){
+					
 						is.count = count;
 						is.value = val;
 						is.p = p;
@@ -397,10 +388,6 @@ public class Find_Itemsets {
 			}
 			
 			is.remove(new Integer(item));
-			//}else{
-				//only when k-itemset (exlude consequent) failed the test, will reach here.
-				//filteredCon = true;
-			//}
 		}
 	}
 	
@@ -503,34 +490,34 @@ public class Find_Itemsets {
 		}
 		
 //		//TODO remove after testing
-		PrintStream queuef = null;
-		try {
-			queuef = new PrintStream(new File("File/queue.csv"));
-			StringBuffer sb = new StringBuffer();
-			sb.append("Index, ");
-			sb.append("Item Name, ");
-			sb.append("Upper bound value\n");
-			
-			
-			for (int j = 0; j < q.size(); j++){
-				ItemQElem elem = q.get(j);
-				
-				sb.append(elem.item);
-				sb.append(", ");
-				sb.append(Globals.itemNames.get(elem.item));
-				sb.append(", ");
-				sb.append(elem.ubVal);
-				sb.append("\n");
-			}
-			
-			queuef.print(sb.toString());
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} finally {
-			if (queuef != null){
-				queuef.close();
-			}
-		}
+//		PrintStream queuef = null;
+//		try {
+//			queuef = new PrintStream(new File("File/queue.csv"));
+//			StringBuffer sb = new StringBuffer();
+//			sb.append("Index, ");
+//			sb.append("Item Name, ");
+//			sb.append("Upper bound value\n");
+//			
+//			
+//			for (int j = 0; j < q.size(); j++){
+//				ItemQElem elem = q.get(j);
+//				
+//				sb.append(elem.item);
+//				sb.append(", ");
+//				sb.append(Globals.itemNames.get(elem.item));
+//				sb.append(", ");
+//				sb.append(elem.ubVal);
+//				sb.append("\n");
+//			}
+//			
+//			queuef.print(sb.toString());
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		} finally {
+//			if (queuef != null){
+//				queuef.close();
+//			}
+//		}
 //		//TODO remove after testing
 		
 		// remember the current minValue, and output an update if it improves in this iteration of the loop

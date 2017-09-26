@@ -1,0 +1,111 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s cochlear_unknown
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 84 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+cochlear_unknown & field60 = normal & field4 = elevated & field57 = t,3, 0.010455, 4.708333,0.00911083,0.013274,1.000000
+cochlear_unknown & field58 = f & field39 = t,3, 0.010455, 4.708333,0.00911083,0.013274,1.000000
+cochlear_unknown & field5 = normal & field55 = t,2, 0.006970, 4.708333,0.0443658,0.008850,1.000000
+cochlear_unknown & field5 = normal & field39 = t,2, 0.006970, 4.708333,0.0443658,0.008850,1.000000
+cochlear_unknown & field7 = t & field54 = t,2, 0.006970, 4.708333,0.0443658,0.008850,1.000000
+cochlear_unknown & field60 = normal & field55 = t,2, 0.006970, 4.708333,0.0443658,0.008850,1.000000
+cochlear_unknown & field57 = t & field54 = t,3, 0.010455, 4.708333,0.00911083,0.013274,1.000000
+cochlear_unknown & field15 = f & field39 = t,2, 0.006970, 4.708333,0.0443658,0.008850,1.000000
+cochlear_unknown & field60 = ?,2, 0.006970, 4.708333,0.0443658,0.008850,1.000000
+cochlear_unknown & field55 = t,3, 0.010455, 4.708333,0.00911083,0.013274,1.000000
+cochlear_unknown & field15 = f & field57 = t,10, 0.033910, 4.280303,7.72188e-07,0.048673,0.909091
+cochlear_unknown & field15 = f & field54 = t,6, 0.019970, 4.035714,0.000415083,0.030973,0.857143
+cochlear_unknown & field60 = normal & field64 = normal & field57 = t,5, 0.016485, 3.923611,0.00183184,0.026549,0.833333
+cochlear_unknown & field60 = normal & field64 = normal & field4 = elevated,3, 0.009515, 3.531250,0.0309278,0.017699,0.750000
+cochlear_unknown & field64 = normal & field4 = elevated & field57 = t,3, 0.009515, 3.531250,0.0309278,0.017699,0.750000
+cochlear_unknown & field58 = f & field54 = t,6, 0.019030, 3.531250,0.00138870,0.035398,0.750000
+cochlear_unknown & field1 = f & field54 = t,6, 0.019030, 3.531250,0.00138870,0.035398,0.750000
+cochlear_unknown & field39 = t,3, 0.009515, 3.531250,0.0309278,0.017699,0.750000
+cochlear_unknown & field1 = f & field57 = t,10, 0.031091, 3.363095,4.15369e-05,0.061947,0.714286
+cochlear_unknown & field66 = a & field54 = t,6, 0.018091, 3.138889,0.00348480,0.039823,0.666667
+cochlear_unknown & field5 = normal & field7 = t & field64 = normal,5, 0.014606, 2.942708,0.0120154,0.035398,0.625000
+cochlear_unknown & field5 = normal & field54 = t,5, 0.014606, 2.942708,0.0120154,0.035398,0.625000
+cochlear_unknown & field54 = t,6, 0.017151, 2.825000,0.00728821,0.044248,0.600000
+cochlear_unknown & field1 = f & field7 = t,16, 0.044483, 2.690476,7.97198e-06,0.123894,0.571429
+cochlear_unknown & field60 = normal & field54 = t,4, 0.011121, 2.690476,0.0384314,0.030973,0.571429
+cochlear_unknown & field1 = f & field4 = elevated,12, 0.031482, 2.456522,0.000517787,0.101770,0.521739
+cochlear_unknown & field1 = f & field60 = normal,36, 0.092568, 2.387324,1.69274e-12,0.314159,0.507042
+cochlear_unknown & field1 = f & field5 = normal,36, 0.089749, 2.290541,1.02909e-11,0.327434,0.486487
+cochlear_unknown & field15 = f & field4 = elevated,12, 0.029603, 2.260000,0.00140267,0.110619,0.480000
+cochlear_unknown & field1 = f & field66 = a,48, 0.112773, 2.132076,1.06833e-19,0.469027,0.452830
+cochlear_unknown & field1 = f & field15 = f,43, 0.097228, 2.045034,1.58302e-13,0.438053,0.434343
+cochlear_unknown & field7 = t & field15 = f,16, 0.036025, 2.036036,0.000760953,0.163717,0.432432
+cochlear_unknown & field1 = f & field3 = f,48, 0.106195, 2.000000,5.92644e-18,0.500000,0.424779
+cochlear_unknown & field66 = a & field4 = elevated,12, 0.025844, 1.948276,0.00690148,0.128319,0.413793
+cochlear_unknown & field1 = f & field58 = f,48, 0.098676, 1.867769,3.96687e-16,0.535398,0.396694
+cochlear_unknown & field58 = f & field4 = elevated,12, 0.023964, 1.822581,0.0131396,0.137168,0.387097
+cochlear_unknown & field5 = normal & field15 = f & field60 = normal & field64 = normal,12, 0.023025, 1.765625,0.0175792,0.141593,0.375000
+cochlear_unknown & field3 = f & field4 = elevated,12, 0.023025, 1.765625,0.0175792,0.141593,0.375000
+cochlear_unknown & field5 = normal & field15 = f & field64 = normal,16, 0.029446, 1.712121,0.00744775,0.194690,0.363636
+cochlear_unknown & field7 = t & field66 = a,16, 0.029446, 1.712121,0.00744775,0.194690,0.363636
+cochlear_unknown & field5 = normal & field60 = normal & field64 = normal,17, 0.031052, 1.703014,0.00589581,0.207965,0.361702
+cochlear_unknown & field3 = f & field7 = t,16, 0.027567, 1.637681,0.0125173,0.203540,0.347826
+cochlear_unknown & field1 = f & field64 = normal,26, 0.044561, 1.632222,0.000601685,0.331858,0.346667
+cochlear_unknown & field15 = f & field60 = normal,31, 0.051649, 1.603938,0.000116985,0.402655,0.340659
+cochlear_unknown & field5 = normal & field15 = f & field60 = normal,23, 0.037865, 1.592524,0.00262747,0.300885,0.338235
+cochlear_unknown & field64 = normal & field66 = a,26, 0.042682, 1.589827,0.00102993,0.340708,0.337662
+cochlear_unknown & field7 = t & field58 = f,16, 0.025687, 1.569444,0.0200571,0.212389,0.333333
+cochlear_unknown & field3 = f & field64 = normal,26, 0.038922, 1.511317,0.00276579,0.358407,0.320988
+cochlear_unknown & field15 = f & field66 = a,43, 0.062456, 1.488664,7.10415e-07,0.601770,0.316176
+cochlear_unknown & field58 = f & field64 = normal,26, 0.037043, 1.474900,0.00435187,0.367257,0.313253
+cochlear_unknown & field3 = f & field15 = f,43, 0.058697, 1.446131,2.52152e-06,0.619469,0.307143
+cochlear_unknown & field58 = f & field60 = normal,36, 0.044639, 1.389344,0.000721315,0.539823,0.295082
+cochlear_unknown & field60 = normal & field66 = a,36, 0.042760, 1.366936,0.00114271,0.548673,0.290323
+cochlear_unknown & field3 = f & field60 = normal,36, 0.039940, 1.334646,0.00220612,0.561947,0.283465
+cochlear_unknown & field5 = normal & field58 = f,36, 0.038061, 1.313954,0.00334937,0.570796,0.279070
+cochlear_unknown & field58 = f & field66 = a,48, 0.047929, 1.291429,8.17668e-07,0.774336,0.274286
+cochlear_unknown & field5 = normal & field66 = a,36, 0.032422, 1.255556,0.0106300,0.597345,0.266667
+cochlear_unknown & field15 = f & field58 = f,43, 0.037082, 1.242076,0.00121106,0.721239,0.263804
+cochlear_unknown & field3 = f & field58 = f,48, 0.038531, 1.221622,1.80161e-05,0.818584,0.259459
+cochlear_unknown & field3 = f & field66 = a,48, 0.035711, 1.202128,4.38684e-05,0.831858,0.255319
+
+24 itemsets failed test for self sufficiency
+cochlear_unknown & field4 = elevated & field57 = t,4, 0.013000, 3.766667,0.00773499,0.022124,0.800000
+cochlear_unknown & field64 = normal & field57 = t,6, 0.019030, 3.531250,0.00138870,0.035398,0.750000
+cochlear_unknown & field7 = t & field64 = normal,6, 0.016211, 2.568182,0.0134159,0.048673,0.545455
+cochlear_unknown & field64 = normal & field4 = elevated,6, 0.015271, 2.354167,0.0224555,0.053097,0.500000
+cochlear_unknown & field60 = normal & field57 = t,9, 0.021967, 2.230263,0.00723324,0.084071,0.473684
+cochlear_unknown & field60 = normal & field4 = elevated,8, 0.018482, 2.092592,0.0184774,0.079646,0.444444
+cochlear_unknown & field57 = t,10, 0.020753, 1.883333,0.0190916,0.110619,0.400000
+cochlear_unknown & field5 = normal & field7 = t,11, 0.021419, 1.785920,0.0214121,0.128319,0.379310
+cochlear_unknown & field15 = f & field60 = normal & field64 = normal,15, 0.028781, 1.765625,0.00704857,0.176991,0.375000
+cochlear_unknown & field1 = f,48, 0.086459, 1.686567,1.80211e-13,0.592920,0.358209
+cochlear_unknown & field4 = elevated,12, 0.021145, 1.661765,0.0298121,0.150442,0.352941
+cochlear_unknown & field60 = normal & field64 = normal,20, 0.034928, 1.652047,0.00362586,0.252212,0.350877
+cochlear_unknown & field5 = normal & field64 = normal,21, 0.035594, 1.620902,0.00358985,0.269911,0.344262
+cochlear_unknown & field7 = t,16, 0.023808, 1.506667,0.0307815,0.221239,0.320000
+cochlear_unknown & field5 = normal & field15 = f,31, 0.045070, 1.489371,0.000755266,0.433628,0.316327
+cochlear_unknown & field15 = f & field64 = normal,21, 0.027136, 1.412500,0.0254209,0.309735,0.300000
+cochlear_unknown & field64 = normal,26, 0.029525, 1.345238,0.0209356,0.402655,0.285714
+cochlear_unknown & field60 = normal,36, 0.036181, 1.293893,0.00500206,0.579646,0.274809
+cochlear_unknown & field5 = normal & field60 = normal,28, 0.028037, 1.292484,0.0283949,0.451327,0.274510
+cochlear_unknown & field15 = f,43, 0.036142, 1.234502,0.00152122,0.725664,0.262195
+cochlear_unknown & field5 = normal,36, 0.029603, 1.228261,0.0179515,0.610619,0.260870
+cochlear_unknown & field66 = a,48, 0.034772, 1.195767,5.88023e-05,0.836283,0.253968
+cochlear_unknown & field3 = f,48, 0.024434, 1.130000,0.00131753,0.884956,0.240000
+cochlear_unknown & field58 = f,48, 0.014097, 1.071090,0.0244044,0.933628,0.227488
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 84 itemsets
+

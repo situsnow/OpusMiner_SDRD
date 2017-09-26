@@ -1,0 +1,125 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s 1
+  Adult.csv
+  Adult
+
+File/input/Adult.csv: 132 items, 32561 transactions
+Found 100 non-redundant productive itemsets in 148 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+1 & field1 = Age32-40 & field3 = Bachelors & field6 = Exec-managerial & field7 = Husband & field10 = Hour51-70 & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field10 = Hour36-50 & field11 = United-States & field1 = Age41-50 & field5 = Married-civ-spouse & field6 = Prof-specialty & field2 = Self-emp-inc,15, 0.000350, 4.152659,5.25639e-10,0.000461,1.000000
+1 & field1 = Age32-40 & field3 = Bachelors & field5 = Married-civ-spouse & field6 = Exec-managerial & field10 = Hour51-70 & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field10 = Hour36-50 & field11 = United-States & field1 = Age41-50 & field7 = Husband & field6 = Prof-specialty & field2 = Self-emp-inc,15, 0.000350, 4.152659,5.25639e-10,0.000461,1.000000
+1 & field1 = Age32-40 & field4 = EduNum13 & field6 = Exec-managerial & field7 = Husband & field10 = Hour51-70 & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field1 = Age32-40 & field4 = EduNum13 & field5 = Married-civ-spouse & field6 = Exec-managerial & field10 = Hour51-70 & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field11 = United-States & field7 = Husband & field6 = Prof-specialty & field4 = EduNum14 & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field9 = Male & field11 = United-States & field6 = Prof-specialty & field4 = EduNum14 & field2 = Self-emp-inc,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field8 = White & field5 = Married-civ-spouse & field6 = Prof-specialty & field4 = EduNum14 & field2 = Self-emp-inc,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field1 = Age41-50 & field6 = Exec-managerial & field3 = Masters & field10 = Hour51-70 & field2 = Self-emp-inc,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field4 = EduNum13 & field10 = Hour36-50 & field1 = Age51-60 & field6 = Prof-specialty & field7 = Wife,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field1 = Age32-40 & field7 = Husband & field3 = Masters & field10 = Hour51-70 & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field1 = Age32-40 & field5 = Married-civ-spouse & field6 = Exec-managerial & field3 = Masters & field10 = Hour51-70,26, 0.000606, 4.152659,8.12516e-17,0.000799,1.000000
+1 & field1 = Age32-40 & field6 = Exec-managerial & field7 = Husband & field4 = EduNum14 & field10 = Hour51-70,25, 0.000583, 4.152659,3.38230e-16,0.000768,1.000000
+1 & field3 = Bachelors & field10 = Hour36-50 & field1 = Age51-60 & field6 = Prof-specialty & field7 = Wife,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field8 = White & field1 = Age41-50 & field6 = Prof-specialty & field4 = EduNum14 & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field11 = United-States & field1 = Age41-50 & field6 = Prof-specialty & field4 = EduNum14 & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field1 = Age32-40 & field5 = Married-civ-spouse & field4 = EduNum14 & field10 = Hour51-70 & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field8 = White & field1 = Age41-50 & field6 = Prof-specialty & field3 = Masters & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field1 = Age32-40 & field7 = Husband & field4 = EduNum14 & field10 = Hour51-70 & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field1 = Age41-50 & field5 = Married-civ-spouse & field6 = Prof-specialty & field4 = EduNum14 & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field1 = Age32-40 & field6 = Exec-managerial & field7 = Husband & field3 = Masters & field10 = Hour51-70,25, 0.000583, 4.152659,3.38230e-16,0.000768,1.000000
+1 & field8 = White & field9 = Male & field6 = Prof-specialty & field4 = EduNum14 & field2 = Self-emp-inc,6, 0.000140, 4.152659,0.000194720,0.000184,1.000000
+1 & field11 = United-States & field7 = Husband & field6 = Prof-specialty & field3 = Masters & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field1 = Age32-40 & field4 = EduNum13 & field11 = United-States & field7 = Wife & field10 = Hour51-70,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field8 = White & field5 = Married-civ-spouse & field6 = Prof-specialty & field3 = Masters & field2 = Self-emp-inc,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field1 = Age32-40 & field3 = Bachelors & field11 = United-States & field7 = Wife & field10 = Hour51-70,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field1 = Age32-40 & field5 = Married-civ-spouse & field6 = Exec-managerial & field4 = EduNum14 & field10 = Hour51-70,26, 0.000606, 4.152659,8.12516e-17,0.000799,1.000000
+1 & field1 = Age32-40 & field5 = Married-civ-spouse & field3 = Masters & field10 = Hour51-70 & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field9 = Male & field11 = United-States & field6 = Prof-specialty & field3 = Masters & field2 = Self-emp-inc,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field11 = United-States & field1 = Age41-50 & field6 = Prof-specialty & field3 = Masters & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field1 = Age41-50 & field5 = Married-civ-spouse & field6 = Prof-specialty & field3 = Masters & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field8 = White & field9 = Male & field6 = Prof-specialty & field3 = Masters & field2 = Self-emp-inc,6, 0.000140, 4.152659,0.000194720,0.000184,1.000000
+1 & field11 = United-States & field5 = Married-civ-spouse & field6 = Prof-specialty & field3 = Masters & field2 = Self-emp-inc,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field1 = Age41-50 & field6 = Exec-managerial & field4 = EduNum14 & field10 = Hour51-70 & field2 = Self-emp-inc,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field11 = United-States & field5 = Married-civ-spouse & field6 = Prof-specialty & field4 = EduNum14 & field2 = Self-emp-inc,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field1 = Age41-50 & field7 = Husband & field6 = Prof-specialty & field4 = EduNum14 & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field8 = White & field7 = Husband & field6 = Prof-specialty & field3 = Masters & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field8 = White & field7 = Husband & field6 = Prof-specialty & field4 = EduNum14 & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field1 = Age41-50 & field7 = Husband & field6 = Prof-specialty & field3 = Masters & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field6 = Exec-managerial & field7 = Husband & field1 = Age51-60 & field4 = EduNum16,14, 0.000326, 4.152659,2.18576e-09,0.000430,1.000000
+1 & field10 = Hour36-50 & field6 = Exec-managerial & field1 = Age51-60 & field4 = EduNum16,13, 0.000303, 4.152659,9.08817e-09,0.000399,1.000000
+1 & field6 = Prof-specialty & field3 = Masters & field10 = Hour51-70 & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field1 = Age32-40 & field6 = Prof-specialty & field7 = Wife & field10 = Hour51-70,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field1 = Age51-60 & field6 = Prof-specialty & field10 = Hour51-70 & field2 = Self-emp-inc,15, 0.000350, 4.152659,5.25639e-10,0.000461,1.000000
+1 & field1 = Age41-50 & field6 = Exec-managerial & field10 = Hour51-70 & field3 = Prof-school,7, 0.000163, 4.152659,4.68633e-05,0.000215,1.000000
+1 & field1 = Age41-50 & field6 = Prof-specialty & field7 = Wife & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field6 = Exec-managerial & field7 = Wife & field3 = Masters & field10 = Hour51-70,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field6 = Exec-managerial & field7 = Wife & field4 = EduNum14 & field10 = Hour51-70,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field8 = White & field1 = Age41-50 & field3 = Prof-school & field2 = Self-emp-inc,33, 0.000769, 4.152659,3.74104e-21,0.001013,1.000000
+1 & field11 = United-States & field1 = Age41-50 & field3 = Prof-school & field2 = Self-emp-inc,32, 0.000746, 4.152659,1.55836e-20,0.000983,1.000000
+1 & field1 = Age32-40 & field6 = Exec-managerial & field10 = Hour51-70 & field3 = Prof-school,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field1 = Age41-50 & field5 = Married-civ-spouse & field6 = Exec-managerial & field3 = Prof-school,19, 0.000443, 4.152659,1.75632e-12,0.000584,1.000000
+1 & field1 = Age41-50 & field6 = Exec-managerial & field7 = Husband & field3 = Prof-school,17, 0.000396, 4.152659,3.03899e-11,0.000522,1.000000
+1 & field10 = Hour36-50 & field6 = Exec-managerial & field1 = Age51-60 & field3 = Doctorate,13, 0.000303, 4.152659,9.08817e-09,0.000399,1.000000
+1 & field1 = Age41-50 & field6 = Exec-managerial & field3 = Prof-school & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field1 = Age41-50 & field5 = Married-civ-spouse & field6 = Exec-managerial & field4 = EduNum15,19, 0.000443, 4.152659,1.75632e-12,0.000584,1.000000
+1 & field11 = United-States & field1 = Age41-50 & field4 = EduNum15 & field2 = Self-emp-inc,32, 0.000746, 4.152659,1.55836e-20,0.000983,1.000000
+1 & field6 = Exec-managerial & field1 = Age51-60 & field10 = Hour51-70 & field4 = EduNum15,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field8 = White & field1 = Age41-50 & field4 = EduNum15 & field2 = Self-emp-inc,33, 0.000769, 4.152659,3.74104e-21,0.001013,1.000000
+1 & field1 = Age41-50 & field6 = Exec-managerial & field7 = Husband & field4 = EduNum15,17, 0.000396, 4.152659,3.03899e-11,0.000522,1.000000
+1 & field1 = Age32-40 & field6 = Exec-managerial & field10 = Hour51-70 & field4 = EduNum15,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field6 = Exec-managerial & field1 = Age51-60 & field10 = Hour51-70 & field3 = Prof-school,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field6 = Exec-managerial & field7 = Husband & field1 = Age51-60 & field3 = Doctorate,14, 0.000326, 4.152659,2.18576e-09,0.000430,1.000000
+1 & field1 = Age41-50 & field6 = Exec-managerial & field4 = EduNum15 & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field6 = Prof-specialty & field4 = EduNum14 & field10 = Hour51-70 & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field1 = Age41-50 & field6 = Exec-managerial & field10 = Hour51-70 & field4 = EduNum15,7, 0.000163, 4.152659,4.68633e-05,0.000215,1.000000
+1 & field5 = Married-civ-spouse & field6 = Exec-managerial & field1 = Age51-60 & field3 = Doctorate,14, 0.000326, 4.152659,2.18576e-09,0.000430,1.000000
+1 & field9 = Male & field1 = Age51-60 & field3 = Doctorate & field2 = Self-emp-inc,9, 0.000210, 4.152659,2.71362e-06,0.000276,1.000000
+1 & field10 = Hour36-50 & field5 = Married-civ-spouse & field3 = Doctorate & field2 = Self-emp-inc,10, 0.000233, 4.152659,6.52896e-07,0.000307,1.000000
+1 & field1 = Age51-60 & field3 = Doctorate & field10 = Hour51-70 & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field10 = Hour36-50 & field7 = Husband & field3 = Doctorate & field2 = Self-emp-inc,9, 0.000210, 4.152659,2.71362e-06,0.000276,1.000000
+1 & field10 = Hour36-50 & field1 = Age41-50 & field6 = Exec-managerial & field3 = Doctorate,11, 0.000256, 4.152659,1.57071e-07,0.000338,1.000000
+1 & field5 = Married-civ-spouse & field1 = Age51-60 & field3 = Doctorate & field2 = Self-emp-inc,8, 0.000187, 4.152659,1.12775e-05,0.000246,1.000000
+1 & field9 = Male & field6 = Exec-managerial & field1 = Age51-60 & field3 = Doctorate,16, 0.000373, 4.152659,1.26395e-10,0.000491,1.000000
+1 & field6 = Exec-managerial & field1 = Age51-60 & field3 = Doctorate & field10 = Hour51-70,6, 0.000140, 4.152659,0.000194720,0.000184,1.000000
+1 & field10 = Hour36-50 & field1 = Age51-60 & field3 = Doctorate & field2 = Self-emp-inc,4, 0.000093, 4.152659,0.00336080,0.000123,1.000000
+1 & field7 = Husband & field1 = Age51-60 & field3 = Doctorate & field2 = Self-emp-inc,8, 0.000187, 4.152659,1.12775e-05,0.000246,1.000000
+1 & field11 = United-States & field1 = Age51-60 & field3 = Doctorate & field2 = Self-emp-inc,8, 0.000187, 4.152659,1.12775e-05,0.000246,1.000000
+1 & field10 = Hour36-50 & field1 = Age41-50 & field3 = Doctorate & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field10 = Hour36-50 & field1 = Age41-50 & field6 = Exec-managerial & field4 = EduNum16,11, 0.000256, 4.152659,1.57071e-07,0.000338,1.000000
+1 & field5 = Married-civ-spouse & field6 = Exec-managerial & field1 = Age51-60 & field4 = EduNum16,14, 0.000326, 4.152659,2.18576e-09,0.000430,1.000000
+1 & field9 = Male & field6 = Exec-managerial & field1 = Age51-60 & field4 = EduNum16,16, 0.000373, 4.152659,1.26395e-10,0.000491,1.000000
+1 & field7 = Wife & field3 = Masters & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field7 = Wife & field4 = EduNum14 & field2 = Self-emp-inc,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field1 = Age41-50 & field7 = Wife & field3 = Prof-school,6, 0.000140, 4.152659,0.000194720,0.000184,1.000000
+1 & field6 = Exec-managerial & field7 = Wife & field3 = Prof-school,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field6 = Exec-managerial & field7 = Wife & field3 = Doctorate,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field10 = Hour36-50 & field7 = Wife & field3 = Doctorate,10, 0.000233, 4.152659,6.52896e-07,0.000307,1.000000
+1 & field10 = Hour51-70 & field4 = EduNum15 & field2 = Self-emp-inc,26, 0.000606, 4.152659,8.12516e-17,0.000799,1.000000
+1 & field7 = Wife & field10 = Hour51-70 & field3 = Prof-school,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field1 = Age32-40 & field3 = Prof-school & field2 = Self-emp-inc,11, 0.000256, 4.152659,1.57071e-07,0.000338,1.000000
+1 & field7 = Wife & field10 = Hour51-70 & field4 = EduNum15,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field10 = Hour51-70 & field3 = Prof-school & field2 = Self-emp-inc,26, 0.000606, 4.152659,8.12516e-17,0.000799,1.000000
+1 & field1 = Age41-50 & field7 = Wife & field3 = Doctorate,7, 0.000163, 4.152659,4.68633e-05,0.000215,1.000000
+1 & field6 = Exec-managerial & field7 = Wife & field4 = EduNum15,5, 0.000117, 4.152659,0.000808999,0.000154,1.000000
+1 & field1 = Age32-40 & field4 = EduNum15 & field2 = Self-emp-inc,11, 0.000256, 4.152659,1.57071e-07,0.000338,1.000000
+1 & field1 = Age41-50 & field7 = Wife & field4 = EduNum15,6, 0.000140, 4.152659,0.000194720,0.000184,1.000000
+1 & field1 = Age51-60 & field7 = Wife & field3 = Doctorate,3, 0.000070, 4.152659,0.0139603,0.000092,1.000000
+1 & field6 = Exec-managerial & field3 = Doctorate & field2 = Self-emp-inc,7, 0.000163, 4.152659,4.68633e-05,0.000215,1.000000
+
+159 seconds (11 input, 148 search, 0 filter, 0 output) for 100 itemsets
+

@@ -1,0 +1,57 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s unacc
+  Car.data.csv
+  Car.data
+
+File/input/Car.data.csv: 24 items, 1728 transactions
+Found 30 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+unacc & field4 = 2 & field6 = low,192, 0.033308, 1.428099,1.30716e-32,0.111111,1.000000
+unacc & field6 = low & field1 = high,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field4 = 2 & field5 = small,192, 0.033308, 1.428099,1.30716e-32,0.111111,1.000000
+unacc & field1 = vhigh & field2 = vhigh,108, 0.018736, 1.428099,4.27771e-18,0.062500,1.000000
+unacc & field2 = vhigh & field6 = low,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field2 = vhigh & field1 = high,108, 0.018736, 1.428099,4.27771e-18,0.062500,1.000000
+unacc & field1 = vhigh & field4 = 2,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field2 = vhigh & field4 = 2,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field4 = 2 & field1 = high,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field3 = 2 & field6 = low,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field1 = vhigh & field6 = low,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field5 = small & field6 = low,192, 0.033308, 1.428099,1.30716e-32,0.111111,1.000000
+unacc & field3 = 2 & field4 = 2,144, 0.024981, 1.428099,3.36014e-24,0.083333,1.000000
+unacc & field6 = low,576, 0.099923, 1.428099,1.03674e-114,0.333333,1.000000
+unacc & field4 = 2,576, 0.099923, 1.428099,1.03674e-114,0.333333,1.000000
+unacc & field1 = vhigh & field3 = 2 & field5 = small,34, 0.005088, 1.348760,0.000318192,0.020833,0.944444
+unacc & field2 = vhigh & field3 = 2 & field5 = small,34, 0.005088, 1.348760,0.000318192,0.020833,0.944444
+unacc & field3 = 2 & field5 = small & field1 = high,33, 0.004509, 1.309091,0.00170723,0.020833,0.916667
+unacc & field1 = vhigh & field5 = small,130, 0.016879, 1.289256,1.32384e-09,0.083333,0.902778
+unacc & field2 = vhigh & field5 = small,130, 0.016879, 1.289256,1.32384e-09,0.083333,0.902778
+unacc & field3 = 2 & field5 = small,126, 0.014564, 1.249587,2.52597e-07,0.083333,0.875000
+unacc & field1 = vhigh & field3 = 2,94, 0.010634, 1.242975,1.70628e-05,0.062500,0.870370
+unacc & field2 = vhigh & field3 = 2,94, 0.010634, 1.242975,1.70628e-05,0.062500,0.870370
+unacc & field5 = small & field1 = high,123, 0.012828, 1.219835,6.55651e-06,0.083333,0.854167
+unacc & field1 = vhigh,360, 0.033275, 1.190083,3.45407e-13,0.250000,0.833333
+unacc & field5 = small,450, 0.027006, 1.115702,8.76227e-08,0.333333,0.781250
+unacc & field3 = 2,326, 0.013600, 1.077686,0.00239817,0.250000,0.754630
+
+3 itemsets failed test for self sufficiency
+unacc & field2 = vhigh,360, 0.033275, 1.190083,3.45407e-13,0.250000,0.833333
+unacc & field3 = 2 & field1 = high,87, 0.006583, 1.150413,0.00750650,0.062500,0.805556
+unacc & field1 = high,324, 0.012442, 1.071074,0.00506170,0.250000,0.750000
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 30 itemsets
+

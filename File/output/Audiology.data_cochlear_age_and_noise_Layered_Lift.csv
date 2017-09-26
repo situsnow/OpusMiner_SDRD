@@ -1,0 +1,33 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -p
+  -k 100
+  -s cochlear_age_and_noise
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 3 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 2.98169e-07
+Alpha for size 3 = 1.09621e-09
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+cochlear_age_and_noise & field1 = t & field15 = t,22, 0.085715, 8.370371,4.22771e-26,0.119469,0.814815
+
+2 itemsets failed test for self sufficiency
+cochlear_age_and_noise & field15 = t,22, 0.070640, 3.645161,1.79703e-14,0.274336,0.354839
+cochlear_age_and_noise & field1 = t,22, 0.057718, 2.456522,4.83797e-10,0.407080,0.239130
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 3 itemsets
+

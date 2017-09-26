@@ -1,0 +1,50 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s possible_menieres
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 25 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+possible_menieres & field11 = t & field19 = t,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field65 = f & field43 = t,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field10 = t & field43 = t,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field65 = f & field11 = t,4, 0.017073, 28.250000,6.61402e-07,0.017699,1.000000
+possible_menieres & field10 = t & field11 = t,5, 0.021341, 28.250000,1.19172e-08,0.022124,1.000000
+possible_menieres & field65 = f & field37 = t,2, 0.008536, 28.250000,0.00110128,0.008850,1.000000
+possible_menieres & field37 = t & field10 = t,2, 0.008536, 28.250000,0.00110128,0.008850,1.000000
+possible_menieres & field37 = t & field11 = t,2, 0.008536, 28.250000,0.00110128,0.008850,1.000000
+possible_menieres & field19 = t & field43 = t,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field16 = t,2, 0.008536, 28.250000,0.00110128,0.008850,1.000000
+possible_menieres & field70 = p186,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field70 = p150,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field70 = p114,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field70 = p98,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field70 = p97,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field70 = p96,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field11 = t,7, 0.029877, 28.250000,1.47065e-12,0.030973,1.000000
+possible_menieres & field70 = p92,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field43 = t,3, 0.012804, 28.250000,2.94985e-05,0.013274,1.000000
+possible_menieres & field70 = p89,1, 0.004268, 28.250000,0.0353982,0.004425,1.000000
+possible_menieres & field65 = f & field10 = t,4, 0.016603, 16.142857,2.21593e-05,0.030973,0.571429
+possible_menieres & field65 = f,4, 0.015820, 9.416667,0.000291112,0.053097,0.333333
+possible_menieres & field19 = t,2, 0.007910, 9.416667,0.0153687,0.026549,0.333333
+possible_menieres & field10 = t,5, 0.018991, 7.062500,0.000155093,0.088496,0.250000
+possible_menieres & field37 = t,2, 0.007440, 6.277778,0.0349343,0.039823,0.222222
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 25 itemsets
+

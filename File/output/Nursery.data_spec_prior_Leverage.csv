@@ -1,0 +1,126 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s spec_prior
+  Nursery.data.csv
+  Nursery.data
+
+File/input/Nursery.data.csv: 31 items, 5222 transactions
+Found 100 non-redundant productive itemsets in 5 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+spec_prior & field2 = very_crit,506, 0.072881, 4.034636,1.02627e-268,0.165454,0.585648
+spec_prior & field1 = usual & field8 = priority,474, 0.050742, 2.267689,2.46387e-107,0.275756,0.329167
+spec_prior & field8 = priority & field2 = very_crit,285, 0.046571, 6.817420,1.65269e-256,0.055151,0.989583
+spec_prior & field6 = inconv & field2 = very_crit,266, 0.038930, 4.241950,7.56629e-128,0.082727,0.615741
+spec_prior & field8 = priority & field6 = inconv,255, 0.024649, 2.019243,3.70065e-36,0.166603,0.293103
+spec_prior & field8 = priority & field6 = inconv & field2 = very_crit,144, 0.023573, 6.889182,7.19343e-127,0.027576,1.000000
+spec_prior & field1 = usual & field7 = problematic,316, 0.020486, 1.511793,6.82300e-20,0.275756,0.219444
+spec_prior & field1 = usual & field6 = inconv,414, 0.019239, 1.320426,1.24989e-15,0.413635,0.191667
+spec_prior & field1 = usual & field5 = critical,308, 0.018954, 1.473519,2.40649e-17,0.275756,0.213889
+spec_prior & field8 = priority & field5 = critical & field2 = very_crit,96, 0.015715, 6.889182,1.54039e-83,0.018384,1.000000
+spec_prior & field8 = priority & field7 = problematic & field2 = very_crit,95, 0.015524, 6.817419,9.97201e-81,0.018384,0.989583
+spec_prior & field8 = recommended & field7 = problematic & field2 = very_crit,95, 0.015524, 6.817419,9.97201e-81,0.018384,0.989583
+spec_prior & field8 = recommended & field5 = critical & field2 = very_crit,92, 0.014949, 6.602132,1.04750e-73,0.018384,0.958333
+spec_prior & field8 = priority & field5 = critical & field2 = critical,90, 0.014566, 6.458608,1.30931e-69,0.018384,0.937500
+spec_prior & field7 = problematic & field6 = inconv & field2 = very_crit,96, 0.014381, 4.592788,9.50963e-48,0.027576,0.666667
+spec_prior & field1 = usual & field8 = recommended,284, 0.014358, 1.358700,8.44617e-11,0.275756,0.197222
+spec_prior & field6 = inconv & field5 = critical & field2 = very_crit,94, 0.013998, 4.497105,1.57618e-45,0.027576,0.652778
+spec_prior & field8 = priority & field4 = 3 & field2 = very_crit,72, 0.011786, 6.889182,2.25255e-62,0.013788,1.000000
+spec_prior & field8 = priority & field4 = more & field2 = very_crit,72, 0.011786, 6.889182,2.25255e-62,0.013788,1.000000
+spec_prior & field8 = priority & field3 = foster & field2 = very_crit,72, 0.011786, 6.889182,2.25255e-62,0.013788,1.000000
+spec_prior & field1 = usual & field4 = 3,216, 0.011343, 1.377836,1.70031e-08,0.206817,0.200000
+spec_prior & field1 = usual & field4 = more,216, 0.011343, 1.377836,1.70031e-08,0.206817,0.200000
+spec_prior & field1 = usual & field3 = foster,216, 0.011343, 1.377836,1.70031e-08,0.206817,0.200000
+spec_prior & field6 = inconv & field3 = foster & field2 = very_crit,72, 0.010786, 4.592788,8.09899e-36,0.020682,0.666667
+spec_prior & field6 = inconv & field4 = 3 & field2 = very_crit,72, 0.010786, 4.592788,8.09899e-36,0.020682,0.666667
+spec_prior & field6 = inconv & field4 = more & field2 = very_crit,72, 0.010786, 4.592788,8.09899e-36,0.020682,0.666667
+spec_prior & field8 = recommended & field4 = more & field2 = very_crit,64, 0.010254, 6.123717,8.33473e-46,0.013788,0.888889
+spec_prior & field8 = recommended & field3 = foster & field2 = very_crit,64, 0.010254, 6.123717,8.33473e-46,0.013788,0.888889
+spec_prior & field8 = recommended & field4 = 3 & field2 = very_crit,64, 0.010254, 6.123717,8.33473e-46,0.013788,0.888889
+spec_prior & field7 = problematic & field6 = inconv & field2 = critical,74, 0.010168, 3.540274,2.81708e-26,0.027576,0.513889
+spec_prior & field8 = priority & field6 = inconv & field5 = critical,93, 0.009804, 2.224632,2.47519e-15,0.055151,0.322917
+spec_prior & field7 = problematic & field5 = critical & field2 = very_crit,64, 0.009587, 4.592788,6.75458e-32,0.018384,0.666667
+spec_prior & field8 = priority & field4 = more & field2 = critical,60, 0.009488, 5.740985,1.81138e-39,0.013788,0.833333
+spec_prior & field8 = priority & field3 = foster & field2 = critical,60, 0.009488, 5.740985,1.81138e-39,0.013788,0.833333
+spec_prior & field8 = priority & field4 = 3 & field2 = critical,60, 0.009488, 5.740985,1.81138e-39,0.013788,0.833333
+spec_prior & field8 = recommended & field7 = problematic & field2 = critical,63, 0.009396, 4.521026,8.38786e-31,0.018384,0.656250
+spec_prior & field8 = priority & field7 = problematic & field2 = critical,63, 0.009396, 4.521026,8.38786e-31,0.018384,0.656250
+spec_prior & field7 = problematic & field5 = critical & field2 = critical,60, 0.008821, 4.305738,1.21369e-27,0.018384,0.625000
+spec_prior & field8 = priority & field7 = problematic & field6 = inconv,85, 0.008216, 2.019243,1.78130e-11,0.055534,0.293103
+spec_prior & field8 = recommended & field7 = problematic & field6 = inconv,85, 0.008216, 2.019243,1.78130e-11,0.055534,0.293103
+spec_prior & field8 = recommended & field7 = problematic & field6 = inconv & field2 = very_crit,48, 0.007858, 6.889182,1.59157e-41,0.009192,1.000000
+spec_prior & field8 = priority & field6 = inconv & field4 = more,72, 0.007784, 2.296394,8.07935e-13,0.041363,0.333333
+spec_prior & field8 = priority & field6 = inconv & field4 = 3,72, 0.007784, 2.296394,8.07935e-13,0.041363,0.333333
+spec_prior & field8 = priority & field6 = inconv & field3 = foster,72, 0.007784, 2.296394,8.07935e-13,0.041363,0.333333
+spec_prior & field6 = inconv & field5 = critical & field2 = critical,60, 0.007487, 2.870492,7.58627e-16,0.027576,0.416667
+spec_prior & field8 = recommended & field6 = inconv & field5 = critical & field2 = very_crit,46, 0.007475, 6.602132,7.11351e-37,0.009192,0.958333
+spec_prior & field8 = priority & field6 = inconv & field5 = critical & field2 = critical,45, 0.007283, 6.458608,6.85086e-35,0.009192,0.937500
+spec_prior & field7 = problematic & field3 = foster & field2 = very_crit,48, 0.007191, 4.592788,3.93801e-24,0.013788,0.666667
+spec_prior & field5 = critical & field4 = more & field2 = very_crit,48, 0.007191, 4.592788,3.93801e-24,0.013788,0.666667
+spec_prior & field7 = problematic & field4 = 3 & field2 = very_crit,48, 0.007191, 4.592788,3.93801e-24,0.013788,0.666667
+spec_prior & field5 = critical & field4 = 3 & field2 = very_crit,48, 0.007191, 4.592788,3.93801e-24,0.013788,0.666667
+spec_prior & field7 = problematic & field4 = more & field2 = very_crit,48, 0.007191, 4.592788,3.93801e-24,0.013788,0.666667
+spec_prior & field5 = critical & field3 = foster & field2 = very_crit,48, 0.007191, 4.592788,3.93801e-24,0.013788,0.666667
+spec_prior & field8 = priority & field7 = problematic & field5 = critical,62, 0.006536, 2.224632,1.58130e-10,0.036768,0.322917
+spec_prior & field8 = recommended & field7 = problematic & field5 = critical,62, 0.006536, 2.224632,1.58130e-10,0.036768,0.322917
+spec_prior & field6 = inconv & field3 = foster & field2 = critical,48, 0.006190, 3.061859,3.42291e-14,0.020682,0.444444
+spec_prior & field6 = inconv & field4 = more & field2 = critical,48, 0.006190, 3.061859,3.42291e-14,0.020682,0.444444
+spec_prior & field6 = inconv & field4 = 3 & field2 = critical,48, 0.006190, 3.061859,3.42291e-14,0.020682,0.444444
+spec_prior & field8 = priority & field6 = inconv & field3 = foster & field2 = critical,36, 0.005893, 6.889182,3.24900e-31,0.006894,1.000000
+spec_prior & field8 = priority & field6 = inconv & field4 = 3 & field2 = critical,36, 0.005893, 6.889182,3.24900e-31,0.006894,1.000000
+spec_prior & field8 = recommended & field6 = inconv & field3 = foster & field2 = very_crit,36, 0.005893, 6.889182,3.24900e-31,0.006894,1.000000
+spec_prior & field8 = recommended & field6 = inconv & field4 = more & field2 = very_crit,36, 0.005893, 6.889182,3.24900e-31,0.006894,1.000000
+spec_prior & field8 = recommended & field6 = inconv & field4 = 3 & field2 = very_crit,36, 0.005893, 6.889182,3.24900e-31,0.006894,1.000000
+spec_prior & field8 = priority & field6 = inconv & field4 = more & field2 = critical,36, 0.005893, 6.889182,3.24900e-31,0.006894,1.000000
+spec_prior & field8 = priority & field7 = problematic & field6 = inconv & field2 = critical,37, 0.005751, 5.310411,2.06148e-22,0.009192,0.770833
+spec_prior & field7 = problematic & field4 = 3 & field2 = critical,40, 0.005659, 3.827323,3.29136e-16,0.013788,0.555556
+spec_prior & field7 = problematic & field4 = more & field2 = critical,40, 0.005659, 3.827323,3.29136e-16,0.013788,0.555556
+spec_prior & field7 = problematic & field3 = foster & field2 = critical,40, 0.005659, 3.827323,3.29136e-16,0.013788,0.555556
+
+32 itemsets failed test for self sufficiency
+spec_prior & field8 = priority,474, 0.042403, 1.876708,1.31862e-71,0.333206,0.272414
+spec_prior & field8 = recommended & field2 = very_crit,221, 0.034315, 5.286490,3.78030e-136,0.055151,0.767361
+spec_prior & field7 = problematic & field2 = very_crit,190, 0.028379, 4.544946,5.82157e-96,0.055151,0.659722
+spec_prior & field8 = priority & field2 = critical,189, 0.028188, 4.521025,8.58369e-95,0.055151,0.656250
+spec_prior & field5 = critical & field2 = very_crit,188, 0.027996, 4.497105,1.24393e-93,0.055151,0.652778
+spec_prior & field1 = usual,758, 0.025073, 1.208796,9.73963e-69,0.827269,0.175463
+spec_prior & field2 = critical,252, 0.024241, 2.009345,3.07390e-35,0.165454,0.291667
+spec_prior & field3 = foster & field2 = very_crit,136, 0.020040, 4.337633,1.67854e-63,0.041363,0.629630
+spec_prior & field4 = more & field2 = very_crit,136, 0.020040, 4.337633,1.67854e-63,0.041363,0.629630
+spec_prior & field4 = 3 & field2 = very_crit,136, 0.020040, 4.337633,1.67854e-63,0.041363,0.629630
+spec_prior & field8 = priority & field5 = critical,186, 0.019608, 2.224632,3.32935e-31,0.110303,0.322917
+spec_prior & field8 = recommended & field6 = inconv & field2 = very_crit,122, 0.019360, 5.836668,2.09946e-82,0.027576,0.847222
+spec_prior & field8 = priority & field6 = inconv & field2 = critical,111, 0.017253, 5.310411,2.66350e-66,0.027576,0.770833
+spec_prior & field6 = inconv & field2 = critical,148, 0.016333, 2.360183,1.70138e-27,0.082727,0.342593
+spec_prior & field7 = problematic & field2 = critical,126, 0.016123, 3.014017,1.87202e-35,0.055151,0.437500
+spec_prior & field5 = critical & field2 = critical,120, 0.014974, 2.870492,3.17177e-31,0.055151,0.416667
+spec_prior & field8 = priority & field7 = problematic,158, 0.014134, 1.876708,1.14125e-17,0.111069,0.272414
+spec_prior & field8 = recommended & field7 = problematic,158, 0.014134, 1.876708,1.14125e-17,0.111069,0.272414
+spec_prior & field8 = priority & field3 = foster,132, 0.013269, 2.105028,2.72573e-19,0.082727,0.305556
+spec_prior & field8 = priority & field4 = 3,132, 0.013269, 2.105028,2.72573e-19,0.082727,0.305556
+spec_prior & field8 = priority & field4 = more,132, 0.013269, 2.105028,2.72573e-19,0.082727,0.305556
+spec_prior & field7 = problematic,316, 0.012147, 1.251139,1.15650e-07,0.333206,0.181609
+spec_prior & field5 = critical,308, 0.010920, 1.227223,1.59298e-06,0.331099,0.178138
+spec_prior & field3 = foster & field2 = critical,80, 0.009316, 2.551549,3.76740e-17,0.041363,0.370370
+spec_prior & field4 = 3 & field2 = critical,80, 0.009316, 2.551549,3.76740e-17,0.041363,0.370370
+spec_prior & field4 = more & field2 = critical,80, 0.009316, 2.551549,3.76740e-17,0.041363,0.370370
+spec_prior & field7 = problematic & field6 = inconv,170, 0.008371, 1.346162,5.04231e-06,0.166603,0.195402
+spec_prior & field7 = problematic & field5 = critical,124, 0.007735, 1.483088,9.00169e-07,0.110303,0.215278
+spec_prior & field8 = recommended & field5 = critical,122, 0.007324, 1.456638,3.01227e-06,0.110494,0.211438
+spec_prior & field6 = inconv,414, 0.006730, 1.092767,0.00323041,0.499808,0.158621
+spec_prior & field8 = recommended & field6 = inconv,159, 0.006265, 1.259057,0.000452278,0.166603,0.182759
+spec_prior & field8 = recommended,284, 0.005991, 1.123795,0.00540744,0.333397,0.163125
+
+5 seconds (0 input, 2 search, 2 filter, 0 output) for 100 itemsets
+

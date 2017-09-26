@@ -1,0 +1,78 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s normal_ear
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 51 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+normal_ear & field1 = f & field15 = f & field64 = normal & field6 = normal,10, 0.037787, 6.848485,1.91070e-08,0.066372,0.666667
+normal_ear & field1 = f & field64 = normal & field6 = normal,11, 0.040919, 6.277778,1.03925e-08,0.079646,0.611111
+normal_ear & field64 = normal & field60 = absent & field6 = normal,8, 0.029368, 5.870130,4.51819e-06,0.061947,0.571429
+normal_ear & field60 = absent & field2 = normal,11, 0.040058, 5.650000,4.96766e-08,0.088496,0.550000
+normal_ear & field66 = a & field6 = normal,15, 0.054311, 5.503246,4.29575e-11,0.123894,0.535714
+normal_ear & field2 = normal & field6 = normal,15, 0.053450, 5.136364,1.66405e-10,0.132743,0.500000
+normal_ear & field2 = normal & field59 = elevated,6, 0.020949, 4.741259,0.000469744,0.057522,0.461538
+normal_ear & field1 = f & field64 = normal & field60 = absent,9, 0.030778, 4.402597,2.05582e-05,0.092920,0.428571
+normal_ear & field1 = f & field15 = f & field6 = normal,12, 0.041037, 4.402597,3.44842e-07,0.123894,0.428571
+normal_ear & field59 = elevated & field6 = normal,3, 0.010259, 4.402597,0.0218115,0.030973,0.428571
+normal_ear & field15 = f & field6 = normal,14, 0.047302, 4.229946,3.05390e-08,0.150442,0.411765
+normal_ear & field7 = f & field6 = normal,15, 0.050004, 4.055024,1.26054e-08,0.168142,0.394737
+normal_ear & field1 = f & field60 = absent & field6 = normal,9, 0.029916, 4.019763,5.08898e-05,0.101770,0.391304
+normal_ear & field60 = absent & field6 = normal,10, 0.032618, 3.804714,2.80732e-05,0.119469,0.370370
+normal_ear & field15 = f & field2 = normal,21, 0.068369, 3.784689,1.90549e-13,0.252212,0.368421
+normal_ear & field6 = normal,15, 0.048712, 3.758315,4.64880e-08,0.181416,0.365854
+normal_ear & field66 = a & field60 = absent,11, 0.035320, 3.645161,1.43082e-05,0.137168,0.354839
+normal_ear & field64 = normal & field2 = normal,18, 0.057248, 3.555944,8.59887e-10,0.230089,0.346154
+normal_ear & field1 = f & field2 = normal,20, 0.061360, 3.261183,9.56480e-11,0.278761,0.317460
+normal_ear & field15 = f & field59 = elevated,6, 0.018365, 3.244019,0.00500056,0.084071,0.315789
+normal_ear & field1 = f & field15 = f & field64 = normal,16, 0.046676, 2.935065,7.29941e-07,0.247788,0.285714
+normal_ear & field66 = a & field2 = normal,22, 0.063748, 2.897436,7.42071e-12,0.345133,0.282051
+normal_ear & field7 = f & field2 = normal,22, 0.063317, 2.860759,1.02848e-11,0.349558,0.278481
+normal_ear & field15 = f & field60 = absent,11, 0.031013, 2.756098,0.000313616,0.181416,0.268293
+normal_ear & field60 = absent & field7 = f,11, 0.029720, 2.568182,0.000646038,0.194690,0.250000
+normal_ear & field7 = f & field59 = elevated,6, 0.015780, 2.465454,0.0218560,0.110619,0.240000
+normal_ear & field64 = normal & field66 = a,18, 0.046480, 2.401417,1.84109e-06,0.340708,0.233766
+normal_ear & field66 = a & field59 = elevated,6, 0.015350, 2.370629,0.0265624,0.115044,0.230769
+normal_ear & field1 = f & field59 = elevated,5, 0.012648, 2.334711,0.0471163,0.097345,0.227273
+normal_ear & field64 = normal & field7 = f,18, 0.045188, 2.311364,3.70764e-06,0.353982,0.225000
+normal_ear & field1 = f & field66 = a,20, 0.042838, 1.938250,7.78826e-06,0.469027,0.188679
+normal_ear & field1 = f & field7 = f,20, 0.042838, 1.938250,7.78826e-06,0.469027,0.188679
+normal_ear & field15 = f & field7 = f,21, 0.038218, 1.698640,2.79678e-05,0.561947,0.165354
+normal_ear & field15 = f & field66 = a,21, 0.034341, 1.586230,0.000122100,0.601770,0.154412
+normal_ear & field66 = a & field7 = f,22, 0.034889, 1.558621,3.08705e-05,0.641593,0.151724
+
+16 itemsets failed test for self sufficiency
+normal_ear & field15 = f & field64 = normal & field6 = normal,11, 0.040919, 6.277778,1.03925e-08,0.079646,0.611111
+normal_ear & field64 = normal & field6 = normal,12, 0.044052, 5.870130,4.61019e-09,0.092920,0.571429
+normal_ear & field1 = f & field6 = normal,13, 0.042877, 3.927807,4.23093e-07,0.150442,0.382353
+normal_ear & field64 = normal & field60 = absent,9, 0.029485, 3.852273,7.68055e-05,0.106195,0.375000
+normal_ear & field1 = f & field60 = absent,10, 0.028741, 2.853535,0.000509484,0.159292,0.277778
+normal_ear & field2 = normal,22, 0.061594, 2.722892,3.62163e-11,0.367257,0.265060
+normal_ear & field15 = f & field64 = normal,17, 0.045070, 2.494805,3.28729e-06,0.309735,0.242857
+normal_ear & field1 = f & field64 = normal,17, 0.042916, 2.328485,1.06396e-05,0.331858,0.226667
+normal_ear & field60 = absent,11, 0.025844, 2.132076,0.00387295,0.234513,0.207547
+normal_ear & field59 = elevated,6, 0.014057, 2.125392,0.0447437,0.128319,0.206897
+normal_ear & field64 = normal,18, 0.040450, 2.031968,3.68741e-05,0.402655,0.197802
+normal_ear & field1 = f & field15 = f,19, 0.041428, 1.971533,2.06217e-05,0.438053,0.191919
+normal_ear & field1 = f,20, 0.030778, 1.533243,0.000794922,0.592920,0.149254
+normal_ear & field15 = f,21, 0.022281, 1.315410,0.00598814,0.725664,0.128049
+normal_ear & field7 = f,22, 0.021537, 1.284091,0.00298422,0.778761,0.125000
+normal_ear & field66 = a,22, 0.015937, 1.195767,0.0157871,0.836283,0.116402
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 51 itemsets
+

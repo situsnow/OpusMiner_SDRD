@@ -1,0 +1,87 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -k 100
+  -s conductive_fixation
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 60 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+conductive_fixation & field5 = absent & field64 = ?,2, 0.008615, 37.666668,0.000589971,0.008850,1.000000
+conductive_fixation & field64 = ? & field6 = normal,2, 0.008615, 37.666668,0.000589971,0.008850,1.000000
+conductive_fixation & field64 = ? & field59 = absent,2, 0.008615, 37.666668,0.000589971,0.008850,1.000000
+conductive_fixation & field60 = absent & field64 = ?,2, 0.008615, 37.666668,0.000589971,0.008850,1.000000
+conductive_fixation & field66 = as & field64 = ?,2, 0.008615, 37.666668,0.000589971,0.008850,1.000000
+conductive_fixation & field3 = t & field64 = ?,2, 0.008615, 37.666668,0.000589971,0.008850,1.000000
+conductive_fixation & field66 = as & field6 = normal,6, 0.025844, 37.666668,5.77755e-12,0.026549,1.000000
+conductive_fixation & field66 = as & field2 = severe,3, 0.012922, 37.666668,1.05352e-05,0.013274,1.000000
+conductive_fixation & field64 = ? & field4 = absent,2, 0.008615, 37.666668,0.000589971,0.008850,1.000000
+conductive_fixation & field60 = absent & field2 = severe,3, 0.012922, 37.666668,1.05352e-05,0.013274,1.000000
+conductive_fixation & field2 = severe & field6 = normal,3, 0.012922, 37.666668,1.05352e-05,0.013274,1.000000
+conductive_fixation & field70 = p135,1, 0.004307, 37.666668,0.0265487,0.004425,1.000000
+conductive_fixation & field70 = p131,1, 0.004307, 37.666668,0.0265487,0.004425,1.000000
+conductive_fixation & field70 = p47,1, 0.004307, 37.666668,0.0265487,0.004425,1.000000
+conductive_fixation & field70 = p190,1, 0.004307, 37.666668,0.0265487,0.004425,1.000000
+conductive_fixation & field70 = p189,1, 0.004307, 37.666668,0.0265487,0.004425,1.000000
+conductive_fixation & field70 = p134,1, 0.004307, 37.666668,0.0265487,0.004425,1.000000
+conductive_fixation & field3 = t & field6 = normal,6, 0.025491, 25.111111,4.85314e-10,0.039823,0.666667
+conductive_fixation & field2 = severe & field59 = absent,3, 0.012687, 22.600000,0.000103234,0.022124,0.600000
+conductive_fixation & field2 = severe & field4 = absent,3, 0.012687, 22.600000,0.000103234,0.022124,0.600000
+conductive_fixation & field3 = t & field2 = severe,3, 0.012687, 22.600000,0.000103234,0.022124,0.600000
+conductive_fixation & field5 = absent & field2 = severe,3, 0.012687, 22.600000,0.000103234,0.022124,0.600000
+conductive_fixation & field1 = f & field64 = ?,2, 0.008380, 18.833334,0.00345597,0.017699,0.500000
+conductive_fixation & field60 = absent & field66 = as,6, 0.025022, 17.384615,9.91427e-09,0.057522,0.461538
+conductive_fixation & field1 = f & field2 = severe,3, 0.012452, 16.142857,0.000354010,0.030973,0.428571
+conductive_fixation & field66 = as & field4 = absent,6, 0.024787, 15.066668,2.89166e-08,0.066372,0.400000
+conductive_fixation & field1 = f & field66 = as,6, 0.024787, 15.066668,2.89166e-08,0.066372,0.400000
+conductive_fixation & field3 = t & field66 = as,6, 0.024787, 15.066668,2.89166e-08,0.066372,0.400000
+conductive_fixation & field5 = absent & field6 = normal,6, 0.024787, 15.066668,2.89166e-08,0.066372,0.400000
+conductive_fixation & field3 = t & field60 = absent,6, 0.024669, 14.125000,4.62666e-08,0.070796,0.375000
+conductive_fixation & field66 = as & field59 = absent,6, 0.024669, 14.125000,4.62666e-08,0.070796,0.375000
+conductive_fixation & field5 = absent & field66 = as,6, 0.024552, 13.294117,7.15029e-08,0.075221,0.352941
+conductive_fixation & field3 = t & field4 = absent,6, 0.024082, 10.761905,3.13513e-07,0.092920,0.285714
+conductive_fixation & field1 = f & field3 = t,6, 0.024082, 10.761905,3.13513e-07,0.092920,0.285714
+conductive_fixation & field6 = normal & field59 = absent,6, 0.023847, 9.826087,5.83226e-07,0.101770,0.260870
+conductive_fixation & field3 = t & field59 = absent,6, 0.023729, 9.416667,7.77635e-07,0.106195,0.250000
+conductive_fixation & field3 = t & field5 = absent,6, 0.023612, 9.040000,1.02320e-06,0.110619,0.240000
+conductive_fixation & field6 = normal & field4 = absent,6, 0.023494, 8.692307,1.33016e-06,0.115044,0.230769
+conductive_fixation & field5 = absent & field60 = absent,6, 0.023377, 8.370371,1.71021e-06,0.119469,0.222222
+conductive_fixation & field60 = absent & field6 = normal,6, 0.023377, 8.370371,1.71021e-06,0.119469,0.222222
+conductive_fixation & field1 = f & field5 = absent,6, 0.022790, 7.062500,5.23557e-06,0.141593,0.187500
+conductive_fixation & field1 = f & field6 = normal,6, 0.022555, 6.647058,7.77024e-06,0.150442,0.176471
+conductive_fixation & field5 = absent & field4 = absent,6, 0.022320, 6.277778,1.12535e-05,0.159292,0.166667
+conductive_fixation & field1 = f & field60 = absent,6, 0.022320, 6.277778,1.12535e-05,0.159292,0.166667
+conductive_fixation & field5 = absent & field59 = absent,6, 0.022202, 6.108109,1.34315e-05,0.163717,0.162162
+conductive_fixation & field60 = absent & field59 = absent,6, 0.022085, 5.947369,1.59500e-05,0.168142,0.157895
+conductive_fixation & field6 = normal,6, 0.021732, 5.512195,2.59781e-05,0.181416,0.146341
+conductive_fixation & field60 = absent & field4 = absent,6, 0.021497, 5.255814,3.52225e-05,0.190265,0.139535
+conductive_fixation & field1 = f & field59 = absent,6, 0.021497, 5.255814,3.52225e-05,0.190265,0.139535
+conductive_fixation & field1 = f & field4 = absent,6, 0.021262, 5.022223,4.70585e-05,0.199115,0.133333
+conductive_fixation & field4 = absent & field59 = absent,6, 0.021027, 4.808511,6.20368e-05,0.207965,0.127660
+conductive_fixation & field59 = absent,6, 0.020205, 4.185185,0.000149218,0.238938,0.111111
+conductive_fixation & field4 = absent,6, 0.019853, 3.964912,0.000209657,0.252212,0.105263
+
+7 itemsets failed test for self sufficiency
+conductive_fixation & field2 = severe,3, 0.012335, 14.125000,0.000560635,0.035398,0.375000
+conductive_fixation & field64 = ?,2, 0.008145, 12.555555,0.00843450,0.026549,0.333333
+conductive_fixation & field66 = as,6, 0.024434, 12.555554,1.07254e-07,0.079646,0.333333
+conductive_fixation & field3 = t,6, 0.023494, 8.692307,1.33016e-06,0.115044,0.230769
+conductive_fixation & field5 = absent,6, 0.021027, 4.808511,6.20368e-05,0.207965,0.127660
+conductive_fixation & field60 = absent,6, 0.020323, 4.264151,0.000132638,0.234513,0.113208
+conductive_fixation & field1 = f,6, 0.010807, 1.686567,0.0414711,0.592920,0.044776
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 60 itemsets
+

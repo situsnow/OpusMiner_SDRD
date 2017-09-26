@@ -1,0 +1,37 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s mixed_cochlear_unk_discontinuity
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 13 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+mixed_cochlear_unk_discontinuity & field66 = ad & field17 = t,2, 0.008771, 113.000000,3.93314e-05,0.008850,1.000000
+mixed_cochlear_unk_discontinuity & field66 = ad & field10 = t,2, 0.008771, 113.000000,3.93314e-05,0.008850,1.000000
+mixed_cochlear_unk_discontinuity & field6 = normal & field66 = ad,2, 0.008732, 75.333336,0.000117994,0.013274,0.666667
+mixed_cochlear_unk_discontinuity & field10 = t & field17 = t,2, 0.008732, 75.333336,0.000117994,0.013274,0.666667
+mixed_cochlear_unk_discontinuity & field6 = normal & field10 = t,2, 0.008693, 56.500000,0.000235988,0.017699,0.500000
+mixed_cochlear_unk_discontinuity & field66 = ad,2, 0.008693, 56.500000,0.000235988,0.017699,0.500000
+mixed_cochlear_unk_discontinuity & field6 = normal & field17 = t,2, 0.008615, 37.666668,0.000589971,0.026549,0.333333
+mixed_cochlear_unk_discontinuity & field17 = t,2, 0.008458, 22.600000,0.00176991,0.044248,0.200000
+mixed_cochlear_unk_discontinuity & field10 = t,2, 0.008066, 11.300000,0.00747296,0.088496,0.100000
+mixed_cochlear_unk_discontinuity & field6 = normal,2, 0.007244, 5.512195,0.0322517,0.181416,0.048780
+mixed_cochlear_unk_discontinuity & field23 = t,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+mixed_cochlear_unk_discontinuity & field70 = p110,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+mixed_cochlear_unk_discontinuity & field70 = p177,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 13 itemsets
+

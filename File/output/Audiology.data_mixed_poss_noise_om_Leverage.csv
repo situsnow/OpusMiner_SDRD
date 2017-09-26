@@ -1,0 +1,38 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s mixed_poss_noise_om
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 12 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+mixed_poss_noise_om & field59 = elevated & field66 = c,2, 0.008771, 113.000000,3.93314e-05,0.008850,1.000000
+mixed_poss_noise_om & field7 = t & field66 = c,2, 0.008771, 113.000000,3.93314e-05,0.008850,1.000000
+mixed_poss_noise_om & field4 = elevated & field66 = c,2, 0.008732, 75.333336,0.000117994,0.013274,0.666667
+mixed_poss_noise_om & field7 = t & field59 = elevated,2, 0.008693, 56.500000,0.000235988,0.017699,0.500000
+mixed_poss_noise_om & field7 = t & field4 = elevated,2, 0.008615, 37.666668,0.000589971,0.026549,0.333333
+mixed_poss_noise_om & field66 = c,2, 0.008575, 32.285717,0.000825959,0.030973,0.285714
+mixed_poss_noise_om & field4 = elevated & field59 = elevated,2, 0.008262, 15.066668,0.00412979,0.066372,0.133333
+mixed_poss_noise_om & field70 = p85,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+mixed_poss_noise_om & field70 = p86,1, 0.004386, 113.000000,0.00884956,0.004425,1.000000
+
+3 itemsets failed test for self sufficiency
+mixed_poss_noise_om & field59 = elevated,2, 0.007714, 7.793104,0.0159685,0.128319,0.068966
+mixed_poss_noise_om & field4 = elevated,2, 0.007518, 6.647059,0.0220649,0.150442,0.058824
+mixed_poss_noise_om & field7 = t,2, 0.006892, 4.520000,0.0481809,0.221239,0.040000
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 12 itemsets
+

@@ -1,0 +1,52 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s cochlear_age_and_noise
+  Audiology.data.csv
+  Audiology.data
+
+File/input/Audiology.data.csv: 410 items, 226 transactions
+Found 26 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+cochlear_age_and_noise & field1 = t & field15 = t,22, 0.085715, 8.370371,4.22771e-26,0.119469,0.814815
+cochlear_age_and_noise & field2 = mild & field15 = t,18, 0.066724, 6.163637,2.73644e-15,0.132743,0.600000
+cochlear_age_and_noise & field2 = mild & field1 = t,18, 0.052510, 2.935065,4.07937e-08,0.278761,0.285714
+cochlear_age_and_noise & field1 = t & field57 = t,10, 0.039510, 9.338842,8.62865e-11,0.048673,0.909091
+cochlear_age_and_noise & field15 = t & field57 = t,10, 0.038218, 7.337662,6.71326e-09,0.061947,0.714286
+cochlear_age_and_noise & field2 = mild & field57 = t,9, 0.033793, 6.603896,2.08827e-07,0.061947,0.642857
+cochlear_age_and_noise & field64 = very_poor & field15 = t,7, 0.026666, 7.190909,3.12366e-06,0.044248,0.700000
+cochlear_age_and_noise & field1 = t & field64 = very_poor,7, 0.025374, 5.531468,3.70231e-05,0.057522,0.538462
+cochlear_age_and_noise & field2 = mild & field64 = very_poor,5, 0.019540, 8.560606,3.14688e-05,0.026549,0.833333
+cochlear_age_and_noise & field1 = t & field26 = t,4, 0.015976, 10.272727,6.91165e-05,0.017699,1.000000
+cochlear_age_and_noise & field15 = t & field26 = t,4, 0.015976, 10.272727,6.91165e-05,0.017699,1.000000
+cochlear_age_and_noise & field26 = t,4, 0.015545, 8.218182,0.000323166,0.022124,0.800000
+cochlear_age_and_noise & field1 = t & field37 = t,3, 0.011551, 7.704545,0.00303749,0.017699,0.750000
+cochlear_age_and_noise & field15 = t & field37 = t,3, 0.011551, 7.704545,0.00303749,0.017699,0.750000
+cochlear_age_and_noise & field37 = t,3, 0.009398, 3.424242,0.0459066,0.039823,0.333333
+cochlear_age_and_noise & field57 = t & field26 = t,2, 0.007988, 10.272727,0.00908555,0.008850,1.000000
+cochlear_age_and_noise & field64 = very_poor & field26 = t,2, 0.007988, 10.272727,0.00908555,0.008850,1.000000
+cochlear_age_and_noise & field57 = t & field37 = t,2, 0.007988, 10.272727,0.00908555,0.008850,1.000000
+cochlear_age_and_noise & field15 = t & field64 = unmeasured,2, 0.007988, 10.272727,0.00908555,0.008850,1.000000
+cochlear_age_and_noise & field29 = t,2, 0.007988, 10.272727,0.00908555,0.008850,1.000000
+cochlear_age_and_noise & field64 = unmeasured,2, 0.007127, 5.136364,0.0482309,0.017699,0.500000
+
+5 itemsets failed test for self sufficiency
+cochlear_age_and_noise & field15 = t,22, 0.070640, 3.645161,1.79703e-14,0.274336,0.354839
+cochlear_age_and_noise & field1 = t,22, 0.057718, 2.456522,4.83797e-10,0.407080,0.239130
+cochlear_age_and_noise & field57 = t,10, 0.033480, 4.109091,1.21444e-05,0.110619,0.400000
+cochlear_age_and_noise & field2 = mild,18, 0.030973, 1.636364,0.00137280,0.500000,0.159292
+cochlear_age_and_noise & field64 = very_poor,7, 0.022359, 3.595454,0.00107207,0.088496,0.350000
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 26 itemsets
+

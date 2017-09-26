@@ -1,0 +1,48 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -l
+  -p
+  -k 100
+  -s negative
+  TicTacToe.data.csv
+  TicTacToe.data
+
+File/input/TicTacToe.data.csv: 28 items, 958 transactions
+Found 17 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 6.61376e-05
+Alpha for size 3 = 3.81563e-06
+Alpha for size 4 = 3.05250e-07
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+negative & field5 = o & field9 = o & field1 = o,50, 0.034105, 2.885542,7.33121e-25,0.052192,1.000000
+negative & field5 = o & field7 = o & field3 = o,50, 0.034105, 2.885542,7.33121e-25,0.052192,1.000000
+negative & field3 = o & field1 = o,55, 0.022683, 1.653175,1.43898e-06,0.100209,0.572917
+negative & field9 = o & field3 = o,55, 0.022683, 1.653175,1.43898e-06,0.100209,0.572917
+negative & field9 = o & field7 = o,55, 0.022683, 1.653175,1.43898e-06,0.100209,0.572917
+negative & field7 = o & field1 = o,55, 0.022683, 1.653175,1.43898e-06,0.100209,0.572917
+negative & field5 = o,192, 0.077423, 1.629483,1.38564e-25,0.354906,0.564706
+negative & field9 = o,146, 0.031215, 1.257580,1.58399e-05,0.349687,0.435821
+negative & field3 = o,146, 0.031215, 1.257580,1.58399e-05,0.349687,0.435821
+negative & field1 = o,146, 0.031215, 1.257580,1.58399e-05,0.349687,0.435821
+negative & field7 = o,146, 0.031215, 1.257580,1.58399e-05,0.349687,0.435821
+
+6 itemsets failed test for self sufficiency
+negative & field5 = o & field7 = o,70, 0.035809, 1.961048,2.85282e-13,0.107516,0.679612
+negative & field5 = o & field9 = o,70, 0.035809, 1.961048,2.85282e-13,0.107516,0.679612
+negative & field5 = o & field3 = o,70, 0.035809, 1.961048,2.85282e-13,0.107516,0.679612
+negative & field5 = o & field1 = o,70, 0.035809, 1.961048,2.85282e-13,0.107516,0.679612
+negative & field7 = o & field3 = o,62, 0.024202, 1.597354,1.43026e-06,0.116910,0.553571
+negative & field9 = o & field1 = o,62, 0.024202, 1.597354,1.43026e-06,0.116910,0.553571
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 17 itemsets
+

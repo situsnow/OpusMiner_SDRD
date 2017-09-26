@@ -1,0 +1,67 @@
+OPUS Miner: Filtered Top-k Association Discovery of Self-Sufficient Itemsets
+Version 1.2
+Copyright (C) 2012-2016 Geoffrey I Webb
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, 
+and you are welcome to redistribute it under certain conditions.
+See the GNU General Public Licence <http://www.gnu.org/licenses/> for details.
+
+If you publish results obtained by using this software please cite
+  Webb, G.I. & Vreeken, J. (2014) Efficient Discovery of the Most Interesting Associations.
+  ACM Transactions on Knowledge Discovery from Data. 8(3), Art. no. 15.
+
+  -k 100
+  -s acc
+  Car.data.csv
+  Car.data
+
+File/input/Car.data.csv: 24 items, 1728 transactions
+Found 41 non-redundant productive itemsets in 0 seconds
+
+SELF-SUFFICIENT ITEMSETS:
+Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+acc & field6 = high & field4 = 4,108, 0.037809, 2.531250,4.60237e-28,0.111111,0.562500
+acc & field6 = high & field4 = more,96, 0.030864, 2.250000,1.30113e-19,0.111111,0.500000
+acc & field6 = med & field4 = 4,90, 0.027392, 2.109375,5.71898e-16,0.111111,0.468750
+acc & field6 = med & field4 = more,90, 0.027392, 2.109375,5.71898e-16,0.111111,0.468750
+acc & field6 = med & field5 = big & field4 = 4,40, 0.014918, 2.812500,1.70305e-12,0.037037,0.625000
+acc & field6 = med & field5 = big & field4 = more,40, 0.014918, 2.812500,1.70305e-12,0.037037,0.625000
+acc & field6 = med & field4 = 4 & field1 = med,30, 0.011188, 2.812500,1.27700e-09,0.027778,0.625000
+acc & field6 = high & field4 = 4 & field2 = med,30, 0.011188, 2.812500,1.27700e-09,0.027778,0.625000
+acc & field6 = med & field4 = 4 & field2 = med,30, 0.011188, 2.812500,1.27700e-09,0.027778,0.625000
+acc & field6 = high & field4 = 4 & field1 = med,30, 0.011188, 2.812500,1.27700e-09,0.027778,0.625000
+acc & field6 = med & field4 = more & field1 = med,29, 0.010610, 2.718750,7.65979e-09,0.027778,0.604167
+acc & field6 = med & field4 = more & field2 = med,29, 0.010610, 2.718750,7.65979e-09,0.027778,0.604167
+acc & field6 = high & field5 = big & field4 = more,32, 0.010288, 2.250000,5.88512e-07,0.037037,0.500000
+acc & field6 = high & field5 = big & field4 = 4,32, 0.010288, 2.250000,5.88512e-07,0.037037,0.500000
+acc & field6 = high & field4 = more & field1 = med,26, 0.008873, 2.437500,9.84981e-07,0.027778,0.541667
+acc & field6 = high & field4 = more & field2 = med,26, 0.008873, 2.437500,9.84981e-07,0.027778,0.541667
+acc & field6 = med & field4 = 4 & field2 = med & field1 = med,12, 0.005401, 4.500000,1.26670e-08,0.006944,1.000000
+acc & field6 = med & field4 = more & field2 = med & field1 = med,11, 0.004823, 4.125000,5.60370e-07,0.006944,0.916667
+
+23 itemsets failed test for self sufficiency
+acc & field6 = high,204, 0.043981, 1.593750,5.87939e-20,0.333333,0.354167
+acc & field4 = 4,198, 0.040509, 1.546875,3.19333e-17,0.333333,0.343750
+acc & field4 = more,186, 0.033565, 1.453125,2.10243e-12,0.333333,0.322917
+acc & field6 = med,180, 0.030093, 1.406250,2.56180e-10,0.333333,0.312500
+acc & field6 = med & field5 = big,80, 0.021605, 1.875000,9.32250e-11,0.111111,0.416667
+acc & field5 = big & field4 = 4,72, 0.016975, 1.687500,2.29263e-07,0.111111,0.375000
+acc & field5 = big & field4 = more,72, 0.016975, 1.687500,2.29263e-07,0.111111,0.375000
+acc & field4 = 4 & field2 = med,60, 0.016204, 1.875000,3.36139e-08,0.083333,0.416667
+acc & field4 = 4 & field1 = med,60, 0.016204, 1.875000,3.36139e-08,0.083333,0.416667
+acc & field6 = med & field1 = med,59, 0.015625, 1.843750,9.35835e-08,0.083333,0.409722
+acc & field6 = med & field2 = med,59, 0.015625, 1.843750,9.35835e-08,0.083333,0.409722
+acc & field6 = high & field2 = med,56, 0.013889, 1.750000,1.67153e-06,0.083333,0.388889
+acc & field6 = high & field1 = med,56, 0.013889, 1.750000,1.67153e-06,0.083333,0.388889
+acc & field4 = more & field1 = med,55, 0.013310, 1.718750,4.10138e-06,0.083333,0.381944
+acc & field4 = more & field2 = med,55, 0.013310, 1.718750,4.10138e-06,0.083333,0.381944
+acc & field6 = high & field5 = big,64, 0.012346, 1.500000,0.000111543,0.111111,0.333333
+acc & field2 = med,115, 0.010995, 1.197917,0.00726151,0.250000,0.266204
+acc & field1 = med,115, 0.010995, 1.197917,0.00726151,0.250000,0.266204
+acc & field5 = big,144, 0.009259, 1.125000,0.0291377,0.333333,0.250000
+acc & field6 = med & field2 = med & field1 = med,23, 0.008681, 2.875000,6.77297e-08,0.020833,0.638889
+acc & field4 = 4 & field2 = med & field1 = med,18, 0.005787, 2.250000,0.000197651,0.020833,0.500000
+acc & field2 = med & field1 = med,33, 0.005208, 1.375000,0.0237746,0.062500,0.305556
+acc & field4 = more & field2 = med & field1 = med,15, 0.004051, 1.875000,0.00648170,0.020833,0.416667
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 41 itemsets
+

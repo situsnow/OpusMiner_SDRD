@@ -37,7 +37,6 @@ Index, Item Name, Upper bound value
 108, field3 = 12th, 0.0021888306
 109, field4 = EduNum8, 0.0021888306
 35, field5 = Married-spouse-absent, 0.0020471849
-56, field6 = Transport-moving, 0.001983136
 80, field3 = 5th-6th, 0.001971364
 81, field4 = EduNum3, 0.001971364
 75, field8 = Other, 0.0012364294
@@ -45,9 +44,6 @@ Index, Item Name, Upper bound value
 114, field6 = Priv-house-serv, 0.0010712396
 93, field3 = 1st-4th, 0.0010581985
 94, field4 = EduNum2, 0.0010581985
-112, field11 = El-Salvador, 5.07534E-4
 110, field11 = Dominican-Republic, 4.5627204E-4
-115, field11 = Guatemala, 3.8118637E-4
 98, field3 = Preschool, 3.7717784E-4
 99, field4 = EduNum1, 3.7717784E-4
-100, field11 = Columbia, 3.7491985E-4
