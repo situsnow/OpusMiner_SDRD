@@ -43,6 +43,7 @@ public class Globals {
 	
 	public static void expandAlpha(final long depth){
 		if (alpha.isEmpty()){
+			//bookmark the change
 			alpha.add(1.0);
 			alpha.add(1.0);
 			if (depth <= 1) return;

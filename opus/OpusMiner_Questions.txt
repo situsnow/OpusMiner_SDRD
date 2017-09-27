@@ -4,12 +4,22 @@
 Meanwhile, in the SDRD program, when search in the first layer of lattice (1-itemset + consequent), it will already exclude some items with p value less than
 alfa (with depth of 2), but in the following alfa calcualtion, the size of L will be still calculated with total number of items, is it correct?
 
+<Xuelin> Because a single item can not be a rule, the program will count from the second level of lattice (the beginning of where you could find rules).
+So when validate itemsets in the searching space, the 1-itemset will check against getAlpha(2) exceptionally. (where 2 is the depth of current searching
+space). But inside expandAlpha, depth will always -1. And for the rest, the depth will be the actual itemset size.
+However, here in context of Supervised Descriptive Rule Discovery, the program will first check if consequent productive, and 1-itemset (antecedent)
+is productive, and the rule (antecedent + consequent) is productive. Since consequent is fixed, the program will always check antecedent only. And the
+itemset in SDRD context is actually talking (searching) about the antecendent permutation space.
+Hence, for checking solely of consequent, antecedent, their respective p-value will check against the 
+
 23. The logic differences between OpusMiner-SDRD and BigML/Opus
 
 	I. The lift/leverage value is the smallest value of all combinations between all items inside itemset in BigML/Opus;
 	   However, in OpusMiner-SDRD the lift/leverage value is the combination of antecedent and consequent
 	II. The p value is the greatest value of all combinations between all items inside itemset in BigML/Opus;
 	   It's the p value where category is the "consequent" and the group is the "antecedent" in SDRD.
+	   
+	   Attribute in Magnum Opus
 	   
 24. Validate why the p value is different between BigML and OpusMiner.
 

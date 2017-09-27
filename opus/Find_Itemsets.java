@@ -134,9 +134,9 @@ public class Find_Itemsets {
 	public static boolean checkSubsetsX(Itemset sofar, Itemset remaining, int limit, int cnt, double new_sup, double alpha){
 		
 		boolean sofarFlag = getTIDCount(sofar);
-		//int sofarCnt = count;
+		int sofarCnt = count;
 		boolean remainingFlag = getTIDCount(remaining);
-		//int remainingCnt = count;
+		int remainingCnt = count;
 		if (!sofarFlag || !remainingFlag){
 			//As the count value will never used here, do not need to pass to neither sofarCnt or remainingCnt
 			return false;
@@ -151,12 +151,11 @@ public class Find_Itemsets {
 //			if (this_val <= minValue) return false;
 //		}
 		
-		//Bookmark this change
-//		double this_p = Utils.fisher(cnt, sofarCnt, remainingCnt);
-//		
-//		if (this_p > p && p > alpha){
-//			return false;
-//		}
+		double this_p = Utils.fisher(cnt, sofarCnt, remainingCnt);
+		
+		if (this_p > p && p > alpha){
+			return false;
+		}
 		
 		if (remaining.size() > 1){
 			Itemset new_remaining = new Itemset(remaining);
