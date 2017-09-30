@@ -342,6 +342,7 @@ public class Find_Itemsets {
 				}
 				//check whether current itemset include consequent, if no, the newMaxItemCount will still be always the cover size of consequent
 				//If it cannot pass, skip the superset checking once and for all (current itemset + consequent).
+				//If current itemset only includes the antecedent, then depth should be the actual antecedent size.
 				proceedFlag = lb_p <= Globals.getAlpha(depth) && (Globals.searchByLift || ubVal > minValue); 
 				
 				if (proceedFlag == false)
@@ -355,8 +356,9 @@ public class Find_Itemsets {
 			
 			if (!apriori){
 				//only save those with oriented consequent itemsets.
+				//If current itemset includes consequent, the size of the antecedent should deduct 1.
 				if (is.contains(Globals.consequentID) && 
-						checkSubsets(item, is, count, new_sup, cover.size(), parentSup, Globals.getAlpha(depth))){
+						checkSubsets(item, is, count, new_sup, cover.size(), parentSup, Globals.getAlpha(depth - 1))){
 					
 						is.count = count;
 						is.value = val;
@@ -399,7 +401,7 @@ public class Find_Itemsets {
 		float conSup = Utils.countToSup(consequentCover);
 		float conUbVal = (float)(Globals.searchByLift? 1.0/conSup
 				: conSup - conSup * conSup);
-		if (Utils.fisher(consequentCover, consequentCover, consequentCover) > Globals.getAlpha(2)){
+		if (Utils.fisher(consequentCover, consequentCover, consequentCover) > Globals.getAlpha(1)){
 			System.err.print(String.format("Consequent '%s' is not productive.", Globals.consequentName));
 			System.exit(1);
 		}
@@ -411,7 +413,7 @@ public class Find_Itemsets {
 			//first check if each item can pass the significant test alone
 			int itemCover = Globals.tids.get(i).size();
 			
-			if (Utils.fisher(itemCover, itemCover, itemCover) > Globals.getAlpha(2)){
+			if (Utils.fisher(itemCover, itemCover, itemCover) > Globals.getAlpha(1)){
 				continue;
 			}
 			
@@ -444,7 +446,7 @@ public class Find_Itemsets {
 			
 			//Since the upper bound value was already checked in previous section, can skip here
 			//if (p <= Globals.getAlpha(2) && (Globals.searchByLift || ubVal >minValue)){
-			if (p <= Globals.getAlpha(2)){	
+			if (p <= Globals.getAlpha(1)){	
 				//For Supervised Descriptive Rule Discovery, though it saved as current 1-itemset, but the upper bound value is 1-itemset + consequent
 				float leverage = ruleSup - conSup * antSup;
 				float lift = ruleSup / (conSup * antSup);

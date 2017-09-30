@@ -45,8 +45,8 @@ public class Globals {
 		if (alpha.isEmpty()){
 			//bookmark the change
 			alpha.add(1.0);
-			alpha.add(1.0);
-			if (depth <= 1) return;
+			//alpha.add(1.0);
+			if (depth < 1) return;
 		}
 		
 		if (depth > noOfItems){
@@ -58,7 +58,7 @@ public class Globals {
 		}else{
 			long i;
 			for (i = alpha.size(); i <= depth; i++){
-				alpha.add(Math.min((Math.pow(0.5, depth - 1) / 
+				alpha.add(Math.min((Math.pow(0.5, depth) / 
 						Math.exp(Fisher.log_combin(noOfItems, (int)(depth)))) * 0.05, 
 						alpha.get((int) (depth - 1))));
 			}

@@ -68,6 +68,7 @@ public class Filter_Itemsets {
 			//In the context of SDRD, the first element will always be the consequent
 			Tidset tidsright = uniqueTids.get(0);
 			
+			//The depth of alpha should be the actual size of the antecedent, so deduct 1 (consequent)
 			result = checkSS2(antCov, tidsright, 
 						Globals.noOfTransactions - supsettids.size(), uniqueCov.size(), Globals.getAlpha(is.size()-1));
 				

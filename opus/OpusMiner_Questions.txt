@@ -6,28 +6,29 @@ alfa (with depth of 2), but in the following alfa calcualtion, the size of L wil
 
 <Xuelin> Because a single item can not be a rule, the program will count from the second level of lattice (the beginning of where you could find rules).
 So when validate itemsets in the searching space, the 1-itemset will check against getAlpha(2) exceptionally. (where 2 is the depth of current searching
-space). But inside expandAlpha, depth will always -1. And for the rest, the depth will be the actual itemset size.
+space). But inside expandAlpha which is 0.05/ [(2^(L-1)) * size(L)], depth will always -1. And for the rest, 
+the depth will be the actual itemset size.
+
 However, here in context of Supervised Descriptive Rule Discovery, the program will first check if consequent productive, and 1-itemset (antecedent)
 is productive, and the rule (antecedent + consequent) is productive. Since consequent is fixed, the program will always check antecedent only. And the
 itemset in SDRD context is actually talking (searching) about the antecendent permutation space.
-Hence, for checking solely of consequent, antecedent, their respective p-value will check against the 
+Hence, for checking solely of consequent, antecedent, their respective p-value will check against the alpha[1] which is 0.05 / [(2^L) * size(L)].
+For the rest of the itemsets, their respective p-value will check against the alpha[L] where L is the actual size of current itemset (antecedent).
+ 
+Meanwhile, one should pay attention to the calculation of itemset size in current layered in MagnumOpus and OpusMiner.
+1. In MagnumOpus, the size is calculated with only availble attributes. For example, if Attribute A has two available values a1, a2; Then there will be no
+combination of a1a2 in the searching space.
+2. However, in OpusMiner, the algorithm will treat them as two different items, and there will be permutation of a1a2 calculated/validated though it's useless.
 
 23. The logic differences between OpusMiner-SDRD and BigML/Opus
 
-	I. The lift/leverage value is the smallest value of all combinations between all items inside itemset in BigML/Opus;
+	I. The lift/leverage value is the smallest value of all combinations between all items inside itemset in BigML/MagnumOpus;
 	   However, in OpusMiner-SDRD the lift/leverage value is the combination of antecedent and consequent
-	II. The p value is the greatest value of all combinations between all items inside itemset in BigML/Opus;
-	   It's the p value where category is the "consequent" and the group is the "antecedent" in SDRD.
-	   
-	   Attribute in Magnum Opus
-	   
-24. Validate why the p value is different between BigML and OpusMiner.
+	II. The p value is the greatest value of all permutations between all items inside itemset in SDRD;
+	    However, in MagnumOpus/BigML, the situation is different. Should refer to Prof. Webb's paper "Discover 
 
-25. Double check the alpha' calculation with Prof. Webb. Especially with the calculation of size in level L.
-    Search all places that reference getAlpha().
-
-26. In find_itemsets.cpp, line 312, insert the item into queue and sort according to the upper bound value. But when search by lift, the upper bound does not
-exist (currently, it will be calculated by leverage). 
+24. In find_itemsets.cpp, line 312, insert the item into queue and sort according to the upper bound value. But when search by lift, the upper bound 
+does not exist (currently, it will be calculated by leverage). 
 
 #########################################################################################
 Questions of original OpusMiner:
