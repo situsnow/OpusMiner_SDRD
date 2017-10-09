@@ -16,17 +16,37 @@ If you publish results obtained by using this software please cite
   Audiology.data
 
 File/input/Audiology.data.csv: 410 items, 226 transactions
-Found 3 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 2.98169e-07
-Alpha for size 3 = 1.09621e-09
+Found 22 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 1.49085e-07
+Alpha for size 3 = 5.48105e-10
+Alpha for size 4 = 2.69339e-12
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+cochlear_age & field15 = f & field1 = t,54, 0.166399, 3.293927,3.72826e-37,0.287611,0.830769
 cochlear_age & field59 = normal & field1 = t,54, 0.159703, 3.015567,3.85586e-33,0.314159,0.760563
+cochlear_age & field66 = a & field1 = t,57, 0.159586, 2.722892,1.46744e-33,0.367257,0.686747
+cochlear_age & field4 = normal & field1 = t,48, 0.137618, 2.840534,2.13577e-24,0.296460,0.716418
+cochlear_age & field2 = mild & field1 = t,42, 0.115534, 2.643275,1.05838e-17,0.278761,0.666667
+cochlear_age & field2 = mild & field15 = f & field59 = normal,39, 0.112303, 2.863548,5.93334e-18,0.238938,0.722222
+cochlear_age & field2 = mild & field4 = normal & field15 = f,37, 0.106802, 2.876505,7.95676e-17,0.225664,0.725490
+cochlear_age & field15 = f & field66 = a,54, 0.087164, 1.574303,2.50628e-11,0.601770,0.397059
+cochlear_age & field2 = mild & field66 = a,42, 0.075358, 1.682084,1.40404e-07,0.438053,0.424242
+cochlear_age & field1 = t & field64 = good,24, 0.072715, 3.171930,1.10635e-11,0.132743,0.800000
+
+12 itemsets failed test for self sufficiency
 cochlear_age & field1 = t,57, 0.149542, 2.456522,1.80554e-29,0.407080,0.619565
-
-1 itemsets failed test for self sufficiency
+cochlear_age & field15 = f & field59 = normal,51, 0.117413, 2.084645,4.06951e-17,0.429204,0.525773
+cochlear_age & field4 = normal & field15 = f,46, 0.104217, 2.049281,1.73383e-13,0.393805,0.516854
+cochlear_age & field2 = mild & field59 = normal,40, 0.095524, 2.172555,6.55959e-12,0.323009,0.547945
+cochlear_age & field2 = mild & field4 = normal,38, 0.088907, 2.122066,1.38506e-10,0.314159,0.535211
+cochlear_age & field2 = mild & field15 = f,41, 0.088789, 1.958571,3.55823e-10,0.367257,0.493976
 cochlear_age & field59 = normal,54, 0.084932, 1.551487,6.36407e-11,0.610619,0.391304
+cochlear_age & field4 = normal,48, 0.066195, 1.452792,1.48862e-06,0.579646,0.366412
+cochlear_age & field2 = mild,42, 0.059735, 1.473684,2.71003e-05,0.500000,0.371681
+cochlear_age & field15 = f,54, 0.055917, 1.305520,2.28094e-06,0.725664,0.329268
+cochlear_age & field64 = good,24, 0.054859, 2.068650,7.94248e-06,0.203540,0.521739
+cochlear_age & field66 = a,57, 0.041291, 1.195767,6.83396e-06,0.836283,0.301587
 
-0 seconds (0 input, 0 search, 0 filter, 0 output) for 3 itemsets
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 22 itemsets
 

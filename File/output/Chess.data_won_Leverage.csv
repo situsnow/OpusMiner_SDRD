@@ -15,7 +15,7 @@ If you publish results obtained by using this software please cite
   Chess.data
 
 File/input/Chess.data.csv: 74 items, 3196 transactions
-Found 100 non-redundant productive itemsets in 15 seconds
+Found 100 non-redundant productive itemsets in 16 seconds
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
@@ -122,5 +122,5 @@ won & field3 = f & field8 = f & field10 = f & field16 = f & field32 = f & field3
 won & field8 = f & field10 = f & field23 = f & field27 = f & field32 = f & field33 = f,951, 0.127300, 1.747685,3.86637e-233,0.326033,0.912668
 won & field3 = f & field8 = f & field10 = f & field27 = f & field32 = f & field33 = f,975, 0.126967, 1.712887,1.92423e-223,0.341051,0.894495
 
-16 seconds (1 input, 10 search, 5 filter, 0 output) for 100 itemsets
+18 seconds (1 input, 11 search, 5 filter, 0 output) for 100 itemsets
 

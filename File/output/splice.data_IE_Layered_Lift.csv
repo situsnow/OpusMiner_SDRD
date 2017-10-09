@@ -17,117 +17,117 @@ If you publish results obtained by using this software please cite
   splice.data
 
 File/input/splice.data.csv: 289 items, 3190 transactions
-Found 100 non-redundant productive itemsets in 11 seconds
-Alpha for size 2 = 6.00730e-07
-Alpha for size 3 = 3.13971e-09
-Alpha for size 4 = 2.19560e-11
-Alpha for size 5 = 1.92596e-13
-Alpha for size 6 = 2.03447e-15
-Alpha for size 7 = 2.51613e-17
-Alpha for size 8 = 3.56898e-19
+Found 100 non-redundant productive itemsets in 17 seconds
+Alpha for size 2 = 3.00365e-07
+Alpha for size 3 = 1.56985e-09
+Alpha for size 4 = 1.09780e-11
+Alpha for size 5 = 9.62982e-14
+Alpha for size 6 = 1.01723e-15
+Alpha for size 7 = 1.25806e-17
+Alpha for size 8 = 1.78449e-19
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
-IE & field11 = T & field30 = A & field17 = C & field27 = C & field15 = C & field26 = C,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field22 = C & field29 = C & field16 = C & field23 = T & field27 = C & field26 = C,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
 IE & field22 = C & field29 = C & field24 = C & field16 = C & field27 = T & field26 = C,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
 IE & field29 = C & field24 = C & field23 = T & field27 = C & field26 = C & field21 = T,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
-IE & field29 = C & field16 = T & field25 = T & field21 = T & field32 = A,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
-IE & field22 = C & field24 = C & field16 = C & field23 = T & field26 = C,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field29 = C & field17 = C & field16 = C & field23 = T & field25 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field30 = A & field17 = C & field24 = C & field23 = T & field26 = C,42, 0.009996, 4.153646,4.44420e-27,0.013166,1.000000
-IE & field29 = C & field26 = T & field19 = T & field20 = T & field24 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field14 = C & field25 = C & field29 = C & field17 = T & field26 = C,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
+IE & field29 = C & field61 = G & field24 = C & field23 = T & field27 = C & field26 = C,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
+IE & field14 = C & field29 = C & field23 = T & field27 = C & field26 = C & field21 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
 IE & field29 = C & field16 = C & field18 = T & field23 = T & field26 = C,33, 0.007854, 4.153646,2.29655e-21,0.010345,1.000000
-IE & field22 = C & field30 = A & field24 = C & field23 = T & field21 = T,30, 0.007140, 4.153646,1.80852e-19,0.009404,1.000000
-IE & field25 = C & field29 = C & field24 = C & field17 = T & field26 = C,29, 0.006902, 4.153646,7.73576e-19,0.009091,1.000000
-IE & field11 = T & field29 = C & field27 = C & field25 = T & field21 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field25 = C & field29 = C & field23 = T & field27 = C & field26 = C,33, 0.007854, 4.153646,2.29655e-21,0.010345,1.000000
-IE & field29 = C & field19 = T & field20 = C & field17 = T & field27 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field25 = C & field16 = C & field27 = C & field26 = C & field20 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field29 = C & field16 = C & field18 = T & field27 = C & field20 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field25 = C & field30 = A & field18 = T & field23 = T & field26 = C,29, 0.006902, 4.153646,7.73576e-19,0.009091,1.000000
-IE & field29 = C & field16 = C & field18 = T & field19 = T & field23 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field29 = C & field17 = C & field16 = C & field18 = T & field23 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field29 = C & field17 = T & field25 = T & field27 = T & field20 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field29 = C & field26 = T & field18 = T & field22 = T & field15 = C,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
-IE & field29 = C & field26 = T & field19 = T & field17 = T & field24 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field25 = C & field29 = C & field16 = C & field19 = T & field24 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field14 = C & field29 = C & field19 = T & field23 = T & field26 = C,35, 0.008330, 4.153646,1.24351e-22,0.010972,1.000000
-IE & field29 = C & field16 = C & field23 = T & field27 = C & field21 = T,33, 0.007854, 4.153646,2.29655e-21,0.010345,1.000000
-IE & field29 = C & field26 = T & field19 = T & field22 = T & field24 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field29 = C & field19 = T & field22 = T & field21 = T & field24 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field25 = C & field29 = C & field16 = C & field23 = T & field26 = C,35, 0.008330, 4.153646,1.24351e-22,0.010972,1.000000
-IE & field29 = C & field16 = C & field18 = T & field23 = T & field20 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field29 = C & field16 = C & field23 = T & field27 = C & field25 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field29 = C & field16 = C & field19 = T & field17 = T & field23 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field29 = C & field18 = T & field20 = C & field22 = T & field21 = T,32, 0.007616, 4.153646,9.85394e-21,0.010031,1.000000
-IE & field30 = A & field17 = C & field24 = C & field23 = T & field21 = T,34, 0.008092, 4.153646,5.34673e-22,0.010658,1.000000
-IE & field29 = C & field16 = C & field19 = T & field23 = T & field27 = C,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field31 = G & field18 = T & field20 = C & field23 = T & field15 = C,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field25 = C & field29 = C & field20 = C & field22 = T & field21 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field30 = A & field18 = T & field23 = T & field27 = C & field21 = T,32, 0.007616, 4.153646,9.85394e-21,0.010031,1.000000
-IE & field25 = C & field29 = C & field16 = C & field19 = T & field23 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field29 = C & field18 = T & field22 = T & field15 = C & field21 = T,34, 0.008092, 4.153646,5.34673e-22,0.010658,1.000000
-IE & field29 = C & field26 = T & field17 = T & field25 = T & field27 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field29 = C & field17 = C & field16 = C & field23 = T & field21 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field14 = C & field29 = C & field18 = T & field22 = T & field27 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field29 = C & field26 = T & field19 = T & field22 = T & field32 = A,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field11 = T & field24 = C & field19 = C & field21 = T & field20 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field25 = C & field29 = C & field16 = C & field18 = T & field22 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field29 = C & field24 = C & field18 = T & field22 = T & field15 = C,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field29 = C & field26 = T & field18 = T & field22 = T & field24 = T,30, 0.007140, 4.153646,1.80852e-19,0.009404,1.000000
-IE & field29 = C & field19 = T & field22 = T & field27 = T & field24 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field25 = C & field29 = C & field15 = C & field27 = T & field24 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field29 = C & field24 = C & field16 = C & field19 = T & field23 = T,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
-IE & field25 = C & field30 = A & field18 = T & field15 = C & field26 = C,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
-IE & field22 = C & field29 = C & field17 = T & field25 = T & field32 = A,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field11 = T & field30 = A & field17 = C & field23 = T & field21 = T,31, 0.007378, 4.153646,4.22369e-20,0.009718,1.000000
-IE & field30 = A & field17 = C & field18 = T & field23 = T & field21 = T,37, 0.008806, 4.153646,6.70504e-24,0.011599,1.000000
-IE & field11 = T & field29 = C & field17 = C & field15 = C & field26 = C,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field11 = T & field29 = C & field14 = T & field17 = T & field20 = T,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
-IE & field29 = C & field30 = A & field16 = C & field27 = C & field32 = A,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field25 = C & field29 = C & field20 = C & field23 = T & field26 = C,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
 IE & field29 = C & field17 = C & field26 = T & field22 = T & field24 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field21 = C & field25 = C & field29 = C & field18 = T & field22 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field6 = C & field22 = C & field29 = C & field23 = T & field21 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field22 = C & field29 = C & field16 = C & field23 = T & field21 = T,35, 0.008330, 4.153646,1.24351e-22,0.010972,1.000000
-IE & field29 = C & field16 = C & field23 = T & field26 = C & field20 = T,30, 0.007140, 4.153646,1.80852e-19,0.009404,1.000000
-IE & field21 = C & field25 = C & field29 = C & field17 = T & field26 = C,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field25 = C & field29 = C & field20 = C & field27 = T & field24 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field29 = C & field18 = T & field19 = T & field20 = C & field17 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field21 = C & field29 = C & field18 = T & field27 = C & field20 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field14 = C & field29 = C & field16 = C & field19 = T & field23 = T,30, 0.007140, 4.153646,1.80852e-19,0.009404,1.000000
-IE & field29 = C & field26 = T & field14 = T & field21 = T & field20 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field29 = C & field26 = T & field17 = T & field16 = T & field21 = T,37, 0.008806, 4.153646,6.70504e-24,0.011599,1.000000
-IE & field14 = C & field29 = C & field30 = A & field27 = C & field32 = A,35, 0.008330, 4.153646,1.24351e-22,0.010972,1.000000
-IE & field29 = C & field24 = C & field26 = T & field27 = T & field32 = A,32, 0.007616, 4.153646,9.85394e-21,0.010031,1.000000
 IE & field31 = G & field18 = T & field23 = T & field27 = C & field15 = C,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field29 = C & field19 = C & field25 = T & field20 = T & field32 = A,29, 0.006902, 4.153646,7.73576e-19,0.009091,1.000000
-IE & field29 = C & field30 = A & field17 = C & field16 = C & field32 = A,32, 0.007616, 4.153646,9.85394e-21,0.010031,1.000000
-IE & field29 = C & field20 = C & field15 = C & field27 = T & field32 = A,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field29 = C & field24 = C & field14 = T & field19 = C & field20 = T,39, 0.009282, 4.153646,3.60024e-25,0.012226,1.000000
-IE & field14 = C & field29 = C & field17 = T & field27 = C & field26 = C,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field26 = T & field15 = C & field27 = T & field21 = T & field32 = A,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field11 = T & field29 = C & field24 = C & field26 = C & field20 = T,30, 0.007140, 4.153646,1.80852e-19,0.009404,1.000000
-IE & field11 = T & field25 = C & field30 = A & field27 = C & field15 = C,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field29 = C & field18 = T & field22 = T & field27 = T & field32 = A,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field29 = C & field17 = T & field22 = T & field16 = T & field21 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field25 = C & field29 = C & field11 = C & field26 = C & field24 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field29 = C & field24 = C & field17 = T & field16 = T & field21 = T,29, 0.006902, 4.153646,7.73576e-19,0.009091,1.000000
-IE & field11 = T & field29 = C & field14 = T & field19 = C & field20 = T,33, 0.007854, 4.153646,2.29655e-21,0.010345,1.000000
-IE & field29 = C & field18 = T & field23 = T & field11 = C & field21 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field14 = C & field29 = C & field30 = A & field16 = C & field32 = A,38, 0.009044, 4.153646,1.55452e-24,0.011912,1.000000
-IE & field14 = C & field22 = C & field31 = G & field24 = T & field32 = A,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field11 = T & field24 = C & field16 = T & field25 = T & field21 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
-IE & field11 = T & field29 = C & field17 = T & field16 = T & field20 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
-IE & field30 = A & field23 = T & field16 = T & field26 = C & field21 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
-IE & field22 = C & field29 = C & field16 = C & field26 = C & field32 = A,31, 0.007378, 4.153646,4.22369e-20,0.009718,1.000000
-IE & field29 = C & field26 = T & field16 = T & field21 = T & field32 = A,29, 0.006902, 4.153646,7.73576e-19,0.009091,1.000000
-IE & field11 = T & field29 = C & field24 = C & field16 = T & field20 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
-IE & field16 = T & field27 = C & field24 = T & field32 = A,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
-IE & field29 = C & field16 = C & field24 = T & field32 = A,31, 0.007378, 4.153646,4.22369e-20,0.009718,1.000000
-IE & field29 = C & field23 = T & field27 = C & field32 = A,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
-IE & field18 = T & field11 = C & field15 = C & field27 = T,32, 0.007616, 4.153646,9.85394e-21,0.010031,1.000000
+IE & field16 = C & field18 = T & field19 = T & field23 = T & field26 = C,21, 0.004998, 4.153646,8.35236e-14,0.006583,1.000000
+IE & field29 = C & field19 = T & field22 = T & field27 = T & field24 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field29 = C & field26 = T & field19 = T & field20 = T & field24 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field29 = C & field17 = C & field16 = C & field23 = T & field21 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
+IE & field29 = C & field18 = T & field22 = T & field25 = T & field21 = T,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
+IE & field25 = C & field29 = C & field19 = T & field27 = T & field24 = T,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field25 = C & field29 = C & field61 = G & field26 = C & field21 = T,30, 0.007140, 4.153646,1.80852e-19,0.009404,1.000000
+IE & field29 = C & field18 = T & field23 = T & field25 = T & field20 = T,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
+IE & field30 = A & field17 = C & field24 = C & field23 = T & field21 = T,34, 0.008092, 4.153646,5.34673e-22,0.010658,1.000000
+IE & field29 = C & field26 = T & field18 = T & field22 = T & field15 = C,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
+IE & field30 = A & field17 = C & field24 = C & field23 = T & field26 = C,42, 0.009996, 4.153646,4.44420e-27,0.013166,1.000000
+IE & field29 = C & field26 = T & field18 = T & field22 = T & field24 = T,30, 0.007140, 4.153646,1.80852e-19,0.009404,1.000000
+IE & field25 = C & field29 = C & field16 = C & field19 = T & field24 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field29 = C & field16 = C & field23 = T & field27 = C & field21 = T,33, 0.007854, 4.153646,2.29655e-21,0.010345,1.000000
+IE & field25 = C & field29 = C & field19 = T & field23 = T & field27 = C,21, 0.004998, 4.153646,8.35236e-14,0.006583,1.000000
+IE & field29 = C & field26 = T & field18 = T & field20 = C & field22 = T,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
+IE & field29 = C & field26 = T & field16 = C & field18 = T & field22 = T,21, 0.004998, 4.153646,8.35236e-14,0.006583,1.000000
+IE & field29 = C & field26 = T & field15 = C & field27 = T & field24 = T,21, 0.004998, 4.153646,8.35236e-14,0.006583,1.000000
+IE & field29 = C & field26 = T & field19 = T & field17 = T & field24 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field25 = C & field29 = C & field26 = C & field20 = T & field24 = T,21, 0.004998, 4.153646,8.35236e-14,0.006583,1.000000
+IE & field25 = C & field29 = C & field18 = T & field27 = T & field24 = T,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
+IE & field25 = C & field30 = A & field18 = T & field23 = T & field26 = C,29, 0.006902, 4.153646,7.73576e-19,0.009091,1.000000
+IE & field29 = C & field16 = C & field23 = T & field26 = C & field20 = T,30, 0.007140, 4.153646,1.80852e-19,0.009404,1.000000
+IE & field30 = A & field18 = T & field23 = T & field27 = C & field21 = T,32, 0.007616, 4.153646,9.85394e-21,0.010031,1.000000
+IE & field24 = C & field16 = C & field18 = T & field23 = T & field26 = C,21, 0.004998, 4.153646,8.35236e-14,0.006583,1.000000
+IE & field29 = C & field19 = T & field22 = T & field21 = T & field24 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field25 = C & field29 = C & field27 = T & field21 = T & field24 = T,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field29 = C & field26 = T & field19 = T & field22 = T & field24 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field25 = C & field23 = T & field27 = C & field26 = C & field20 = T,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field25 = C & field30 = A & field18 = T & field15 = C & field26 = C,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
+IE & field25 = C & field29 = C & field16 = C & field23 = T & field26 = C,35, 0.008330, 4.153646,1.24351e-22,0.010972,1.000000
+IE & field25 = C & field29 = C & field16 = C & field18 = T & field22 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
+IE & field25 = C & field29 = C & field24 = C & field17 = T & field26 = C,29, 0.006902, 4.153646,7.73576e-19,0.009091,1.000000
+IE & field29 = C & field16 = C & field23 = T & field27 = C & field25 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field29 = C & field16 = C & field18 = T & field23 = T & field20 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field29 = C & field26 = T & field20 = C & field22 = T & field24 = T,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
+IE & field22 = T & field23 = T & field27 = C & field26 = C & field21 = T,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field25 = C & field29 = C & field23 = T & field15 = C & field26 = C,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field25 = C & field29 = C & field23 = T & field27 = C & field26 = C,33, 0.007854, 4.153646,2.29655e-21,0.010345,1.000000
+IE & field29 = C & field19 = T & field27 = C & field25 = T & field21 = T,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field25 = C & field29 = C & field16 = C & field19 = T & field23 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field29 = C & field18 = T & field22 = T & field15 = C & field27 = T,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
+IE & field25 = C & field16 = C & field27 = C & field26 = C & field20 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field29 = C & field16 = C & field18 = T & field19 = T & field23 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field25 = C & field29 = C & field20 = C & field22 = T & field21 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field14 = C & field29 = C & field16 = C & field19 = T & field23 = T,30, 0.007140, 4.153646,1.80852e-19,0.009404,1.000000
+IE & field29 = C & field17 = C & field18 = T & field22 = T & field15 = C,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field14 = C & field25 = C & field24 = C & field23 = T & field26 = C,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field29 = C & field18 = T & field20 = C & field22 = T & field21 = T,32, 0.007616, 4.153646,9.85394e-21,0.010031,1.000000
+IE & field31 = G & field18 = T & field20 = C & field23 = T & field15 = C,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field25 = C & field29 = C & field20 = C & field27 = T & field24 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
+IE & field29 = C & field17 = C & field16 = C & field23 = T & field25 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field61 = G & field16 = C & field18 = T & field23 = T & field26 = C,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field29 = C & field16 = C & field19 = T & field23 = T & field27 = C,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
+IE & field29 = C & field18 = T & field22 = T & field15 = C & field21 = T,34, 0.008092, 4.153646,5.34673e-22,0.010658,1.000000
+IE & field25 = C & field29 = C & field61 = G & field19 = T & field26 = C,31, 0.007378, 4.153646,4.22369e-20,0.009718,1.000000
+IE & field29 = C & field19 = T & field20 = C & field17 = T & field27 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field30 = A & field17 = C & field18 = T & field23 = T & field21 = T,37, 0.008806, 4.153646,6.70504e-24,0.011599,1.000000
+IE & field29 = C & field26 = T & field17 = T & field21 = T & field24 = T,21, 0.004998, 4.153646,8.35236e-14,0.006583,1.000000
+IE & field29 = C & field24 = C & field16 = C & field19 = T & field23 = T,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
+IE & field29 = C & field26 = T & field17 = T & field25 = T & field27 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
+IE & field26 = T & field18 = T & field20 = C & field22 = T & field27 = T,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
+IE & field29 = C & field61 = G & field19 = T & field17 = T & field24 = T,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field29 = C & field17 = C & field16 = C & field18 = T & field23 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field25 = C & field29 = C & field61 = G & field23 = T & field26 = C,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
+IE & field26 = T & field20 = C & field22 = T & field21 = T & field24 = T,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field25 = C & field29 = C & field20 = C & field23 = T & field26 = C,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field14 = C & field29 = C & field19 = T & field23 = T & field26 = C,35, 0.008330, 4.153646,1.24351e-22,0.010972,1.000000
+IE & field29 = C & field18 = T & field15 = C & field27 = T & field24 = T,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
+IE & field14 = C & field25 = C & field19 = T & field17 = T & field23 = T,21, 0.004998, 4.153646,8.35236e-14,0.006583,1.000000
+IE & field14 = C & field29 = C & field18 = T & field19 = T & field23 = T,21, 0.004998, 4.153646,8.35236e-14,0.006583,1.000000
+IE & field30 = A & field61 = G & field18 = T & field23 = T & field26 = C,39, 0.009282, 4.153646,3.60024e-25,0.012226,1.000000
+IE & field29 = C & field61 = G & field18 = T & field27 = C & field20 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
+IE & field25 = C & field29 = C & field61 = G & field19 = T & field24 = T,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
+IE & field14 = C & field24 = C & field16 = C & field19 = T & field23 = T,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field29 = C & field24 = C & field18 = T & field22 = T & field15 = C,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field29 = C & field18 = T & field19 = T & field20 = C & field17 = T,27, 0.006426, 4.153646,1.41096e-17,0.008464,1.000000
+IE & field14 = C & field29 = C & field18 = T & field22 = T & field27 = T,24, 0.005712, 4.153646,1.09061e-15,0.007524,1.000000
+IE & field29 = C & field61 = G & field19 = T & field23 = T & field25 = T,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
+IE & field29 = C & field16 = C & field18 = T & field20 = C & field22 = T,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field14 = C & field29 = C & field26 = T & field22 = T & field27 = T,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field14 = C & field31 = G & field61 = G & field18 = T & field23 = T,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
+IE & field14 = C & field25 = C & field29 = C & field17 = T & field26 = C,28, 0.006664, 4.153646,3.30547e-18,0.008777,1.000000
+IE & field29 = C & field61 = G & field16 = C & field19 = T & field23 = T,31, 0.007378, 4.153646,4.22369e-20,0.009718,1.000000
+IE & field14 = C & field61 = G & field23 = T & field27 = C & field26 = C,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
+IE & field14 = C & field61 = G & field18 = T & field23 = T & field26 = C,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field14 = C & field25 = C & field16 = C & field23 = T & field26 = C,22, 0.005236, 4.153646,1.96883e-14,0.006897,1.000000
+IE & field14 = C & field61 = G & field24 = C & field19 = T & field26 = C,23, 0.005474, 4.153646,4.63619e-15,0.007210,1.000000
+IE & field22 = C & field30 = A & field24 = C & field23 = T & field21 = T,30, 0.007140, 4.153646,1.80852e-19,0.009404,1.000000
+IE & field14 = C & field61 = G & field16 = C & field19 = T & field26 = C,26, 0.006188, 4.153646,6.01654e-17,0.008150,1.000000
+IE & field14 = C & field61 = G & field19 = T & field23 = T & field26 = C,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
+IE & field22 = C & field24 = C & field16 = C & field23 = T & field26 = C,25, 0.005950, 4.153646,2.56290e-16,0.007837,1.000000
 
-12 seconds (0 input, 11 search, 0 filter, 0 output) for 100 itemsets
+18 seconds (0 input, 17 search, 0 filter, 0 output) for 100 itemsets
 

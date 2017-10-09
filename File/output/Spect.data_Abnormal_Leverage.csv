@@ -15,7 +15,7 @@ If you publish results obtained by using this software please cite
   Spect.data
 
 File/input/Spect.data.csv: 45 items, 267 transactions
-Found 100 non-redundant productive itemsets in 13 seconds
+Found 100 non-redundant productive itemsets in 15 seconds
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
@@ -122,5 +122,5 @@ Abnormal & field7 = 0 & field14 = 0 & field5 = 0,40, 0.086549, 2.368071,3.47153e
 Abnormal & field7 = 0 & field14 = 0 & field21 = 0,40, 0.086549, 2.368071,3.47153e-13,0.307116,0.487805
 Abnormal & field3 = 0 & field12 = 0 & field14 = 0,42, 0.086325, 2.216206,8.26285e-13,0.344569,0.456522
 
-13 seconds (0 input, 13 search, 0 filter, 0 output) for 100 itemsets
+15 seconds (0 input, 13 search, 1 filter, 0 output) for 100 itemsets
 

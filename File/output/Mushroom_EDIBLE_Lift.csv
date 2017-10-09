@@ -16,7 +16,7 @@ If you publish results obtained by using this software please cite
   Mushroom
 
 File/input/Mushroom.csv: 118 items, 8416 transactions
-Found 100 non-redundant productive itemsets in 46 seconds
+Found 100 non-redundant productive itemsets in 49 seconds
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
@@ -121,5 +121,5 @@ EDIBLE & field10 = RED,96, 0.005324, 1.875223,3.79057e-27,0.011407,1.000000
 EDIBLE & field15 = RED,96, 0.005324, 1.875223,3.79057e-27,0.011407,1.000000
 EDIBLE & field12 = ROOTED,192, 0.010648, 1.875223,5.33558e-54,0.022814,1.000000
 
-49 seconds (2 input, 46 search, 0 filter, 0 output) for 100 itemsets
+52 seconds (2 input, 49 search, 0 filter, 0 output) for 100 itemsets
 

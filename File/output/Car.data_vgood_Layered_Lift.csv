@@ -17,20 +17,26 @@ If you publish results obtained by using this software please cite
   Car.data
 
 File/input/Car.data.csv: 24 items, 1728 transactions
-Found 6 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 9.05797e-05
-Alpha for size 3 = 6.17589e-06
+Found 11 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 4.52899e-05
+Alpha for size 3 = 3.08794e-06
+Alpha for size 4 = 2.94090e-07
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
 vgood & field6 = high & field1 = low,39, 0.019435, 7.199999,8.39318e-28,0.083333,0.270833
+vgood & field5 = big & field4 = more & field1 = low,12, 0.005900, 6.646153,6.90951e-08,0.027778,0.250000
 vgood & field6 = high & field5 = big,40, 0.018969, 5.538461,8.65855e-24,0.111111,0.208333
+vgood & field6 = high & field4 = more,35, 0.016075, 4.846153,3.59387e-18,0.111111,0.182292
 vgood & field5 = big & field1 = low,24, 0.010754, 4.430769,4.25547e-11,0.083333,0.166667
-vgood & field6 = high,65, 0.025077, 3.000000,7.69430e-33,0.333333,0.112847
 
-2 itemsets failed test for self sufficiency
+6 itemsets failed test for self sufficiency
+vgood & field4 = more & field1 = low,21, 0.009018, 3.876923,1.36205e-08,0.083333,0.145833
+vgood & field6 = high,65, 0.025077, 3.000000,7.69430e-33,0.333333,0.112847
+vgood & field5 = big & field4 = more,20, 0.007395, 2.769231,9.71419e-06,0.111111,0.104167
 vgood & field1 = low,39, 0.013166, 2.400000,1.04660e-09,0.250000,0.090278
 vgood & field5 = big,40, 0.010610, 1.846154,1.92583e-06,0.333333,0.069444
+vgood & field4 = more,35, 0.007716, 1.615384,0.000412198,0.333333,0.060764
 
-0 seconds (0 input, 0 search, 0 filter, 0 output) for 6 itemsets
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 11 itemsets
 

@@ -16,11 +16,14 @@ If you publish results obtained by using this software please cite
   Audiology.data
 
 File/input/Audiology.data.csv: 410 items, 226 transactions
-Found 0 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 2.98169e-07
+Found 3 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 1.49085e-07
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+possible_brainstem_disorder & field65 = f & field14 = t,4, 0.017386, 56.500000,9.44860e-09,0.017699,1.000000
+possible_brainstem_disorder & field65 = f,4, 0.016759, 18.833334,4.67706e-06,0.053097,0.333333
+possible_brainstem_disorder & field14 = t,4, 0.016759, 18.833334,4.67706e-06,0.053097,0.333333
 
-0 seconds (0 input, 0 search, 0 filter, 0 output) for 0 itemsets
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 3 itemsets
 

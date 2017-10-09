@@ -16,12 +16,20 @@ If you publish results obtained by using this software please cite
   Audiology.data
 
 File/input/Audiology.data.csv: 410 items, 226 transactions
-Found 1 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 2.98169e-07
+Found 6 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 1.49085e-07
+Alpha for size 3 = 5.48105e-10
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
-conductive_fixation & field66 = as,6, 0.024434, 12.555554,1.07254e-07,0.079646,0.333333
+conductive_fixation & field66 = as & field6 = normal,6, 0.025844, 37.666668,5.77755e-12,0.026549,1.000000
+conductive_fixation & field3 = t & field6 = normal,6, 0.025491, 25.111111,4.85314e-10,0.039823,0.666667
+conductive_fixation & field3 = t & field66 = as,6, 0.024787, 15.066668,2.89166e-08,0.066372,0.400000
+conductive_fixation & field6 = normal,6, 0.021732, 5.512195,2.59781e-05,0.181416,0.146341
 
-0 seconds (0 input, 0 search, 0 filter, 0 output) for 1 itemsets
+2 itemsets failed test for self sufficiency
+conductive_fixation & field66 = as,6, 0.024434, 12.555554,1.07254e-07,0.079646,0.333333
+conductive_fixation & field3 = t,6, 0.023494, 8.692307,1.33016e-06,0.115044,0.230769
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 6 itemsets
 

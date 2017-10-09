@@ -16,22 +16,39 @@ If you publish results obtained by using this software please cite
   Spect.data
 
 File/input/Spect.data.csv: 45 items, 267 transactions
-Found 10 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 2.52525e-05
-Alpha for size 3 = 8.80902e-07
+Found 25 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 1.26263e-05
+Alpha for size 3 = 4.40451e-07
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
-Normal & field14 = 1,125, 0.075622, 1.192646,2.35602e-10,0.494382,0.946970
 Normal & field14 = 1 & field9 = 1,95, 0.064372, 1.220880,3.81748e-09,0.367041,0.969388
 Normal & field14 = 1 & field23 = 1,80, 0.058747, 1.243885,4.35016e-09,0.303371,0.987654
+Normal & field14 = 1 & field22 = 1,78, 0.051256, 1.212788,7.87632e-07,0.303371,0.962963
+Normal & field14 = 1 & field4 = 1,85, 0.050709, 1.189465,3.42911e-06,0.337079,0.944444
+Normal & field23 = 1 & field22 = 1,66, 0.047946, 1.240636,3.55634e-07,0.250936,0.985075
+Normal & field23 = 1 & field9 = 1,62, 0.047833, 1.259434,6.58055e-08,0.232210,1.000000
+Normal & field23 = 1 & field4 = 1,61, 0.044088, 1.239120,1.55188e-06,0.232210,0.983871
+Normal & field17 = 1 & field21 = 1,54, 0.041661, 1.259434,7.52456e-07,0.202247,1.000000
+Normal & field11 = 1,91, 0.040469, 1.134737,0.000431216,0.378277,0.900990
+Normal & field8 = 1,71, 0.039908, 1.176576,0.000127127,0.284644,0.934211
+Normal & field17 = 1 & field23 = 1,47, 0.036261, 1.259434,5.82367e-06,0.176030,1.000000
+Normal & field3 = 1,62, 0.035938, 1.183105,0.000273782,0.247191,0.939394
+Normal & field12 = 1,61, 0.035167, 1.181930,0.000345607,0.243446,0.938462
+Normal & field13 = 1 & field9 = 1,45, 0.034718, 1.259434,1.03066e-05,0.168539,1.000000
+Normal & field7 = 1,59, 0.033624, 1.179470,0.000546607,0.235955,0.936508
+Normal & field18 = 1,38, 0.029317, 1.259434,7.26094e-05,0.142322,1.000000
+Normal & field19 = 1,35, 0.027003, 1.259434,0.000164171,0.131086,1.000000
+
+8 itemsets failed test for self sufficiency
+Normal & field14 = 1,125, 0.075622, 1.192646,2.35602e-10,0.494382,0.946970
 Normal & field9 = 1,106, 0.057989, 1.171053,7.78901e-07,0.426966,0.929825
 Normal & field22 = 1,92, 0.056110, 1.194515,4.60077e-07,0.363296,0.948454
 Normal & field23 = 1,102, 0.054903, 1.167839,2.48232e-06,0.411985,0.927273
-Normal & field14 = 1 & field22 = 1,78, 0.051256, 1.212788,7.87632e-07,0.303371,0.962963
 Normal & field17 = 1,79, 0.049054, 1.198738,3.55458e-06,0.310861,0.951807
-Normal & field23 = 1 & field22 = 1,66, 0.047946, 1.240636,3.55634e-07,0.250936,0.985075
-Normal & field23 = 1 & field9 = 1,62, 0.047833, 1.259434,6.58055e-08,0.232210,1.000000
+Normal & field21 = 1,80, 0.043878, 1.171566,5.42936e-05,0.322097,0.930232
+Normal & field4 = 1,95, 0.043555, 1.139488,0.000175737,0.393258,0.904762
+Normal & field13 = 1,73, 0.038477, 1.163781,0.000286211,0.295880,0.924051
 
-0 seconds (0 input, 0 search, 0 filter, 0 output) for 10 itemsets
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 25 itemsets
 

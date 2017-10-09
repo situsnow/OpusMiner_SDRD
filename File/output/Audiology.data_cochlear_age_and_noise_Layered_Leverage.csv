@@ -16,17 +16,20 @@ If you publish results obtained by using this software please cite
   Audiology.data
 
 File/input/Audiology.data.csv: 410 items, 226 transactions
-Found 3 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 2.98169e-07
-Alpha for size 3 = 1.09621e-09
+Found 6 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 1.49085e-07
+Alpha for size 3 = 5.48105e-10
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
 cochlear_age_and_noise & field1 = t & field15 = t,22, 0.085715, 8.370371,4.22771e-26,0.119469,0.814815
+cochlear_age_and_noise & field1 = t & field57 = t,10, 0.039510, 9.338842,8.62865e-11,0.048673,0.909091
+cochlear_age_and_noise & field15 = t & field57 = t,10, 0.038218, 7.337662,6.71326e-09,0.061947,0.714286
 
-2 itemsets failed test for self sufficiency
+3 itemsets failed test for self sufficiency
 cochlear_age_and_noise & field15 = t,22, 0.070640, 3.645161,1.79703e-14,0.274336,0.354839
 cochlear_age_and_noise & field1 = t,22, 0.057718, 2.456522,4.83797e-10,0.407080,0.239130
+cochlear_age_and_noise & field57 = t,10, 0.033480, 4.109091,1.21444e-05,0.110619,0.400000
 
-0 seconds (0 input, 0 search, 0 filter, 0 output) for 3 itemsets
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 6 itemsets
 

@@ -16,117 +16,117 @@ If you publish results obtained by using this software please cite
   Adult.csv
   Adult
 
-File/input/Adult.csv: 132 items, 32561 transactions
-Found 100 non-redundant productive itemsets in 92 seconds
-Alpha for size 2 = 2.89151e-06
-Alpha for size 3 = 3.33636e-08
-Alpha for size 4 = 5.17265e-10
-Alpha for size 5 = 1.01028e-11
-Alpha for size 6 = 2.38650e-13
-Alpha for size 7 = 6.62915e-15
+File/input/Adult.csv: 116 items, 32561 transactions
+Found 100 non-redundant productive itemsets in 78 seconds
+Alpha for size 2 = 1.87406e-06
+Alpha for size 3 = 2.46587e-08
+Alpha for size 4 = 4.36438e-10
+Alpha for size 5 = 9.74191e-12
+Alpha for size 6 = 2.63295e-13
+Alpha for size 7 = 8.37756e-15
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
-0 & field5 = Never-married & field6 = Adm-clerical & field7 = Not-in-family & field3 = HS-grad & field9 = Female,142, 0.001050, 1.317193,9.27487e-18,0.004361,1.000000
-0 & field5 = Never-married & field2 = Private & field1 = Age24-31 & field3 = Some-college & field7 = Own-child,199, 0.001472, 1.317193,1.27659e-24,0.006112,1.000000
-0 & field5 = Never-married & field6 = Adm-clerical & field7 = Not-in-family & field4 = EduNum9 & field9 = Female,142, 0.001050, 1.317193,9.27487e-18,0.004361,1.000000
-0 & field5 = Never-married & field7 = Not-in-family & field2 = Private & field3 = Some-college & field10 = Hour21-35,153, 0.001132, 1.317193,4.40848e-19,0.004699,1.000000
-0 & field2 = Private & field1 = Age24-31 & field9 = Female & field4 = EduNum10 & field7 = Own-child,109, 0.000806, 1.317193,8.57559e-14,0.003348,1.000000
-0 & field2 = Private & field1 = Age24-31 & field9 = Female & field3 = Some-college & field7 = Own-child,109, 0.000806, 1.317193,8.57559e-14,0.003348,1.000000
-0 & field5 = Never-married & field7 = Not-in-family & field2 = Private & field4 = EduNum10 & field10 = Hour21-35,153, 0.001132, 1.317193,4.40848e-19,0.004699,1.000000
-0 & field5 = Never-married & field2 = Private & field1 = Age24-31 & field4 = EduNum10 & field7 = Own-child,199, 0.001472, 1.317193,1.27659e-24,0.006112,1.000000
-0 & field5 = Never-married & field8 = Black & field9 = Female & field7 = Own-child,225, 0.001664, 1.317193,9.36980e-28,0.006910,1.000000
-0 & field8 = Black & field9 = Female & field1 = Age17-23 & field7 = Own-child,110, 0.000814, 1.317193,6.50357e-14,0.003378,1.000000
-0 & field5 = Never-married & field4 = EduNum9 & field1 = Age24-31 & field10 = Hour21-35,147, 0.001087, 1.317193,2.32274e-18,0.004515,1.000000
-0 & field7 = Not-in-family & field9 = Female & field6 = Other-service & field1 = Age17-23,105, 0.000777, 1.317193,2.59221e-13,0.003225,1.000000
-0 & field5 = Never-married & field1 = Age24-31 & field6 = Other-service & field10 = Hour21-35,125, 0.000924, 1.317193,1.02555e-15,0.003839,1.000000
-0 & field4 = EduNum9 & field9 = Female & field7 = Own-child & field10 = Hour21-35,133, 0.000984, 1.317193,1.12045e-16,0.004085,1.000000
-0 & field7 = Not-in-family & field3 = HS-grad & field6 = Other-service & field10 = Hour21-35,101, 0.000747, 1.317193,7.83444e-13,0.003102,1.000000
-0 & field3 = HS-grad & field1 = Age24-31 & field9 = Female & field7 = Own-child,150, 0.001109, 1.317193,1.01196e-18,0.004607,1.000000
-0 & field3 = HS-grad & field9 = Female & field1 = Age17-23 & field7 = Own-child,291, 0.002152, 1.317193,1.00533e-35,0.008937,1.000000
-0 & field5 = Never-married & field3 = HS-grad & field1 = Age17-23 & field7 = Own-child,710, 0.005251, 1.317193,9.24507e-87,0.021805,1.000000
-0 & field4 = EduNum9 & field1 = Age24-31 & field9 = Female & field7 = Own-child,150, 0.001109, 1.317193,1.01196e-18,0.004607,1.000000
-0 & field5 = Never-married & field3 = HS-grad & field6 = Other-service & field10 = Hour21-35,179, 0.001324, 1.317193,3.27413e-22,0.005497,1.000000
-0 & field5 = Never-married & field9 = Female & field6 = Other-service & field1 = Age17-23,456, 0.003372, 1.317193,9.91386e-56,0.014004,1.000000
-0 & field7 = Not-in-family & field4 = EduNum9 & field6 = Other-service & field10 = Hour21-35,101, 0.000747, 1.317193,7.83444e-13,0.003102,1.000000
-0 & field5 = Never-married & field4 = EduNum9 & field6 = Other-service & field10 = Hour21-35,179, 0.001324, 1.317193,3.27413e-22,0.005497,1.000000
-0 & field6 = Adm-clerical & field2 = Private & field1 = Age17-23 & field7 = Own-child,363, 0.002685, 1.317193,1.93613e-44,0.011148,1.000000
-0 & field5 = Never-married & field2 = Private & field4 = EduNum9 & field1 = Age17-23,1008, 0.007455, 1.317193,1.56173e-123,0.030957,1.000000
-0 & field5 = Never-married & field9 = Female & field6 = Other-service & field7 = Own-child,404, 0.002988, 1.317193,2.06044e-49,0.012407,1.000000
-0 & field4 = EduNum9 & field9 = Female & field1 = Age17-23 & field7 = Own-child,291, 0.002152, 1.317193,1.00533e-35,0.008937,1.000000
-0 & field5 = Never-married & field2 = Private & field3 = HS-grad & field1 = Age17-23,1008, 0.007455, 1.317193,1.56173e-123,0.030957,1.000000
-0 & field2 = Private & field6 = Other-service & field10 = Hour21-35 & field7 = Unmarried,133, 0.000984, 1.317193,1.12045e-16,0.004085,1.000000
-0 & field5 = Never-married & field4 = EduNum9 & field1 = Age17-23 & field7 = Own-child,710, 0.005251, 1.317193,9.24507e-87,0.021805,1.000000
-0 & field9 = Female & field6 = Other-service & field1 = Age17-23 & field7 = Own-child,318, 0.002352, 1.317193,5.45349e-39,0.009766,1.000000
-0 & field9 = Female & field6 = Other-service & field7 = Own-child & field10 = Hour21-35,141, 0.001043, 1.317193,1.22337e-17,0.004330,1.000000
-0 & field5 = Never-married & field6 = Adm-clerical & field3 = Some-college & field1 = Age17-23,311, 0.002300, 1.317193,3.83375e-38,0.009551,1.000000
-0 & field6 = Adm-clerical & field3 = Some-college & field1 = Age17-23 & field7 = Own-child,222, 0.001642, 1.317193,2.15542e-27,0.006818,1.000000
-0 & field6 = Adm-clerical & field7 = Not-in-family & field3 = HS-grad & field1 = Age24-31,97, 0.000717, 1.317193,2.36743e-12,0.002979,1.000000
-0 & field3 = HS-grad & field9 = Female & field7 = Own-child & field10 = Hour21-35,133, 0.000984, 1.317193,1.12045e-16,0.004085,1.000000
-0 & field1 = Age24-31 & field9 = Female & field3 = Some-college & field7 = Unmarried,117, 0.000865, 1.317193,9.38095e-15,0.003593,1.000000
-0 & field5 = Never-married & field6 = Adm-clerical & field9 = Female & field1 = Age17-23,452, 0.003343, 1.317193,3.03837e-55,0.013882,1.000000
-0 & field7 = Not-in-family & field9 = Female & field3 = Some-college & field10 = Hour21-35,166, 0.001228, 1.317193,1.20241e-20,0.005098,1.000000
-0 & field6 = Adm-clerical & field9 = Female & field1 = Age17-23 & field7 = Own-child,293, 0.002167, 1.317193,5.76128e-36,0.008998,1.000000
-0 & field5 = Never-married & field1 = Age24-31 & field7 = Own-child & field10 = Hour21-35,166, 0.001228, 1.317193,1.20241e-20,0.005098,1.000000
-0 & field9 = Female & field6 = Other-service & field3 = Some-college & field10 = Hour21-35,142, 0.001050, 1.317193,9.27487e-18,0.004361,1.000000
-0 & field6 = Adm-clerical & field9 = Female & field4 = EduNum10 & field1 = Age17-23,214, 0.001583, 1.317193,1.98675e-26,0.006572,1.000000
-0 & field5 = Never-married & field6 = Adm-clerical & field2 = Private & field1 = Age17-23,555, 0.004105, 1.317193,8.62123e-68,0.017045,1.000000
-0 & field5 = Never-married & field3 = HS-grad & field1 = Age24-31 & field10 = Hour21-35,147, 0.001087, 1.317193,2.32274e-18,0.004515,1.000000
-0 & field9 = Female & field4 = EduNum10 & field1 = Age17-23 & field7 = Own-child,641, 0.004741, 1.317193,2.65221e-78,0.019686,1.000000
-0 & field6 = Adm-clerical & field7 = Not-in-family & field4 = EduNum9 & field1 = Age24-31,97, 0.000717, 1.317193,2.36743e-12,0.002979,1.000000
-0 & field9 = Female & field3 = Some-college & field1 = Age17-23 & field7 = Own-child,641, 0.004741, 1.317193,2.65221e-78,0.019686,1.000000
-0 & field6 = Adm-clerical & field7 = Not-in-family & field1 = Age24-31 & field9 = Female,220, 0.001627, 1.317193,3.75587e-27,0.006757,1.000000
-0 & field5 = Never-married & field6 = Adm-clerical & field4 = EduNum10 & field1 = Age17-23,311, 0.002300, 1.317193,3.83375e-38,0.009551,1.000000
-0 & field5 = Never-married & field6 = Adm-clerical & field1 = Age24-31 & field3 = Some-college,158, 0.001169, 1.317193,1.10343e-19,0.004852,1.000000
-0 & field1 = Age24-31 & field9 = Female & field4 = EduNum10 & field7 = Unmarried,117, 0.000865, 1.317193,9.38095e-15,0.003593,1.000000
-0 & field6 = Adm-clerical & field9 = Female & field3 = Some-college & field1 = Age17-23,214, 0.001583, 1.317193,1.98675e-26,0.006572,1.000000
-0 & field7 = Not-in-family & field9 = Female & field4 = EduNum10 & field10 = Hour21-35,166, 0.001228, 1.317193,1.20241e-20,0.005098,1.000000
-0 & field6 = Adm-clerical & field4 = EduNum10 & field1 = Age17-23 & field7 = Own-child,222, 0.001642, 1.317193,2.15542e-27,0.006818,1.000000
-0 & field9 = Female & field6 = Other-service & field4 = EduNum10 & field10 = Hour21-35,142, 0.001050, 1.317193,9.27487e-18,0.004361,1.000000
-0 & field5 = Never-married & field6 = Adm-clerical & field1 = Age24-31 & field4 = EduNum10,158, 0.001169, 1.317193,1.10343e-19,0.004852,1.000000
-0 & field6 = Adm-clerical & field5 = Divorced & field1 = Age24-31,108, 0.000799, 1.317193,1.13076e-13,0.003317,1.000000
-0 & field3 = HS-grad & field1 = Age17-23 & field10 = Hour21-35,326, 0.002411, 1.317193,5.86777e-40,0.010012,1.000000
-0 & field5 = Never-married & field10 = Hour1-20 & field3 = HS-grad,238, 0.001760, 1.317193,2.53210e-29,0.007309,1.000000
-0 & field10 = Hour1-20 & field2 = Private & field7 = Unmarried,148, 0.001095, 1.317193,1.76086e-18,0.004545,1.000000
-0 & field1 = Age24-31 & field6 = Other-service & field7 = Own-child,144, 0.001065, 1.317193,5.33086e-18,0.004422,1.000000
-0 & field7 = Not-in-family & field1 = Age17-23 & field10 = Hour21-35,269, 0.001989, 1.317193,4.58004e-33,0.008261,1.000000
-0 & field5 = Never-married & field10 = Hour1-20 & field7 = Own-child,1192, 0.008816, 1.317193,1.93774e-146,0.036608,1.000000
-0 & field7 = Not-in-family & field3 = HS-grad & field1 = Age17-23,323, 0.002389, 1.317193,1.35388e-39,0.009920,1.000000
-0 & field10 = Hour1-20 & field9 = Female & field7 = Unmarried,200, 0.001479, 1.317193,9.67287e-25,0.006142,1.000000
-0 & field7 = Not-in-family & field4 = EduNum9 & field1 = Age17-23,323, 0.002389, 1.317193,1.35388e-39,0.009920,1.000000
-0 & field10 = Hour1-20 & field3 = HS-grad & field7 = Unmarried,86, 0.000636, 1.317193,4.95072e-11,0.002641,1.000000
-0 & field10 = Hour1-20 & field3 = HS-grad & field7 = Own-child,181, 0.001339, 1.317193,1.88048e-22,0.005559,1.000000
-0 & field4 = EduNum9 & field6 = Other-service & field7 = Own-child,260, 0.001923, 1.317193,5.59578e-32,0.007985,1.000000
-0 & field4 = EduNum9 & field6 = Other-service & field1 = Age17-23,243, 0.001797, 1.317193,6.31122e-30,0.007463,1.000000
-0 & field6 = Adm-clerical & field1 = Age17-23 & field10 = Hour21-35,160, 0.001183, 1.317193,6.34013e-20,0.004914,1.000000
-0 & field4 = EduNum9 & field1 = Age17-23 & field10 = Hour21-35,326, 0.002411, 1.317193,5.86777e-40,0.010012,1.000000
-0 & field5 = Never-married & field6 = Other-service & field7 = Unmarried,161, 0.001191, 1.317193,4.80583e-20,0.004945,1.000000
-0 & field5 = Never-married & field10 = Hour1-20 & field1 = Age24-31,221, 0.001634, 1.317193,2.84527e-27,0.006787,1.000000
-0 & field10 = Hour1-20 & field4 = EduNum9 & field7 = Unmarried,86, 0.000636, 1.317193,4.95072e-11,0.002641,1.000000
-0 & field10 = Hour1-20 & field4 = EduNum9 & field7 = Own-child,181, 0.001339, 1.317193,1.88048e-22,0.005559,1.000000
-0 & field5 = Never-married & field10 = Hour1-20 & field4 = EduNum9,238, 0.001760, 1.317193,2.53210e-29,0.007309,1.000000
-0 & field9 = Female & field1 = Age17-23 & field10 = Hour21-35,640, 0.004733, 1.317193,3.51583e-78,0.019655,1.000000
-0 & field5 = Divorced & field1 = Age24-31 & field7 = Own-child,83, 0.000614, 1.317193,1.13419e-10,0.002549,1.000000
-0 & field3 = HS-grad & field6 = Other-service & field1 = Age17-23,243, 0.001797, 1.317193,6.31122e-30,0.007463,1.000000
-0 & field6 = Adm-clerical & field4 = EduNum9 & field1 = Age17-23,207, 0.001531, 1.317193,1.38661e-25,0.006357,1.000000
-0 & field10 = Hour1-20 & field6 = Other-service & field7 = Own-child,339, 0.002507, 1.317193,1.56514e-41,0.010411,1.000000
-0 & field6 = Adm-clerical & field7 = Not-in-family & field1 = Age17-23,166, 0.001228, 1.317193,1.20241e-20,0.005098,1.000000
-0 & field3 = HS-grad & field6 = Other-service & field7 = Own-child,260, 0.001923, 1.317193,5.59578e-32,0.007985,1.000000
-0 & field2 = Private & field1 = Age17-23 & field7 = Unmarried,166, 0.001228, 1.317193,1.20241e-20,0.005098,1.000000
-0 & field7 = Not-in-family & field10 = Hour1-20 & field1 = Age24-31,90, 0.000666, 1.317193,1.63903e-11,0.002764,1.000000
-0 & field5 = Divorced & field6 = Other-service & field10 = Hour21-35,122, 0.000902, 1.317193,2.35219e-15,0.003747,1.000000
-0 & field5 = Never-married & field6 = Adm-clerical & field10 = Hour1-20,244, 0.001805, 1.317193,4.77999e-30,0.007494,1.000000
-0 & field6 = Other-service & field3 = Some-college & field7 = Unmarried,88, 0.000651, 1.317193,2.84863e-11,0.002703,1.000000
-0 & field6 = Adm-clerical & field3 = HS-grad & field1 = Age17-23,207, 0.001531, 1.317193,1.38661e-25,0.006357,1.000000
-0 & field10 = Hour1-20 & field3 = Some-college & field7 = Own-child,513, 0.003794, 1.317193,1.14149e-62,0.015755,1.000000
-0 & field5 = Never-married & field10 = Hour1-20 & field6 = Other-service,410, 0.003032, 1.317193,3.85119e-50,0.012592,1.000000
-0 & field6 = Adm-clerical & field10 = Hour1-20 & field7 = Own-child,180, 0.001331, 1.317193,2.48133e-22,0.005528,1.000000
-0 & field6 = Other-service & field4 = EduNum10 & field7 = Unmarried,88, 0.000651, 1.317193,2.84863e-11,0.002703,1.000000
-0 & field6 = Adm-clerical & field1 = Age24-31 & field7 = Unmarried,133, 0.000984, 1.317193,1.12045e-16,0.004085,1.000000
-0 & field10 = Hour1-20 & field4 = EduNum10 & field7 = Own-child,513, 0.003794, 1.317193,1.14149e-62,0.015755,1.000000
-0 & field10 = Hour1-20 & field1 = Age17-23,1277, 0.009444, 1.317193,4.49736e-157,0.039219,1.000000
-0 & field4 = EduNum1,51, 0.000377, 1.317193,7.80705e-07,0.001566,1.000000
+0 & field4 = Never-married & field5 = Adm-clerical & field3 = HS-grad & field1 = Age24-31 & field8 = Female,97, 0.000717, 1.317193,2.36743e-12,0.002979,1.000000
+0 & field2 = Private & field1 = Age24-31 & field8 = Female & field3 = Some-college & field6 = Own-child,109, 0.000806, 1.317193,8.57559e-14,0.003348,1.000000
+0 & field4 = Never-married & field5 = Adm-clerical & field6 = Not-in-family & field3 = HS-grad & field8 = Female,142, 0.001050, 1.317193,9.27487e-18,0.004361,1.000000
+0 & field4 = Never-married & field2 = Private & field1 = Age24-31 & field3 = Some-college & field6 = Own-child,199, 0.001472, 1.317193,1.27659e-24,0.006112,1.000000
+0 & field4 = Never-married & field6 = Not-in-family & field2 = Private & field3 = Some-college & field9 = Hour21-35,153, 0.001132, 1.317193,4.40848e-19,0.004699,1.000000
+0 & field4 = Never-married & field2 = Private & field3 = HS-grad & field7 = Black,386, 0.002855, 1.317193,3.14860e-47,0.011855,1.000000
+0 & field4 = Never-married & field2 = Private & field7 = Black & field5 = Other-service,222, 0.001642, 1.317193,2.15542e-27,0.006818,1.000000
+0 & field6 = Not-in-family & field3 = HS-grad & field5 = Other-service & field9 = Hour21-35,101, 0.000747, 1.317193,7.83444e-13,0.003102,1.000000
+0 & field3 = HS-grad & field8 = Female & field6 = Own-child & field9 = Hour21-35,133, 0.000984, 1.317193,1.12045e-16,0.004085,1.000000
+0 & field4 = Never-married & field3 = HS-grad & field9 = Hour21-35 & field6 = Unmarried,81, 0.000599, 1.317193,1.97095e-10,0.002488,1.000000
+0 & field4 = Never-married & field3 = HS-grad & field1 = Age24-31 & field9 = Hour21-35,147, 0.001087, 1.317193,2.32274e-18,0.004515,1.000000
+0 & field3 = HS-grad & field1 = Age24-31 & field8 = Female & field6 = Own-child,150, 0.001109, 1.317193,1.01196e-18,0.004607,1.000000
+0 & field4 = Never-married & field3 = HS-grad & field5 = Other-service & field9 = Hour21-35,179, 0.001324, 1.317193,3.27413e-22,0.005497,1.000000
+0 & field8 = Female & field5 = Other-service & field1 = Age17-23 & field6 = Own-child,318, 0.002352, 1.317193,5.45349e-39,0.009766,1.000000
+0 & field4 = Never-married & field1 = Age24-31 & field5 = Other-service & field9 = Hour21-35,125, 0.000924, 1.317193,1.02555e-15,0.003839,1.000000
+0 & field2 = Private & field5 = Other-service & field9 = Hour21-35 & field6 = Unmarried,133, 0.000984, 1.317193,1.12045e-16,0.004085,1.000000
+0 & field6 = Not-in-family & field8 = Female & field5 = Other-service & field1 = Age17-23,105, 0.000777, 1.317193,2.59221e-13,0.003225,1.000000
+0 & field3 = HS-grad & field8 = Female & field1 = Age17-23 & field6 = Own-child,291, 0.002152, 1.317193,1.00533e-35,0.008937,1.000000
+0 & field4 = Never-married & field3 = HS-grad & field1 = Age17-23 & field6 = Own-child,710, 0.005251, 1.317193,9.24507e-87,0.021805,1.000000
+0 & field4 = Never-married & field5 = Adm-clerical & field2 = Private & field1 = Age17-23,555, 0.004105, 1.317193,8.62123e-68,0.017045,1.000000
+0 & field3 = HS-grad & field1 = Age24-31 & field5 = Other-service & field9 = Hour21-35,88, 0.000651, 1.317193,2.84863e-11,0.002703,1.000000
+0 & field3 = HS-grad & field5 = Other-service & field9 = Hour21-35 & field6 = Unmarried,83, 0.000614, 1.317193,1.13419e-10,0.002549,1.000000
+0 & field4 = Never-married & field1 = Age24-31 & field6 = Own-child & field9 = Hour21-35,166, 0.001228, 1.317193,1.20241e-20,0.005098,1.000000
+0 & field8 = Female & field5 = Other-service & field3 = Some-college & field9 = Hour21-35,142, 0.001050, 1.317193,9.27487e-18,0.004361,1.000000
+0 & field4 = Never-married & field8 = Female & field5 = Other-service & field6 = Own-child,404, 0.002988, 1.317193,2.06044e-49,0.012407,1.000000
+0 & field4 = Never-married & field8 = Female & field5 = Other-service & field1 = Age17-23,456, 0.003372, 1.317193,9.91386e-56,0.014004,1.000000
+0 & field8 = Female & field5 = Other-service & field6 = Own-child & field9 = Hour21-35,141, 0.001043, 1.317193,1.22337e-17,0.004330,1.000000
+0 & field5 = Adm-clerical & field2 = Private & field1 = Age17-23 & field6 = Own-child,363, 0.002685, 1.317193,1.93613e-44,0.011148,1.000000
+0 & field8 = Female & field3 = Some-college & field1 = Age17-23 & field6 = Own-child,641, 0.004741, 1.317193,2.65221e-78,0.019686,1.000000
+0 & field4 = Never-married & field2 = Private & field3 = HS-grad & field1 = Age17-23,1008, 0.007455, 1.317193,1.56173e-123,0.030957,1.000000
+0 & field1 = Age24-31 & field8 = Female & field9 = Hour21-35 & field6 = Unmarried,90, 0.000666, 1.317193,1.63903e-11,0.002764,1.000000
+0 & field1 = Age24-31 & field8 = Female & field3 = Some-college & field6 = Unmarried,117, 0.000865, 1.317193,9.38095e-15,0.003593,1.000000
+0 & field6 = Not-in-family & field8 = Female & field3 = Some-college & field9 = Hour21-35,166, 0.001228, 1.317193,1.20241e-20,0.005098,1.000000
+0 & field1 = Age24-31 & field8 = Female & field6 = Own-child & field9 = Hour21-35,91, 0.000673, 1.317193,1.24324e-11,0.002795,1.000000
+0 & field4 = Never-married & field5 = Adm-clerical & field8 = Female & field1 = Age17-23,452, 0.003343, 1.317193,3.03837e-55,0.013882,1.000000
+0 & field6 = Not-in-family & field5 = Other-service & field3 = Some-college & field9 = Hour21-35,79, 0.000584, 1.317193,3.42491e-10,0.002426,1.000000
+0 & field5 = Adm-clerical & field6 = Not-in-family & field1 = Age24-31 & field8 = Female,220, 0.001627, 1.317193,3.75587e-27,0.006757,1.000000
+0 & field5 = Adm-clerical & field6 = Not-in-family & field3 = HS-grad & field1 = Age24-31,97, 0.000717, 1.317193,2.36743e-12,0.002979,1.000000
+0 & field4 = Never-married & field7 = Black & field8 = Female & field5 = Other-service,150, 0.001109, 1.317193,1.01196e-18,0.004607,1.000000
+0 & field5 = Adm-clerical & field8 = Female & field1 = Age17-23 & field6 = Own-child,293, 0.002167, 1.317193,5.76128e-36,0.008998,1.000000
+0 & field4 = Never-married & field7 = Black & field8 = Female & field6 = Own-child,225, 0.001664, 1.317193,9.36980e-28,0.006910,1.000000
+0 & field4 = Never-married & field3 = HS-grad & field7 = Black & field9 = Hour21-35,99, 0.000732, 1.317193,1.36192e-12,0.003040,1.000000
+0 & field4 = Never-married & field5 = Adm-clerical & field1 = Age24-31 & field3 = Some-college,158, 0.001169, 1.317193,1.10343e-19,0.004852,1.000000
+0 & field4 = Never-married & field3 = HS-grad & field7 = Black & field8 = Female,265, 0.001960, 1.317193,1.39322e-32,0.008139,1.000000
+0 & field7 = Black & field8 = Female & field1 = Age17-23 & field6 = Own-child,110, 0.000814, 1.317193,6.50357e-14,0.003378,1.000000
+0 & field5 = Adm-clerical & field6 = Not-in-family & field1 = Age24-31 & field3 = Some-college,87, 0.000643, 1.317193,3.75538e-11,0.002672,1.000000
+0 & field4 = Never-married & field5 = Adm-clerical & field3 = Some-college & field1 = Age17-23,311, 0.002300, 1.317193,3.83375e-38,0.009551,1.000000
+0 & field5 = Adm-clerical & field8 = Female & field3 = Some-college & field1 = Age17-23,214, 0.001583, 1.317193,1.98675e-26,0.006572,1.000000
+0 & field6 = Not-in-family & field3 = HS-grad & field7 = Black & field8 = Female,119, 0.000880, 1.317193,5.39448e-15,0.003655,1.000000
+0 & field6 = Not-in-family & field7 = Black & field8 = Female & field5 = Other-service,91, 0.000673, 1.317193,1.24324e-11,0.002795,1.000000
+0 & field4 = Divorced & field1 = Age24-31 & field8 = Female & field3 = Some-college,87, 0.000643, 1.317193,3.75538e-11,0.002672,1.000000
+0 & field5 = Adm-clerical & field3 = Some-college & field1 = Age17-23 & field6 = Own-child,222, 0.001642, 1.317193,2.15542e-27,0.006818,1.000000
+0 & field4 = Never-married & field3 = HS-grad & field7 = Black & field6 = Unmarried,143, 0.001058, 1.317193,7.03161e-18,0.004392,1.000000
+0 & field3 = HS-grad & field7 = Black & field8 = Female & field9 = Hour21-35,117, 0.000865, 1.317193,9.38095e-15,0.003593,1.000000
+0 & field5 = Adm-clerical & field1 = Age24-31 & field6 = Unmarried,133, 0.000984, 1.317193,1.12045e-16,0.004085,1.000000
+0 & field4 = Never-married & field9 = Hour1-20 & field3 = HS-grad,238, 0.001760, 1.317193,2.53210e-29,0.007309,1.000000
+0 & field3 = HS-grad & field5 = Other-service & field1 = Age17-23,243, 0.001797, 1.317193,6.31122e-30,0.007463,1.000000
+0 & field3 = HS-grad & field1 = Age17-23 & field9 = Hour21-35,326, 0.002411, 1.317193,5.86777e-40,0.010012,1.000000
+0 & field3 = HS-grad & field5 = Other-service & field6 = Own-child,260, 0.001923, 1.317193,5.59578e-32,0.007985,1.000000
+0 & field1 = Age24-31 & field5 = Other-service & field6 = Own-child,144, 0.001065, 1.317193,5.33086e-18,0.004422,1.000000
+0 & field9 = Hour1-20 & field3 = HS-grad & field6 = Own-child,181, 0.001339, 1.317193,1.88048e-22,0.005559,1.000000
+0 & field8 = Female & field1 = Age17-23 & field9 = Hour21-35,640, 0.004733, 1.317193,3.51583e-78,0.019655,1.000000
+0 & field9 = Hour1-20 & field8 = Female & field6 = Unmarried,200, 0.001479, 1.317193,9.67287e-25,0.006142,1.000000
+0 & field6 = Not-in-family & field3 = HS-grad & field1 = Age17-23,323, 0.002389, 1.317193,1.35388e-39,0.009920,1.000000
+0 & field9 = Hour1-20 & field3 = HS-grad & field4 = Divorced,75, 0.000555, 1.317193,1.03406e-09,0.002303,1.000000
+0 & field4 = Divorced & field1 = Age24-31 & field6 = Own-child,83, 0.000614, 1.317193,1.13419e-10,0.002549,1.000000
+0 & field4 = Divorced & field5 = Other-service & field9 = Hour21-35,122, 0.000902, 1.317193,2.35219e-15,0.003747,1.000000
+0 & field9 = Hour1-20 & field5 = Other-service & field6 = Own-child,339, 0.002507, 1.317193,1.56514e-41,0.010411,1.000000
+0 & field4 = Never-married & field9 = Hour1-20 & field6 = Own-child,1192, 0.008816, 1.317193,1.93774e-146,0.036608,1.000000
+0 & field9 = Hour1-20 & field3 = HS-grad & field6 = Unmarried,86, 0.000636, 1.317193,4.95072e-11,0.002641,1.000000
+0 & field5 = Adm-clerical & field9 = Hour1-20 & field6 = Own-child,180, 0.001331, 1.317193,2.48133e-22,0.005528,1.000000
+0 & field4 = Never-married & field5 = Other-service & field6 = Unmarried,161, 0.001191, 1.317193,4.80583e-20,0.004945,1.000000
+0 & field6 = Not-in-family & field1 = Age17-23 & field9 = Hour21-35,269, 0.001989, 1.317193,4.58004e-33,0.008261,1.000000
+0 & field2 = Private & field1 = Age17-23 & field6 = Unmarried,166, 0.001228, 1.317193,1.20241e-20,0.005098,1.000000
+0 & field6 = Not-in-family & field9 = Hour1-20 & field1 = Age24-31,90, 0.000666, 1.317193,1.63903e-11,0.002764,1.000000
+0 & field4 = Never-married & field9 = Hour1-20 & field5 = Other-service,410, 0.003032, 1.317193,3.85119e-50,0.012592,1.000000
+0 & field4 = Never-married & field9 = Hour1-20 & field1 = Age24-31,221, 0.001634, 1.317193,2.84527e-27,0.006787,1.000000
+0 & field4 = Never-married & field5 = Adm-clerical & field9 = Hour1-20,244, 0.001805, 1.317193,4.77999e-30,0.007494,1.000000
+0 & field5 = Adm-clerical & field1 = Age17-23 & field9 = Hour21-35,160, 0.001183, 1.317193,6.34013e-20,0.004914,1.000000
+0 & field5 = Adm-clerical & field3 = HS-grad & field1 = Age17-23,207, 0.001531, 1.317193,1.38661e-25,0.006357,1.000000
+0 & field9 = Hour1-20 & field2 = Private & field6 = Unmarried,148, 0.001095, 1.317193,1.76086e-18,0.004545,1.000000
+0 & field5 = Adm-clerical & field6 = Not-in-family & field1 = Age17-23,166, 0.001228, 1.317193,1.20241e-20,0.005098,1.000000
+0 & field3 = HS-grad & field7 = Black & field6 = Own-child,209, 0.001546, 1.317193,7.95954e-26,0.006419,1.000000
+0 & field5 = Other-service & field3 = Some-college & field6 = Unmarried,88, 0.000651, 1.317193,2.84863e-11,0.002703,1.000000
+0 & field5 = Adm-clerical & field4 = Divorced & field1 = Age24-31,108, 0.000799, 1.317193,1.13076e-13,0.003317,1.000000
+0 & field9 = Hour1-20 & field3 = Some-college & field6 = Own-child,513, 0.003794, 1.317193,1.14149e-62,0.015755,1.000000
+0 & field7 = Black & field1 = Age24-31 & field6 = Unmarried,147, 0.001087, 1.317193,2.32274e-18,0.004515,1.000000
+0 & field4 = Never-married & field9 = Hour1-20 & field7 = Black,155, 0.001146, 1.317193,2.53329e-19,0.004760,1.000000
+0 & field3 = HS-grad & field7 = Black & field1 = Age17-23,157, 0.001161, 1.317193,1.45567e-19,0.004822,1.000000
+0 & field7 = Black & field5 = Other-service & field6 = Own-child,115, 0.000850, 1.317193,1.63127e-14,0.003532,1.000000
+0 & field7 = Black & field5 = Other-service & field1 = Age17-23,104, 0.000769, 1.317193,3.41791e-13,0.003194,1.000000
+0 & field9 = Hour1-20 & field7 = Black & field5 = Other-service,75, 0.000555, 1.317193,1.03406e-09,0.002303,1.000000
+0 & field7 = Black & field1 = Age24-31 & field6 = Own-child,179, 0.001324, 1.317193,3.27413e-22,0.005497,1.000000
+0 & field6 = Not-in-family & field7 = Black & field9 = Hour21-35,107, 0.000791, 1.317193,1.49099e-13,0.003286,1.000000
+0 & field7 = Black & field6 = Own-child & field9 = Hour21-35,111, 0.000821, 1.317193,4.93214e-14,0.003409,1.000000
+0 & field9 = Hour1-20 & field7 = Black & field6 = Own-child,112, 0.000828, 1.317193,3.74037e-14,0.003440,1.000000
+0 & field7 = Black & field1 = Age17-23 & field9 = Hour21-35,122, 0.000902, 1.317193,2.35219e-15,0.003747,1.000000
+0 & field4 = Divorced & field1 = Age17-23,62, 0.000459, 1.317193,3.74743e-08,0.001904,1.000000
+0 & field9 = Hour1-20 & field1 = Age17-23,1277, 0.009444, 1.317193,4.49736e-157,0.039219,1.000000
 0 & field3 = Preschool,51, 0.000377, 1.317193,7.80705e-07,0.001566,1.000000
 
-104 seconds (11 input, 92 search, 0 filter, 0 output) for 100 itemsets
+92 seconds (13 input, 78 search, 0 filter, 0 output) for 100 itemsets
 

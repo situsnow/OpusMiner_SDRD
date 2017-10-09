@@ -122,5 +122,5 @@ very_recom & field6 = convenient & field2 = improper,44, 0.004133, 1.962621,7.42
 very_recom & field2 = proper & field1 = pretentious,66, 0.004052, 1.471966,0.000455512,0.165454,0.076389
 very_recom & field2 = improper,66, 0.004052, 1.471966,0.000455512,0.165454,0.076389
 
-5 seconds (0 input, 2 search, 1 filter, 0 output) for 100 itemsets
+4 seconds (0 input, 2 search, 1 filter, 0 output) for 100 itemsets
 

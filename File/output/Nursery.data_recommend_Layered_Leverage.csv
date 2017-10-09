@@ -17,7 +17,6 @@ If you publish results obtained by using this software please cite
 
 File/input/Nursery.data.csv: 31 items, 5222 transactions
 Found 0 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 5.37634e-05
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength

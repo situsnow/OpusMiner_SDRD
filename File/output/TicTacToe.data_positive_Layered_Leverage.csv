@@ -17,7 +17,6 @@ If you publish results obtained by using this software please cite
 
 File/input/TicTacToe.data.csv: 28 items, 958 transactions
 Found 1 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 6.61376e-05
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength

@@ -16,12 +16,12 @@ If you publish results obtained by using this software please cite
   Audiology.data.csv
   Audiology.data
 
-File/input/Audiology.data.csv: 410 items, 226 transactions
-Found 0 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 2.98169e-07
+File/input/Audiology.data.csv: 184 items, 226 transactions
+Found 1 non-redundant productive itemsets in 0 seconds
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+mixed_cochlear_age_otitis_media & field66 = c,3, 0.012726, 24.214287,7.27542e-05,0.030973,0.428571
 
-0 seconds (0 input, 0 search, 0 filter, 0 output) for 0 itemsets
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 1 itemsets
 

@@ -122,5 +122,5 @@ EI & field36 = G & field37 = T & field34 = G,174, 0.039320, 3.582557,4.87794e-84
 EI & field37 = T,347, 0.038605, 1.550155,5.87721e-28,0.291850,0.372717
 EI & field31 = G & field37 = T,246, 0.038224, 1.982808,2.43441e-38,0.161755,0.476744
 
-2 seconds (0 input, 0 search, 1 filter, 0 output) for 100 itemsets
+3 seconds (1 input, 0 search, 1 filter, 0 output) for 100 itemsets
 

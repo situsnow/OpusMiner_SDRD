@@ -16,22 +16,21 @@ If you publish results obtained by using this software please cite
   Chess.data
 
 File/input/Chess.data.csv: 74 items, 3196 transactions
-Found 100 non-redundant productive itemsets in 7 seconds
-Alpha for size 2 = 9.25583e-06
-Alpha for size 3 = 1.92830e-07
-Alpha for size 4 = 5.43183e-09
-Alpha for size 5 = 1.93994e-10
-Alpha for size 6 = 8.43451e-12
-Alpha for size 7 = 4.34129e-13
-Alpha for size 8 = 2.59182e-14
-Alpha for size 9 = 1.76715e-15
+Found 100 non-redundant productive itemsets in 11 seconds
+Alpha for size 2 = 4.62792e-06
+Alpha for size 3 = 9.64149e-08
+Alpha for size 4 = 2.71591e-09
+Alpha for size 5 = 9.69969e-11
+Alpha for size 6 = 4.21726e-12
+Alpha for size 7 = 2.17065e-13
+Alpha for size 8 = 1.29591e-14
+Alpha for size 9 = 8.83574e-16
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
 won & field3 = f & field10 = f & field23 = f & field32 = f & field33 = f,1113, 0.149558, 1.752718,6.35172e-299,0.380476,0.915296
 won & field3 = f & field10 = f & field16 = f & field23 = f & field27 = f & field32 = f & field33 = f,1094, 0.147207, 1.754541,4.74419e-292,0.373592,0.916248
-won & field10 = f & field23 = f & field33 = f & field35 = t,906, 0.132174, 1.873560,4.30664e-291,0.289737,0.978402
-won & field3 = f & field10 = f & field33 = f & field35 = t,921, 0.131475, 1.839041,5.52237e-274,0.300063,0.960375
+won & field10 = f & field33 = f & field35 = t,950, 0.135811, 1.841268,1.93180e-287,0.309136,0.961538
 won & field10 = f & field16 = f & field23 = f & field27 = f & field33 = f & field35 = t,894, 0.130380, 1.873017,1.48783e-285,0.285982,0.978118
 won & field3 = f & field10 = f & field16 = f & field27 = f & field33 = f & field35 = t,909, 0.129682, 1.838080,1.62067e-268,0.296308,0.959873
 won & field8 = f & field10 = f & field16 = f & field23 = f & field27 = f & field32 = f & field33 = f,942, 0.126772, 1.754722,1.18110e-233,0.321652,0.916342
@@ -41,7 +40,7 @@ won & field3 = f & field8 = f & field10 = f & field16 = f & field23 = f & field2
 won & field3 = f & field8 = f & field10 = f & field16 = f & field23 = f & field27 = f & field32 = f,1116, 0.113079, 1.478927,6.85822e-152,0.452128,0.772318
 won & field8 = f & field10 = f & field16 = f & field27 = f & field33 = f & field35 = t,791, 0.113022, 1.840463,1.20411e-224,0.257509,0.961118
 
-88 itemsets failed test for self sufficiency
+89 itemsets failed test for self sufficiency
 won & field10 = f & field32 = f & field33 = f,1195, 0.155771, 1.714104,1.77264e-309,0.417710,0.895131
 won & field10 = f & field16 = f & field32 = f & field33 = f,1186, 0.155242, 1.719223,7.35655e-309,0.413329,0.897805
 won & field10 = f & field27 = f & field32 = f & field33 = f,1185, 0.154276, 1.712588,4.66409e-304,0.414581,0.894340
@@ -66,23 +65,24 @@ won & field10 = f & field16 = f & field27 = f & field33 = f,1183, 0.136820, 1.58
 won & field3 = f & field10 = f & field23 = f & field33 = f,1125, 0.136809, 1.635751,3.46344e-234,0.412078,0.854214
 won & field10 = f & field27 = f & field33 = f,1197, 0.136462, 1.573204,1.92698e-224,0.455882,0.821551
 won & field3 = f & field10 = f & field16 = f & field23 = f & field33 = f,1111, 0.136187, 1.644108,7.22360e-234,0.404881,0.858578
-won & field10 = f & field33 = f & field35 = t,950, 0.135811, 1.841268,1.93180e-287,0.309136,0.961538
 won & field3 = f & field10 = f & field23 = f & field27 = f & field33 = f,1115, 0.135314, 1.633615,1.60642e-229,0.408949,0.853099
 won & field3 = f & field10 = f & field33 = f,1178, 0.134929, 1.577465,2.76387e-220,0.447434,0.823776
-won & field10 = f & field27 = f & field33 = f & field35 = t,944, 0.134914, 1.840818,1.25524e-284,0.307259,0.961303
 won & field10 = f & field16 = f & field33 = f & field35 = t,944, 0.134914, 1.840818,1.25524e-284,0.307259,0.961303
+won & field10 = f & field27 = f & field33 = f & field35 = t,944, 0.134914, 1.840818,1.25524e-284,0.307259,0.961303
 won & field3 = f & field10 = f & field16 = f & field23 = f & field27 = f & field33 = f,1101, 0.134692, 1.641998,3.09508e-229,0.401752,0.857477
 won & field3 = f & field10 = f & field16 = f & field33 = f,1164, 0.134306, 1.584198,2.98179e-219,0.440238,0.827292
 won & field10 = f & field16 = f & field27 = f & field33 = f & field35 = t,938, 0.134017, 1.840363,7.87696e-282,0.305382,0.961066
 won & field3 = f & field10 = f & field27 = f & field33 = f,1168, 0.133434, 1.575088,1.32462e-215,0.444305,0.822535
 won & field3 = f & field10 = f & field16 = f & field27 = f & field33 = f,1154, 0.132811, 1.581830,1.28470e-214,0.437109,0.826056
+won & field10 = f & field23 = f & field33 = f & field35 = t,906, 0.132174, 1.873560,4.30664e-291,0.289737,0.978402
 won & field8 = f & field10 = f & field32 = f & field33 = f,1012, 0.131844, 1.713438,1.53312e-236,0.353880,0.894783
+won & field3 = f & field10 = f & field33 = f & field35 = t,921, 0.131475, 1.839041,5.52237e-274,0.300063,0.960375
 won & field8 = f & field10 = f & field16 = f & field32 = f & field33 = f,1003, 0.131316, 1.719484,1.37745e-236,0.349499,0.897941
 won & field10 = f & field16 = f & field23 = f & field33 = f & field35 = t,900, 0.131277, 1.873290,2.57193e-288,0.287860,0.978261
 won & field10 = f & field23 = f & field27 = f & field33 = f & field35 = t,900, 0.131277, 1.873290,2.57193e-288,0.287860,0.978261
 won & field8 = f & field10 = f & field27 = f & field32 = f & field33 = f,1004, 0.130648, 1.712003,5.77112e-233,0.351377,0.894034
-won & field3 = f & field10 = f & field27 = f & field33 = f & field35 = t,915, 0.130578, 1.838563,3.04177e-271,0.298185,0.960126
 won & field3 = f & field10 = f & field16 = f & field33 = f & field35 = t,915, 0.130578, 1.838563,3.04177e-271,0.298185,0.960126
+won & field3 = f & field10 = f & field27 = f & field33 = f & field35 = t,915, 0.130578, 1.838563,3.04177e-271,0.298185,0.960126
 won & field8 = f & field10 = f & field16 = f & field27 = f & field32 = f & field33 = f,995, 0.130120, 1.718074,5.05224e-233,0.346996,0.897205
 won & field8 = f & field10 = f & field23 = f & field32 = f & field33 = f,959, 0.128496, 1.748959,1.18751e-236,0.328536,0.913333
 won & field3 = f & field8 = f & field10 = f & field32 = f & field33 = f,983, 0.128163, 1.714359,6.32170e-227,0.343554,0.895264
@@ -91,8 +91,8 @@ won & field3 = f & field10 = f & field23 = f & field33 = f & field35 = t,877, 0.
 won & field3 = f & field8 = f & field10 = f & field16 = f & field32 = f & field33 = f,974, 0.127307, 1.717432,1.98841e-225,0.339800,0.896869
 won & field8 = f & field10 = f & field23 = f & field27 = f & field32 = f & field33 = f,951, 0.127300, 1.747685,3.86637e-233,0.326033,0.912668
 won & field3 = f & field8 = f & field10 = f & field27 = f & field32 = f & field33 = f,975, 0.126967, 1.712887,1.92423e-223,0.341051,0.894495
-won & field3 = f & field10 = f & field16 = f & field23 = f & field33 = f & field35 = t,871, 0.126942, 1.871936,4.32164e-275,0.278786,0.977553
 won & field3 = f & field10 = f & field23 = f & field27 = f & field33 = f & field35 = t,871, 0.126942, 1.871936,4.32164e-275,0.278786,0.977553
+won & field3 = f & field10 = f & field16 = f & field23 = f & field33 = f & field35 = t,871, 0.126942, 1.871936,4.32164e-275,0.278786,0.977553
 won & field10 = f & field16 = f & field27 = f & field32 = f,1381, 0.126388, 1.413417,2.71901e-194,0.585419,0.738108
 won & field10 = f & field16 = f & field23 = f & field27 = f & field32 = f,1328, 0.126308, 1.436730,4.01435e-190,0.553817,0.750282
 won & field3 = f & field8 = f & field10 = f & field23 = f & field32 = f & field33 = f,930, 0.124814, 1.751106,1.46850e-227,0.318210,0.914454
@@ -131,5 +131,5 @@ won & field3 = f & field8 = f & field10 = f & field27 = f & field33 = f,987, 0.1
 won & field10 = f & field16 = f & field27 = f & field35 = t,1095, 0.112553, 1.489231,1.77585e-151,0.440551,0.777699
 won & field3 = f & field8 = f & field10 = f & field16 = f & field23 = f & field33 = f,928, 0.112261, 1.630316,1.39166e-170,0.341051,0.851376
 
-9 seconds (1 input, 3 search, 4 filter, 0 output) for 100 itemsets
+13 seconds (1 input, 6 search, 5 filter, 0 output) for 100 itemsets
 

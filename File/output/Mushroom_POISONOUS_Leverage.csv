@@ -15,7 +15,7 @@ If you publish results obtained by using this software please cite
   Mushroom
 
 File/input/Mushroom.csv: 118 items, 8416 transactions
-Found 100 non-redundant productive itemsets in 41 seconds
+Found 100 non-redundant productive itemsets in 42 seconds
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
@@ -122,5 +122,5 @@ POISONOUS & field8 = CLOSE,3816, 0.074980, 1.198129,4.93957e-318,0.810836,0.5592
 POISONOUS & field12 = ?,1760, 0.071591, 1.520531,1.09400e-186,0.294677,0.709677
 POISONOUS & field23 = PATHS,1008, 0.056329, 1.887856,8.23422e-219,0.135932,0.881119
 
-44 seconds (2 input, 36 search, 4 filter, 0 output) for 100 itemsets
+45 seconds (2 input, 37 search, 5 filter, 0 output) for 100 itemsets
 

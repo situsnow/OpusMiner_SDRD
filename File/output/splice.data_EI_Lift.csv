@@ -16,7 +16,7 @@ If you publish results obtained by using this software please cite
   splice.data
 
 File/input/splice.data.csv: 289 items, 3190 transactions
-Found 100 non-redundant productive itemsets in 395 seconds
+Found 100 non-redundant productive itemsets in 384 seconds
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
@@ -121,5 +121,5 @@ EI & field34 = G & field7 = G & field41 = G & field38 = G & field42 = G,8, 0.001
 EI & field31 = G & field37 = T & field35 = A & field7 = G & field41 = G,20, 0.004762, 4.159061,3.44752e-13,0.006270,1.000000
 EI & field33 = T & field36 = G & field35 = A & field34 = A,206, 0.049050, 4.159061,1.70090e-138,0.064577,1.000000
 
-396 seconds (0 input, 395 search, 0 filter, 0 output) for 100 itemsets
+385 seconds (0 input, 384 search, 0 filter, 0 output) for 100 itemsets
 

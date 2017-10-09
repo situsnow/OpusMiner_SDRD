@@ -1,13 +1,11 @@
-#Did not run
-java opus/OpusMiner -l -k 100 -s loss Connect-4.data.csv Connect-4.data
-java opus/OpusMiner -l -k 100 -s draw Connect-4.data.csv Connect-4.data
+#Search by Leverage, Direct
 
 
-java opus/OpusMiner -k 100 -s loss Connect-4.data.csv Connect-4.data
-java opus/OpusMiner -k 100 -s draw Connect-4.data.csv Connect-4.data
+#Search by Leverage, Layered
 
-##
-java opus/OpusMiner -p -k 100 -s win Connect-4.data.csv Connect-4.data
-java opus/OpusMiner -p -k 100 -s loss Connect-4.data.csv Connect-4.data
-java opus/OpusMiner -p -k 100 -s draw Connect-4.data.csv Connect-4.data
+#Search by Lift, Direct
 
+
+
+#java opus/OpusMiner -l -k 100 -s IE splice.data.csv splice.data
+java opus/OpusMiner -l -p -k 100 -s IE splice.data.csv splice.data

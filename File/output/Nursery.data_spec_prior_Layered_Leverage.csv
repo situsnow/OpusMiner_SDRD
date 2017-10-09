@@ -17,10 +17,9 @@ If you publish results obtained by using this software please cite
 
 File/input/Nursery.data.csv: 31 items, 5222 transactions
 Found 26 non-redundant productive itemsets in 1 seconds
-Alpha for size 2 = 5.37634e-05
-Alpha for size 3 = 2.78087e-06
-Alpha for size 4 = 1.98633e-07
-Alpha for size 5 = 1.83920e-08
+Alpha for size 2 = 2.68817e-05
+Alpha for size 3 = 1.39043e-06
+Alpha for size 4 = 9.93167e-08
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
@@ -31,7 +30,6 @@ spec_prior & field7 = problematic & field2 = very_crit,190, 0.028379, 4.544946,5
 spec_prior & field8 = priority & field2 = critical,189, 0.028188, 4.521025,8.58369e-95,0.055151,0.656250
 spec_prior & field5 = critical & field2 = very_crit,188, 0.027996, 4.497105,1.24393e-93,0.055151,0.652778
 spec_prior & field1 = usual,758, 0.025073, 1.208796,9.73963e-69,0.827269,0.175463
-spec_prior & field2 = critical,252, 0.024241, 2.009345,3.07390e-35,0.165454,0.291667
 spec_prior & field1 = usual & field7 = problematic,316, 0.020486, 1.511793,6.82300e-20,0.275756,0.219444
 spec_prior & field1 = usual & field5 = critical,308, 0.018954, 1.473519,2.40649e-17,0.275756,0.213889
 spec_prior & field7 = problematic & field2 = critical,126, 0.016123, 3.014017,1.87202e-35,0.055151,0.437500
@@ -43,8 +41,9 @@ spec_prior & field8 = priority & field7 = problematic & field2 = critical,63, 0.
 spec_prior & field7 = problematic & field5 = critical & field2 = critical,60, 0.008821, 4.305738,1.21369e-27,0.018384,0.625000
 spec_prior & field8 = priority & field7 = problematic & field5 = critical & field2 = critical,30, 0.004855, 6.458608,1.61251e-23,0.006128,0.937500
 
-8 itemsets failed test for self sufficiency
+9 itemsets failed test for self sufficiency
 spec_prior & field8 = priority,474, 0.042403, 1.876708,1.31862e-71,0.333206,0.272414
+spec_prior & field2 = critical,252, 0.024241, 2.009345,3.07390e-35,0.165454,0.291667
 spec_prior & field8 = priority & field5 = critical,186, 0.019608, 2.224632,3.32935e-31,0.110303,0.322917
 spec_prior & field5 = critical & field2 = critical,120, 0.014974, 2.870492,3.17177e-31,0.055151,0.416667
 spec_prior & field8 = priority & field7 = problematic,158, 0.014134, 1.876708,1.14125e-17,0.111069,0.272414

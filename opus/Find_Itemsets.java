@@ -1,5 +1,8 @@
 package opus;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -340,9 +343,9 @@ public class Find_Itemsets {
 				}else{
 					ubVal = (float) (Math.min(conSup, 0.5) - conSup * 0.5);
 				}
-				//check whether current itemset include consequent, if no, the newMaxItemCount will still be always the cover size of consequent
 				//If it cannot pass, skip the superset checking once and for all (current itemset + consequent).
-				//If current itemset only includes the antecedent, then depth should be the actual antecedent size.
+				//Current itemset only includes the antecedent, then depth should be the actual antecedent size.
+				//The upperbound value here is calculated with the support of consequent.
 				proceedFlag = lb_p <= Globals.getAlpha(depth) && (Globals.searchByLift || ubVal > minValue); 
 				
 				if (proceedFlag == false)
@@ -491,34 +494,34 @@ public class Find_Itemsets {
 		}
 		
 //		//TODO remove after testing
-//		PrintStream queuef = null;
-//		try {
-//			queuef = new PrintStream(new File("File/queue.csv"));
-//			StringBuffer sb = new StringBuffer();
-//			sb.append("Index, ");
-//			sb.append("Item Name, ");
-//			sb.append("Upper bound value\n");
-//			
-//			
-//			for (int j = 0; j < q.size(); j++){
-//				ItemQElem elem = q.get(j);
-//				
-//				sb.append(elem.item);
-//				sb.append(", ");
-//				sb.append(Globals.itemNames.get(elem.item));
-//				sb.append(", ");
-//				sb.append(elem.ubVal);
-//				sb.append("\n");
-//			}
-//			
-//			queuef.print(sb.toString());
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} finally {
-//			if (queuef != null){
-//				queuef.close();
-//			}
-//		}
+		PrintStream queuef = null;
+		try {
+			queuef = new PrintStream(new File("File/queue.csv"));
+			StringBuffer sb = new StringBuffer();
+			sb.append("Index, ");
+			sb.append("Item Name, ");
+			sb.append("Upper bound value\n");
+			
+			
+			for (int j = 0; j < q.size(); j++){
+				ItemQElem elem = q.get(j);
+				
+				sb.append(elem.item);
+				sb.append(", ");
+				sb.append(Globals.itemNames.get(elem.item));
+				sb.append(", ");
+				sb.append(elem.ubVal);
+				sb.append("\n");
+			}
+			
+			queuef.print(sb.toString());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			if (queuef != null){
+				queuef.close();
+			}
+		}
 //		//TODO remove after testing
 		
 		// remember the current minValue, and output an update if it improves in this iteration of the loop
@@ -542,6 +545,12 @@ public class Find_Itemsets {
 			newCover = Globals.tids.get(item);
 			
 			opus(is, newCover, newq, newCover.size(), 0);
+			
+			//DEBUG TODO
+			if (i == 50){
+				System.out.println("Stops here..");
+			}
+			System.out.println("Current item is: " + item);
 			
 			newq.append(q.get(i).ubVal, item);
 			

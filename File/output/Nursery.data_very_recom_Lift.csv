@@ -16,7 +16,7 @@ If you publish results obtained by using this software please cite
   Nursery.data
 
 File/input/Nursery.data.csv: 31 items, 5222 transactions
-Found 100 non-redundant productive itemsets in 4 seconds
+Found 100 non-redundant productive itemsets in 5 seconds
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
@@ -123,5 +123,5 @@ very_recom & field5 = convenient & field6 = convenient & field7 = nonprob & fiel
 very_recom & field5 = convenient & field6 = convenient & field7 = slightly_prob & field1 = pretentious,17, 0.002749, 6.423124,2.62108e-10,0.009766,0.333333
 very_recom & field7 = slightly_prob & field2 = less_proper & field1 = pretentious,4, 0.000647, 6.423124,0.00252127,0.002298,0.333333
 
-5 seconds (0 input, 2 search, 1 filter, 0 output) for 100 itemsets
+5 seconds (0 input, 2 search, 2 filter, 0 output) for 100 itemsets
 

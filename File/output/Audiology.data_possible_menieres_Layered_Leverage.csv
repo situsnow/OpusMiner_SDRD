@@ -16,12 +16,13 @@ If you publish results obtained by using this software please cite
   Audiology.data
 
 File/input/Audiology.data.csv: 410 items, 226 transactions
-Found 1 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 2.98169e-07
+Found 2 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 1.49085e-07
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
 possible_menieres & field11 = t,7, 0.029877, 28.250000,1.47065e-12,0.030973,1.000000
+possible_menieres & field43 = t,3, 0.012804, 28.250000,2.94985e-05,0.013274,1.000000
 
-0 seconds (0 input, 0 search, 0 filter, 0 output) for 1 itemsets
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 2 itemsets
 

@@ -123,5 +123,5 @@ spec_prior & field4 = 3 & field2 = critical,80, 0.009316, 2.551549,3.76740e-17,0
 spec_prior & field3 = foster & field2 = critical,80, 0.009316, 2.551549,3.76740e-17,0.041363,0.370370
 spec_prior & field6 = inconv & field2 = critical,148, 0.016333, 2.360183,1.70138e-27,0.082727,0.342593
 
-5 seconds (0 input, 2 search, 2 filter, 0 output) for 100 itemsets
+6 seconds (0 input, 3 search, 2 filter, 0 output) for 100 itemsets
 

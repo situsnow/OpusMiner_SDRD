@@ -16,9 +16,8 @@ If you publish results obtained by using this software please cite
   Audiology.data.csv
   Audiology.data
 
-File/input/Audiology.data.csv: 410 items, 226 transactions
+File/input/Audiology.data.csv: 184 items, 226 transactions
 Found 0 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 2.98169e-07
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength

@@ -16,12 +16,34 @@ If you publish results obtained by using this software please cite
   Audiology.data
 
 File/input/Audiology.data.csv: 410 items, 226 transactions
-Found 1 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 2.98169e-07
+Found 20 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 1.49085e-07
+Alpha for size 3 = 5.48105e-10
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
-mixed_cochlear_unk_fixation & field66 = as,9, 0.036651, 12.555555,1.34792e-11,0.079646,0.500000
+mixed_cochlear_unk_fixation & field6 = mild & field66 = as,9, 0.038061, 22.600000,2.77237e-15,0.044248,0.900000
+mixed_cochlear_unk_fixation & field66 = as & field4 = absent,9, 0.037180, 15.066668,1.38757e-12,0.066372,0.600000
+mixed_cochlear_unk_fixation & field66 = as & field59 = absent,9, 0.037004, 14.125000,3.17159e-12,0.070796,0.562500
+mixed_cochlear_unk_fixation & field5 = absent & field66 = as,9, 0.036827, 13.294117,6.73962e-12,0.075221,0.529412
+mixed_cochlear_unk_fixation & field6 = mild & field4 = absent,9, 0.035242, 8.692307,8.66240e-10,0.115044,0.346154
+mixed_cochlear_unk_fixation & field6 = mild & field59 = absent,9, 0.035065, 8.370371,1.29936e-09,0.119469,0.333333
+mixed_cochlear_unk_fixation & field5 = absent & field6 = mild,9, 0.034889, 8.071428,1.91485e-09,0.123894,0.321429
+mixed_cochlear_unk_fixation & field5 = absent & field4 = absent,9, 0.033480, 6.277778,2.61000e-08,0.159292,0.250000
+mixed_cochlear_unk_fixation & field5 = absent & field59 = absent,9, 0.033303, 6.108109,3.44892e-08,0.163717,0.243243
+mixed_cochlear_unk_fixation & field59 = absent,9, 0.030308, 4.185185,1.47433e-06,0.238938,0.166667
+mixed_cochlear_unk_fixation & field4 = absent,9, 0.029779, 3.964913,2.49415e-06,0.252212,0.157895
+mixed_cochlear_unk_fixation & field3 = t & field66 = as,7, 0.028330, 11.718518,3.99027e-08,0.066372,0.466667
+mixed_cochlear_unk_fixation & field3 = t & field6 = mild,7, 0.028330, 11.718518,3.99027e-08,0.066372,0.466667
+mixed_cochlear_unk_fixation & field2 = moderate & field66 = as,6, 0.025315, 21.523809,3.35749e-09,0.030973,0.857143
+mixed_cochlear_unk_fixation & field2 = moderate & field6 = mild,6, 0.024787, 15.066666,9.72080e-08,0.044248,0.600000
 
-0 seconds (0 input, 0 search, 0 filter, 0 output) for 1 itemsets
+5 itemsets failed test for self sufficiency
+mixed_cochlear_unk_fixation & field66 = as,9, 0.036651, 12.555555,1.34792e-11,0.079646,0.500000
+mixed_cochlear_unk_fixation & field5 = absent,9, 0.031541, 4.808511,3.77776e-07,0.207965,0.191489
+mixed_cochlear_unk_fixation & field6 = mild,9, 0.029251, 3.766667,4.09843e-06,0.265487,0.150000
+mixed_cochlear_unk_fixation & field3 = t,7, 0.026392, 6.760683,3.71658e-06,0.115044,0.269231
+mixed_cochlear_unk_fixation & field2 = moderate,6, 0.022848, 7.174603,2.19716e-05,0.092920,0.285714
+
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 20 itemsets
 

@@ -16,16 +16,21 @@ If you publish results obtained by using this software please cite
   Audiology.data.csv
   Audiology.data
 
-File/input/Audiology.data.csv: 410 items, 226 transactions
-Found 3 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 2.98169e-07
-Alpha for size 3 = 1.09621e-09
+File/input/Audiology.data.csv: 184 items, 226 transactions
+Found 6 non-redundant productive itemsets in 0 seconds
+Alpha for size 2 = 7.42457e-07
+Alpha for size 3 = 6.11915e-09
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
+normal_ear & field64 = normal & field6 = normal,12, 0.044052, 5.870130,4.61019e-09,0.092920,0.571429
 normal_ear & field2 = normal & field6 = normal,15, 0.053450, 5.136364,1.66405e-10,0.132743,0.500000
+normal_ear & field64 = normal & field2 = normal,18, 0.057248, 3.555944,8.59887e-10,0.230089,0.346154
+
+3 itemsets failed test for self sufficiency
 normal_ear & field6 = normal,15, 0.048712, 3.758315,4.64880e-08,0.181416,0.365854
 normal_ear & field2 = normal,22, 0.061594, 2.722892,3.62163e-11,0.367257,0.265060
+normal_ear & field64 = normal,18, 0.040450, 2.031968,3.68741e-05,0.402655,0.197802
 
-0 seconds (0 input, 0 search, 0 filter, 0 output) for 3 itemsets
+0 seconds (0 input, 0 search, 0 filter, 0 output) for 6 itemsets
 

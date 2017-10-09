@@ -18,9 +18,9 @@ If you publish results obtained by using this software please cite
 
 File/input/Car.data.csv: 24 items, 1728 transactions
 Found 15 non-redundant productive itemsets in 0 seconds
-Alpha for size 2 = 9.05797e-05
-Alpha for size 3 = 6.17589e-06
-Alpha for size 4 = 5.88180e-07
+Alpha for size 2 = 4.52899e-05
+Alpha for size 3 = 3.08794e-06
+Alpha for size 4 = 2.94090e-07
 
 SELF-SUFFICIENT ITEMSETS:
 Rule, No. of transactions, Leverage, Lift, P-value, Antecedent Support, Strength
